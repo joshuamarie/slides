@@ -161,10 +161,10 @@ $$E(X) = \frac{21}{6} = 3.5$$
 
 :::
 
-## Variance and Standard Deviation {background-image="image-main.png"}
 
-:::: {.columns}
-::: {.column width="50%"}
+
+## Variance and Standard Deviation {transition="fade" background-image="image-main.png"}
+
 ### Variance $\sigma^2$
 
 Measures how spread out the values are from the mean.
@@ -173,9 +173,22 @@ $$\text{Var}(X) = E[(X - \mu)^2]$$
 $$= \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)$$
 
 where $\mu = E(X)$
-:::
 
-::: {.column width="50%"}
+## Variance and Standard Deviation {transition="fade" background-image="image-main.png"}
+
+::::: {.columns}
+:::: {.column width="50%"}
+### Variance $\sigma^2$
+
+Measures how spread out the values are from the mean.
+
+$$\text{Var}(X) = E[(X - \mu)^2]$$
+$$= \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)$$
+
+where $\mu = E(X)$
+::::
+
+:::: {.column width="50%"}
 ### Standard Deviation $\sigma$
 
 The square root of variance (same units as X).
@@ -183,10 +196,14 @@ The square root of variance (same units as X).
 $$\sigma = \sqrt{\text{Var}(X)}$$
 
 **Interpretation:**
-- Small $\sigma$: values clustered near mean
-- Large $\sigma$: values spread out
+
+::: incremental
+-   Small $\sigma$: values clustered near mean
+-   Large $\sigma$: values spread out
 :::
+
 ::::
+:::::
 
 ## Common Discrete Distributions {background-image="image-main.png"}
 
