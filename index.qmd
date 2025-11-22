@@ -1,0 +1,25 @@
+---
+title: ""
+page-layout: full
+listing:
+  - id: "my-slides"
+    contents: slides
+    type: grid
+    grid-columns: 3
+    image-height: 200px
+    sort: "date desc"
+    categories: true
+    sort-ui: [title, date, categories]
+    filter-ui: true
+    fields: [image, date, title, subtitle, categories]
+css: title-card.css
+---
+
+::: {.title-card}
+# Welcome to my collection of presentation slides. Browse through the topics below.
+
+## [Joshua Marie](joshuamarie.com)
+:::
+
+::: {#my-slides}
+:::

@@ -1,0 +1,220 @@
+---
+title: "Statistics and Probability for 11th Graders"
+date: 2025-11-20
+categories: [statistics, probability]
+image: 'image-thumb.png'
+format:
+    revealjs:
+        transition: slide
+        transition-speed: default
+        background-transition: fade
+        
+        width: 1600
+        height: 900
+        margin: 0.1
+        min-scale: 0.2
+        max-scale: 2.0
+        
+        highlight-style: github-dark
+        css: custom_style.css
+        
+        chalkboard: 
+            buttons: false
+        
+---
+
+## Random Variables {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+
+:::: {.column width="50%"}
+***Definition***
+
+A random variable is a function that assigns numerical values to outcomes of a random experiment.
+
+::: incremental
+- Maps outcomes to real numbers
+- Denoted by capital letters (X, Y, Z)
+- Can be discrete or continuous
+:::
+
+::::
+
+## Random Variables {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+
+:::::: {.columns}
+:::: {.column width="50%"}
+***Definition***
+
+A random variable is a function that assigns numerical values to outcomes of a random experiment.
+
+-   Maps outcomes to real numbers
+-   Denoted by capital letters (X, Y, Z)
+-   Can be discrete or continuous
+
+::::
+
+:::: {.column width="50%"}
+***Example***
+
+Rolling a die: $X = \text{number shown}$
+
+- $X$ can be 1, 2, 3, 4, 5, or 6
+- Each outcome has equal probability
+- $P(X = k) = \frac{1}{6}; k \in {\{1,2,3,4,5,6}\}$
+::::
+
+::::::
+
+## Types of Random Variables {background-image="image-main.png" transition="fade"} 
+
+:::::: {.columns}
+
+:::: {.column width="50%"}
+
+### Discrete Random Variables
+
+Takes on **countable** values
+
+::: {.fragment .fade-in}
+**Key Property:** Can list all *discrete* possible values
+:::
+
+::: {.fragment .fade-in}
+**Examples:**
+:::
+
+::: incremental
+
+-   Number of heads in 10 coin flips
+-   Number of students absent
+-   Number of cars passing by
+-   Number of balls drawn in an urn
+
+:::
+
+::::
+
+:::: {.column width="50%"}
+
+### Continuous Random Variables
+
+Takes on **uncountably infinite** values
+
+::: {.fragment .fade-in}
+**Key Property:** Any value in an interval is possible
+:::
+
+::: {.fragment .fade-in}
+**Examples:**
+:::
+
+::: incremental
+
+-   Height of students
+-   Time until next bus arrives
+-   Temperature at noon
+-   Waiting time
+
+:::
+
+::::
+
+::::::
+
+## Probability Distribution {background-image="image-main.png"}
+
+### For Discrete Random Variables
+
+A probability distribution assigns probabilities to each possible value.
+
+**Requirements:**
+
+-   $0 \leq P(X = x) \leq 1$ for all $x$
+-   $\sum_{x}^{\infty}P(X = x) = 1$ (sum over all possible values)
+
+::: {.fragment .fade-in}
+
+**Example: Rolling a die**
+
+| $X$ | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|
+| $P(X)$ | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 | 1/6 |
+
+:::
+
+## Expected Value (Mean) {background-image="image-main.png"}
+
+The **expected value** E(X) is the average value we expect from a random variable.
+
+### Formula
+$$E(X) = \sum_{i} x_i \cdot P(X = x_i)$$
+
+### Example: Rolling a die
+$$E(X) = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} + 5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6}$$
+
+$$E(X) = \frac{21}{6} = 3.5$$
+
+## Variance and Standard Deviation {background-image="image-main.png"}
+
+:::: {.columns}
+::: {.column width="50%"}
+### Variance σ²
+
+Measures how spread out the values are from the mean.
+
+$$\text{Var}(X) = E[(X - \mu)^2]$$
+$$= \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)$$
+
+where μ = E(X)
+:::
+
+::: {.column width="50%"}
+### Standard Deviation σ
+
+The square root of variance (same units as X).
+
+$$\sigma = \sqrt{\text{Var}(X)}$$
+
+**Interpretation:**
+- Small σ: values clustered near mean
+- Large σ: values spread out
+:::
+::::
+
+## Common Discrete Distributions {background-image="image-main.png"}
+
+### Binomial Distribution
+
+**Scenario:** n independent trials, each with probability p of success
+
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+**Example:** Flipping a coin 10 times, X = number of heads
+- n = 10, p = 0.5
+- E(X) = np = 5
+- Var(X) = np(1-p) = 2.5
+
+## Practice Problem {background-image="image-main.png"}
+
+**Problem:** A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.
+
+**Find:**
+
+1. The probability distribution of X
+2. E(X)
+3. Var(X)
+
+## Solution {background-image="image-main.png"}
+
+**Probability Distribution:**
+
+- P(X = 0) = P(2 blue) = (2/5)(1/4) = 2/20 = 1/10
+- P(X = 1) = P(1 red, 1 blue) = 2(3/5)(2/4) = 12/20 = 3/5
+- P(X = 2) = P(2 red) = (3/5)(2/4) = 6/20 = 3/10
+
+**Expected Value:**
+
+E(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = **1.2**
+
+**Variance:**
+
+Var(X) = (0-1.2)²(1/10) + (1-1.2)²(3/5) + (2-1.2)²(3/10) = **0.36**

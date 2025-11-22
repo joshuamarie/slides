@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "slides/stats-probability-g11/index.html#random-variables",
+    "href": "slides/stats-probability-g11/index.html#random-variables",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Random Variables",
+    "text": "Random Variables\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#types-of-random-variables",
+    "href": "slides/stats-probability-g11/index.html#types-of-random-variables",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Types of Random Variables",
+    "text": "Types of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#probability-distribution",
+    "href": "slides/stats-probability-g11/index.html#probability-distribution",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Probability Distribution",
+    "text": "Probability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\nX\n1\n2\n3\n4\n5\n6\n\n\n\n\nP(X)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#expected-value-mean",
+    "href": "slides/stats-probability-g11/index.html#expected-value-mean",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Expected Value (Mean)",
+    "text": "Expected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i} x_i \\cdot P(X = x_i)\\]\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\\[E(X) = \\frac{21}{6} = 3.5\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#variance-and-standard-deviation",
+    "href": "slides/stats-probability-g11/index.html#variance-and-standard-deviation",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\n\nVariance σ²\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere μ = E(X)\n\nStandard Deviation σ\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation: - Small σ: values clustered near mean - Large σ: values spread out"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#common-discrete-distributions",
+    "href": "slides/stats-probability-g11/index.html#common-discrete-distributions",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Common Discrete Distributions",
+    "text": "Common Discrete Distributions\nBinomial Distribution\nScenario: n independent trials, each with probability p of success\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\nExample: Flipping a coin 10 times, X = number of heads - n = 10, p = 0.5 - E(X) = np = 5 - Var(X) = np(1-p) = 2.5"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#practice-problem",
+    "href": "slides/stats-probability-g11/index.html#practice-problem",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Practice Problem",
+    "text": "Practice Problem\nProblem: A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.\nFind:\n\nThe probability distribution of X\nE(X)\nVar(X)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#solution",
+    "href": "slides/stats-probability-g11/index.html#solution",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Solution",
+    "text": "Solution\nProbability Distribution:\n\nP(X = 0) = P(2 blue) = (2/5)(1/4) = 2/20 = 1/10\nP(X = 1) = P(1 red, 1 blue) = 2(3/5)(2/4) = 12/20 = 3/5\nP(X = 2) = P(2 red) = (3/5)(2/4) = 6/20 = 3/10\n\nExpected Value:\nE(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = 1.2\nVariance:\nVar(X) = (0-1.2)²(1/10) + (1-1.2)²(3/5) + (2-1.2)²(3/10) = 0.36"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#random-variables-1",
+    "href": "slides/stats-probability-g11/index.html#random-variables-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Random Variables",
+    "text": "Random Variables\n\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous\n\n\nExample\nRolling a die: \\(X = \\text{number shown}\\)\n\n\\(X\\) can be 1, 2, 3, 4, 5, or 6\nEach outcome has equal probability\n\\(P(X = k) = \\frac{1}{6}; k \\in {\\{1,2,3,4,5,6}\\}\\)"
+  }
+]

@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+/.quarto/
+/files/
+
+/__pycache__/
+/*.py[cod]
+/*$py.class
+/.venv/
+/env/
+/venv/
