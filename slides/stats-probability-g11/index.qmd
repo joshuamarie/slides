@@ -23,20 +23,211 @@ format:
         
 ---
 
-## Random Variables {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+## What is Statistics? {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-:::: {.column width="50%"}
 ***Definition***
 
-A random variable is a function that assigns numerical values to outcomes of a random experiment.
+**Statistics** is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making
+
+::: {.fragment .fade-in}
+Two kinds of statistics: 
+:::
 
 ::: incremental
-- Maps outcomes to real numbers
-- Denoted by capital letters (X, Y, Z)
-- Can be discrete or continuous
+-   **Descriptive Statistics**: The way to summarize and describe data (mean, median, mode, graphs)
+-   **Inferential Statistics**: Meticulous way to make generalizations, i.e. predictions or inferences, about a population based on sample data
+:::
+
+## What is Probability? {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+***Definition***
+
+**Probability** is the measure of the likelihood that an event will occur.
+
+::: incremental
+
+-   Expressed as a *decimal* number between 0 and 1 (or 0% to 100%)
+-   $P(E) = 0$ means the event is impossible
+-   $P(E) = 1$ means the event is certain
+-   Helps us make predictions about random events
+
+:::
+
+## Calculating Basic Probability {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+***Formula for Probability***
+
+$$P(\text{Event}) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}=\frac{x}{n}$$
+
+::: {.fragment .fade-in}
+**Example: Rolling a die**
+
+What is the probability of rolling a 4 in a die?
+
+-   Favorable outcomes: {4} $\rightarrow$ 1 outcome
+-   Total outcomes: $\{1,\ 2,\ 3,\ 4,\ 5,\ 6\}$ $\rightarrow$ 6 outcomes
+-   $P(\text{rolling a 4}) = \frac{1}{6}$
+
+:::
+
+## Sample Space {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+***Definition***
+
+A **sample space (S)** is the collection or set of all possible outcomes of a random experiment.
+
+::: incremental
+-   Represented using the symbol "S" or $\Omega$ in some textbooks
+-   Contains all outcomes that could occur
+-   Can be finite or infinite
+:::
+
+::: {.fragment .fade-in}
+**Examples:**
+:::
+
+::: incremental
+-   Tossing a coin: $S = \{H, T\}$
+-   Rolling a die: $S = \{1,\ 2,\ 3,\ 4,\ 5,\ 6\}$
+-   Tossing two coins: $S = \{HH,\ HT,\ TH,\ TT\}$
+:::
+
+## Events {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+
+***Definition***
+
+An **event** is a subset of possible outcomes from the sample space.
+
+::: incremental
+-   Can be a single outcome or multiple outcomes
+-   Denoted by capital letters (A, B, C)
+:::
+
+:::: {.fragment .fade-in}
+::: callout-important
+When you calculate the probability of the event $P(E)$, it is ALWAYS a *decimal number*, a fractional number, ranges from 0 to 1. 
+
+For example: 
+
+When tossing a coin, what's the probability of getting heads?
+There should be two outcomes: *getting a head* & *getting a tail* . 
+The sample space would be: $S=\{H,\ T\}$
+And the event A is getting head
+Thus, $x=1;\ n=2$, and the probability would be:
+
+$$P(A)=\frac{1}{2}=0.5$$
+
+:::
+::::
+
+## Events {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+***Definition***
+
+-   An **event** is any subset of possible outcomes in the **sample space**  $\Omega$.
+
+-   Compound event: contains two or more outcomes (e.g., "rolling an even number")
+
+## Calculating Probability of Events {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Practice Problem:**
+
+A bag contains 5 red balls, 3 blue balls, and 2 green balls.
+
+a.  What is the probability of drawing a red ball?
+b.  What is the probability of drawing a blue or green ball?
+c.  What is the probability of NOT drawing a red ball?
+
+::: {.fragment .fade-in}
+a.  $P(\text{red}) = \frac{5}{10} = \frac{1}{2}$
+b.  $P(\text{blue or green}) = \frac{3}{10} + \frac{2}{10} = \frac{5}{10} = \frac{1}{2}$
+c.  $P(\text{not red}) = 1 - P(\text{red}) = 1 - \frac{1}{2} = \frac{1}{2}$
+:::
+
+## Events {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+
+:::: {.column width="100%"}
+
+### Mutually Exclusive (Disjoint) Events
+
+Two events $A$ and $B$ are **mutually exclusive** if they have **no outcomes in common**:
+
+$$A \cap B = \emptyset$$
+
+**Consequence for probabilities:**
+
+$$P(A \cup B) = P(A) + P(B)$$
+(no overlap to double-count)
+
+**Classic example – Die roll**
+
+- $A$: Rolling an even number $\{2,\ 4,\ 6\}$
+- $B$: Rolling an odd number $\{1,\ 3,\ 5\}$
+
+$\rightarrow$ $A \cap B = \emptyset$ $\rightarrow$ mutually exclusive
+
+::: {.fragment .fade-in}
+**Another example:** Drawing one card
+
+- $A$: Drawing a heart
+- $B$: Drawing a spade  
+
+$\rightarrow$ also mutually exclusive
 :::
 
 ::::
+
+## Events {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+
+::: {.column width="100%"}
+
+### Non-Mutually Exclusive Events
+
+Two events $A$ and $B$ are **non-mutually exclusive** if they *share at least one outcome*:
+
+$$A \cap B \neq \emptyset$$
+
+**Addition rule becomes:**
+
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+(we subtract the overlap so it’s not counted twice)
+
+**Die roll example**
+
+- $A$: Rolling an even number: $\{2,\ 4,\ 6\}$
+- $B$: Rolling a number $ >4 :\ \{5,\ 6\}$
+
+$\rightarrow$ $A \cap B = \{6\} \neq \emptyset$ $\rightarrow$ **not** mutually exclusive
+
+$P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{3}{6} + \frac{2}{6} - \frac{1}{6} = \frac{4}{6} = \frac{2}{3}$
+
+:::
+
+## Random Variables {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+***Definition***
+
+A **random variable** is a function that assigns a numerical value to each outcome in the sample space of a random experiment.
+
+**Notation:** We use capital letters (X, Y, Z) for random variables
+
+**How it works:**
+
+::: incremental
+1.  Perform a random experiment $\rightarrow$ get outcomes in sample space $S$
+2.  The random variable $X$ maps each outcome to a number
+3.  We can then calculate probabilities: $P(X = x)$
+:::
+
+::: {.fragment .fade-in}
+**Intuition: Tossing two coins**
+
+-   Sample space: $S = \{HH,\ HT,\ TH,\ TT\}$
+-   Let $X$ = number of heads
+-   Mapping: $HH \rightarrow 2$, $HT \rightarrow 1$, $TH \rightarrow 1$, $TT \rightarrow 0$
+-   So $X$ can be 0, 1, or 2
+-   $P(X = 1) = \frac{2}{4} = \frac{1}{2}$ (since HT and TH both give 1 head)
+:::
 
 ## Random Variables {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
 
@@ -167,12 +358,16 @@ $$E(X) = \frac{21}{6} = 3.5$$
 
 ### Variance $\sigma^2$
 
+::: {.column width="50%"}
+
 Measures how spread out the values are from the mean.
 
 $$\text{Var}(X) = E[(X - \mu)^2]$$
 $$= \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)$$
 
 where $\mu = E(X)$
+
+:::
 
 ## Variance and Standard Deviation {transition="fade" background-image="image-main.png"}
 
@@ -205,7 +400,38 @@ $$\sigma = \sqrt{\text{Var}(X)}$$
 ::::
 :::::
 
-## Common Discrete Distributions {background-image="image-main.png"}
+## Where Do All These Distributions Come From? {transition="fade" background-image="image-main.png"}
+
+Many real-life situations follow repeatable patterns. When we study those patterns carefully, we discover a handful of **probability distributions** that keep showing up again and again.
+
+The **normal distribution** (the bell curve) is the most famous distribution out there. Yes, it is *only a member* of a much larger family.
+
+## Common Discrete Distributions {transition="fade" background-image="image-main.png"}
+
+Here are common discrete probability distribution. 
+
+:::: panel-tabset
+
+### Bernoulli Distribution
+
+**Scenario:** A single trial with only two possible outcomes (success or failure)
+
+$$P(X = x) = \begin{cases} 
+p & \text{if } x = 1 \text{ (success)} \\
+1-p & \text{if } x = 0 \text{ (failure)}
+\end{cases}$$
+
+$$P(X = x)=p^x(1-p)^{1-x}$$
+
+
+**Properties:**
+- $E(X) = p$
+- $\text{Var}(X) = p(1-p)$
+
+**Example:** Flipping a coin once, $X = 1$ if heads, $X = 0$ if tails
+- $p = 0.5$
+- $E(X) = 0.5$
+- $\text{Var}(X) = 0.5(0.5) = 0.25$
 
 ### Binomial Distribution
 
@@ -214,9 +440,12 @@ $$\sigma = \sqrt{\text{Var}(X)}$$
 $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 **Example:** Flipping a coin 10 times, X = number of heads
-- n = 10, p = 0.5
-- E(X) = np = 5
-- Var(X) = np(1-p) = 2.5
+
+- $n = 10$, $p = 0.5$
+- $E(X) = np = 5$
+- $\text{Var}(X) = np(1-p) = 2.5$
+
+:::: 
 
 ## Practice Problem {background-image="image-main.png"}
 
@@ -224,17 +453,17 @@ $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 **Find:**
 
-1. The probability distribution of X
-2. E(X)
-3. Var(X)
+1. The probability distribution of $X$
+2. $E(X)$
+3. $Var(X)$
 
 ## Solution {background-image="image-main.png"}
 
 **Probability Distribution:**
 
-- P(X = 0) = P(2 blue) = (2/5)(1/4) = 2/20 = 1/10
-- P(X = 1) = P(1 red, 1 blue) = 2(3/5)(2/4) = 12/20 = 3/5
-- P(X = 2) = P(2 red) = (3/5)(2/4) = 6/20 = 3/10
+- $P(X = 0) = P(\text{2 blue}) = (2/5)(1/4) = 2/20 = 1/10$
+- $P(X = 1) = P(\text{1 red, 1 blue}) = (2)(3/5)(2/4) = 12/20 = 3/5$
+- $P(X = 2) = P(\text{2 red}) = (3/5)(2/4) = 6/20 = 3/10$
 
 **Expected Value:**
 

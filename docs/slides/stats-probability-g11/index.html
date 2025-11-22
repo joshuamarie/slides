@@ -143,19 +143,186 @@ Joshua Marie
 
   <p class="date">2025-11-20</p>
 </section>
-<section id="random-variables" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>Random Variables</h2>
-<div class="column" style="width:50%;">
+<section id="what-is-statistics" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>What is Statistics?</h2>
 <p><strong><em>Definition</em></strong></p>
-<p>A random variable is a function that assigns numerical values to outcomes of a random experiment.</p>
+<p><strong>Statistics</strong> is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making</p>
+<div class="fragment fade-in">
+<p>Two kinds of statistics:</p>
+</div>
 <div>
 <ul>
-<li class="fragment">Maps outcomes to real numbers</li>
-<li class="fragment">Denoted by capital letters (X, Y, Z)</li>
-<li class="fragment">Can be discrete or continuous</li>
+<li class="fragment"><strong>Descriptive Statistics</strong>: The way to summarize and describe data (mean, median, mode, graphs)</li>
+<li class="fragment"><strong>Inferential Statistics</strong>: Meticulous way to make generalizations, i.e.&nbsp;predictions or inferences, about a population based on sample data</li>
 </ul>
 </div>
+</section>
+<section id="what-is-probability" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>What is Probability?</h2>
+<p><strong><em>Definition</em></strong></p>
+<p><strong>Probability</strong> is the measure of the likelihood that an event will occur.</p>
+<div>
+<ul>
+<li class="fragment">Expressed as a <em>decimal</em> number between 0 and 1 (or 0% to 100%)</li>
+<li class="fragment"><span class="math inline">\(P(E) = 0\)</span> means the event is impossible</li>
+<li class="fragment"><span class="math inline">\(P(E) = 1\)</span> means the event is certain</li>
+<li class="fragment">Helps us make predictions about random events</li>
+</ul>
+</div>
+</section>
+<section id="calculating-basic-probability" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Calculating Basic Probability</h2>
+<p><strong><em>Formula for Probability</em></strong></p>
+<p><span class="math display">\[P(\text{Event}) = \frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}=\frac{x}{n}\]</span></p>
+<div class="fragment fade-in">
+<p><strong>Example: Rolling a die</strong></p>
+<p>What is the probability of rolling a 4 in a die?</p>
+<ul>
+<li>Favorable outcomes: {4} <span class="math inline">\(\rightarrow\)</span> 1 outcome</li>
+<li>Total outcomes: <span class="math inline">\(\{1,\ 2,\ 3,\ 4,\ 5,\ 6\}\)</span> <span class="math inline">\(\rightarrow\)</span> 6 outcomes</li>
+<li><span class="math inline">\(P(\text{rolling a 4}) = \frac{1}{6}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="sample-space" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Sample Space</h2>
+<p><strong><em>Definition</em></strong></p>
+<p>A <strong>sample space (S)</strong> is the collection or set of all possible outcomes of a random experiment.</p>
+<div>
+<ul>
+<li class="fragment">Represented using the symbol “S” or <span class="math inline">\(\Omega\)</span> in some textbooks</li>
+<li class="fragment">Contains all outcomes that could occur</li>
+<li class="fragment">Can be finite or infinite</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<p><strong>Examples:</strong></p>
+</div>
+<div>
+<ul>
+<li class="fragment">Tossing a coin: <span class="math inline">\(S = \{H, T\}\)</span></li>
+<li class="fragment">Rolling a die: <span class="math inline">\(S = \{1,\ 2,\ 3,\ 4,\ 5,\ 6\}\)</span></li>
+<li class="fragment">Tossing two coins: <span class="math inline">\(S = \{HH,\ HT,\ TH,\ TT\}\)</span></li>
+</ul>
+</div>
+</section>
+<section id="events" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Events</h2>
+<p><strong><em>Definition</em></strong></p>
+<p>An <strong>event</strong> is a subset of possible outcomes from the sample space.</p>
+<div>
+<ul>
+<li class="fragment">Can be a single outcome or multiple outcomes</li>
+<li class="fragment">Denoted by capital letters (A, B, C)</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>When you calculate the probability of the event <span class="math inline">\(P(E)\)</span>, it is ALWAYS a <em>decimal number</em>, a fractional number, ranges from 0 to 1.</p>
+<p>For example:</p>
+<p>When tossing a coin, what’s the probability of getting heads? There should be two outcomes: <em>getting a head</em> &amp; <em>getting a tail</em> . The sample space would be: <span class="math inline">\(S=\{H,\ T\}\)</span> And the event A is getting head Thus, <span class="math inline">\(x=1;\ n=2\)</span>, and the probability would be:</p>
+<p><span class="math display">\[P(A)=\frac{1}{2}=0.5\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="events-1" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Events</h2>
+<p><strong><em>Definition</em></strong></p>
+<ul>
+<li><p>An <strong>event</strong> is any subset of possible outcomes in the <strong>sample space</strong> <span class="math inline">\(\Omega\)</span>.</p></li>
+<li><p>Compound event: contains two or more outcomes (e.g., “rolling an even number”)</p></li>
+</ul>
+</section>
+<section id="calculating-probability-of-events" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Calculating Probability of Events</h2>
+<p><strong>Practice Problem:</strong></p>
+<p>A bag contains 5 red balls, 3 blue balls, and 2 green balls.</p>
+<ol type="a">
+<li>What is the probability of drawing a red ball?</li>
+<li>What is the probability of drawing a blue or green ball?</li>
+<li>What is the probability of NOT drawing a red ball?</li>
+</ol>
+<div class="fragment fade-in">
+<ol type="a">
+<li><span class="math inline">\(P(\text{red}) = \frac{5}{10} = \frac{1}{2}\)</span></li>
+<li><span class="math inline">\(P(\text{blue or green}) = \frac{3}{10} + \frac{2}{10} = \frac{5}{10} = \frac{1}{2}\)</span></li>
+<li><span class="math inline">\(P(\text{not red}) = 1 - P(\text{red}) = 1 - \frac{1}{2} = \frac{1}{2}\)</span></li>
+</ol>
+</div>
+</section>
+<section id="events-2" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Events</h2>
+<div class="column" style="width:100%;">
+<h3 id="mutually-exclusive-disjoint-events">Mutually Exclusive (Disjoint) Events</h3>
+<p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>mutually exclusive</strong> if they have <strong>no outcomes in common</strong>:</p>
+<p><span class="math display">\[A \cap B = \emptyset\]</span></p>
+<p><strong>Consequence for probabilities:</strong></p>
+<p><span class="math display">\[P(A \cup B) = P(A) + P(B)\]</span> (no overlap to double-count)</p>
+<p><strong>Classic example – Die roll</strong></p>
+<ul>
+<li><span class="math inline">\(A\)</span>: Rolling an even number <span class="math inline">\(\{2,\ 4,\ 6\}\)</span></li>
+<li><span class="math inline">\(B\)</span>: Rolling an odd number <span class="math inline">\(\{1,\ 3,\ 5\}\)</span></li>
+</ul>
+<p><span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(A \cap B = \emptyset\)</span> <span class="math inline">\(\rightarrow\)</span> mutually exclusive</p>
+<div class="fragment fade-in">
+<p><strong>Another example:</strong> Drawing one card</p>
+<ul>
+<li><span class="math inline">\(A\)</span>: Drawing a heart</li>
+<li><span class="math inline">\(B\)</span>: Drawing a spade</li>
+</ul>
+<p><span class="math inline">\(\rightarrow\)</span> also mutually exclusive</p>
+</div>
 </div></section>
+<section id="events-3" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Events</h2>
+<div class="column" style="width:100%;">
+<h3 id="non-mutually-exclusive-events">Non-Mutually Exclusive Events</h3>
+<p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>non-mutually exclusive</strong> if they <em>share at least one outcome</em>:</p>
+<p><span class="math display">\[A \cap B \neq \emptyset\]</span></p>
+<p><strong>Addition rule becomes:</strong></p>
+<p><span class="math display">\[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]</span> (we subtract the overlap so it’s not counted twice)</p>
+<p><strong>Die roll example</strong></p>
+<ul>
+<li><span class="math inline">\(A\)</span>: Rolling an even number: <span class="math inline">\(\{2,\ 4,\ 6\}\)</span></li>
+<li><span class="math inline">\(B\)</span>: Rolling a number $ &gt;4 :&nbsp;{5,&nbsp;6}$</li>
+</ul>
+<p><span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(A \cap B = \{6\} \neq \emptyset\)</span> <span class="math inline">\(\rightarrow\)</span> <strong>not</strong> mutually exclusive</p>
+<p><span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{3}{6} + \frac{2}{6} - \frac{1}{6} = \frac{4}{6} = \frac{2}{3}\)</span></p>
+</div></section>
+<section id="random-variables" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Random Variables</h2>
+<p><strong><em>Definition</em></strong></p>
+<p>A <strong>random variable</strong> is a function that assigns a numerical value to each outcome in the sample space of a random experiment.</p>
+<p><strong>Notation:</strong> We use capital letters (X, Y, Z) for random variables</p>
+<p><strong>How it works:</strong></p>
+<div>
+<ol type="1">
+<li class="fragment">Perform a random experiment <span class="math inline">\(\rightarrow\)</span> get outcomes in sample space <span class="math inline">\(S\)</span></li>
+<li class="fragment">The random variable <span class="math inline">\(X\)</span> maps each outcome to a number</li>
+<li class="fragment">We can then calculate probabilities: <span class="math inline">\(P(X = x)\)</span></li>
+</ol>
+</div>
+<div class="fragment fade-in">
+<p><strong>Intuition: Tossing two coins</strong></p>
+<ul>
+<li>Sample space: <span class="math inline">\(S = \{HH,\ HT,\ TH,\ TT\}\)</span></li>
+<li>Let <span class="math inline">\(X\)</span> = number of heads</li>
+<li>Mapping: <span class="math inline">\(HH \rightarrow 2\)</span>, <span class="math inline">\(HT \rightarrow 1\)</span>, <span class="math inline">\(TH \rightarrow 1\)</span>, <span class="math inline">\(TT \rightarrow 0\)</span></li>
+<li>So <span class="math inline">\(X\)</span> can be 0, 1, or 2</li>
+<li><span class="math inline">\(P(X = 1) = \frac{2}{4} = \frac{1}{2}\)</span> (since HT and TH both give 1 head)</li>
+</ul>
+</div>
+</section>
 <section id="random-variables-1" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
 <h2>Random Variables</h2>
 <div class="columns">
@@ -266,11 +433,19 @@ Joshua Marie
 <p><span class="math display">\[E(X) = \frac{21}{6} = 3.5\]</span></p>
 </div>
 </section>
-<section id="variance-and-standard-deviation" class="slide level2" data-background-image="image-main.png">
+<section id="variance-and-standard-deviation" class="slide level2" data-transition="fade" data-background-image="image-main.png">
+<h2>Variance and Standard Deviation</h2>
+<h3 id="variance-sigma2">Variance <span class="math inline">\(\sigma^2\)</span></h3>
+<div class="column" style="width:50%;">
+<p>Measures how spread out the values are from the mean.</p>
+<p><span class="math display">\[\text{Var}(X) = E[(X - \mu)^2]\]</span> <span class="math display">\[= \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)\]</span></p>
+<p>where <span class="math inline">\(\mu = E(X)\)</span></p>
+</div></section>
+<section id="variance-and-standard-deviation-1" class="slide level2" data-transition="fade" data-background-image="image-main.png">
 <h2>Variance and Standard Deviation</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="variance-sigma2">Variance <span class="math inline">\(\sigma^2\)</span></h3>
+<h3 id="variance-sigma2-1">Variance <span class="math inline">\(\sigma^2\)</span></h3>
 <p>Measures how spread out the values are from the mean.</p>
 <p><span class="math display">\[\text{Var}(X) = E[(X - \mu)^2]\]</span> <span class="math display">\[= \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)\]</span></p>
 <p>where <span class="math inline">\(\mu = E(X)\)</span></p>
@@ -278,33 +453,66 @@ Joshua Marie
 <h3 id="standard-deviation-sigma">Standard Deviation <span class="math inline">\(\sigma\)</span></h3>
 <p>The square root of variance (same units as X).</p>
 <p><span class="math display">\[\sigma = \sqrt{\text{Var}(X)}\]</span></p>
-<p><strong>Interpretation:</strong> - Small <span class="math inline">\(\sigma\)</span>: values clustered near mean - Large <span class="math inline">\(\sigma\)</span>: values spread out</p>
+<p><strong>Interpretation:</strong></p>
+<div>
+<ul>
+<li class="fragment">Small <span class="math inline">\(\sigma\)</span>: values clustered near mean</li>
+<li class="fragment">Large <span class="math inline">\(\sigma\)</span>: values spread out</li>
+</ul>
+</div>
 </div></div>
 </section>
-<section id="common-discrete-distributions" class="slide level2" data-background-image="image-main.png">
+<section id="where-do-all-these-distributions-come-from" class="slide level2" data-transition="fade" data-background-image="image-main.png">
+<h2>Where Do All These Distributions Come From?</h2>
+<p>Many real-life situations follow repeatable patterns. When we study those patterns carefully, we discover a handful of <strong>probability distributions</strong> that keep showing up again and again.</p>
+<p>The <strong>normal distribution</strong> (the bell curve) is the most famous distribution out there. Yes, it is <em>only a member</em> of a much larger family.</p>
+</section>
+<section id="common-discrete-distributions" class="slide level2" data-transition="fade" data-background-image="image-main.png">
 <h2>Common Discrete Distributions</h2>
-<h3 id="binomial-distribution">Binomial Distribution</h3>
+<p>Here are common discrete probability distribution.</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Bernoulli Distribution</a></li><li><a href="#tabset-1-2">Binomial Distribution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><strong>Scenario:</strong> A single trial with only two possible outcomes (success or failure)</p>
+<p><span class="math display">\[P(X = x) = \begin{cases}
+p &amp; \text{if } x = 1 \text{ (success)} \\
+1-p &amp; \text{if } x = 0 \text{ (failure)}
+\end{cases}\]</span></p>
+<p><span class="math display">\[P(X = x)=p^x(1-p)^{1-x}\]</span></p>
+<p><strong>Properties:</strong> - <span class="math inline">\(E(X) = p\)</span> - <span class="math inline">\(\text{Var}(X) = p(1-p)\)</span></p>
+<p><strong>Example:</strong> Flipping a coin once, <span class="math inline">\(X = 1\)</span> if heads, <span class="math inline">\(X = 0\)</span> if tails - <span class="math inline">\(p = 0.5\)</span> - <span class="math inline">\(E(X) = 0.5\)</span> - <span class="math inline">\(\text{Var}(X) = 0.5(0.5) = 0.25\)</span></p>
+</div>
+<div id="tabset-1-2">
 <p><strong>Scenario:</strong> n independent trials, each with probability p of success</p>
 <p><span class="math display">\[P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\]</span></p>
-<p><strong>Example:</strong> Flipping a coin 10 times, X = number of heads - n = 10, p = 0.5 - E(X) = np = 5 - Var(X) = np(1-p) = 2.5</p>
+<p><strong>Example:</strong> Flipping a coin 10 times, X = number of heads</p>
+<ul>
+<li><span class="math inline">\(n = 10\)</span>, <span class="math inline">\(p = 0.5\)</span></li>
+<li><span class="math inline">\(E(X) = np = 5\)</span></li>
+<li><span class="math inline">\(\text{Var}(X) = np(1-p) = 2.5\)</span></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="practice-problem" class="slide level2" data-background-image="image-main.png">
 <h2>Practice Problem</h2>
 <p><strong>Problem:</strong> A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.</p>
 <p><strong>Find:</strong></p>
 <ol type="1">
-<li>The probability distribution of X</li>
-<li>E(X)</li>
-<li>Var(X)</li>
+<li>The probability distribution of <span class="math inline">\(X\)</span></li>
+<li><span class="math inline">\(E(X)\)</span></li>
+<li><span class="math inline">\(Var(X)\)</span></li>
 </ol>
 </section>
 <section id="solution" class="slide level2" data-background-image="image-main.png">
 <h2>Solution</h2>
 <p><strong>Probability Distribution:</strong></p>
 <ul>
-<li>P(X = 0) = P(2 blue) = (2/5)(1/4) = 2/20 = 1/10</li>
-<li>P(X = 1) = P(1 red, 1 blue) = 2(3/5)(2/4) = 12/20 = 3/5</li>
-<li>P(X = 2) = P(2 red) = (3/5)(2/4) = 6/20 = 3/10</li>
+<li><span class="math inline">\(P(X = 0) = P(\text{2 blue}) = (2/5)(1/4) = 2/20 = 1/10\)</span></li>
+<li><span class="math inline">\(P(X = 1) = P(\text{1 red, 1 blue}) = (2)(3/5)(2/4) = 12/20 = 3/5\)</span></li>
+<li><span class="math inline">\(P(X = 2) = P(\text{2 red}) = (3/5)(2/4) = 6/20 = 3/10\)</span></li>
 </ul>
 <p><strong>Expected Value:</strong></p>
 <p>E(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = <strong>1.2</strong></p>
