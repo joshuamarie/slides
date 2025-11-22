@@ -146,37 +146,45 @@ A probability distribution assigns probabilities to each possible value.
 The **expected value** E(X) is the average value we expect from a random variable.
 
 ### Formula
-$$E(X) = \sum_{i} x_i \cdot P(X = x_i)$$
+$$E(X) = \sum_{i}^{\infty} x_i \cdot P(X = x_i)$$
+
+::: {.fragment .fade-in}
 
 ### Example: Rolling a die
 $$E(X) = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} + 5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6}$$
 
+:::
+
+::: {.fragment .fade-in}
+
 $$E(X) = \frac{21}{6} = 3.5$$
+
+:::
 
 ## Variance and Standard Deviation {background-image="image-main.png"}
 
 :::: {.columns}
 ::: {.column width="50%"}
-### Variance σ²
+### Variance $\sigma^2$
 
 Measures how spread out the values are from the mean.
 
 $$\text{Var}(X) = E[(X - \mu)^2]$$
 $$= \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)$$
 
-where μ = E(X)
+where $\mu = E(X)$
 :::
 
 ::: {.column width="50%"}
-### Standard Deviation σ
+### Standard Deviation $\sigma$
 
 The square root of variance (same units as X).
 
 $$\sigma = \sqrt{\text{Var}(X)}$$
 
 **Interpretation:**
-- Small σ: values clustered near mean
-- Large σ: values spread out
+- Small $\sigma$: values clustered near mean
+- Large $\sigma$: values spread out
 :::
 ::::
 

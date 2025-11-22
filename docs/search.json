@@ -18,21 +18,21 @@
     "href": "slides/stats-probability-g11/index.html#probability-distribution",
     "title": "Statistics and Probability for 11th Graders",
     "section": "Probability Distribution",
-    "text": "Probability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\nX\n1\n2\n3\n4\n5\n6\n\n\n\n\nP(X)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6"
+    "text": "Probability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\n\\(X\\)\n1\n2\n3\n4\n5\n6\n\n\n\n\n\\(P(X)\\)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#expected-value-mean",
     "href": "slides/stats-probability-g11/index.html#expected-value-mean",
     "title": "Statistics and Probability for 11th Graders",
     "section": "Expected Value (Mean)",
-    "text": "Expected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i} x_i \\cdot P(X = x_i)\\]\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\\[E(X) = \\frac{21}{6} = 3.5\\]"
+    "text": "Expected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i}^{\\infty} x_i \\cdot P(X = x_i)\\]\n\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\n\n\\[E(X) = \\frac{21}{6} = 3.5\\]"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#variance-and-standard-deviation",
     "href": "slides/stats-probability-g11/index.html#variance-and-standard-deviation",
     "title": "Statistics and Probability for 11th Graders",
     "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\n\n\nVariance σ²\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere μ = E(X)\n\nStandard Deviation σ\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation: - Small σ: values clustered near mean - Large σ: values spread out"
+    "text": "Variance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation: - Small \\(\\sigma\\): values clustered near mean - Large \\(\\sigma\\): values spread out"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#common-discrete-distributions",

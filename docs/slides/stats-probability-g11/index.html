@@ -230,7 +230,7 @@ Joshua Marie
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>X</th>
+<th><span class="math inline">\(X\)</span></th>
 <th>1</th>
 <th>2</th>
 <th>3</th>
@@ -241,7 +241,7 @@ Joshua Marie
 </thead>
 <tbody>
 <tr class="odd">
-<td>P(X)</td>
+<td><span class="math inline">\(P(X)\)</span></td>
 <td>1/6</td>
 <td>1/6</td>
 <td>1/6</td>
@@ -257,24 +257,28 @@ Joshua Marie
 <h2>Expected Value (Mean)</h2>
 <p>The <strong>expected value</strong> E(X) is the average value we expect from a random variable.</p>
 <h3 id="formula">Formula</h3>
-<p><span class="math display">\[E(X) = \sum_{i} x_i \cdot P(X = x_i)\]</span></p>
+<p><span class="math display">\[E(X) = \sum_{i}^{\infty} x_i \cdot P(X = x_i)\]</span></p>
+<div class="fragment fade-in">
 <h3 id="example-rolling-a-die">Example: Rolling a die</h3>
 <p><span class="math display">\[E(X) = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} + 5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6}\]</span></p>
+</div>
+<div class="fragment fade-in">
 <p><span class="math display">\[E(X) = \frac{21}{6} = 3.5\]</span></p>
+</div>
 </section>
 <section id="variance-and-standard-deviation" class="slide level2" data-background-image="image-main.png">
 <h2>Variance and Standard Deviation</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="variance-σ²">Variance σ²</h3>
+<h3 id="variance-sigma2">Variance <span class="math inline">\(\sigma^2\)</span></h3>
 <p>Measures how spread out the values are from the mean.</p>
 <p><span class="math display">\[\text{Var}(X) = E[(X - \mu)^2]\]</span> <span class="math display">\[= \sum_{i} (x_i - \mu)^2 \cdot P(X = x_i)\]</span></p>
-<p>where μ = E(X)</p>
+<p>where <span class="math inline">\(\mu = E(X)\)</span></p>
 </div><div class="column" style="width:50%;">
-<h3 id="standard-deviation-σ">Standard Deviation σ</h3>
+<h3 id="standard-deviation-sigma">Standard Deviation <span class="math inline">\(\sigma\)</span></h3>
 <p>The square root of variance (same units as X).</p>
 <p><span class="math display">\[\sigma = \sqrt{\text{Var}(X)}\]</span></p>
-<p><strong>Interpretation:</strong> - Small σ: values clustered near mean - Large σ: values spread out</p>
+<p><strong>Interpretation:</strong> - Small <span class="math inline">\(\sigma\)</span>: values clustered near mean - Large <span class="math inline">\(\sigma\)</span>: values spread out</p>
 </div></div>
 </section>
 <section id="common-discrete-distributions" class="slide level2" data-background-image="image-main.png">
