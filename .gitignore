@@ -13,3 +13,5 @@
 /.venv/
 /env/
 /venv/
+
+**/*.quarto_ipynb

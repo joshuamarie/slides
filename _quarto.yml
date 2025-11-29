@@ -3,6 +3,8 @@ project:
   output-dir: docs
 
 website:
+  title: "Slides - Joshua Marie"
+  favicon: "assets/jm-favicon.png"
   site-url: https://slides.joshuamarie.com
   repo-url: https://github.com/joshuamarie/slides
   navbar:
