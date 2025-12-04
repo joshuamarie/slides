@@ -159,5 +159,54 @@
     "title": "Statistics and Probability for 11th Graders",
     "section": "Where Do All These Distributions Come From?",
     "text": "Where Do All These Distributions Come From?\nMany real-life situations follow repeatable patterns. When we study those patterns carefully, we discover a handful of probability distributions that keep showing up again and again.\nThe normal distribution (the bell curve) is the most famous distribution out there. Yes, it is only a member of a much larger family."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz",
+    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nWhat is the probability of drawing a “king” from the deck of card?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nLet us continue…"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nLet us continue…\nRemember: For \\(n\\) independent trials with probability \\(p\\):\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\n\nQuestion: What shape do you notice as \\(n\\) gets larger?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cup B) \\neq 0\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-2",
+    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\n\nviewof sampleSize = Inputs.select([100, 500, 1000, 5000, 10000], {\n    label: \"Sample Size\",\n    value: 1000\n})\n\nviewof n = Inputs.range([1, 100], {\n    label: \"Number of Trials (n)\",\n    value: 10,\n    step: 1\n})\n\nviewof p = Inputs.range([0.01, 0.99], {\n    label: \"Probability of Success (p)\",\n    value: 0.5,\n    step: 0.01\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotBinomial } from './binomial_sim.js';\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, you define normal distribution"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution"
   }
 ]

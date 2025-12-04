@@ -1,0 +1,107 @@
+---
+title: "Statistics and Probability for 11th Graders — Part 2"
+date: 2025-12-05
+categories: [statistics, probability]
+image: 'image-thumb.png'
+format:
+    revealjs:
+        transition: slide
+        transition-speed: default
+        background-transition: fade
+        
+        title-slide-attributes:
+            data-background-image: "image-main.png"
+            data-background-size: cover
+            data-background-position: center
+            data-background-opacity: "1"
+        
+        width: 1600
+        height: 900
+        margin: 0.1
+        min-scale: 0.2
+        max-scale: 2.0
+        
+        highlight-style: github-dark
+        css: ../custom_style.css
+        
+        chalkboard: 
+            buttons: false
+            
+        quiz:
+            resetKey: 'q'
+
+revealjs-plugins:
+  - quiz
+---
+
+## Hands-on Quiz {background-image="image-main.png" transition-speed="fast" .quiz-question}
+
+What is the probability of drawing a "king" from the deck of card?
+
+-  [$\frac{1}{13}$](.correct)
+-  $\frac{1}{2}$
+-  $\frac{2}{13}$
+-  $\frac{1}{5}$
+
+## Hands-on Quiz {background-image="image-main.png" transition-speed="fast" .quiz-question .quiz-multiple}
+
+Consider $A$ and $B$ defines the two events. Which of the following defines mutually exclusive events? 
+
+-  Two events occur simultaneously
+-  [Two events are disjoint](.correct)
+-  [$P(A \cap B) = 0$](.correct)
+-  $P(A \cup B) \neq 0$
+
+## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+Let us continue...
+
+## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+Let us continue...
+
+**Remember:** For $n$ independent trials with probability $p$:
+
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+::: {.fragment .fade-in}
+**Question:** What shape do you notice as $n$ gets larger?
+:::
+
+## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast"} 
+
+What happens when you increase the number of trials $n$?
+
+```{ojs}
+//| panel: sidebar
+viewof sampleSize = Inputs.select([100, 500, 1000, 5000, 10000], {
+    label: "Sample Size",
+    value: 1000
+})
+
+viewof n = Inputs.range([1, 100], {
+    label: "Number of Trials (n)",
+    value: 10,
+    step: 1
+})
+
+viewof p = Inputs.range([0.01, 0.99], {
+    label: "Probability of Success (p)",
+    value: 0.5,
+    step: 0.01
+})
+```
+
+```{ojs}
+//| panel: fill
+import { plotBinomial } from './binomial_sim.js';
+plotBinomial(sampleSize, n, p)
+```
+
+Because of this pattern, you define **normal distribution**
+
+## Normal distribution {background-image="image-main.png" auto-animate="true"} 
+
+## Normal distribution {background-image="image-main.png" auto-animate="true"} 
+
+
