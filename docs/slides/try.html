@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<link href="../../assets/jm-favicon.png" rel="icon" type="image/png">
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../assets/jm-favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Joshua Marie">
-  <meta name="dcterms.date" content="2025-12-05">
-  <title>Slides - Joshua Marie – Statistics and Probability for 11th Graders — Part 2</title>
+  <title>Slides - Joshua Marie – Multiple Choice Quiz Example</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,82 +29,13 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-      }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-    div.sourceCode
-      { color: #e1e4e8; background-color: #24292e; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #e1e4e8; } /* Normal */
-    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
-    code span.an { color: #6a737d; } /* Annotation */
-    code span.at { color: #f97583; } /* Attribute */
-    code span.bn { color: #79b8ff; } /* BaseN */
-    code span.bu { color: #f97583; } /* BuiltIn */
-    code span.cf { color: #f97583; } /* ControlFlow */
-    code span.ch { color: #9ecbff; } /* Char */
-    code span.cn { color: #79b8ff; } /* Constant */
-    code span.co { color: #6a737d; } /* Comment */
-    code span.cv { color: #6a737d; } /* CommentVar */
-    code span.do { color: #6a737d; } /* Documentation */
-    code span.dt { color: #f97583; } /* DataType */
-    code span.dv { color: #79b8ff; } /* DecVal */
-    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
-    code span.ex { color: #f97583; font-weight: bold; } /* Extension */
-    code span.fl { color: #79b8ff; } /* Float */
-    code span.fu { color: #b392f0; } /* Function */
-    code span.im { color: #9ecbff; } /* Import */
-    code span.in { color: #6a737d; } /* Information */
-    code span.kw { color: #f97583; } /* Keyword */
-    code span.op { color: #e1e4e8; } /* Operator */
-    code span.ot { color: #b392f0; } /* Other */
-    code span.pp { color: #f97583; } /* Preprocessor */
-    code span.re { color: #6a737d; } /* RegionMarker */
-    code span.sc { color: #79b8ff; } /* SpecialChar */
-    code span.ss { color: #9ecbff; } /* SpecialString */
-    code span.st { color: #9ecbff; } /* String */
-    code span.va { color: #ffab70; } /* Variable */
-    code span.vs { color: #9ecbff; } /* VerbatimString */
-    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-e819637885281928af38d8b96f95b3b0.css">
-  <link rel="stylesheet" href="../custom_style.css">
-  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -193,15 +123,13 @@
       margin-right: 0; 
     }
   </style>
-  <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-  <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="image-main.png" data-background-opacity="1" data-background-position="center" data-background-size="cover" class="quarto-title-block center">
-  <h1 class="title">Statistics and Probability for 11th Graders — Part 2</h1>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Multiple Choice Quiz Example</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -211,110 +139,118 @@ Joshua Marie
 </div>
 </div>
 
-  <p class="date">2025-12-05</p>
 </section>
-<section id="hands-on-quiz" class="slide level2 quiz-question" data-background-image="image-main.png" data-transition-speed="fast">
-<h2>Hands-on Quiz</h2>
-<p>What is the probability of drawing a “king” from the deck of card?</p>
+<section id="what-is-the-capital-of-france" class="slide level2 quiz-question">
+<h2>What is the capital of France?</h2>
 <ul>
-<li><span class="correct"><span class="math inline">\(\frac{1}{13}\)</span></span></li>
-<li><span class="math inline">\(\frac{1}{2}\)</span></li>
-<li><span class="math inline">\(\frac{2}{13}\)</span></li>
-<li><span class="math inline">\(\frac{1}{5}\)</span></li>
+<li>London</li>
+<li><span class="correct">Paris</span></li>
+<li>Berlin</li>
+<li>Madrid</li>
 </ul>
+<div class="footer">
+<p>Click on one of the options then click the check button. If you got it wrong click reset and try again.</p>
+</div>
 </section>
-<section id="hands-on-quiz-1" class="slide level2 quiz-question quiz-multiple" data-background-image="image-main.png" data-transition-speed="fast">
-<h2>Hands-on Quiz</h2>
-<p>Consider <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> defines the two events. Which of the following defines mutually exclusive events?</p>
+<section id="what-is-the-capital-of-the-usa" class="slide level2 quiz-question">
+<h2>What is the capital of the USA?</h2>
 <ul>
-<li>Two events occur simultaneously</li>
-<li><span class="correct">Two events are disjoint</span></li>
-<li><span class="correct"><span class="math inline">\(P(A \cap B) = 0\)</span></span></li>
-<li><span class="math inline">\(P(A \cup B) \neq 0\)</span></li>
+<li>Paris</li>
+<li>Berlin</li>
+<li>Madrid</li>
+<li><span class="correct">Washington, D.C.</span></li>
 </ul>
-</section>
-<section id="probability-distribution" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>Probability distribution</h2>
-<p>Let us continue…</p>
-</section>
-<section id="probability-distribution-1" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>Probability distribution</h2>
-<p>Let us continue…</p>
-<p><strong>Remember:</strong> For <span class="math inline">\(n\)</span> independent trials with probability <span class="math inline">\(p\)</span>:</p>
-<p><span class="math display">\[P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\]</span></p>
-<div class="fragment fade-in">
-<p><strong>Question:</strong> What shape do you notice as <span class="math inline">\(n\)</span> gets larger?</p>
+<div class="footer">
+<p>Alternatively, you can select each option using your number keypad. For example, click “2” to select the second option.</p>
 </div>
 </section>
-<section id="probability-distribution-2" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>Probability distribution</h2>
-<p>What happens when you increase the number of trials <span class="math inline">\(n\)</span>?</p>
-<div class="layout-sidebar layout-sidebar-left">
-<div class="cell panel-sidebar">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="77" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 76;"><span id="cb1-77"><a></a>viewof sampleSize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>([<span class="dv">100</span><span class="op">,</span> <span class="dv">500</span><span class="op">,</span> <span class="dv">1000</span><span class="op">,</span> <span class="dv">5000</span><span class="op">,</span> <span class="dv">10000</span>]<span class="op">,</span> {</span>
-<span id="cb1-78"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Sample Size"</span><span class="op">,</span></span>
-<span id="cb1-79"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1000</span></span>
-<span id="cb1-80"><a></a>})</span>
-<span id="cb1-81"><a></a></span>
-<span id="cb1-82"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {</span>
-<span id="cb1-83"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Trials (n)"</span><span class="op">,</span></span>
-<span id="cb1-84"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
-<span id="cb1-85"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
-<span id="cb1-86"><a></a>})</span>
-<span id="cb1-87"><a></a></span>
-<span id="cb1-88"><a></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.01</span><span class="op">,</span> <span class="fl">0.99</span>]<span class="op">,</span> {</span>
-<span id="cb1-89"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Probability of Success (p)"</span><span class="op">,</span></span>
-<span id="cb1-90"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span></span>
-<span id="cb1-91"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span></span>
-<span id="cb1-92"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
+<section id="what-is-the-capital-of-spain" class="slide level2 quiz-question">
+<h2>What is the capital of Spain?</h2>
+<ul>
+<li>Paris</li>
+<li>Berlin</li>
+<li><span class="correct">Madrid</span></li>
+</ul>
+<div class="footer">
+<p>You can use the “c” key to check your answer, the “q” key to reset the question, and the “t” key to shuffle the question slides.</p>
 </div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell panel-fill">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="97" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 96;"><span id="cb2-97"><a></a><span class="im">import</span> { plotBinomial } <span class="im">from</span> <span class="st">'./binomial_sim.js'</span><span class="op">;</span></span>
-<span id="cb2-98"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>Because of this pattern, you define <strong>normal distribution</strong></p>
 </section>
-<section id="normal-distribution" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Normal distribution</h2>
+<section id="what-is-the-capital-of-germany" class="slide level2 quiz-question">
+<h2>What is the capital of Germany?</h2>
+<ul>
+<li>Paris</li>
+<li><span class="correct">Berlin</span></li>
+<li>Madrid</li>
+<li>London</li>
+</ul>
+<div class="footer">
+<p>Keyboard shortcuts can be changed in the YAML header of your Quarto file. See <a href="README.md">README.md</a> for more info.</p>
+</div>
 </section>
-<section id="normal-distribution-1" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Normal distribution</h2>
+<section id="python-lists" class="slide level2 quiz-question">
+<h2>Python lists</h2>
+<p>What is the value of x[2]? <!-- ```{python}
+#| eval: FALSE
+#| echo: TRUE
+x = [2, 3, 4]
+x[2] = 4
+print(x[2])
+``` --></p>
+<ul>
+<li>2</li>
+<li>3</li>
+<li><span class="correct">4</span></li>
+</ul>
+<div class="footer">
+<p>You can also include code or other content prior to the question.</p>
+</div>
+</section>
+<section id="section" class="slide level2 quiz-question">
+<h2></h2>
+<p><strong>What is the name of Ross and Carol’s son in the TV show <em>“Friends”?</em></strong></p>
+<ul>
+<li><span data-explanation="Jack is the name of Monica and Ross's father.">Jack</span></li>
+<li><span data-explanation="😲 Joey is one of the main characters, played by Matt LeBlanc.">Joey</span></li>
+<li><span class="correct" data-explanation="💯 Correct! Ben is the name of Ross and Carol's son.">Ben</span></li>
+<li><span data-explanation="😂 Chandler is another main character, played by Matthew Perry.">Chandler</span></li>
+</ul>
+<div class="footer">
+<p>You can specify an explanation for each option using the <code>data-explanation</code> attribute.</p>
+</div>
+</section>
+<section id="what-is-the-formula-for-the-area-of-a-circle" class="slide level2 quiz-question">
+<h2>What is the formula for the area of a circle?</h2>
+<ul>
+<li><span class="correct"><span class="math inline">\(πr^2\)</span></span></li>
+<li><span data-explanation="🫠 This is the formula for the circumference of a circle."><span class="math inline">\(2πr\)</span></span></li>
+<li><span data-explanation="This is the formula for the surface area of a sphere."><span class="math inline">\(4πr^2\)</span></span></li>
+<li><span data-explanation="This is the formula for the volume of a sphere."><span class="math inline">\(\frac{4}{3}r^3\)</span></span></li>
+</ul>
+<div class="footer">
+<p>You can also include math expressions <a href="https://quarto.org/docs/visual-editor/technical.html#latex-and-html">using LaTeX</a> in the options.</p>
+</div>
+</section>
+<section id="which-one-is-chandler" class="slide level2 quiz-question">
+<h2>Which one is Chandler?</h2>
+<ul>
+<li><span data-explanation="😬 This is Joey."><img data-src="https://upload.wikimedia.org/wikipedia/en/d/da/Matt_LeBlanc_as_Joey_Tribbiani.jpg" height="90"></span></li>
+<li><span class="correct" data-explanation="✅ Nicely done! This is Chandler."><img data-src="https://upload.wikimedia.org/wikipedia/en/6/66/Matthew_Perry_as_Chandler_Bing.png" width="90"></span></li>
+</ul>
+<div class="footer">
+<p>Or you can try to embed images in the options.</p>
+</div>
+</section>
+<section id="which-of-the-following-are-programming-languages" class="slide level2 quiz-question quiz-multiple">
+<h2>Which of the following are programming languages?</h2>
+<ul>
+<li><span class="correct">Python</span></li>
+<li><span class="correct">JavaScript</span></li>
+<li><span data-explanation="HTML is a markup language, not a programming language.">HTML</span></li>
+<li><span data-explanation="CSS is a style sheet language, not a programming language.">CSS</span></li>
+</ul>
+<div class="footer">
+<p>You can create multiple-choice questions by adding the <code>quiz-multiple</code> class to the question. Select ALL correct answers to get it right!</p>
+</div>
 
 
 </section>
@@ -326,21 +262,20 @@ Joshua Marie
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
-  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -355,8 +290,7 @@ Joshua Marie
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":false},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'quiz': {"checkKey":"c","resetKey":"q","shuffleKey":"t","allowNumberKeys":true,"disableOnCheck":false,"shuffleOptions":true,"defaultCorrect":"","defaultIncorrect":"","includeScore":false,"disableReset":false},
 'smaller': false,
  
@@ -483,14 +417,14 @@ Joshua Marie
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
+        transition: 'none',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'fade',
+        backgroundTransition: 'none',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -503,17 +437,12 @@ Joshua Marie
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1600,
+        width: 1050,
 
-        height: 900,
+        height: 700,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
-
-        // Bounds for smallest/largest possible scale to apply to content
-        minScale: 0.2,
-
-        maxScale: 2,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
@@ -533,7 +462,7 @@ Joshua Marie
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealQuiz, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealQuiz, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -541,17 +470,6 @@ Joshua Marie
           RevealZoom
         ]
       });
-    </script>
-    <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBzYW1wbGVTaXplID0gSW5wdXRzLnNlbGVjdChbMTAwLCA1MDAsIDEwMDAsIDUwMDAsIDEwMDAwXSwge1xyXG4gICAgbGFiZWw6IFwiU2FtcGxlIFNpemVcIixcclxuICAgIHZhbHVlOiAxMDAwXHJcbn0pXHJcblxyXG52aWV3b2YgbiA9IElucHV0cy5yYW5nZShbMSwgMTAwXSwge1xyXG4gICAgbGFiZWw6IFwiTnVtYmVyIG9mIFRyaWFscyAobilcIixcclxuICAgIHZhbHVlOiAxMCxcclxuICAgIHN0ZXA6IDFcclxufSlcclxuXHJcbnZpZXdvZiBwID0gSW5wdXRzLnJhbmdlKFswLjAxLCAwLjk5XSwge1xyXG4gICAgbGFiZWw6IFwiUHJvYmFiaWxpdHkgb2YgU3VjY2VzcyAocClcIixcclxuICAgIHZhbHVlOiAwLjUsXHJcbiAgICBzdGVwOiAwLjAxXHJcbn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gJy4vYmlub21pYWxfc2ltLmpzJztcclxucGxvdEJpbm9taWFsKHNhbXBsZVNpemUsIG4sIHApXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2FtcGxlU2l6ZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCduJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3AnKSJ9XX0=
-    </script>
-    <script type="module">
-    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-    window._ojs.paths.runtimeToDoc = "../../slides/stats-probability-g11-pt2";
-    window._ojs.paths.runtimeToRoot = "../..";
-    window._ojs.paths.docToRoot = "../..";
-    window._ojs.selfContained = false;
-    window._ojs.runtime.interpretFromScriptTags();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {

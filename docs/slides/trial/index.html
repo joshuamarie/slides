@@ -30,72 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-      }
-    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-    div.sourceCode
-      { color: #e1e4e8; background-color: #24292e; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #e1e4e8; } /* Normal */
-    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
-    code span.an { color: #6a737d; } /* Annotation */
-    code span.at { color: #f97583; } /* Attribute */
-    code span.bn { color: #79b8ff; } /* BaseN */
-    code span.bu { color: #f97583; } /* BuiltIn */
-    code span.cf { color: #f97583; } /* ControlFlow */
-    code span.ch { color: #9ecbff; } /* Char */
-    code span.cn { color: #79b8ff; } /* Constant */
-    code span.co { color: #6a737d; } /* Comment */
-    code span.cv { color: #6a737d; } /* CommentVar */
-    code span.do { color: #6a737d; } /* Documentation */
-    code span.dt { color: #f97583; } /* DataType */
-    code span.dv { color: #79b8ff; } /* DecVal */
-    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
-    code span.ex { color: #f97583; font-weight: bold; } /* Extension */
-    code span.fl { color: #79b8ff; } /* Float */
-    code span.fu { color: #b392f0; } /* Function */
-    code span.im { color: #9ecbff; } /* Import */
-    code span.in { color: #6a737d; } /* Information */
-    code span.kw { color: #f97583; } /* Keyword */
-    code span.op { color: #e1e4e8; } /* Operator */
-    code span.ot { color: #b392f0; } /* Other */
-    code span.pp { color: #f97583; } /* Preprocessor */
-    code span.re { color: #6a737d; } /* RegionMarker */
-    code span.sc { color: #79b8ff; } /* SpecialChar */
-    code span.ss { color: #9ecbff; } /* SpecialString */
-    code span.st { color: #9ecbff; } /* String */
-    code span.va { color: #ffab70; } /* Variable */
-    code span.vs { color: #9ecbff; } /* VerbatimString */
-    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-e819637885281928af38d8b96f95b3b0.css">
   <link rel="stylesheet" href="../custom_style.css">
@@ -193,8 +127,6 @@
       margin-right: 0; 
     }
   </style>
-  <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-  <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -223,7 +155,7 @@ Joshua Marie
 <li><span class="math inline">\(\frac{1}{5}\)</span></li>
 </ul>
 </section>
-<section id="hands-on-quiz-1" class="slide level2 quiz-question quiz-multiple" data-background-image="image-main.png" data-transition-speed="fast">
+<section id="hands-on-quiz-1" class="slide level2 quiz-question quiz-multiple" data-background-image="image-main.png">
 <h2>Hands-on Quiz</h2>
 <p>Consider <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> defines the two events. Which of the following defines mutually exclusive events?</p>
 <ul>
@@ -232,89 +164,6 @@ Joshua Marie
 <li><span class="correct"><span class="math inline">\(P(A \cap B) = 0\)</span></span></li>
 <li><span class="math inline">\(P(A \cup B) \neq 0\)</span></li>
 </ul>
-</section>
-<section id="probability-distribution" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>Probability distribution</h2>
-<p>Let us continue…</p>
-</section>
-<section id="probability-distribution-1" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>Probability distribution</h2>
-<p>Let us continue…</p>
-<p><strong>Remember:</strong> For <span class="math inline">\(n\)</span> independent trials with probability <span class="math inline">\(p\)</span>:</p>
-<p><span class="math display">\[P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\]</span></p>
-<div class="fragment fade-in">
-<p><strong>Question:</strong> What shape do you notice as <span class="math inline">\(n\)</span> gets larger?</p>
-</div>
-</section>
-<section id="probability-distribution-2" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>Probability distribution</h2>
-<p>What happens when you increase the number of trials <span class="math inline">\(n\)</span>?</p>
-<div class="layout-sidebar layout-sidebar-left">
-<div class="cell panel-sidebar">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="77" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 76;"><span id="cb1-77"><a></a>viewof sampleSize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>([<span class="dv">100</span><span class="op">,</span> <span class="dv">500</span><span class="op">,</span> <span class="dv">1000</span><span class="op">,</span> <span class="dv">5000</span><span class="op">,</span> <span class="dv">10000</span>]<span class="op">,</span> {</span>
-<span id="cb1-78"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Sample Size"</span><span class="op">,</span></span>
-<span id="cb1-79"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1000</span></span>
-<span id="cb1-80"><a></a>})</span>
-<span id="cb1-81"><a></a></span>
-<span id="cb1-82"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">100</span>]<span class="op">,</span> {</span>
-<span id="cb1-83"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Trials (n)"</span><span class="op">,</span></span>
-<span id="cb1-84"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
-<span id="cb1-85"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
-<span id="cb1-86"><a></a>})</span>
-<span id="cb1-87"><a></a></span>
-<span id="cb1-88"><a></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.01</span><span class="op">,</span> <span class="fl">0.99</span>]<span class="op">,</span> {</span>
-<span id="cb1-89"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Probability of Success (p)"</span><span class="op">,</span></span>
-<span id="cb1-90"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span></span>
-<span id="cb1-91"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span></span>
-<span id="cb1-92"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell panel-fill">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="97" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 96;"><span id="cb2-97"><a></a><span class="im">import</span> { plotBinomial } <span class="im">from</span> <span class="st">'./binomial_sim.js'</span><span class="op">;</span></span>
-<span id="cb2-98"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>Because of this pattern, you define <strong>normal distribution</strong></p>
-</section>
-<section id="normal-distribution" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Normal distribution</h2>
-</section>
-<section id="normal-distribution-1" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Normal distribution</h2>
 
 
 </section>
@@ -541,17 +390,6 @@ Joshua Marie
           RevealZoom
         ]
       });
-    </script>
-    <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBzYW1wbGVTaXplID0gSW5wdXRzLnNlbGVjdChbMTAwLCA1MDAsIDEwMDAsIDUwMDAsIDEwMDAwXSwge1xyXG4gICAgbGFiZWw6IFwiU2FtcGxlIFNpemVcIixcclxuICAgIHZhbHVlOiAxMDAwXHJcbn0pXHJcblxyXG52aWV3b2YgbiA9IElucHV0cy5yYW5nZShbMSwgMTAwXSwge1xyXG4gICAgbGFiZWw6IFwiTnVtYmVyIG9mIFRyaWFscyAobilcIixcclxuICAgIHZhbHVlOiAxMCxcclxuICAgIHN0ZXA6IDFcclxufSlcclxuXHJcbnZpZXdvZiBwID0gSW5wdXRzLnJhbmdlKFswLjAxLCAwLjk5XSwge1xyXG4gICAgbGFiZWw6IFwiUHJvYmFiaWxpdHkgb2YgU3VjY2VzcyAocClcIixcclxuICAgIHZhbHVlOiAwLjUsXHJcbiAgICBzdGVwOiAwLjAxXHJcbn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gJy4vYmlub21pYWxfc2ltLmpzJztcclxucGxvdEJpbm9taWFsKHNhbXBsZVNpemUsIG4sIHApXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2FtcGxlU2l6ZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCduJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3AnKSJ9XX0=
-    </script>
-    <script type="module">
-    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-    window._ojs.paths.runtimeToDoc = "../../slides/stats-probability-g11-pt2";
-    window._ojs.paths.runtimeToRoot = "../..";
-    window._ojs.paths.docToRoot = "../..";
-    window._ojs.selfContained = false;
-    window._ojs.runtime.interpretFromScriptTags();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {

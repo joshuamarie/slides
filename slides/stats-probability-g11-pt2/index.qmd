@@ -38,7 +38,7 @@ revealjs-plugins:
 
 What is the probability of drawing a "king" from the deck of card?
 
--  [$\frac{1}{13}$](.correct)
+-  [$\frac{1}{13}$]{.correct}
 -  $\frac{1}{2}$
 -  $\frac{2}{13}$
 -  $\frac{1}{5}$
@@ -48,8 +48,8 @@ What is the probability of drawing a "king" from the deck of card?
 Consider $A$ and $B$ defines the two events. Which of the following defines mutually exclusive events? 
 
 -  Two events occur simultaneously
--  [Two events are disjoint](.correct)
--  [$P(A \cap B) = 0$](.correct)
+-  [Two events are disjoint]{.correct}
+-  [$P(A \cap B) = 0$]{.correct}
 -  $P(A \cup B) \neq 0$
 
 ## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}

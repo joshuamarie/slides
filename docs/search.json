@@ -208,5 +208,82 @@
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Normal distribution",
     "text": "Normal distribution"
+  },
+  {
+    "objectID": "slides/try.html#what-is-the-capital-of-france",
+    "href": "slides/try.html#what-is-the-capital-of-france",
+    "title": "Multiple Choice Quiz Example",
+    "section": "What is the capital of France?",
+    "text": "What is the capital of France?\n\nLondon\nParis\nBerlin\nMadrid\n\n\nClick on one of the options then click the check button. If you got it wrong click reset and try again."
+  },
+  {
+    "objectID": "slides/try.html#what-is-the-capital-of-the-usa",
+    "href": "slides/try.html#what-is-the-capital-of-the-usa",
+    "title": "Multiple Choice Quiz Example",
+    "section": "What is the capital of the USA?",
+    "text": "What is the capital of the USA?\n\nParis\nBerlin\nMadrid\nWashington, D.C.\n\n\nAlternatively, you can select each option using your number keypad. For example, click “2” to select the second option."
+  },
+  {
+    "objectID": "slides/try.html#what-is-the-capital-of-spain",
+    "href": "slides/try.html#what-is-the-capital-of-spain",
+    "title": "Multiple Choice Quiz Example",
+    "section": "What is the capital of Spain?",
+    "text": "What is the capital of Spain?\n\nParis\nBerlin\nMadrid\n\n\nYou can use the “c” key to check your answer, the “q” key to reset the question, and the “t” key to shuffle the question slides."
+  },
+  {
+    "objectID": "slides/try.html#what-is-the-capital-of-germany",
+    "href": "slides/try.html#what-is-the-capital-of-germany",
+    "title": "Multiple Choice Quiz Example",
+    "section": "What is the capital of Germany?",
+    "text": "What is the capital of Germany?\n\nParis\nBerlin\nMadrid\nLondon\n\n\nKeyboard shortcuts can be changed in the YAML header of your Quarto file. See README.md for more info."
+  },
+  {
+    "objectID": "slides/try.html#python-lists",
+    "href": "slides/try.html#python-lists",
+    "title": "Multiple Choice Quiz Example",
+    "section": "Python lists",
+    "text": "Python lists\nWhat is the value of x[2]? \n\n2\n3\n4\n\n\nYou can also include code or other content prior to the question."
+  },
+  {
+    "objectID": "slides/try.html#section",
+    "href": "slides/try.html#section",
+    "title": "Multiple Choice Quiz Example",
+    "section": "",
+    "text": "What is the name of Ross and Carol’s son in the TV show “Friends”?\n\nJack\nJoey\nBen\nChandler\n\n\nYou can specify an explanation for each option using the data-explanation attribute."
+  },
+  {
+    "objectID": "slides/try.html#what-is-the-formula-for-the-area-of-a-circle",
+    "href": "slides/try.html#what-is-the-formula-for-the-area-of-a-circle",
+    "title": "Multiple Choice Quiz Example",
+    "section": "What is the formula for the area of a circle?",
+    "text": "What is the formula for the area of a circle?\n\n\\(πr^2\\)\n\\(2πr\\)\n\\(4πr^2\\)\n\\(\\frac{4}{3}r^3\\)\n\n\nYou can also include math expressions using LaTeX in the options."
+  },
+  {
+    "objectID": "slides/try.html#which-one-is-chandler",
+    "href": "slides/try.html#which-one-is-chandler",
+    "title": "Multiple Choice Quiz Example",
+    "section": "Which one is Chandler?",
+    "text": "Which one is Chandler?\n\n\n\n\n\nOr you can try to embed images in the options."
+  },
+  {
+    "objectID": "slides/try.html#which-of-the-following-are-programming-languages",
+    "href": "slides/try.html#which-of-the-following-are-programming-languages",
+    "title": "Multiple Choice Quiz Example",
+    "section": "Which of the following are programming languages?",
+    "text": "Which of the following are programming languages?\n\nPython\nJavaScript\nHTML\nCSS\n\n\nYou can create multiple-choice questions by adding the quiz-multiple class to the question. Select ALL correct answers to get it right!"
+  },
+  {
+    "objectID": "slides/trial/index.html#hands-on-quiz",
+    "href": "slides/trial/index.html#hands-on-quiz",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nWhat is the probability of drawing a “king” from the deck of card?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
+  },
+  {
+    "objectID": "slides/trial/index.html#hands-on-quiz-1",
+    "href": "slides/trial/index.html#hands-on-quiz-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cup B) \\neq 0\\)"
   }
 ]
