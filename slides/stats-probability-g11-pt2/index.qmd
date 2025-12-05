@@ -38,10 +38,10 @@ revealjs-plugins:
 
 What defines the population and sample?
 
--  [$\frac{1}{13}$]{.correct}
--  $\frac{1}{2}$
--  $\frac{2}{13}$
--  $\frac{1}{5}$
+-  Population refers to --- while sample refers to ---
+-  Population refers to --- while sample refers to ---
+-  Population refers to --- while sample refers to ---
+-  [Population refers to --- while sample refers to ---]}{.correct}
 
 ## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
 
@@ -101,7 +101,7 @@ viewof p = Inputs.range([0.001, 0.999], {
 ```{ojs}
 //| panel: fill
 import { plotBinomial } from './binomial_sim.js';
-plotBinomial(sampleSize, 10, 0.5)
+plotBinomial(sampleSize, n, p)
 ```
 
 ::: {.fragment .fade-in}
