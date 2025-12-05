@@ -1,0 +1,15 @@
+input[type="range"] {
+  accent-color: #58c4dd;
+}
+
+select {
+  background: #1a1a1a;
+  color: #c9a0dc;
+  border: 1px solid #58c4dd;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+button {
+  font-family: 'JetBrains Mono', monospace !important;
+}

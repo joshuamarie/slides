@@ -22,7 +22,9 @@ format:
         max-scale: 2.0
         
         highlight-style: github-dark
-        css: ../custom_style.css
+        css: 
+          - ./custom_style.css
+          - ./button.css
         
         chalkboard: 
             buttons: false
@@ -85,37 +87,25 @@ What happens when you increase the number of trials $n$?
 //| panel: fill
 import { plotBinomial } from "./binomial_sim.js"
 
-viewof sampleSize = 1000
-viewof n = 30
-viewof p = 0.5
+viewof sampleSize = Inputs.select([100, 1000, 5000, 10000], {
+    label: "Sample Size",
+    value: 1000
+})
+
+viewof n = Inputs.range([1, 200], {
+    label: "Number of Trials (n)",
+    value: 30,
+    step: 1
+})
+
+viewof p = Inputs.range([0.01, 0.99], {
+    label: "Probability of Success (p)",
+    value: 0.5,
+    step: 0.01
+})
 
 plotBinomial(sampleSize, n, p)
 ```
-
-
-<!-- ```{ojs} -->
-<!-- //| panel: fill -->
-<!-- import { plotBinomial } from "./binomial_sim.js" -->
-
-<!-- viewof sampleSize = Inputs.select([100, 1000, 5000, 10000], { -->
-<!--     label: "Sample Size", -->
-<!--     value: 1000 -->
-<!-- }) -->
-
-<!-- viewof n = Inputs.range([1, 200], { -->
-<!--     label: "Number of Trials (n)", -->
-<!--     value: 30, -->
-<!--     step: 1 -->
-<!-- }) -->
-
-<!-- viewof p = Inputs.range([0.01, 0.99], { -->
-<!--     label: "Probability of Success (p)", -->
-<!--     value: 0.5, -->
-<!--     step: 0.01 -->
-<!-- }) -->
-
-<!-- plotBinomial(sampleSize, n, p) -->
-<!-- ``` -->
 
 ::: {.fragment .fade-in}
 Because of this pattern, we define the **normal distribution**
