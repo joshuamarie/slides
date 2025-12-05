@@ -1,5 +1,4 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-import * as Inputs from "https://cdn.jsdelivr.net/npm/@observablehq/inputs@0.10/+esm";
 
 export function plotBinomial(sampleSize, n, p) {
   const samples = Array.from({ length: sampleSize }, () => {
@@ -24,7 +23,7 @@ export function plotBinomial(sampleSize, n, p) {
 
   const width = 960;
   const height = 580;
-  const margin = { top: 140, right: 50, bottom: 70, left: 70 };
+  const margin = { top: 80, right: 50, bottom: 70, left: 70 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -67,7 +66,7 @@ export function plotBinomial(sampleSize, n, p) {
       .map(x => {
         const z = (x - mean) / stdDev;
         const pdf = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * z * z);
-        return { x, y: pdf * sampleSize };
+        return { x, y: pdf * sampleSize }; 
       });
 
     const line = d3.line()
@@ -97,6 +96,11 @@ export function plotBinomial(sampleSize, n, p) {
       .style("fill", "#58c4dd")
       .style("font-size", "13px");
 
+  g.selectAll(".domain, .tick line")
+    .style("stroke", "#58c4dd")
+    .style("opacity", 0.5);
+
+  // X-axis label
   svg.append("text")
     .attr("x", width / 2)
     .attr("y", height - 20)
@@ -116,7 +120,7 @@ export function plotBinomial(sampleSize, n, p) {
 
   svg.append("text")
     .attr("x", width / 2)
-    .attr("y", 40)
+    .attr("y", 30)
     .attr("text-anchor", "middle")
     .attr("fill", "#c9a0dc")
     .style("font-size", "22px")
@@ -125,93 +129,11 @@ export function plotBinomial(sampleSize, n, p) {
 
   svg.append("text")
     .attr("x", width / 2)
-    .attr("y", 70)
+    .attr("y", 60)
     .attr("text-anchor", "middle")
     .attr("fill", "#ffff88")
-    .style("font-size", "18px")
-    .text("What happens when you increase the number of trials n?");
-
-  const controls = svg.append("foreignObject")
-    .attr("width", width - 100)
-    .attr("height", 100)  
-    .attr("x", 50)
-    .attr("y", 8);
-
-  const container = controls.append("xhtml:div")
-    .style("width", "100%")
-    .style("height", "100%")
-    .style("background", "rgba(10, 10, 10, 0.92)")
-    .style("backdrop-filter", "blur(4px)")
-    .style("border", "2px solid #58c4dd")
-    .style("border-radius", "12px")
-    .style("padding", "12px")
-    .style("box-shadow", "0 0 20px rgba(88, 196, 221, 0.5)")
-    .style("color", "#c9a0dc")
-    .style("font-family", "'JetBrains Mono', monospace")
-    .style("font-size", "14px");
-
-  container.append("xhtml:div")
-    .style("text-align", "center")
-    .style("margin-bottom", "10px")
-    .style("color", "#83c167")
-    .style("font-weight", "bold")
-    .text("Controls");
-
-  const grid = container.append("xhtml:div")
-    .style("display", "grid")
-    .style("grid-template-columns", "1fr 1fr")  
-    .style("gap", "8px 12px")
-    .style("align-items", "center");
-
-  // Sample Size
-  const sampleDiv = grid.append("xhtml:div");
-  sampleDiv.append("xhtml:label")
-    .text("Sample Size")
-    .style("display", "block")
-    .style("color", "#83c167")
-    .style("margin-bottom", "4px");
-  sampleDiv.append(() => 
-    Inputs.select([100, 1000, 5000, 10000], { value: sampleSize })
-  ).style("width", "100%");
-
-  // Number of trials
-  const nDiv = grid.append("xhtml:div");
-  nDiv.append("xhtml:label")
-    .text("Trials (n)")
-    .style("display", "block")
-    .style("color", "#83c167")
-    .style("margin-bottom", "4px");
-  nDiv.append(() => 
-    Inputs.range([1, 200], { value: n, step: 1 })
-  ).style("width", "100%");
-
-  // Probability p
-  const pDiv = grid.append("xhtml:div");
-  pDiv.append("xhtml:label")
-    .text("Probability (p)")
-    .style("display", "block")
-    .style("color", "#83c167")
-    .style("margin-bottom", "4px");
-  pDiv.append(() => 
-    Inputs.range([0.01, 0.99], { value: p, step: 0.01 })
-  ).style("width", "100%");
-
-  const resetDiv = container.append("xhtml:div")
-    .style("display", "flex")
-    .style("justify-content", "center")
-    .style("margin-top", "8px");
-  resetDiv.append(() => 
-    Inputs.button("Reset", { 
-      reduce: () => ({ sampleSize: 1000, n: 30, p: 0.5 }) 
-    })
-  )
-  .style("background", "#fc6255")
-  .style("color", "white")
-  .style("border", "none")
-  .style("padding", "6px 12px")
-  .style("border-radius", "6px")
-  .style("cursor", "pointer")
-  .style("font-family", "'JetBrains Mono', monospace");
+    .style("font-size", "16px")
+    .text("Observe how the binomial distribution approaches the normal curve as n increases");
 
   return svg.node();
 }
