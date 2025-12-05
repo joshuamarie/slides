@@ -33,8 +33,8 @@ export function plotBinomial(sampleSize, n, p) {
   }
   
   const width = 1200;
-  const height = 650;
-  const margin = {top: 80, right: 40, bottom: 80, left: 80};
+  const height = 700;
+  const margin = {top: 100, right: 40, bottom: 80, left: 80};
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   
@@ -126,7 +126,6 @@ export function plotBinomial(sampleSize, n, p) {
       .style("filter", "drop-shadow(0 0 8px rgba(255, 255, 0, 0.6))");
   }
   
-  // Title
   g.append("text")
     .attr("x", innerWidth / 2)
     .attr("y", -40)
@@ -137,7 +136,6 @@ export function plotBinomial(sampleSize, n, p) {
     .style("font-weight", "bold")
     .text(`Binomial Distribution: n=${n}, p=${p.toFixed(2)} | μ=${mean.toFixed(2)}, σ=${stdDev.toFixed(2)}`);
   
-  // Sample size info
   g.append("text")
     .attr("x", innerWidth / 2)
     .attr("y", -15)
