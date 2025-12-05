@@ -60,7 +60,8 @@ export function plotBinomial(sampleSize, n, p) {
   const maxFreq = d3.max(data, d => d.frequency);
   const yScale = d3.scaleLinear()
     .domain([0, maxFreq * 1.1])
-    .range([innerHeight, 0]);
+    .range([innerHeight, 0])
+    .nice(); // This helps with axis alignment
   
   const xAxis = g.append("g")
     .attr("transform", `translate(0,${innerHeight})`)
@@ -112,14 +113,15 @@ export function plotBinomial(sampleSize, n, p) {
   
   const barWidth = Math.max(2, innerWidth / (n + 1) * 0.8);
   
+  // Draw bars AFTER axes to prevent overlap
   g.selectAll(".bar")
     .data(data)
     .join("rect")
     .attr("class", "bar")
     .attr("x", d => xScale(d.successes) - barWidth / 2)
-    .attr("y", d => yScale(d.frequency))
+    .attr("y", d => Math.max(yScale(d.frequency), 1)) // Prevent bars from going above chart
     .attr("width", barWidth)
-    .attr("height", d => innerHeight - yScale(d.frequency))
+    .attr("height", d => Math.max(0, innerHeight - yScale(d.frequency))) // Ensure non-negative height
     .attr("fill", "#58c4dd")
     .attr("opacity", 0.7)
     .attr("stroke", "#58c4dd")

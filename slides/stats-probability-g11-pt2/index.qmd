@@ -81,8 +81,80 @@ $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 What happens when you increase the number of trials $n$?
 
+Now update your Quarto code with improved CSS for the controls:
+markdown
+
 ```{ojs}
-viewof sampleSize = Inputs.checkbox([100, 1000, 10000], {
+//| panel: sidebar
+html`<style>
+  /* Sidebar styling */
+  .observablehq--inspect {
+    background: #1a1a1a !important;
+    border: 2px solid #58c4dd !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    box-shadow: 0 0 20px rgba(88, 196, 221, 0.3) !important;
+    max-width: 280px !important;
+  }
+  
+  /* Label styling - bright and readable */
+  .observablehq--inspect label {
+    color: #83c167 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+  
+  /* Input boxes - dark background with bright text */
+  .observablehq--inspect input[type="number"] {
+    background: #0a0a0a !important;
+    color: #58c4dd !important;
+    border: 1px solid #58c4dd !important;
+    border-radius: 4px !important;
+    padding: 6px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    width: 70px !important;
+  }
+  
+  /* Range sliders */
+  .observablehq--inspect input[type="range"] {
+    accent-color: #58c4dd !important;
+    width: 100% !important;
+  }
+  
+  /* Radio buttons */
+  .observablehq--inspect input[type="radio"] {
+    accent-color: #58c4dd !important;
+    margin-right: 8px !important;
+  }
+  
+  /* Radio button labels */
+  .observablehq--inspect input[type="radio"] + label {
+    color: #58c4dd !important;
+    font-size: 13px !important;
+    margin-right: 12px !important;
+    display: inline !important;
+  }
+  
+  /* Output values - bright and visible */
+  .observablehq--inspect output {
+    color: #c9a0dc !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+  
+  /* Form spacing */
+  .observablehq--inspect form {
+    margin-bottom: 15px !important;
+  }
+</style>`
+
+viewof sampleSize = Inputs.radio([100, 1000, 10000], {
     label: "Sample Size",
     value: 1000
 })
