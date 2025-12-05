@@ -33,7 +33,7 @@ export function plotBinomial(sampleSize, n, p) {
   }
   
   const width = 1200;
-  const height = 600;
+  const height = 650;
   const margin = {top: 80, right: 40, bottom: 80, left: 80};
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;

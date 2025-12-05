@@ -93,12 +93,12 @@ import { plotBinomial } from "./binomial_sim.js"
 
 viewof sampleSize = Inputs.select([100, 1000, 5000, 10000], {
     label: "Sample Size",
-    value: 1000
+    value: 10000
 })
 
 viewof n = Inputs.range([1, 200], {
     label: "Number of Trials (n)",
-    value: 30,
+    value: 1,
     step: 1
 })
 
