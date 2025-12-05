@@ -41,7 +41,7 @@ What defines the population and sample?
 -  Population refers to --- while sample refers to ---
 -  Population refers to --- while sample refers to ---
 -  Population refers to --- while sample refers to ---
--  [Population refers to --- while sample refers to ---]}{.correct}
+-  [Population refers to --- while sample refers to ---]{.correct}
 
 ## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
 
