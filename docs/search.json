@@ -200,14 +200,14 @@
     "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Normal distribution",
-    "text": "Normal distribution"
+    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve."
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution-1",
     "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-1",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Normal distribution",
-    "text": "Normal distribution"
+    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve.\nKey characteristics:\n\nBell-shaped and symmetric\nMean = Median = Mode (all at the center)\nTotal area under curve = 1 (or 100%)\nExtends indefinitely in both directions (left and right of the mean \\(\\mu\\))"
   },
   {
     "objectID": "slides/try.html#what-is-the-capital-of-france",
@@ -438,6 +438,20 @@
     "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-3",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Probability distribution",
-    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\nimport { plotBinomial } from \"./binomial_sim.js\"\n\nviewof sampleSize = Inputs.range([50, 100000], {\n    label: \"Sample Size\",\n    value: 50,\n    step: 10\n})\n\nviewof n = Inputs.range([1, 300], {\n    label: \"Number of Trials (n)\",\n    value: 1,\n    step: 1\n})\n\nviewof p = Inputs.range([0.001, 0.999], {\n    label: \"Probability of Success (p)\",\n    value: 0.5,\n    step: 0.001\n})\n\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, we define what we called the normal distribution"
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\nimport { plotBinomial } from \"./binomial_sim.js\"\n\nviewof sampleSize = Inputs.range([50, 100000], {\n    label: \"Sample Size\",\n    value: 50,\n    step: 10\n})\n\nviewof n = Inputs.range([1, 300], {\n    label: \"Number of Trials (n)\",\n    value: 1,\n    step: 1\n})\n\nviewof p = Inputs.range([0.001, 0.999], {\n    label: \"Probability of Success (p)\",\n    value: 0.5,\n    step: 0.001\n})\n\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, we define what we called the normal distribution."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution-2",
+    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Characteristics of the normal distribution",
+    "text": "Characteristics of the normal distribution"
   }
 ]

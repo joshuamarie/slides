@@ -135,7 +135,7 @@ export function plotBinomial(sampleSize, n, p) {
     .style("font-family", "JetBrains Mono, monospace")
     .style("font-size", "20px")
     .style("font-weight", "bold")
-    .text(`Binomial Distribution: n=${n}, p=${p.toFixed(2)} | μ=${mean.toFixed(2)}, σ=${stdDev.toFixed(2)}`);
+    .text(`Binomial Distribution: n=${n}, p=${p.toFixed(2)} | mean=${mean.toFixed(2)}, std_dev=${stdDev.toFixed(2)}`);
   
   // Sample size info
   g.append("text")

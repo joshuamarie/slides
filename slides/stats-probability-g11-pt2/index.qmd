@@ -113,11 +113,29 @@ plotBinomial(sampleSize, n, p)
 ```
 
 ::: {.fragment .fade-in}
-Because of this pattern, we define what we called the **normal distribution**
+Because of this pattern, we define what we called the **normal distribution**. 
 :::
 
 ## Normal distribution {background-image="image-main.png" auto-animate="true"} 
 
+A **normal distribution** is a continuous probability distribution that describes the population that has mean $\mu$ and variance $\sigma^2$ forms a bell-shaped curve.
+
 ## Normal distribution {background-image="image-main.png" auto-animate="true"} 
+
+A **normal distribution** is a continuous probability distribution that describes the population that has mean $\mu$ and variance $\sigma^2$ forms a bell-shaped curve.
+
+**Key characteristics:**
+
+::: incremental
+- Bell-shaped and symmetric
+- Mean = Median = Mode (all at the center)
+- Total area under curve = 1 (or 100%)
+- Extends indefinitely in both directions (left and right of the mean $\mu$)
+:::
+
+## Normal distribution {background-image="image-main.png" auto-animate="true"} 
+
+## Characteristics of the normal distribution
+
 
 
