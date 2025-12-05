@@ -83,6 +83,10 @@ $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 What happens when you increase the number of trials $n$?
 
+## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
+
+What happens when you increase the number of trials $n$?
+
 ```{ojs}
 //| panel: fill
 import { plotBinomial } from "./binomial_sim.js"

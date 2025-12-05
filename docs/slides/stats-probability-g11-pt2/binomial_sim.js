@@ -1,5 +1,5 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-import { Inputs } from "https://cdn.jsdelivr.net/npm/@observablehq/inputs@0.10/+esm";
+import * as Inputs from "https://cdn.jsdelivr.net/npm/@observablehq/inputs@0.10/+esm";
 
 export function plotBinomial(sampleSize, n, p) {
   const samples = Array.from({ length: sampleSize }, () => {
@@ -20,7 +20,7 @@ export function plotBinomial(sampleSize, n, p) {
   }));
 
   const mean = n * p;
-  stdDev = Math.sqrt(n * p * (1 - p));
+  const stdDev = Math.sqrt(n * p * (1 - p));
 
   const width = 960;
   const height = 580;
@@ -63,8 +63,12 @@ export function plotBinomial(sampleSize, n, p) {
 
   if (n >= 8 && stdDev > 0.5) {
     const normalData = d3.range(mean - 4 * stdDev, mean + 4 * stdDev, 0.15)
-      .filter(x => x >= 0 && x <= n ? {x, y: sampleSize * (1 / (stdDev * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * ((x - mean)/stdDev)**2)} : null)
-      .filter(d => d !== null);
+      .filter(x => x >= 0 && x <= n)
+      .map(x => {
+        const z = (x - mean) / stdDev;
+        const pdf = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * z * z);
+        return { x, y: pdf * sampleSize };
+      });
 
     const line = d3.line()
       .x(d => xScale(d.x))
@@ -79,7 +83,7 @@ export function plotBinomial(sampleSize, n, p) {
       .attr("d", line)
       .style("filter", "drop-shadow(0 0 10px #ffff00)");
   }
-  
+
   g.append("g")
     .attr("transform", `translate(0,${innerHeight})`)
     .call(d3.axisBottom(xScale).ticks(12))
@@ -129,7 +133,7 @@ export function plotBinomial(sampleSize, n, p) {
 
   const controls = svg.append("foreignObject")
     .attr("width", width - 100)
-    .attr("height", 100)
+    .attr("height", 100)  
     .attr("x", 50)
     .attr("y", 8);
 
@@ -155,39 +159,59 @@ export function plotBinomial(sampleSize, n, p) {
 
   const grid = container.append("xhtml:div")
     .style("display", "grid")
-    .style("grid-template-columns", "1fr 1fr 1fr") 
+    .style("grid-template-columns", "1fr 1fr")  
     .style("gap", "8px 12px")
     .style("align-items", "center");
 
-  grid.append("xhtml:label").text("Sample Size").style("color", "#83c167");
-  grid.append("xhtml:div").append(() => 
+  // Sample Size
+  const sampleDiv = grid.append("xhtml:div");
+  sampleDiv.append("xhtml:label")
+    .text("Sample Size")
+    .style("display", "block")
+    .style("color", "#83c167")
+    .style("margin-bottom", "4px");
+  sampleDiv.append(() => 
     Inputs.select([100, 1000, 5000, 10000], { value: sampleSize })
-  );
-  grid.append("xhtml:div"); 
+  ).style("width", "100%");
 
   // Number of trials
-  grid.append("xhtml:label").text("Trials (n)").style("color", "#83c167");
-  grid.append("xhtml:div").append(() => 
-    Inputs.range([1, 200], { value: n, step: 1, style: "width:100%" })
-  );
-  grid.append("xhtml:div"); 
+  const nDiv = grid.append("xhtml:div");
+  nDiv.append("xhtml:label")
+    .text("Trials (n)")
+    .style("display", "block")
+    .style("color", "#83c167")
+    .style("margin-bottom", "4px");
+  nDiv.append(() => 
+    Inputs.range([1, 200], { value: n, step: 1 })
+  ).style("width", "100%");
 
   // Probability p
-  grid.append("xhtml:label").text("p").style("color", "#83c167");
-  grid.append("xhtml:div").append(() => 
-    Inputs.range([0.01, 0.99], { value: p, step: 0.01, style: "width:100%" })
-  );
-  grid.append("xhtml:div").append(() => 
+  const pDiv = grid.append("xhtml:div");
+  pDiv.append("xhtml:label")
+    .text("Probability (p)")
+    .style("display", "block")
+    .style("color", "#83c167")
+    .style("margin-bottom", "4px");
+  pDiv.append(() => 
+    Inputs.range([0.01, 0.99], { value: p, step: 0.01 })
+  ).style("width", "100%");
+
+  const resetDiv = container.append("xhtml:div")
+    .style("display", "flex")
+    .style("justify-content", "center")
+    .style("margin-top", "8px");
+  resetDiv.append(() => 
     Inputs.button("Reset", { 
       reduce: () => ({ sampleSize: 1000, n: 30, p: 0.5 }) 
     })
-    .style("background", "#fc6255")
-    .style("color", "white")
-    .style("border", "none")
-    .style("padding", "6px 12px")
-    .style("border-radius", "6px")
-    .style("cursor", "pointer")
-  );
+  )
+  .style("background", "#fc6255")
+  .style("color", "white")
+  .style("border", "none")
+  .style("padding", "6px 12px")
+  .style("border-radius", "6px")
+  .style("cursor", "pointer")
+  .style("font-family", "'JetBrains Mono', monospace");
 
   return svg.node();
 }
