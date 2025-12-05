@@ -3,7 +3,8 @@
     "listing": "/index.html",
     "items": [
       "/slides/stats-probability-g11-pt2/index.html",
-      "/slides/stats-probability-g11/index.html"
+      "/slides/stats-probability-g11/index.html",
+      "/slides/stats-probability-g11-light/index.html"
     ]
   }
 ]

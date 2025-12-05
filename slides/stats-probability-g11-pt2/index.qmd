@@ -34,7 +34,16 @@ revealjs-plugins:
   - quiz
 ---
 
-## Hands-on Quiz {background-image="image-main.png" transition-speed="fast" .quiz-question}
+## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
+
+What defines the population and sample?
+
+-  [$\frac{1}{13}$]{.correct}
+-  $\frac{1}{2}$
+-  $\frac{2}{13}$
+-  $\frac{1}{5}$
+
+## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
 
 What is the probability of drawing a "king" from the deck of card?
 
@@ -43,20 +52,20 @@ What is the probability of drawing a "king" from the deck of card?
 -  $\frac{2}{13}$
 -  $\frac{1}{5}$
 
-## Hands-on Quiz {background-image="image-main.png" transition-speed="fast" .quiz-question .quiz-multiple}
+## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question .quiz-multiple}
 
 Consider $A$ and $B$ defines the two events. Which of the following defines mutually exclusive events? 
 
 -  Two events occur simultaneously
 -  [Two events are disjoint]{.correct}
 -  [$P(A \cap B) = 0$]{.correct}
--  $P(A \cup B) \neq 0$
+-  $P(A \cap B) \neq 0$
 
 ## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
 Let us continue...
 
-## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
+## Probability distribution {background-image="image-main.png" auto-animate="true"}
 
 Let us continue...
 
@@ -68,24 +77,23 @@ $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 **Question:** What shape do you notice as $n$ gets larger?
 :::
 
-## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast"} 
+## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
 
 What happens when you increase the number of trials $n$?
 
 ```{ojs}
-//| panel: sidebar
-viewof sampleSize = Inputs.select([100, 500, 1000, 5000, 10000], {
+viewof sampleSize = Inputs.checkbox([100, 1000, 10000], {
     label: "Sample Size",
     value: 1000
 })
 
-viewof n = Inputs.range([1, 100], {
+viewof n = Inputs.range([1, 200], {
     label: "Number of Trials (n)",
     value: 10,
     step: 1
 })
 
-viewof p = Inputs.range([0.01, 0.99], {
+viewof p = Inputs.range([0.001, 0.999], {
     label: "Probability of Success (p)",
     value: 0.5,
     step: 0.01
@@ -98,7 +106,9 @@ import { plotBinomial } from './binomial_sim.js';
 plotBinomial(sampleSize, n, p)
 ```
 
-Because of this pattern, you define **normal distribution**
+::: {.fragment .fade-in}
+Because of this pattern, we define the **normal distribution**
+:::
 
 ## Normal distribution {background-image="image-main.png" auto-animate="true"} 
 

@@ -22,13 +22,19 @@ export function plotBinomial(sampleSize, n, p) {
   const mean = n * p;
   const stdDev = Math.sqrt(n * p * (1 - p));
   
-  const normalData = Array.from({length: 200}, (_, i) => {
-    const x = (i / 199) * n;
+  // Fixed normal curve calculation - scale properly to match histogram
+  const binWidth = 1; // Each bar represents exactly 1 unit on x-axis
+  const normalData = [];
+  
+  // Generate curve over the range with proper scaling
+  for (let x = 0; x <= n; x += 0.1) {
     const z = (x - mean) / stdDev;
-    const y = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * 
-              Math.exp(-0.5 * z * z);
-    return {x, y: y * sampleSize * (n / 200)};
-  });
+    // Normal PDF
+    const pdf = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * z * z);
+    // Scale to match histogram: multiply by total samples and bin width
+    const frequency = pdf * sampleSize * binWidth;
+    normalData.push({x, y: frequency});
+  }
   
   const width = 1400;
   const height = 600;
@@ -119,6 +125,7 @@ export function plotBinomial(sampleSize, n, p) {
     .attr("stroke", "#58c4dd")
     .attr("stroke-width", 1);
   
+  // Draw normal curve with proper scaling
   if (n >= 10 && stdDev > 0) {
     const line = d3.line()
       .x(d => xScale(d.x))

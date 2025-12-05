@@ -4,14 +4,14 @@
     "href": "slides/stats-probability-g11/index.html#random-variables",
     "title": "Statistics and Probability for 11th Graders",
     "section": "Random Variables",
-    "text": "Random Variables\nDefinition\nA random variable is a function that assigns a numerical value to each outcome in the sample space of a random experiment.\nNotation: We use capital letters (X, Y, Z) for random variables\nHow it works:\n\n\nPerform a random experiment \\(\\rightarrow\\) get outcomes in sample space \\(S\\)\nThe random variable \\(X\\) maps each outcome to a number\nWe can then calculate probabilities: \\(P(X = x)\\)\n\n\n\nIntuition: Tossing two coins\n\nSample space: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)\nLet \\(X\\) = number of heads\nMapping: \\(HH \\rightarrow 2\\), \\(HT \\rightarrow 1\\), \\(TH \\rightarrow 1\\), \\(TT \\rightarrow 0\\)\nSo \\(X\\) can be 0, 1, or 2\n\\(P(X = 1) = \\frac{2}{4} = \\frac{1}{2}\\) (since HT and TH both give 1 head)"
+    "text": "Random Variables\nDefinition\nA random variable is a function that assigns a numerical value to each outcome in the sample space of a random experiment.\nNotation: We use capital letters (X, Y, Z) for random variables\nHow it works:\n\nPerform a random experiment \\(\\rightarrow\\) get outcomes in sample space \\(S\\)\nThe random variable \\(X\\) maps each outcome to a number\nWe can then calculate probabilities: \\(P(X = x)\\)\n\n\nIntuition: Tossing two coins\n\nSample space: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)\nLet \\(X\\) = number of heads\nMapping: \\(HH \\rightarrow 2\\), \\(HT \\rightarrow 1\\), \\(TH \\rightarrow 1\\), \\(TT \\rightarrow 0\\)\nSo \\(X\\) can be 0, 1, or 2\n\\(P(X = 1) = \\frac{2}{4} = \\frac{1}{2}\\) (since HT and TH both give 1 head)"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#types-of-random-variables",
     "href": "slides/stats-probability-g11/index.html#types-of-random-variables",
     "title": "Statistics and Probability for 11th Graders",
     "section": "Types of Random Variables",
-    "text": "Types of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time"
+    "text": "Types of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#probability-distribution",
@@ -67,21 +67,21 @@
     "href": "slides/stats-probability-g11/index.html#variance-and-standard-deviation-1",
     "title": "Statistics and Probability for 11th Graders",
     "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation:\n\n\nSmall \\(\\sigma\\): values clustered near mean\nLarge \\(\\sigma\\): values spread out"
+    "text": "Variance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation:\n\nSmall \\(\\sigma\\): values clustered near mean\nLarge \\(\\sigma\\): values spread out"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#sample-space",
     "href": "slides/stats-probability-g11/index.html#sample-space",
     "title": "Statistics and Probability for 11th Graders",
     "section": "Sample Space",
-    "text": "Sample Space\nDefinition\nA sample space (S) is the collection or set of all possible outcomes of a random experiment.\n\n\nRepresented using the symbol “S” or \\(\\Omega\\) in some textbooks\nContains all outcomes that could occur\nCan be finite or infinite\n\n\n\nExamples:\n\n\n\nTossing a coin: \\(S = \\{H, T\\}\\)\nRolling a die: \\(S = \\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\)\nTossing two coins: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)"
+    "text": "Sample Space\nDefinition\nA sample space (S) is the collection or set of all possible outcomes of a random experiment.\n\nRepresented using the symbol “S” or \\(\\Omega\\) in some textbooks\nContains all outcomes that could occur\nCan be finite or infinite\n\n\nExamples:\n\n\nTossing a coin: \\(S = \\{H, T\\}\\)\nRolling a die: \\(S = \\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\)\nTossing two coins: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#events",
     "href": "slides/stats-probability-g11/index.html#events",
     "title": "Statistics and Probability for 11th Graders",
     "section": "Events",
-    "text": "Events\nDefinition\nAn event is a subset of possible outcomes from the sample space.\n\n\nCan be a single outcome or multiple outcomes\nDenoted by capital letters (A, B, C)\n\n\n\n\n\n\n\n\n\nImportant\n\n\nWhen you calculate the probability of the event \\(P(E)\\), it is ALWAYS a decimal number, a fractional number, ranges from 0 to 1.\nFor example:\nWhen tossing a coin, what’s the probability of getting heads? There should be two outcomes: getting a head & getting a tail . The sample space would be: \\(S=\\{H,\\ T\\}\\) And the event A is getting head Thus, \\(x=1;\\ n=2\\), and the probability would be:\n\\[P(A)=\\frac{1}{2}=0.5\\]"
+    "text": "Events\nDefinition\nAn event is a subset of possible outcomes from the sample space.\n\nCan be a single outcome or multiple outcomes\nDenoted by capital letters (A, B, C)\n\n\n\n\n\n\n\n\nImportant\n\n\nWhen you calculate the probability of the event \\(P(E)\\), it is ALWAYS a decimal number, a fractional number, ranges from 0 to 1.\nFor example:\nWhen tossing a coin, what’s the probability of getting heads? There should be two outcomes: getting a head & getting a tail . The sample space would be: \\(S=\\{H,\\ T\\}\\) And the event A is getting head Thus, \\(x=1;\\ n=2\\), and the probability would be:\n\\[P(A)=\\frac{1}{2}=0.5\\]"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#events-1",
@@ -116,14 +116,14 @@
     "href": "slides/stats-probability-g11/index.html#what-is-statistics",
     "title": "Statistics and Probability for 11th Graders",
     "section": "What is Statistics?",
-    "text": "What is Statistics?\nDefinition\nStatistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making\n\nTwo kinds of statistics:\n\n\n\nDescriptive Statistics: The way to summarize and describe data (mean, median, mode, graphs)\nInferential Statistics: Meticulous way to make generalizations, i.e. predictions or inferences, about a population based on sample data"
+    "text": "What is Statistics?\nDefinition\nStatistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making\n\nTwo kinds of statistics:\n\n\nDescriptive Statistics: The way to summarize and describe data (mean, median, mode, graphs)\nInferential Statistics: Meticulous way to make generalizations, i.e. predictions or inferences, about a population based on sample data"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#what-is-probability",
     "href": "slides/stats-probability-g11/index.html#what-is-probability",
     "title": "Statistics and Probability for 11th Graders",
     "section": "What is Probability?",
-    "text": "What is Probability?\nDefinition\nProbability is the measure of the likelihood that an event will occur.\n\n\nExpressed as a decimal number between 0 and 1 (or 0% to 100%)\n\\(P(E) = 0\\) means the event is impossible\n\\(P(E) = 1\\) means the event is certain\nHelps us make predictions about random events"
+    "text": "What is Probability?\nDefinition\nProbability is the measure of the likelihood that an event will occur.\n\nExpressed as a decimal number between 0 and 1 (or 0% to 100%)\n\\(P(E) = 0\\) means the event is impossible\n\\(P(E) = 1\\) means the event is certain\nHelps us make predictions about random events"
   },
   {
     "objectID": "slides/stats-probability-g11/index.html#calculating-basic-probability",
@@ -165,7 +165,7 @@
     "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Hands-on Quiz",
-    "text": "Hands-on Quiz\nWhat is the probability of drawing a “king” from the deck of card?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
+    "text": "Hands-on Quiz\nWhat defines the population and sample?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution",
@@ -186,14 +186,14 @@
     "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-1",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Hands-on Quiz",
-    "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cup B) \\neq 0\\)"
+    "text": "Hands-on Quiz\nWhat is the probability of drawing a “king” from the deck of card?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-2",
     "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-2",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Probability distribution",
-    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\n\nviewof sampleSize = Inputs.select([100, 500, 1000, 5000, 10000], {\n    label: \"Sample Size\",\n    value: 1000\n})\n\nviewof n = Inputs.range([1, 100], {\n    label: \"Number of Trials (n)\",\n    value: 10,\n    step: 1\n})\n\nviewof p = Inputs.range([0.01, 0.99], {\n    label: \"Probability of Success (p)\",\n    value: 0.5,\n    step: 0.01\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotBinomial } from './binomial_sim.js';\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, you define normal distribution"
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\nviewof sampleSize = Inputs.checkbox([100, 1000, 10000], {\n    label: \"Sample Size\",\n    value: 1000\n})\n\nviewof n = Inputs.range([1, 200], {\n    label: \"Number of Trials (n)\",\n    value: 10,\n    step: 1\n})\n\nviewof p = Inputs.range([0.001, 0.999], {\n    label: \"Probability of Success (p)\",\n    value: 0.5,\n    step: 0.01\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotBinomial } from './binomial_sim.js';\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, we define the normal distribution"
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution",
@@ -285,5 +285,152 @@
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Hands-on Quiz",
     "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cup B) \\neq 0\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#what-is-statistics",
+    "href": "slides/stats-probability-g11-light/index.html#what-is-statistics",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "What is Statistics?",
+    "text": "What is Statistics?\nDefinition\nStatistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making\n\nTwo kinds of statistics:\n\n\nDescriptive Statistics: The way to summarize and describe data (mean, median, mode, graphs)\nInferential Statistics: Meticulous way to make generalizations, i.e. predictions or inferences, about a population based on sample data"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#what-is-probability",
+    "href": "slides/stats-probability-g11-light/index.html#what-is-probability",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "What is Probability?",
+    "text": "What is Probability?\nDefinition\nProbability is the measure of the likelihood that an event will occur.\n\nExpressed as a decimal number between 0 and 1 (or 0% to 100%)\n\\(P(E) = 0\\) means the event is impossible\n\\(P(E) = 1\\) means the event is certain\nHelps us make predictions about random events"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#calculating-basic-probability",
+    "href": "slides/stats-probability-g11-light/index.html#calculating-basic-probability",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Calculating Basic Probability",
+    "text": "Calculating Basic Probability\nFormula for Probability\n\\[P(\\text{Event}) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of possible outcomes}}=\\frac{x}{n}\\]\n\nExample: Rolling a die\nWhat is the probability of rolling a 4 in a die?\n\nFavorable outcomes: {4} \\(\\rightarrow\\) 1 outcome\nTotal outcomes: \\(\\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\) \\(\\rightarrow\\) 6 outcomes\n\\(P(\\text{rolling a 4}) = \\frac{1}{6}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#sample-space",
+    "href": "slides/stats-probability-g11-light/index.html#sample-space",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Sample Space",
+    "text": "Sample Space\nDefinition\nA sample space (S) is the collection or set of all possible outcomes of a random experiment.\n\nRepresented using the symbol “S” or \\(\\Omega\\) in some textbooks\nContains all outcomes that could occur\nCan be finite or infinite\n\n\nExamples:\n\n\nTossing a coin: \\(S = \\{H, T\\}\\)\nRolling a die: \\(S = \\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\)\nTossing two coins: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#events",
+    "href": "slides/stats-probability-g11-light/index.html#events",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\nDefinition\nAn event is a subset of possible outcomes from the sample space.\n\nCan be a single outcome or multiple outcomes\nDenoted by capital letters (A, B, C)\n\n\n\n\n\n\n\n\nImportant\n\n\nWhen you calculate the probability of the event \\(P(E)\\), it is ALWAYS a decimal number, a fractional number, ranges from 0 to 1.\nFor example:\nWhen tossing a coin, what’s the probability of getting heads? There should be two outcomes: getting a head & getting a tail . The sample space would be: \\(S=\\{H,\\ T\\}\\) And the event A is getting head Thus, \\(x=1;\\ n=2\\), and the probability would be:\n\\[P(A)=\\frac{1}{2}=0.5\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#events-1",
+    "href": "slides/stats-probability-g11-light/index.html#events-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\nDefinition\n\nAn event is any subset of possible outcomes in the sample space \\(\\Omega\\).\nCompound event: contains two or more outcomes (e.g., “rolling an even number”)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#calculating-probability-of-events",
+    "href": "slides/stats-probability-g11-light/index.html#calculating-probability-of-events",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Calculating Probability of Events",
+    "text": "Calculating Probability of Events\nPractice Problem:\nA bag contains 5 red balls, 3 blue balls, and 2 green balls.\n\nWhat is the probability of drawing a red ball?\nWhat is the probability of drawing a blue or green ball?\nWhat is the probability of NOT drawing a red ball?\n\n\n\n\\(P(\\text{red}) = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{blue or green}) = \\frac{3}{10} + \\frac{2}{10} = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{not red}) = 1 - P(\\text{red}) = 1 - \\frac{1}{2} = \\frac{1}{2}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#events-2",
+    "href": "slides/stats-probability-g11-light/index.html#events-2",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\n\nMutually Exclusive (Disjoint) Events\nTwo events \\(A\\) and \\(B\\) are mutually exclusive if they have no outcomes in common:\n\\[A \\cap B = \\emptyset\\]\nConsequence for probabilities:\n\\[P(A \\cup B) = P(A) + P(B)\\] (no overlap to double-count)\nClassic example – Die roll\n\n\\(A\\): Rolling an even number \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling an odd number \\(\\{1,\\ 3,\\ 5\\}\\)\n\n\\(\\rightarrow\\) \\(A \\cap B = \\emptyset\\) \\(\\rightarrow\\) mutually exclusive\n\nAnother example: Drawing one card\n\n\\(A\\): Drawing a heart\n\\(B\\): Drawing a spade\n\n\\(\\rightarrow\\) also mutually exclusive"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#events-3",
+    "href": "slides/stats-probability-g11-light/index.html#events-3",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\n\nNon-Mutually Exclusive Events\nTwo events \\(A\\) and \\(B\\) are non-mutually exclusive if they share at least one outcome:\n\\[A \\cap B \\neq \\emptyset\\]\nAddition rule becomes:\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\] (we subtract the overlap so it’s not counted twice)\nDie roll example\n\n\\(A\\): Rolling an even number: \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling a number $ &gt;4 : {5, 6}$\n\n\\(\\rightarrow\\) \\(A \\cap B = \\{6\\} \\neq \\emptyset\\) \\(\\rightarrow\\) not mutually exclusive\n\\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B) = \\frac{3}{6} + \\frac{2}{6} - \\frac{1}{6} = \\frac{4}{6} = \\frac{2}{3}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#random-variables",
+    "href": "slides/stats-probability-g11-light/index.html#random-variables",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Random Variables",
+    "text": "Random Variables\nDefinition\nA random variable is a function that assigns a numerical value to each outcome in the sample space of a random experiment.\nNotation: We use capital letters (X, Y, Z) for random variables\nHow it works:\n\nPerform a random experiment \\(\\rightarrow\\) get outcomes in sample space \\(S\\)\nThe random variable \\(X\\) maps each outcome to a number\nWe can then calculate probabilities: \\(P(X = x)\\)\n\n\nIntuition: Tossing two coins\n\nSample space: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)\nLet \\(X\\) = number of heads\nMapping: \\(HH \\rightarrow 2\\), \\(HT \\rightarrow 1\\), \\(TH \\rightarrow 1\\), \\(TT \\rightarrow 0\\)\nSo \\(X\\) can be 0, 1, or 2\n\\(P(X = 1) = \\frac{2}{4} = \\frac{1}{2}\\) (since HT and TH both give 1 head)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#random-variables-1",
+    "href": "slides/stats-probability-g11-light/index.html#random-variables-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Random Variables",
+    "text": "Random Variables\n\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous\n\n\nExample\nRolling a die: \\(X = \\text{number shown}\\)\n\n\\(X\\) can be 1, 2, 3, 4, 5, or 6\nEach outcome has equal probability\n\\(P(X = k) = \\frac{1}{6}; k \\in {\\{1,2,3,4,5,6}\\}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#types-of-random-variables",
+    "href": "slides/stats-probability-g11-light/index.html#types-of-random-variables",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Types of Random Variables",
+    "text": "Types of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#probability-distribution",
+    "href": "slides/stats-probability-g11-light/index.html#probability-distribution",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Probability Distribution",
+    "text": "Probability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\n\\(X\\)\n1\n2\n3\n4\n5\n6\n\n\n\n\n\\(P(X)\\)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#expected-value-mean",
+    "href": "slides/stats-probability-g11-light/index.html#expected-value-mean",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Expected Value (Mean)",
+    "text": "Expected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i}^{\\infty} x_i \\cdot P(X = x_i)\\]\n\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\n\n\\[E(X) = \\frac{21}{6} = 3.5\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation",
+    "href": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\nVariance \\(\\sigma^2\\)\n\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation-1",
+    "href": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation:\n\nSmall \\(\\sigma\\): values clustered near mean\nLarge \\(\\sigma\\): values spread out"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#where-do-all-these-distributions-come-from",
+    "href": "slides/stats-probability-g11-light/index.html#where-do-all-these-distributions-come-from",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Where Do All These Distributions Come From?",
+    "text": "Where Do All These Distributions Come From?\nMany real-life situations follow repeatable patterns. When we study those patterns carefully, we discover a handful of probability distributions that keep showing up again and again.\nThe normal distribution (the bell curve) is the most famous distribution out there. Yes, it is only a member of a much larger family."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#common-discrete-distributions",
+    "href": "slides/stats-probability-g11-light/index.html#common-discrete-distributions",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Common Discrete Distributions",
+    "text": "Common Discrete Distributions\nHere are common discrete probability distribution.\n\nBernoulli DistributionBinomial Distribution\n\n\nScenario: A single trial with only two possible outcomes (success or failure)\n\\[P(X = x) = \\begin{cases}\np & \\text{if } x = 1 \\text{ (success)} \\\\\n1-p & \\text{if } x = 0 \\text{ (failure)}\n\\end{cases}\\]\n\\[P(X = x)=p^x(1-p)^{1-x}\\]\nProperties: - \\(E(X) = p\\) - \\(\\text{Var}(X) = p(1-p)\\)\nExample: Flipping a coin once, \\(X = 1\\) if heads, \\(X = 0\\) if tails - \\(p = 0.5\\) - \\(E(X) = 0.5\\) - \\(\\text{Var}(X) = 0.5(0.5) = 0.25\\)\n\n\nScenario: n independent trials, each with probability p of success\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\nExample: Flipping a coin 10 times, X = number of heads\n\n\\(n = 10\\), \\(p = 0.5\\)\n\\(E(X) = np = 5\\)\n\\(\\text{Var}(X) = np(1-p) = 2.5\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#practice-problem",
+    "href": "slides/stats-probability-g11-light/index.html#practice-problem",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Practice Problem",
+    "text": "Practice Problem\nProblem: A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.\nFind:\n\nThe probability distribution of \\(X\\)\n\\(E(X)\\)\n\\(Var(X)\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#solution",
+    "href": "slides/stats-probability-g11-light/index.html#solution",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Solution",
+    "text": "Solution\nProbability Distribution:\n\n\\(P(X = 0) = P(\\text{2 blue}) = (2/5)(1/4) = 2/20 = 1/10\\)\n\\(P(X = 1) = P(\\text{1 red, 1 blue}) = (2)(3/5)(2/4) = 12/20 = 3/5\\)\n\\(P(X = 2) = P(\\text{2 red}) = (3/5)(2/4) = 6/20 = 3/10\\)\n\nExpected Value:\nE(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = 1.2\nVariance:\nVar(X) = (0-1.2)²(1/10) + (1-1.2)²(3/5) + (2-1.2)²(3/10) = 0.36"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-2",
+    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cap B) \\neq 0\\)"
   }
 ]
