@@ -24,6 +24,7 @@ format:
         highlight-style: github-dark
         css: 
           - ./custom_style.css
+          - ./button.css
         
         chalkboard: 
             buttons: false
