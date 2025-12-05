@@ -62,7 +62,7 @@ export function plotBinomial(sampleSize, n, p) {
     .attr("transform", `translate(0,${innerHeight})`)
     .call(d3.axisBottom(xScale).ticks(Math.min(n, 20)).tickFormat(d => d >= 0 && d <= n ? d3.format("d")(d) : ""))
     .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "12px");
+    .style("font-size", "14px");
   
   xAxis.selectAll("text").style("fill", "#58c4dd");
   xAxis.selectAll("line").style("stroke", "#58c4dd");
@@ -71,7 +71,7 @@ export function plotBinomial(sampleSize, n, p) {
   const yAxis = g.append("g")
     .call(d3.axisLeft(yScale))
     .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "12px");
+    .style("font-size", "14px");
   
   yAxis.selectAll("text").style("fill", "#58c4dd");
   yAxis.selectAll("line").style("stroke", "#58c4dd");
@@ -126,23 +126,25 @@ export function plotBinomial(sampleSize, n, p) {
       .style("filter", "drop-shadow(0 0 8px rgba(255, 255, 0, 0.6))");
   }
   
+  // Title
   g.append("text")
     .attr("x", innerWidth / 2)
     .attr("y", -40)
     .style("text-anchor", "middle")
     .style("fill", "#c9a0dc")
     .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "18px")
+    .style("font-size", "20px")
     .style("font-weight", "bold")
     .text(`Binomial Distribution: n=${n}, p=${p.toFixed(2)} | μ=${mean.toFixed(2)}, σ=${stdDev.toFixed(2)}`);
   
+  // Sample size info
   g.append("text")
     .attr("x", innerWidth / 2)
     .attr("y", -15)
     .style("text-anchor", "middle")
     .style("fill", "#83c167")
     .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "14px")
+    .style("font-size", "16px")
     .text(`Sample Size: ${sampleSize.toLocaleString()}`);
   
   return svg.node();

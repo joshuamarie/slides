@@ -97,7 +97,7 @@ viewof sampleSize = Inputs.range([50, 100000], {
     step: 10
 })
 
-viewof n = Inputs.range([1, 200], {
+viewof n = Inputs.range([1, 300], {
     label: "Number of Trials (n)",
     value: 1,
     step: 1
@@ -106,7 +106,7 @@ viewof n = Inputs.range([1, 200], {
 viewof p = Inputs.range([0.001, 0.999], {
     label: "Probability of Success (p)",
     value: 0.5,
-    step: 0.01
+    step: 0.001
 })
 
 plotBinomial(sampleSize, n, p)

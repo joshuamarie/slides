@@ -273,7 +273,7 @@ Joshua Marie
 <span id="cb1-97"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span></span>
 <span id="cb1-98"><a></a>})</span>
 <span id="cb1-99"><a></a></span>
-<span id="cb1-100"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {</span>
+<span id="cb1-100"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">300</span>]<span class="op">,</span> {</span>
 <span id="cb1-101"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Trials (n)"</span><span class="op">,</span></span>
 <span id="cb1-102"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
 <span id="cb1-103"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
@@ -282,7 +282,7 @@ Joshua Marie
 <span id="cb1-106"><a></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {</span>
 <span id="cb1-107"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Probability of Success (p)"</span><span class="op">,</span></span>
 <span id="cb1-108"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span></span>
-<span id="cb1-109"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span></span>
+<span id="cb1-109"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span></span>
 <span id="cb1-110"><a></a>})</span>
 <span id="cb1-111"><a></a></span>
 <span id="cb1-112"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -559,7 +559,7 @@ Joshua Marie
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gXCIuL2Jpbm9taWFsX3NpbS5qc1wiXHJcblxyXG52aWV3b2Ygc2FtcGxlU2l6ZSA9IElucHV0cy5yYW5nZShbNTAsIDEwMDAwMF0sIHtcclxuICAgIGxhYmVsOiBcIlNhbXBsZSBTaXplXCIsXHJcbiAgICB2YWx1ZTogNTAsXHJcbiAgICBzdGVwOiAxMFxyXG59KVxyXG5cclxudmlld29mIG4gPSBJbnB1dHMucmFuZ2UoWzEsIDIwMF0sIHtcclxuICAgIGxhYmVsOiBcIk51bWJlciBvZiBUcmlhbHMgKG4pXCIsXHJcbiAgICB2YWx1ZTogMSxcclxuICAgIHN0ZXA6IDFcclxufSlcclxuXHJcbnZpZXdvZiBwID0gSW5wdXRzLnJhbmdlKFswLjAwMSwgMC45OTldLCB7XHJcbiAgICBsYWJlbDogXCJQcm9iYWJpbGl0eSBvZiBTdWNjZXNzIChwKVwiLFxyXG4gICAgdmFsdWU6IDAuNSxcclxuICAgIHN0ZXA6IDAuMDFcclxufSlcclxuXHJcbnBsb3RCaW5vbWlhbChzYW1wbGVTaXplLCBuLCBwKVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NhbXBsZVNpemUnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwJykifV19
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gXCIuL2Jpbm9taWFsX3NpbS5qc1wiXHJcblxyXG52aWV3b2Ygc2FtcGxlU2l6ZSA9IElucHV0cy5yYW5nZShbNTAsIDEwMDAwMF0sIHtcclxuICAgIGxhYmVsOiBcIlNhbXBsZSBTaXplXCIsXHJcbiAgICB2YWx1ZTogNTAsXHJcbiAgICBzdGVwOiAxMFxyXG59KVxyXG5cclxudmlld29mIG4gPSBJbnB1dHMucmFuZ2UoWzEsIDMwMF0sIHtcclxuICAgIGxhYmVsOiBcIk51bWJlciBvZiBUcmlhbHMgKG4pXCIsXHJcbiAgICB2YWx1ZTogMSxcclxuICAgIHN0ZXA6IDFcclxufSlcclxuXHJcbnZpZXdvZiBwID0gSW5wdXRzLnJhbmdlKFswLjAwMSwgMC45OTldLCB7XHJcbiAgICBsYWJlbDogXCJQcm9iYWJpbGl0eSBvZiBTdWNjZXNzIChwKVwiLFxyXG4gICAgdmFsdWU6IDAuNSxcclxuICAgIHN0ZXA6IDAuMDAxXHJcbn0pXHJcblxyXG5wbG90Qmlub21pYWwoc2FtcGxlU2l6ZSwgbiwgcClcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzYW1wbGVTaXplJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ24nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncCcpIn1dfQ==
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
