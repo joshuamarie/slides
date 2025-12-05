@@ -22,7 +22,7 @@ export function plotBinomial(sampleSize, n, p) {
   const mean = n * p;
   const stdDev = Math.sqrt(n * p * (1 - p));
   
-  const binWidth = 1; 
+  const binWidth = 1;
   const normalData = Array.from({length: 500}, (_, i) => {
     const x = (i / 499) * n;
     const z = (x - mean) / stdDev;
@@ -33,102 +33,20 @@ export function plotBinomial(sampleSize, n, p) {
   
   const width = 1400;
   const height = 600;
-  const margin = {top: 120, right: 40, bottom: 80, left: 80}; 
+  const margin = {top: 40, right: 40, bottom: 80, left: 80};
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   
-  const container = d3.create("div")
-    .style("width", `${width}px`)
+  const svg = d3.create("svg")
+    .attr("width", width)
+    .attr("height", height)
     .style("background", "#0a0a0a")
     .style("border", "2px solid #58c4dd")
     .style("border-radius", "8px")
-    .style("box-shadow", "0 0 20px rgba(88, 196, 221, 0.3)")
-    .style("padding", "20px")
-    .style("box-sizing", "border-box");
-  
-  const controls = container.append("div")
-    .style("display", "flex")
-    .style("justify-content", "space-around")
-    .style("align-items", "center")
-    .style("margin-bottom", "20px")
-    .style("padding", "15px")
-    .style("background", "rgba(88, 196, 221, 0.1)")
-    .style("border-radius", "6px");
-  
-  const sampleControl = controls.append("div")
-    .style("display", "flex")
-    .style("flex-direction", "column")
-    .style("align-items", "center");
-  
-  sampleControl.append("label")
-    .style("color", "#83c167")
-    .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "14px")
-    .style("margin-bottom", "5px")
-    .text("Sample Size");
-  
-  const sampleSelect = sampleControl.append("select")
-    .style("background", "#1a1a1a")
-    .style("color", "#58c4dd")
-    .style("border", "1px solid #58c4dd")
-    .style("padding", "5px 10px")
-    .style("border-radius", "4px")
-    .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "14px");
-  
-  [100, 1000, 10000].forEach(val => {
-    sampleSelect.append("option")
-      .attr("value", val)
-      .property("selected", val === sampleSize)
-      .text(val);
-  });
-  
-  const nControl = controls.append("div")
-    .style("display", "flex")
-    .style("flex-direction", "column")
-    .style("align-items", "center");
-  
-  nControl.append("label")
-    .style("color", "#83c167")
-    .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "14px")
-    .style("margin-bottom", "5px")
-    .text(`Number of Trials (n): ${n}`);
-  
-  nControl.append("input")
-    .attr("type", "range")
-    .attr("min", 1)
-    .attr("max", 200)
-    .attr("value", n)
-    .style("width", "200px");
-  
-  const pControl = controls.append("div")
-    .style("display", "flex")
-    .style("flex-direction", "column")
-    .style("align-items", "center");
-  
-  pControl.append("label")
-    .style("color", "#83c167")
-    .style("font-family", "JetBrains Mono, monospace")
-    .style("font-size", "14px")
-    .style("margin-bottom", "5px")
-    .text(`Probability of Success (p): ${p.toFixed(2)}`);
-  
-  pControl.append("input")
-    .attr("type", "range")
-    .attr("min", 0.001)
-    .attr("max", 0.999)
-    .attr("step", 0.01)
-    .attr("value", p)
-    .style("width", "200px");
-  
-  const svg = container.append("svg")
-    .attr("width", width)
-    .attr("height", height - 100)
-    .style("display", "block");
+    .style("box-shadow", "0 0 20px rgba(88, 196, 221, 0.3)");
   
   const g = svg.append("g")
-    .attr("transform", `translate(${margin.left},${margin.top - 80})`);
+    .attr("transform", `translate(${margin.left},${margin.top})`);
   
   const xScale = d3.scaleLinear()
     .domain([0, n])
@@ -227,5 +145,5 @@ export function plotBinomial(sampleSize, n, p) {
     .style("font-weight", "bold")
     .text(`Binomial Distribution: n=${n}, p=${p.toFixed(2)} | μ=${mean.toFixed(2)}, σ=${stdDev.toFixed(2)}`);
   
-  return container.node();
+  return svg.node();
 }

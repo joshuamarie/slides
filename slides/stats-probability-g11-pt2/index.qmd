@@ -38,10 +38,10 @@ revealjs-plugins:
 
 What defines the population and sample?
 
--  Population refers to --- while sample refers to ---
--  Population refers to --- while sample refers to ---
--  Population refers to --- while sample refers to ---
--  [Population refers to --- while sample refers to ---]{.correct}
+-  Population refers to \<---\> while sample refers to \<---\>
+-  Population refers to \<---\> while sample refers to \<---\>
+-  Population refers to \<---\> while sample refers to \<---\>
+-  [Population refers to \<insert text\> while sample refers to \<text\>}]{.correct}
 
 ## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
 
