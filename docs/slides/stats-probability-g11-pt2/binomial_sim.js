@@ -22,23 +22,19 @@ export function plotBinomial(sampleSize, n, p) {
   const mean = n * p;
   const stdDev = Math.sqrt(n * p * (1 - p));
   
-  // Fixed normal curve calculation - scale properly to match histogram
-  const binWidth = 1; // Each bar represents exactly 1 unit on x-axis
+  const binWidth = 1;
   const normalData = [];
   
-  // Generate curve over the range with proper scaling
   for (let x = 0; x <= n; x += 0.1) {
     const z = (x - mean) / stdDev;
-    // Normal PDF
     const pdf = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * z * z);
-    // Scale to match histogram: multiply by total samples and bin width
     const frequency = pdf * sampleSize * binWidth;
     normalData.push({x, y: frequency});
   }
   
-  const width = 1400;
-  const height = 600;
-  const margin = {top: 40, right: 40, bottom: 80, left: 80};
+  const width = 1600;
+  const height = 700;
+  const margin = {top: 100, right: 40, bottom: 80, left: 280};
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   
@@ -50,22 +46,87 @@ export function plotBinomial(sampleSize, n, p) {
     .style("border-radius", "8px")
     .style("box-shadow", "0 0 20px rgba(88, 196, 221, 0.3)");
   
+  const controlsGroup = svg.append("g")
+    .attr("transform", `translate(20, 20)`);
+  
+  controlsGroup.append("rect")
+    .attr("width", 240)
+    .attr("height", height - 40)
+    .attr("fill", "#1a1a1a")
+    .attr("stroke", "#58c4dd")
+    .attr("stroke-width", 2)
+    .attr("rx", 8)
+    .style("filter", "drop-shadow(0 0 10px rgba(88, 196, 221, 0.2))");
+  
+  controlsGroup.append("text")
+    .attr("x", 20)
+    .attr("y", 30)
+    .style("fill", "#83c167")
+    .style("font-family", "JetBrains Mono, monospace")
+    .style("font-size", "14px")
+    .style("font-weight", "bold")
+    .text("Sample Size");
+  
+  const sampleSizeText = controlsGroup.append("text")
+    .attr("x", 20)
+    .attr("y", 55)
+    .style("fill", "#c9a0dc")
+    .style("font-family", "JetBrains Mono, monospace")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
+    .text(sampleSize.toLocaleString());
+  
+  controlsGroup.append("text")
+    .attr("x", 20)
+    .attr("y", 100)
+    .style("fill", "#83c167")
+    .style("font-family", "JetBrains Mono, monospace")
+    .style("font-size", "14px")
+    .style("font-weight", "bold")
+    .text("Number of Trials (n)");
+  
+  const nText = controlsGroup.append("text")
+    .attr("x", 20)
+    .attr("y", 125)
+    .style("fill", "#c9a0dc")
+    .style("font-family", "JetBrains Mono, monospace")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
+    .text(n);
+  
+  controlsGroup.append("text")
+    .attr("x", 20)
+    .attr("y", 170)
+    .style("fill", "#83c167")
+    .style("font-family", "JetBrains Mono, monospace")
+    .style("font-size", "14px")
+    .style("font-weight", "bold")
+    .text("Probability of Success (p)");
+  
+  const pText = controlsGroup.append("text")
+    .attr("x", 20)
+    .attr("y", 195)
+    .style("fill", "#c9a0dc")
+    .style("font-family", "JetBrains Mono, monospace")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
+    .text(p.toFixed(2));
+  
   const g = svg.append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
   
   const xScale = d3.scaleLinear()
-    .domain([0, n])
+    .domain([-0.5, n + 0.5])
     .range([0, innerWidth]);
   
   const maxFreq = d3.max(data, d => d.frequency);
   const yScale = d3.scaleLinear()
     .domain([0, maxFreq * 1.1])
-    .range([innerHeight, 0])
-    .nice(); // This helps with axis alignment
+    .range([innerHeight, 0]);
   
   const xAxis = g.append("g")
     .attr("transform", `translate(0,${innerHeight})`)
-    .call(d3.axisBottom(xScale).ticks(Math.min(n, 20)))
+    .call(d3.axisBottom(xScale).ticks(Math.min(n, 20)).tickFormat(d => d >= 0 && d <= n ? d3.format("d")(d) : ""))
     .style("font-family", "JetBrains Mono, monospace")
     .style("font-size", "14px");
   
@@ -111,23 +172,21 @@ export function plotBinomial(sampleSize, n, p) {
     .style("font-size", "18px")
     .text("Frequency");
   
-  const barWidth = Math.max(2, innerWidth / (n + 1) * 0.8);
+  const barWidth = Math.min(innerWidth / (n + 1) * 0.8, 50);
   
-  // Draw bars AFTER axes to prevent overlap
   g.selectAll(".bar")
     .data(data)
     .join("rect")
     .attr("class", "bar")
     .attr("x", d => xScale(d.successes) - barWidth / 2)
-    .attr("y", d => Math.max(yScale(d.frequency), 1)) // Prevent bars from going above chart
+    .attr("y", d => yScale(d.frequency))
     .attr("width", barWidth)
-    .attr("height", d => Math.max(0, innerHeight - yScale(d.frequency))) // Ensure non-negative height
+    .attr("height", d => innerHeight - yScale(d.frequency))
     .attr("fill", "#58c4dd")
     .attr("opacity", 0.7)
     .attr("stroke", "#58c4dd")
     .attr("stroke-width", 1);
   
-  // Draw normal curve with proper scaling
   if (n >= 10 && stdDev > 0) {
     const line = d3.line()
       .x(d => xScale(d.x))
@@ -145,7 +204,7 @@ export function plotBinomial(sampleSize, n, p) {
   
   g.append("text")
     .attr("x", innerWidth / 2)
-    .attr("y", -15)
+    .attr("y", -55)
     .style("text-anchor", "middle")
     .style("fill", "#c9a0dc")
     .style("font-family", "JetBrains Mono, monospace")
