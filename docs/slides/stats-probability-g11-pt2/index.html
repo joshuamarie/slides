@@ -260,22 +260,20 @@ Joshua Marie
 <h2>Probability distribution</h2>
 <p>What happens when you increase the number of trials <span class="math inline">\(n\)</span>?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="85" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb1-85"><a></a>viewof sampleSize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="dv">100</span><span class="op">,</span> <span class="dv">1000</span><span class="op">,</span> <span class="dv">10000</span>]<span class="op">,</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="85" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb1-85"><a></a>viewof sampleSize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>([<span class="dv">100</span><span class="op">,</span> <span class="dv">1000</span><span class="op">,</span> <span class="dv">10000</span>]<span class="op">,</span> {</span>
 <span id="cb1-86"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Sample Size"</span><span class="op">,</span></span>
 <span id="cb1-87"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1000</span></span>
 <span id="cb1-88"><a></a>})</span>
-<span id="cb1-89"><a></a></span>
-<span id="cb1-90"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {</span>
-<span id="cb1-91"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Trials (n)"</span><span class="op">,</span></span>
-<span id="cb1-92"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
-<span id="cb1-93"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
-<span id="cb1-94"><a></a>})</span>
-<span id="cb1-95"><a></a></span>
-<span id="cb1-96"><a></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {</span>
-<span id="cb1-97"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Probability of Success (p)"</span><span class="op">,</span></span>
-<span id="cb1-98"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span></span>
-<span id="cb1-99"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span></span>
-<span id="cb1-100"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-89"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {</span>
+<span id="cb1-90"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Trials (n)"</span><span class="op">,</span></span>
+<span id="cb1-91"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
+<span id="cb1-92"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
+<span id="cb1-93"><a></a>})</span>
+<span id="cb1-94"><a></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {</span>
+<span id="cb1-95"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Probability of Success (p)"</span><span class="op">,</span></span>
+<span id="cb1-96"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span></span>
+<span id="cb1-97"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span></span>
+<span id="cb1-98"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -298,9 +296,9 @@ Joshua Marie
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="104" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 103;"><span id="cb2-104"><a></a><span class="im">import</span> { plotBinomial } <span class="im">from</span> <span class="st">'./binomial_sim.js'</span><span class="op">;</span></span>
-<span id="cb2-105"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="103" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 102;"><span id="cb2-103"><a></a><span class="im">import</span> { plotBinomial } <span class="im">from</span> <span class="st">'./binomial_sim.js'</span><span class="op">;</span></span>
+<span id="cb2-104"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -553,7 +551,7 @@ Joshua Marie
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBzYW1wbGVTaXplID0gSW5wdXRzLnJhZGlvKFsxMDAsIDEwMDAsIDEwMDAwXSwge1xyXG4gICAgbGFiZWw6IFwiU2FtcGxlIFNpemVcIixcclxuICAgIHZhbHVlOiAxMDAwXHJcbn0pXHJcblxyXG52aWV3b2YgbiA9IElucHV0cy5yYW5nZShbMSwgMjAwXSwge1xyXG4gICAgbGFiZWw6IFwiTnVtYmVyIG9mIFRyaWFscyAobilcIixcclxuICAgIHZhbHVlOiAxMCxcclxuICAgIHN0ZXA6IDFcclxufSlcclxuXHJcbnZpZXdvZiBwID0gSW5wdXRzLnJhbmdlKFswLjAwMSwgMC45OTldLCB7XHJcbiAgICBsYWJlbDogXCJQcm9iYWJpbGl0eSBvZiBTdWNjZXNzIChwKVwiLFxyXG4gICAgdmFsdWU6IDAuNSxcclxuICAgIHN0ZXA6IDAuMDFcclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaW1wb3J0IHsgcGxvdEJpbm9taWFsIH0gZnJvbSAnLi9iaW5vbWlhbF9zaW0uanMnO1xyXG5wbG90Qmlub21pYWwoc2FtcGxlU2l6ZSwgbiwgcClcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzYW1wbGVTaXplJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ24nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncCcpIn1dfQ==
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBzYW1wbGVTaXplID0gSW5wdXRzLmNoZWNrYm94KFsxMDAsIDEwMDAsIDEwMDAwXSwge1xyXG4gICAgbGFiZWw6IFwiU2FtcGxlIFNpemVcIixcclxuICAgIHZhbHVlOiAxMDAwXHJcbn0pXHJcbnZpZXdvZiBuID0gSW5wdXRzLnJhbmdlKFsxLCAyMDBdLCB7XHJcbiAgICBsYWJlbDogXCJOdW1iZXIgb2YgVHJpYWxzIChuKVwiLFxyXG4gICAgdmFsdWU6IDEwLFxyXG4gICAgc3RlcDogMVxyXG59KVxyXG52aWV3b2YgcCA9IElucHV0cy5yYW5nZShbMC4wMDEsIDAuOTk5XSwge1xyXG4gICAgbGFiZWw6IFwiUHJvYmFiaWxpdHkgb2YgU3VjY2VzcyAocClcIixcclxuICAgIHZhbHVlOiAwLjUsXHJcbiAgICBzdGVwOiAwLjAxXHJcbn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gJy4vYmlub21pYWxfc2ltLmpzJztcclxucGxvdEJpbm9taWFsKHNhbXBsZVNpemUsIG4sIHApXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2FtcGxlU2l6ZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCduJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3AnKSJ9XX0=
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

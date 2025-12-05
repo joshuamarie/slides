@@ -82,17 +82,15 @@ $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 What happens when you increase the number of trials $n$?
 
 ```{ojs}
-viewof sampleSize = Inputs.radio([100, 1000, 10000], {
+viewof sampleSize = Inputs.checkbox([100, 1000, 10000], {
     label: "Sample Size",
     value: 1000
 })
-
 viewof n = Inputs.range([1, 200], {
     label: "Number of Trials (n)",
     value: 10,
     step: 1
 })
-
 viewof p = Inputs.range([0.001, 0.999], {
     label: "Probability of Success (p)",
     value: 0.5,
@@ -101,6 +99,7 @@ viewof p = Inputs.range([0.001, 0.999], {
 ```
 
 ```{ojs}
+//| panel: fill
 import { plotBinomial } from './binomial_sim.js';
 plotBinomial(sampleSize, n, p)
 ```
