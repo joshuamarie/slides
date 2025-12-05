@@ -218,10 +218,10 @@ Joshua Marie
 <h2>Hands-on Quiz</h2>
 <p>What defines the population and sample?</p>
 <ul>
-<li>Population refers to &lt;—&gt; while sample refers to &lt;—&gt;</li>
-<li>Population refers to &lt;—&gt; while sample refers to &lt;—&gt;</li>
-<li>Population refers to &lt;—&gt; while sample refers to &lt;—&gt;</li>
-<li><span class="correct">Population refers to &lt;insert text&gt; while sample refers to &lt;text&gt;}</span></li>
+<li>Population refers to a subset of data while sample refers to all data</li>
+<li>Population refers to estimates while sample refers to parameters</li>
+<li>Population refers to small groups while sample refers to large groups</li>
+<li><span class="correct">Population refers to the entire group being studied while sample refers to a subset selected from that group</span></li>
 </ul>
 </section>
 <section id="hands-on-quiz-1" class="slide level2 quiz-question" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
@@ -242,6 +242,26 @@ Joshua Marie
 <li><span class="correct">Two events are disjoint</span></li>
 <li><span class="correct"><span class="math inline">\(P(A \cap B) = 0\)</span></span></li>
 <li><span class="math inline">\(P(A \cap B) \neq 0\)</span></li>
+</ul>
+</section>
+<section id="hands-on-quiz-3" class="slide level2 quiz-question" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Hands-on Quiz</h2>
+<p>A binomial distribution requires which conditions?</p>
+<ul>
+<li>Trials are dependent and probability changes</li>
+<li><span class="correct">Fixed number of independent trials with constant probability</span></li>
+<li>Continuous outcomes with no upper limit</li>
+<li>Only two trials are needed</li>
+</ul>
+</section>
+<section id="hands-on-quiz-4" class="slide level2 quiz-question" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Hands-on Quiz</h2>
+<p>What is the expected value of rolling a fair six-sided die?</p>
+<ul>
+<li>3.2</li>
+<li><span class="correct">3.5</span></li>
+<li>4.5</li>
+<li>5.3</li>
 </ul>
 </section>
 <section id="probability-distribution" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
@@ -265,27 +285,30 @@ Joshua Marie
 <h2>Probability distribution</h2>
 <p>What happens when you increase the number of trials <span class="math inline">\(n\)</span>?</p>
 <div class="cell panel-fill">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="92" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 91;"><span id="cb1-92"><a></a><span class="im">import</span> { plotBinomial } <span class="im">from</span> <span class="st">"./binomial_sim.js"</span></span>
-<span id="cb1-93"><a></a></span>
-<span id="cb1-94"><a></a>viewof sampleSize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">100000</span>]<span class="op">,</span> {</span>
-<span id="cb1-95"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Sample Size"</span><span class="op">,</span></span>
-<span id="cb1-96"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
-<span id="cb1-97"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb1-98"><a></a>})</span>
-<span id="cb1-99"><a></a></span>
-<span id="cb1-100"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">300</span>]<span class="op">,</span> {</span>
-<span id="cb1-101"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Trials (n)"</span><span class="op">,</span></span>
-<span id="cb1-102"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
-<span id="cb1-103"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
-<span id="cb1-104"><a></a>})</span>
-<span id="cb1-105"><a></a></span>
-<span id="cb1-106"><a></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {</span>
-<span id="cb1-107"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Probability of Success (p)"</span><span class="op">,</span></span>
-<span id="cb1-108"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span></span>
-<span id="cb1-109"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span></span>
-<span id="cb1-110"><a></a>})</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="110" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 109;"><span id="cb1-110"><a></a><span class="im">import</span> { plotBinomial } <span class="im">from</span> <span class="st">"./binomial_sim.js"</span></span>
 <span id="cb1-111"><a></a></span>
-<span id="cb1-112"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-112"><a></a><span class="co">// Sample Size</span></span>
+<span id="cb1-113"><a></a>viewof sampleSize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">50</span><span class="op">,</span> <span class="dv">100000</span>]<span class="op">,</span> {</span>
+<span id="cb1-114"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Size"</span><span class="op">,</span></span>
+<span id="cb1-115"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
+<span id="cb1-116"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">10</span></span>
+<span id="cb1-117"><a></a>})</span>
+<span id="cb1-118"><a></a></span>
+<span id="cb1-119"><a></a><span class="co">// Number of Trials</span></span>
+<span id="cb1-120"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">300</span>]<span class="op">,</span> {</span>
+<span id="cb1-121"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"(n)"</span><span class="op">,</span></span>
+<span id="cb1-122"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb1-123"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
+<span id="cb1-124"><a></a>})</span>
+<span id="cb1-125"><a></a></span>
+<span id="cb1-126"><a></a><span class="co">// Probability of Success</span></span>
+<span id="cb1-127"><a></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.999</span>]<span class="op">,</span> {</span>
+<span id="cb1-128"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"(p)"</span><span class="op">,</span></span>
+<span id="cb1-129"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span></span>
+<span id="cb1-130"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.001</span></span>
+<span id="cb1-131"><a></a>})</span>
+<span id="cb1-132"><a></a></span>
+<span id="cb1-133"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -343,9 +366,143 @@ Joshua Marie
 </section>
 <section id="normal-distribution-2" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Normal distribution</h2>
+<p>It has its own closed mathematical form that defines the normal distribution:</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}
+\exp\!\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
+\]</span></p>
 </section>
-<section id="characteristics-of-the-normal-distribution" class="slide level2">
+<section id="visualization-of-the-normal-distribution" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Visualization of the normal distribution</h2>
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="170" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 169;"><span id="cb2-170"><a></a>viewof mu <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {</span>
+<span id="cb2-171"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Mean (μ)"</span><span class="op">,</span></span>
+<span id="cb2-172"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb2-173"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span></span>
+<span id="cb2-174"><a></a>})</span>
+<span id="cb2-175"><a></a></span>
+<span id="cb2-176"><a></a>viewof sigma <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> {</span>
+<span id="cb2-177"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Standard Deviation (σ)"</span><span class="op">,</span></span>
+<span id="cb2-178"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb2-179"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span></span>
+<span id="cb2-180"><a></a>})</span>
+<span id="cb2-181"><a></a></span>
+<span id="cb2-182"><a></a>{</span>
+<span id="cb2-183"><a></a>    <span class="kw">const</span> width <span class="op">=</span> <span class="dv">800</span><span class="op">;</span></span>
+<span id="cb2-184"><a></a>    <span class="kw">const</span> height <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb2-185"><a></a>    <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">50</span>}<span class="op">;</span></span>
+<span id="cb2-186"><a></a>    </span>
+<span id="cb2-187"><a></a>    <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-188"><a></a>    <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> mu <span class="op">-</span> <span class="dv">4</span> <span class="op">*</span> sigma<span class="op">;</span> x <span class="op">&lt;=</span> mu <span class="op">+</span> <span class="dv">4</span><span class="op">*</span>sigma<span class="op">;</span> x <span class="op">+=</span> <span class="fl">0.1</span>) {</span>
+<span id="cb2-189"><a></a>        <span class="kw">const</span> y <span class="op">=</span> (<span class="dv">1</span> <span class="op">/</span> (sigma <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))) <span class="op">*</span> </span>
+<span id="cb2-190"><a></a>                  <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>((x <span class="op">-</span> mu) <span class="op">/</span> sigma<span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></span>
+<span id="cb2-191"><a></a>        data<span class="op">.</span><span class="fu">push</span>({x<span class="op">,</span> y})<span class="op">;</span></span>
+<span id="cb2-192"><a></a>    }</span>
+<span id="cb2-193"><a></a>    </span>
+<span id="cb2-194"><a></a>    <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb2-195"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width)</span>
+<span id="cb2-196"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
+<span id="cb2-197"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width<span class="op">,</span> height])<span class="op">;</span></span>
+<span id="cb2-198"><a></a>    </span>
+<span id="cb2-199"><a></a>    <span class="kw">const</span> xScale <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb2-200"><a></a>        <span class="op">.</span><span class="fu">domain</span>([mu <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>sigma<span class="op">,</span> mu <span class="op">+</span> <span class="dv">4</span><span class="op">*</span>sigma])</span>
+<span id="cb2-201"><a></a>        <span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb2-202"><a></a>    </span>
+<span id="cb2-203"><a></a>    <span class="kw">const</span> yScale <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb2-204"><a></a>        <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> d3<span class="op">.</span><span class="fu">max</span>(data<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)])</span>
+<span id="cb2-205"><a></a>        <span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb2-206"><a></a>    </span>
+<span id="cb2-207"><a></a>    <span class="kw">const</span> line <span class="op">=</span> d3<span class="op">.</span><span class="fu">line</span>()</span>
+<span id="cb2-208"><a></a>        <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">xScale</span>(d<span class="op">.</span><span class="at">x</span>))</span>
+<span id="cb2-209"><a></a>        <span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">yScale</span>(d<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb2-210"><a></a>    </span>
+<span id="cb2-211"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb2-212"><a></a>        <span class="op">.</span><span class="fu">datum</span>(data)</span>
+<span id="cb2-213"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)</span>
+<span id="cb2-214"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#4CAF50"</span>)</span>
+<span id="cb2-215"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="fl">2.5</span>)</span>
+<span id="cb2-216"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> line)<span class="op">;</span></span>
+<span id="cb2-217"><a></a>    </span>
+<span id="cb2-218"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb2-219"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
+<span id="cb2-220"><a></a>        <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(xScale))<span class="op">;</span></span>
+<span id="cb2-221"><a></a>    </span>
+<span id="cb2-222"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb2-223"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
+<span id="cb2-224"><a></a>        <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(yScale))<span class="op">;</span></span>
+<span id="cb2-225"><a></a>    </span>
+<span id="cb2-226"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
+<span id="cb2-227"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> <span class="fu">xScale</span>(mu))</span>
+<span id="cb2-228"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> <span class="fu">xScale</span>(mu))</span>
+<span id="cb2-229"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb2-230"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb2-231"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"red"</span>)</span>
+<span id="cb2-232"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb2-233"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"5,5"</span>)<span class="op">;</span></span>
+<span id="cb2-234"><a></a>    </span>
+<span id="cb2-235"><a></a>    <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb2-236"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div title="Observe">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Observe</strong></p>
+</div>
+<div class="callout-content">
+<p>As you adjust <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>, notice how the curve shifts and spreads!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="characteristics-of-the-normal-distribution" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
 <h2>Characteristics of the normal distribution</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="visual-properties">Visual Properties</h3>
+<ol type="1">
+<li><strong>Bell-shaped</strong> with highest peak at center</li>
+<li><strong>Symmetrical</strong> about the mean</li>
+<li><strong>Continuous</strong> on both sides</li>
+<li><strong>Horizontally Asymptotic</strong> Never touches the horizontal axis</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<h3 id="mathematical-properties">Mathematical Properties</h3>
+<ul>
+<li>Mean = Median = Mode</li>
+<li>Total area = 1 (100%)</li>
+<li>Determined by two parameters:
+<ul>
+<li><span class="math inline">\(\mu\)</span> (mean): location</li>
+<li><span class="math inline">\(\sigma\)</span> (standard deviation): spread</li>
+</ul></li>
+</ul>
+</div></div>
 
 
 </section>
@@ -574,7 +731,7 @@ Joshua Marie
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gXCIuL2Jpbm9taWFsX3NpbS5qc1wiXHJcblxyXG52aWV3b2Ygc2FtcGxlU2l6ZSA9IElucHV0cy5yYW5nZShbNTAsIDEwMDAwMF0sIHtcclxuICAgIGxhYmVsOiBcIlNhbXBsZSBTaXplXCIsXHJcbiAgICB2YWx1ZTogNTAsXHJcbiAgICBzdGVwOiAxMFxyXG59KVxyXG5cclxudmlld29mIG4gPSBJbnB1dHMucmFuZ2UoWzEsIDMwMF0sIHtcclxuICAgIGxhYmVsOiBcIk51bWJlciBvZiBUcmlhbHMgKG4pXCIsXHJcbiAgICB2YWx1ZTogMSxcclxuICAgIHN0ZXA6IDFcclxufSlcclxuXHJcbnZpZXdvZiBwID0gSW5wdXRzLnJhbmdlKFswLjAwMSwgMC45OTldLCB7XHJcbiAgICBsYWJlbDogXCJQcm9iYWJpbGl0eSBvZiBTdWNjZXNzIChwKVwiLFxyXG4gICAgdmFsdWU6IDAuNSxcclxuICAgIHN0ZXA6IDAuMDAxXHJcbn0pXHJcblxyXG5wbG90Qmlub21pYWwoc2FtcGxlU2l6ZSwgbiwgcClcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzYW1wbGVTaXplJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ24nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncCcpIn1dfQ==
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gXCIuL2Jpbm9taWFsX3NpbS5qc1wiXHJcblxyXG4vLyBTYW1wbGUgU2l6ZVxyXG52aWV3b2Ygc2FtcGxlU2l6ZSA9IElucHV0cy5yYW5nZShbNTAsIDEwMDAwMF0sIHtcclxuICAgIGxhYmVsOiBcIlNpemVcIixcclxuICAgIHZhbHVlOiA1MCxcclxuICAgIHN0ZXA6IDEwXHJcbn0pXHJcblxyXG4vLyBOdW1iZXIgb2YgVHJpYWxzXHJcbnZpZXdvZiBuID0gSW5wdXRzLnJhbmdlKFsxLCAzMDBdLCB7XHJcbiAgICBsYWJlbDogXCIobilcIixcclxuICAgIHZhbHVlOiAxLFxyXG4gICAgc3RlcDogMVxyXG59KVxyXG5cclxuLy8gUHJvYmFiaWxpdHkgb2YgU3VjY2Vzc1xyXG52aWV3b2YgcCA9IElucHV0cy5yYW5nZShbMC4wMDEsIDAuOTk5XSwge1xyXG4gICAgbGFiZWw6IFwiKHApXCIsXHJcbiAgICB2YWx1ZTogMC41LFxyXG4gICAgc3RlcDogMC4wMDFcclxufSlcclxuXHJcbnBsb3RCaW5vbWlhbChzYW1wbGVTaXplLCBuLCBwKVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgbXUgPSBJbnB1dHMucmFuZ2UoWy01LCA1XSwge1xyXG4gICAgbGFiZWw6IFwiTWVhbiAozrwpXCIsXHJcbiAgICB2YWx1ZTogMCxcclxuICAgIHN0ZXA6IDAuMVxyXG59KVxyXG5cclxudmlld29mIHNpZ21hID0gSW5wdXRzLnJhbmdlKFswLjUsIDNdLCB7XHJcbiAgICBsYWJlbDogXCJTdGFuZGFyZCBEZXZpYXRpb24gKM+DKVwiLFxyXG4gICAgdmFsdWU6IDEsXHJcbiAgICBzdGVwOiAwLjFcclxufSlcclxuXHJcbntcclxuICAgIGNvbnN0IHdpZHRoID0gODAwO1xyXG4gICAgY29uc3QgaGVpZ2h0ID0gNDAwO1xyXG4gICAgY29uc3QgbWFyZ2luID0ge3RvcDogMjAsIHJpZ2h0OiAzMCwgYm90dG9tOiA0MCwgbGVmdDogNTB9O1xyXG4gICAgXHJcbiAgICBjb25zdCBkYXRhID0gW107XHJcbiAgICBmb3IgKGxldCB4ID0gbXUgLSA0ICogc2lnbWE7IHggPD0gbXUgKyA0KnNpZ21hOyB4ICs9IDAuMSkge1xyXG4gICAgICAgIGNvbnN0IHkgPSAoMSAvIChzaWdtYSAqIE1hdGguc3FydCgyICogTWF0aC5QSSkpKSAqIFxyXG4gICAgICAgICAgICAgICAgICBNYXRoLmV4cCgtMC41ICogTWF0aC5wb3coKHggLSBtdSkgLyBzaWdtYSwgMikpO1xyXG4gICAgICAgIGRhdGEucHVzaCh7eCwgeX0pO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICBjb25zdCBzdmcgPSBkMy5jcmVhdGUoXCJzdmdcIilcclxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoKVxyXG4gICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodClcclxuICAgICAgICAuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIHdpZHRoLCBoZWlnaHRdKTtcclxuICAgIFxyXG4gICAgY29uc3QgeFNjYWxlID0gZDMuc2NhbGVMaW5lYXIoKVxyXG4gICAgICAgIC5kb21haW4oW211IC0gNCpzaWdtYSwgbXUgKyA0KnNpZ21hXSlcclxuICAgICAgICAucmFuZ2UoW21hcmdpbi5sZWZ0LCB3aWR0aCAtIG1hcmdpbi5yaWdodF0pO1xyXG4gICAgXHJcbiAgICBjb25zdCB5U2NhbGUgPSBkMy5zY2FsZUxpbmVhcigpXHJcbiAgICAgICAgLmRvbWFpbihbMCwgZDMubWF4KGRhdGEsIGQgPT4gZC55KV0pXHJcbiAgICAgICAgLnJhbmdlKFtoZWlnaHQgLSBtYXJnaW4uYm90dG9tLCBtYXJnaW4udG9wXSk7XHJcbiAgICBcclxuICAgIGNvbnN0IGxpbmUgPSBkMy5saW5lKClcclxuICAgICAgICAueChkID0+IHhTY2FsZShkLngpKVxyXG4gICAgICAgIC55KGQgPT4geVNjYWxlKGQueSkpO1xyXG4gICAgXHJcbiAgICBzdmcuYXBwZW5kKFwicGF0aFwiKVxyXG4gICAgICAgIC5kYXR1bShkYXRhKVxyXG4gICAgICAgIC5hdHRyKFwiZmlsbFwiLCBcIm5vbmVcIilcclxuICAgICAgICAuYXR0cihcInN0cm9rZVwiLCBcIiM0Q0FGNTBcIilcclxuICAgICAgICAuYXR0cihcInN0cm9rZS13aWR0aFwiLCAyLjUpXHJcbiAgICAgICAgLmF0dHIoXCJkXCIsIGxpbmUpO1xyXG4gICAgXHJcbiAgICBzdmcuYXBwZW5kKFwiZ1wiKVxyXG4gICAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2hlaWdodCAtIG1hcmdpbi5ib3R0b219KWApXHJcbiAgICAgICAgLmNhbGwoZDMuYXhpc0JvdHRvbSh4U2NhbGUpKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcImdcIilcclxuICAgICAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKCR7bWFyZ2luLmxlZnR9LDApYClcclxuICAgICAgICAuY2FsbChkMy5heGlzTGVmdCh5U2NhbGUpKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcImxpbmVcIilcclxuICAgICAgICAuYXR0cihcIngxXCIsIHhTY2FsZShtdSkpXHJcbiAgICAgICAgLmF0dHIoXCJ4MlwiLCB4U2NhbGUobXUpKVxyXG4gICAgICAgIC5hdHRyKFwieTFcIiwgbWFyZ2luLnRvcClcclxuICAgICAgICAuYXR0cihcInkyXCIsIGhlaWdodCAtIG1hcmdpbi5ib3R0b20pXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2VcIiwgXCJyZWRcIilcclxuICAgICAgICAuYXR0cihcInN0cm9rZS13aWR0aFwiLCAyKVxyXG4gICAgICAgIC5hdHRyKFwic3Ryb2tlLWRhc2hhcnJheVwiLCBcIjUsNVwiKTtcclxuICAgIFxyXG4gICAgcmV0dXJuIHN2Zy5ub2RlKCk7XHJcbn1cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzYW1wbGVTaXplJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ24nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtdScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzaWdtYScpIn1dfQ==
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
