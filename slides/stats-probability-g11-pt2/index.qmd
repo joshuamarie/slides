@@ -184,8 +184,11 @@ viewof sigma = Inputs.range([0.5, 3], {
     const height = 400;
     const margin = {top: 20, right: 30, bottom: 40, left: 50};
     
+    const xMin = -10;
+    const xMax = 10;
+    
     const data = [];
-    for (let x = mu - 4 * sigma; x <= mu + 4*sigma; x += 0.1) {
+    for (let x = xMin; x <= xMax; x += 0.1) {
         const y = (1 / (sigma * Math.sqrt(2 * Math.PI))) * 
                   Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));
         data.push({x, y});
@@ -197,11 +200,11 @@ viewof sigma = Inputs.range([0.5, 3], {
         .attr("viewBox", [0, 0, width, height]);
     
     const xScale = d3.scaleLinear()
-        .domain([mu - 4*sigma, mu + 4*sigma])
+        .domain([xMin, xMax])
         .range([margin.left, width - margin.right]);
     
     const yScale = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.y)])
+        .domain([0, 0.9])
         .range([height - margin.bottom, margin.top]);
     
     const line = d3.line()
@@ -267,4 +270,7 @@ As you adjust $\mu$ and $\sigma$, notice how the curve shifts and spreads!
 ::::
 :::::
 
+## The Empirical Rule (68-95-99.7 Rule) {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+## Standard Normal Distribution (Z-Distribution) {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
