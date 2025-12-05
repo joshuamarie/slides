@@ -262,24 +262,11 @@ Joshua Marie
 <div class="cell panel-fill">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="86" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 85;"><span id="cb1-86"><a></a><span class="im">import</span> { plotBinomial } <span class="im">from</span> <span class="st">"./binomial_sim.js"</span></span>
 <span id="cb1-87"><a></a></span>
-<span id="cb1-88"><a></a>viewof sampleSize <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>([<span class="dv">100</span><span class="op">,</span> <span class="dv">1000</span><span class="op">,</span> <span class="dv">5000</span><span class="op">,</span> <span class="dv">10000</span>]<span class="op">,</span> {</span>
-<span id="cb1-89"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Sample Size"</span><span class="op">,</span></span>
-<span id="cb1-90"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1000</span></span>
-<span id="cb1-91"><a></a>})</span>
-<span id="cb1-92"><a></a></span>
-<span id="cb1-93"><a></a>viewof n <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">200</span>]<span class="op">,</span> {</span>
-<span id="cb1-94"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Number of Trials (n)"</span><span class="op">,</span></span>
-<span id="cb1-95"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
-<span id="cb1-96"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
-<span id="cb1-97"><a></a>})</span>
-<span id="cb1-98"><a></a></span>
-<span id="cb1-99"><a></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.01</span><span class="op">,</span> <span class="fl">0.99</span>]<span class="op">,</span> {</span>
-<span id="cb1-100"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Probability of Success (p)"</span><span class="op">,</span></span>
-<span id="cb1-101"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">0.5</span><span class="op">,</span></span>
-<span id="cb1-102"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span></span>
-<span id="cb1-103"><a></a>})</span>
-<span id="cb1-104"><a></a></span>
-<span id="cb1-105"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-88"><a></a>viewof sampleSize <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb1-89"><a></a>viewof n <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb1-90"><a></a>viewof p <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb1-91"><a></a></span>
+<span id="cb1-92"><a></a><span class="fu">plotBinomial</span>(sampleSize<span class="op">,</span> n<span class="op">,</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -316,6 +303,25 @@ Joshua Marie
 </div>
 </div>
 </div>
+<!-- ```{ojs} -->
+<!-- //| panel: fill -->
+<!-- import { plotBinomial } from "./binomial_sim.js" -->
+<!-- viewof sampleSize = Inputs.select([100, 1000, 5000, 10000], { -->
+<!--     label: "Sample Size", -->
+<!--     value: 1000 -->
+<!-- }) -->
+<!-- viewof n = Inputs.range([1, 200], { -->
+<!--     label: "Number of Trials (n)", -->
+<!--     value: 30, -->
+<!--     step: 1 -->
+<!-- }) -->
+<!-- viewof p = Inputs.range([0.01, 0.99], { -->
+<!--     label: "Probability of Success (p)", -->
+<!--     value: 0.5, -->
+<!--     step: 0.01 -->
+<!-- }) -->
+<!-- plotBinomial(sampleSize, n, p) -->
+<!-- ``` -->
 <div class="fragment fade-in">
 <p>Because of this pattern, we define the <strong>normal distribution</strong></p>
 </div>
@@ -553,7 +559,7 @@ Joshua Marie
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gXCIuL2Jpbm9taWFsX3NpbS5qc1wiXHJcblxyXG52aWV3b2Ygc2FtcGxlU2l6ZSA9IElucHV0cy5zZWxlY3QoWzEwMCwgMTAwMCwgNTAwMCwgMTAwMDBdLCB7XHJcbiAgICBsYWJlbDogXCJTYW1wbGUgU2l6ZVwiLFxyXG4gICAgdmFsdWU6IDEwMDBcclxufSlcclxuXHJcbnZpZXdvZiBuID0gSW5wdXRzLnJhbmdlKFsxLCAyMDBdLCB7XHJcbiAgICBsYWJlbDogXCJOdW1iZXIgb2YgVHJpYWxzIChuKVwiLFxyXG4gICAgdmFsdWU6IDMwLFxyXG4gICAgc3RlcDogMVxyXG59KVxyXG5cclxudmlld29mIHAgPSBJbnB1dHMucmFuZ2UoWzAuMDEsIDAuOTldLCB7XHJcbiAgICBsYWJlbDogXCJQcm9iYWJpbGl0eSBvZiBTdWNjZXNzIChwKVwiLFxyXG4gICAgdmFsdWU6IDAuNSxcclxuICAgIHN0ZXA6IDAuMDFcclxufSlcclxuXHJcbnBsb3RCaW5vbWlhbChzYW1wbGVTaXplLCBuLCBwKVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NhbXBsZVNpemUnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwJykifV19
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gXCIuL2Jpbm9taWFsX3NpbS5qc1wiXHJcblxyXG52aWV3b2Ygc2FtcGxlU2l6ZSA9IDEwMDBcclxudmlld29mIG4gPSAzMFxyXG52aWV3b2YgcCA9IDAuNVxyXG5cclxucGxvdEJpbm9taWFsKHNhbXBsZVNpemUsIG4sIHApXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2FtcGxlU2l6ZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCduJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3AnKSJ9XX0=
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
