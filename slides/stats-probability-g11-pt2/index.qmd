@@ -111,7 +111,7 @@ plotBinomial(sampleSize, n, p)
 ```
 
 ::: {.fragment .fade-in}
-Because of this pattern, we define the **normal distribution**
+Because of this pattern, we define what we called the **normal distribution**
 :::
 
 ## Normal distribution {background-image="image-main.png" auto-animate="true"} 

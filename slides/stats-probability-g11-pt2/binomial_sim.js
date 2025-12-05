@@ -21,9 +21,10 @@ export function plotBinomial(sampleSize, n, p) {
   const mean = n * p;
   const stdDev = Math.sqrt(n * p * (1 - p));
 
+  // SVG setup
   const width = 960;
   const height = 580;
-  const margin = { top: 80, right: 50, bottom: 70, left: 70 };
+  const margin = { top: 140, right: 50, bottom: 70, left: 70 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -96,11 +97,6 @@ export function plotBinomial(sampleSize, n, p) {
       .style("fill", "#58c4dd")
       .style("font-size", "13px");
 
-  g.selectAll(".domain, .tick line")
-    .style("stroke", "#58c4dd")
-    .style("opacity", 0.5);
-
-  // X-axis label
   svg.append("text")
     .attr("x", width / 2)
     .attr("y", height - 20)
@@ -120,20 +116,68 @@ export function plotBinomial(sampleSize, n, p) {
 
   svg.append("text")
     .attr("x", width / 2)
-    .attr("y", 30)
+    .attr("y", 40)
     .attr("text-anchor", "middle")
     .attr("fill", "#c9a0dc")
     .style("font-size", "22px")
     .style("font-weight", "bold")
-    .text(`Binomial(n=${n}, p=${p.toFixed(2)}) → Normal(μ=${mean.toFixed(2)}, σ=${stdDev.toFixed(2)})`);
+    .text(`Binomial(n=${n}, p=${p.toFixed(2)}) â†’ Normal(Î¼=${mean.toFixed(2)}, Ïƒ=${stdDev.toFixed(2)})`);
 
   svg.append("text")
     .attr("x", width / 2)
-    .attr("y", 60)
+    .attr("y", 70)
     .attr("text-anchor", "middle")
     .attr("fill", "#ffff88")
-    .style("font-size", "16px")
-    .text("Observe how the binomial distribution approaches the normal curve as n increases");
+    .style("font-size", "18px")
+    .text("What happens when you increase the number of trials n?");
+
+  const controls = svg.append("foreignObject")
+    .attr("width", width - 100)
+    .attr("height", 120)
+    .attr("x", 50)
+    .attr("y", 10);
+
+  const body = controls.append("xhtml:div")
+    .style("background", "rgba(26,26,26,0.95)")
+    .style("padding", "18px")
+    .style("border-radius", "12px")
+    .style("border", "2px solid #58c4dd")
+    .style("color", "#c9a0dc");
+
+  body.append("xhtml:h3")
+    .style("margin", "0 0 15px 0")
+    .style("color", "#83c167")
+    .style("text-align", "center")
+    .text("Controls");
+
+  const div = body.append("xhtml:div")
+    .style("display", "grid")
+    .style("gap", "12px")
+    .style("grid-template-columns", "1fr 1fr");
+
+  div.append("xhtml:div")
+    .call(d3.attachTooltip)
+    .append(() => Inputs.select([100, 1000, 5000, 10000], {
+      label: "Sample Size",
+      value: sampleSize
+    }));
+
+  // Number of trials n
+  div.append("xhtml:div")
+    .append(() => Inputs.range([1, 200], {
+      label: "Number of Trials (n)",
+      value: n,
+      step: 1
+    }));
+
+  // Probability p
+  div.append("xhtml:div")
+    .append(() => Inputs.range([0.01, 0.99], {
+      label: "Probability p",
+      value: p,
+      step: 0.01
+    }));
 
   return svg.node();
+
 }
