@@ -179,7 +179,7 @@
     "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-1",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Probability distribution",
-    "text": "Probability distribution\nLet us continue…\nRemember: For \\(n\\) independent trials with probability \\(p\\):\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\n\nQuestion: What shape do you notice as \\(n\\) gets larger?"
+    "text": "Probability distribution\nLet us continue…\nRemember: For \\(n\\) independent trials with probability \\(p\\):\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\n\nSide question: What shape do you notice as \\(n\\) gets larger?"
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-1",
@@ -527,6 +527,153 @@
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#assignment",
     "href": "slides/stats-probability-g11-pt2/index.html#assignment",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Assignment",
+    "text": "Assignment\nInstructions:\n\nOpen the link for the exercise:"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nWhat defines the population and sample?\n\nPopulation refers to a subset of data while sample refers to all data\nPopulation refers to estimates while sample refers to parameters\nPopulation refers to small groups while sample refers to large groups\nPopulation refers to the entire group being studied while sample refers to a subset selected from that group"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz-1",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nWhat is the probability of drawing a “king” from the deck of card?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz-2",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cap B) \\neq 0\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz-3",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz-3",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nA binomial distribution requires which conditions?\n\nTrials are dependent and probability changes\nFixed number of independent trials with constant probability\nContinuous outcomes with no upper limit\nOnly two trials are needed"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz-4",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz-4",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nWhat is the expected value of rolling a fair six-sided die?\n\n3.2\n3.5\n4.5\n5.3"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#probability-distribution",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#probability-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nLet us continue…"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#probability-distribution-1",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#probability-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nLet us continue…\nRemember: For \\(n\\) independent trials with probability \\(p\\):\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\n\nSide question: What shape do you notice as \\(n\\) gets larger?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#probability-distribution-2",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#probability-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#probability-distribution-3",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#probability-distribution-3",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\nimport { plotBinomial } from \"./binomial_sim.js\"\n\n// Sample Size\nviewof sampleSize = Inputs.range([50, 100000], {\n    label: \"Size\",\n    value: 50,\n    step: 10\n})\n\n// Number of Trials\nviewof n = Inputs.range([1, 300], {\n    label: \"(n)\",\n    value: 1,\n    step: 1\n})\n\n// Probability of Success\nviewof p = Inputs.range([0.001, 0.999], {\n    label: \"(p)\",\n    value: 0.5,\n    step: 0.001\n})\n\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, we define what we called the normal distribution."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#normal-distribution",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve.\nKey characteristics:\n\nBell-shaped and symmetric\nMean = Median = Mode (all at the center)\nTotal area under curve = 1 (or 100%)\nExtends indefinitely in both directions (left and right of the mean \\(\\mu\\))"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#normal-distribution-2",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#normal-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nIt has its own closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function.\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “x follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#visualization-of-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#visualization-of-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Visualization of the normal distribution",
+    "text": "Visualization of the normal distribution\n\nviewof mu = Inputs.range([-7, 7], {\n    label: \"Mean (μ)\",\n    value: 0,\n    step: 0.1\n})\n\nviewof sigma = Inputs.range([0.001, 5], {\n    label: \"Standard Deviation (σ)\",\n    value: 1,\n    step: 0.01\n})\n\n{\n    const width = 800;\n    const height = 400;\n    const margin = {top: 20, right: 30, bottom: 40, left: 50};\n    \n    const xMin = -10;\n    const xMax = 10;\n    \n    const data = [];\n    for (let x = xMin; x &lt;= xMax; x += 0.1) {\n        const y = (1 / (sigma * Math.sqrt(2 * Math.PI))) * \n                  Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));\n        data.push({x, y});\n    }\n    \n    const svg = d3.create(\"svg\")\n        .attr(\"width\", width)\n        .attr(\"height\", height)\n        .attr(\"viewBox\", [0, 0, width, height]);\n    \n    const xScale = d3.scaleLinear()\n        .domain([xMin, xMax])\n        .range([margin.left, width - margin.right]);\n    \n    const yScale = d3.scaleLinear()\n        .domain([0, 0.9])\n        .range([height - margin.bottom, margin.top]);\n    \n    const line = d3.line()\n        .x(d =&gt; xScale(d.x))\n        .y(d =&gt; yScale(d.y));\n    \n    svg.append(\"path\")\n        .datum(data)\n        .attr(\"fill\", \"none\")\n        .attr(\"stroke\", \"#4CAF50\")\n        .attr(\"stroke-width\", 2.5)\n        .attr(\"d\", line);\n    \n    svg.append(\"g\")\n        .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n        .call(d3.axisBottom(xScale));\n    \n    svg.append(\"g\")\n        .attr(\"transform\", `translate(${margin.left},0)`)\n        .call(d3.axisLeft(yScale));\n    \n    svg.append(\"line\")\n        .attr(\"x1\", xScale(mu))\n        .attr(\"x2\", xScale(mu))\n        .attr(\"y1\", margin.top)\n        .attr(\"y2\", height - margin.bottom)\n        .attr(\"stroke\", \"red\")\n        .attr(\"stroke-width\", 2)\n        .attr(\"stroke-dasharray\", \"5,5\");\n    \n    return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObserve\n\n\nAs you adjust \\(\\mu\\) and \\(\\sigma\\), notice how the curve shifts and spreads!"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#characteristics-of-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#characteristics-of-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Characteristics of the normal distribution",
+    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#characteristics-of-the-normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#characteristics-of-the-normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Characteristics of the normal distribution",
+    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis\n\n\nMathematical Properties\n\nMean = Median = Mode\nTotal area = 1 (100%)\nDetermined by two parameters:\n\n\\(\\mu\\) (mean): location\n\\(\\sigma\\) (standard deviation): spread"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#standard-normal-distribution",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#standard-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\nThe standard normal distribution is a special case where:\n\nMean \\(\\mu = 0\\)\nStandard deviation \\(\\sigma = 1\\)\n\nMost textbooks denotes the random variable \\(Z\\) of the standard normal distribution as \\(Z \\sim \\mathcal{N}(0, 1)\\)\n\nWe can scale down \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) to \\(Z \\sim \\mathcal{N}(0, 1)\\). We called it “standardization”."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#the-importance-of-z-scores",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#the-importance-of-z-scores",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "The importance of z-scores",
+    "text": "The importance of z-scores\n\n\nCompare different distributions\nIt is much easier to compare different distribution (still normal) on the same scale\n\nDealing with probabilities\nAlthough we have softwares for us to calculate such probabilities, interpreting probabilities under z-score scale is much easier.\n\nIdentify outliers\nStandardization has a huge advantage to the application of outlier identification."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#the-empirical-rule-68-95-99.7-rule",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#the-empirical-rule-68-95-99.7-rule",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "The Empirical Rule (68-95-99.7 Rule)",
+    "text": "The Empirical Rule (68-95-99.7 Rule)\n\n\nviewof mu_empirical = Inputs.range([-10, 10], {\n    label: \"Mean (μ)\",\n    value: 0,\n    step: 0.5\n})\n\nviewof sigma_empirical = Inputs.range([0.001, 5], {\n    label: \"Std. Dev. (σ)\",\n    value: 1,\n    step: 0.01\n})\n\nviewof ruleSelect = Inputs.radio(\n    new Map([\n        [\"68% Rule (±1σ)\", 1],\n        [\"95% Rule (±2σ)\", 2],\n        [\"99.7% Rule (±3σ)\", 3],\n        [\"All Rules\", 4]\n    ]),\n    {label: \"Show Rule:\", value: 1}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotEmpiricalRule } from \"./normal_empirical_rule.js\"\n\nplotEmpiricalRule(mu_empirical, sigma_empirical, ruleSelect)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`&lt;hr&gt;&lt;h4&gt;Current Values:&lt;/h4&gt;`\n\n\n\n\n\n\n\nmd`${\n    ruleSelect === 1 ? `**68% of data falls between ${(mu_empirical - sigma_empirical).toFixed(2)} and ${(mu_empirical + sigma_empirical).toFixed(2)}**` :\n    ruleSelect === 2 ? `**95% of data falls between ${(mu_empirical - 2*sigma_empirical).toFixed(2)} and ${(mu_empirical + 2*sigma_empirical).toFixed(2)}**` :\n    ruleSelect === 3 ? `**99.7% of data falls between ${(mu_empirical - 3*sigma_empirical).toFixed(2)} and ${(mu_empirical + 3*sigma_empirical).toFixed(2)}**` :\n    `**μ ± 1σ:** [${(mu_empirical - sigma_empirical).toFixed(2)}, ${(mu_empirical + sigma_empirical).toFixed(2)}]\n    \n**μ ± 2σ:** [${(mu_empirical - 2*sigma_empirical).toFixed(2)}, ${(mu_empirical + 2*sigma_empirical).toFixed(2)}]\n\n**μ ± 3σ:** [${(mu_empirical - 3*sigma_empirical).toFixed(2)}, ${(mu_empirical + 3*sigma_empirical).toFixed(2)}]`\n}`\n\n\n\n\n\n\n\n\n\n\nmd`${\n    ruleSelect === 1 ? `**68% Rule:** Approximately 68% of all data values fall within ONE standard deviation of the mean (μ ± σ).` :\n    ruleSelect === 2 ? `**95% Rule:** Approximately 95% of all data values fall within TWO standard deviations of the mean (μ ± 2σ).` :\n    ruleSelect === 3 ? `**99.7% Rule:** Approximately 99.7% of all data values fall within THREE standard deviations of the mean (μ ± 3σ).` :\n    `**Complete Empirical Rule:** This shows all three rules simultaneously:\n- 68% within μ ± σ (purple)\n- 95% within μ ± 2σ (orange)  \n- 99.7% within μ ± 3σ (red)`\n}`"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#the-empirical-rule-68-95-99.7-rule-1",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#the-empirical-rule-68-95-99.7-rule-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "The Empirical Rule (68-95-99.7 Rule)",
+    "text": "The Empirical Rule (68-95-99.7 Rule)\nThe Empirical Rule (also called the 68-95-99.7 Rule) tells us what percentage of data falls within certain distances from the mean in a normal distribution.\n\n\n68% Rule\nApproximately 68% of data falls within 1 standard deviation of the mean:\n\\[\\mu - \\sigma \\leq X \\leq \\mu + \\sigma\\]\n\n95% Rule\nApproximately 95% of data falls within 2 standard deviations of the mean:\n\\[\\mu - 2\\sigma \\leq X \\leq \\mu + 2\\sigma\\]\n\n99.7% Rule\nApproximately 99.7% of data falls within 3 standard deviations of the mean:\n\\[\\mu - 3\\sigma \\leq X \\leq \\mu + 3\\sigma\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#practice-problem",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#practice-problem",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Practice Problem",
+    "text": "Practice Problem\nScenario: Heights of adult males in a population are normally distributed with a mean of 175 cm and a standard deviation of 8 cm.\nQuestions:\n\nWhat percentage of men have heights between 167 cm and 183 cm?\nWhat percentage of men are taller than 191 cm?\nIf a man is 159 cm tall, how many standard deviations is he from the mean?\nWould a height of 159 cm be considered unusual? Why or why not?\n\n\nSolutions:\n\n167 to 183 cm = \\(\\mu \\pm 1\\sigma\\). It should be 68%\n191 cm = \\(\\mu + 2\\sigma\\)\n\nBeyond \\(2\\sigma\\) above mean\n\\((100\\% - 95\\%) / 2\\) = 2.5%\n\n\\(z = \\frac{159 - 175}{8} = \\frac{-16}{8} = -2\\) — 2 standard deviations below\nYes, unusual because it’s exactly \\(2\\sigma\\) below the mean (only 2.5% are this short or shorter)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2-light/index.html#assignment",
+    "href": "slides/stats-probability-g11-pt2-light/index.html#assignment",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Assignment",
     "text": "Assignment\nInstructions:\n\nOpen the link for the exercise:"

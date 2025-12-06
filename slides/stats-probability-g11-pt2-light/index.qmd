@@ -1,6 +1,6 @@
 ---
 title: "Statistics and Probability for 11th Graders — Part 2"
-subtitle: "Probability distribution (continuation)"
+subtitle: "Probability distribution (continuation and light mode)"
 date: 2025-12-05
 categories: [statistics, probability]
 image: 'image-thumb.png'
@@ -98,7 +98,7 @@ Let us continue...
 $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 ::: {.fragment .fade-in}
-**Question:** What shape do you notice as $n$ gets larger?
+**Side question:** What shape do you notice as $n$ gets larger?
 :::
 
 ## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
@@ -344,10 +344,10 @@ viewof mu_empirical = Inputs.range([-10, 10], {
     step: 0.5
 })
 
-viewof sigma_empirical = Inputs.range([0.5, 5], {
-    label: "Standard Deviation (σ)",
+viewof sigma_empirical = Inputs.range([0.001, 5], {
+    label: "Std. Dev. (σ)",
     value: 1,
-    step: 0.1
+    step: 0.01
 })
 
 viewof ruleSelect = Inputs.radio(

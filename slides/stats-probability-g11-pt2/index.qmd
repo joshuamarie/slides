@@ -98,7 +98,7 @@ Let us continue...
 $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 ::: {.fragment .fade-in}
-**Question:** What shape do you notice as $n$ gets larger?
+**Side question:** What shape do you notice as $n$ gets larger?
 :::
 
 ## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
