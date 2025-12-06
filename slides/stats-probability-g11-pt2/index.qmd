@@ -172,7 +172,7 @@ The $f(x)$ there refers to the density function. Some textbooks denotes the dens
 :::
 
 ::: {.fragment .fade-in}
-The random variable for this distribution $X \sim \mathcal{N}(\mu, \sigma)$ (reads as "x follows the normal distribution with parameters mean $\mu$ and standard deviation $\sigma$"). 
+The random variable for this distribution $X \sim \mathcal{N}(\mu, \sigma)$ (reads as "X follows the normal distribution with parameters mean $\mu$ and standard deviation $\sigma$"). 
 :::
 
 ## Visualization of the normal distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
