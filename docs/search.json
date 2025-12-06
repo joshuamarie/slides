@@ -445,7 +445,7 @@
     "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-2",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Normal distribution",
-    "text": "Normal distribution\nIt has its own closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function.\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “x follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
+    "text": "Normal distribution\nIt has its own closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function. Some textbooks denotes the density function as \\(f_X(x)\\).\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “x follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
@@ -613,7 +613,7 @@
     "href": "slides/stats-probability-g11-pt2-light/index.html#normal-distribution-2",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Normal distribution",
-    "text": "Normal distribution\nIt has its own closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function.\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “x follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
+    "text": "Normal distribution\nIt has the closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function. Some textbooks denotes the density function as \\(f_X(x)\\).\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “x follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
   },
   {
     "objectID": "slides/stats-probability-g11-pt2-light/index.html#visualization-of-the-normal-distribution",

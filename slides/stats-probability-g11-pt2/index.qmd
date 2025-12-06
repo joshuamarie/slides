@@ -168,7 +168,7 @@ f(x)=\frac{1}{\sigma\sqrt{2\pi}}
 $$
 
 ::: {.fragment .fade-in}
-The $f(x)$ there refers to the density function. 
+The $f(x)$ there refers to the density function. Some textbooks denotes the density function as $f_X(x)$. 
 :::
 
 ::: {.fragment .fade-in}
