@@ -149,7 +149,6 @@
 .reveal .katex {
     color: var(--color-dark-blue);
     text-shadow: none;
-    font-weight: "bold";
 }
 
 /* Columns */
@@ -272,4 +271,14 @@
 .reveal .fragment.highlight-current-blue.current-fragment {
     color: var(--color-blue);
     font-weight: bold;
+}
+
+/* Customize quiz button block */
+.option-button {
+    background-color: #ABE0F0;
+    color: #1B211A;
+}
+
+.option-button .katex {
+    color: #BBCB64;   
 }

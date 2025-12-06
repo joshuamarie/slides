@@ -8,7 +8,7 @@
     --text-dark: #2a2a2a;
     --color-blue: #0088aa;
     --color-yellow: #cc8800;
-    --color-green: #3a7f28;
+    --color-dark-blue: #1A2A4F;
     --color-red: #d42f1f;
     --color-purple: #8855aa;
 }
@@ -67,7 +67,7 @@
 
 .reveal h3 {
     font-size: 1.5em;
-    color: var(--color-green);
+    color: var(--color-dark-blue);
 }
 
 /* Strong/Bold text */
@@ -147,7 +147,7 @@
 /* Math equations */
 .reveal .MathJax,
 .reveal .katex {
-    color: var(--color-green);
+    color: var(--color-dark-blue);
     text-shadow: none;
 }
 
@@ -271,4 +271,14 @@
 .reveal .fragment.highlight-current-blue.current-fragment {
     color: var(--color-blue);
     font-weight: bold;
+}
+
+/* Customize quiz button block */
+.option-button {
+    background-color: #ABE0F0;
+    color: #1B211A;
+}
+
+.option-button .katex {
+    color: #BBCB64;   
 }
