@@ -275,30 +275,6 @@
 
 /* Customize quiz button block */
 .option-button {
-    background-color: #ABE0F0 !important;
+    background-color: #ABE0F0 !important; 
     color: #1B211A !important;
-}
-
-.option-button .katex,
-.option-button .katex * {
-    color: #bbcB64 !important;
-    fill: #bbcB64 !important;
-    stroke: #bbcB64 !important;
-}
-
-/* This is the nuclear option that beats the re-render */
-.option-button .katex-display > .katex,
-.option-button .katex-display .katex {
-    color: #bbcB64 !important;
-}
-
-/* Finally, override the global rule specifically for quiz buttons */
-.reveal .katex {
-    color: var(--color-dark-blue);
-}
-
-/* ←←← This one must come **after** the global rule above */
-.option-button .katex,
-.option-button .katex-display .katex {
-    color: #bbcB64 !important;
 }

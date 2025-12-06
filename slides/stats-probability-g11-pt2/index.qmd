@@ -85,7 +85,7 @@ What is the expected value of rolling a fair six-sided die?
 -  4.5
 -  5.3
 
-## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
+## Probability distribution {background-image="image-main.png" auto-animate="true"}
 
 Let us continue...
 
