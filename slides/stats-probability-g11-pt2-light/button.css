@@ -1,0 +1,57 @@
+.observablehq--inspect {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    background: #0a0a0a;
+        border: 1px solid #58c4dd;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+}
+
+.observablehq--inspect > form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+}
+
+input[type="range"] {
+    background: #1a1a1a;
+        border: 1px solid #58c4dd;
+    border-radius: 4px;
+    padding: 2px;
+    width: 100%;
+}
+
+input[type="number"] {
+    background: #ffffff !important;
+        color: #000 !important;
+        border: 1px solid #58c4dd;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+select {
+    background: #ffffff !important;
+        color: #000 !important;
+        border: 1px solid #58c4dd;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+}
+
+label {
+    color: #83c167 !important;
+        font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    display: block;
+    margin-bottom: 4px;
+}

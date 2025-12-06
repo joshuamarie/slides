@@ -289,7 +289,7 @@ As you adjust $\mu$ and $\sigma$, notice how the curve shifts and spreads!
 ### Mathematical Properties
 
 - Mean = Median = Mode
-- Total area $ \leq 1\ (100\%)$
+- Total area = 1 (100%)
 - Determined by two parameters:
   - $\mu$ (mean): location
   - $\sigma$ (standard deviation): spread
@@ -344,10 +344,10 @@ viewof mu_empirical = Inputs.range([-10, 10], {
     step: 0.5
 })
 
-viewof sigma_empirical = Inputs.range([0.001, 5], {
-    label: "Std. Dev. (σ)",
+viewof sigma_empirical = Inputs.range([0.5, 5], {
+    label: "Standard Deviation (σ)",
     value: 1,
-    step: 0.01
+    step: 0.1
 })
 
 viewof ruleSelect = Inputs.radio(
