@@ -275,10 +275,6 @@
 
 /* Customize quiz button block */
 .option-button {
-    background-color: #ABE0F0;
-    color: #1B211A;
-}
-
-.option-button .katex {
-    color: #BBCB64;   
+    background-color: #ABE0F0 !important;
+    color: #1B211A !important;
 }

@@ -1,7 +1,7 @@
 ---
 title: "Statistics and Probability for 11th Graders — Part 2"
 subtitle: "Probability distribution (continuation and light mode)"
-description: "This is the light mode version of the original slide"
+description: "The light mode version of the original slide"
 date: 2025-12-05
 categories: [statistics, probability]
 image: 'image-thumb.png'
