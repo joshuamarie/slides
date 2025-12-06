@@ -256,7 +256,7 @@ viewof sigma = Inputs.range([0.001, 5], {
 As you adjust $\mu$ and $\sigma$, notice how the curve shifts and spreads!
 :::
 
-## Characteristics of the normal distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
+## Characteristics of the normal distribution {background-image="image-main.png" auto-animate="true" .scrollable} 
 
 ::::: {.columns}
 :::: {.column width="50%"}
@@ -271,7 +271,7 @@ As you adjust $\mu$ and $\sigma$, notice how the curve shifts and spreads!
 ::::
 :::::
 
-## Characteristics of the normal distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
+## Characteristics of the normal distribution {background-image="image-main.png" auto-animate="true" .scrollable} 
 
 ::::: {.columns}
 :::: {.column width="50%"}
@@ -341,20 +341,23 @@ Although we have softwares for us to calculate such probabilities, interpreting 
 #| standalone: true
 #| viewerHeight: 800
 #| components: [viewer]
-box::use(
-    shiny[
-        sliderInput, radioButtons, hr, h4, textOutput, 
-        plotOutput, uiOutput, renderPlot, renderText, 
-        renderUI, shinyApp, HTML
-    ],
-    ggplot2[
-        ggplot, aes, geom_line, geom_area, geom_vline, 
-        theme_minimal, labs, 
-        theme, element_text, linewidth
-    ],
-    bslib[page_sidebar, sidebar, card, card_header],
-    stats[dnorm]
-)
+library(shiny)
+library(ggplot2)
+library(bslib)
+# box::use(
+#     shiny[
+#         sliderInput, radioButtons, hr, h4, textOutput, 
+#         plotOutput, uiOutput, renderPlot, renderText, 
+#         renderUI, shinyApp, HTML
+#     ],
+#     ggplot2[
+#         ggplot, aes, geom_line, geom_area, geom_vline, 
+#         theme_minimal, labs, 
+#         theme, element_text, linewidth
+#     ],
+#     bslib[page_sidebar, sidebar, card, card_header],
+#     stats[dnorm]
+# )
 
 ui = page_sidebar(
     title = "Empirical Rule Interactive Visualization",
