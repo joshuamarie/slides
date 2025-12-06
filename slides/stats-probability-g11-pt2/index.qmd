@@ -445,11 +445,14 @@ $$\mu - 3\sigma \leq X \leq \mu + 3\sigma$$
     - Beyond $2\sigma$ above mean 
     - $(100\% - 95\%) / 2$ = **2.5%**
 
-3.  $z = \frac{159 - 175}{8} = \frac{-16}{8} = -2$ → **2 standard deviations below**
-4.  **Yes, unusual** because it's exactly 2σ below the mean (only 2.5% are this short or shorter)
+3.  $z = \frac{159 - 175}{8} = \frac{-16}{8} = -2$ — **2 standard deviations below**
+4.  **Yes, unusual** because it's exactly $2\sigma$ below the mean (only 2.5% are this short or shorter)
 :::
 
 ## Assignment {background-image="image-main.png" .scrollable}
 
-Open the link 
+Instructions: 
+
+1.  Open the [link]() for the exercise: 
+2.  
 

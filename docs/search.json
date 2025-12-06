@@ -522,13 +522,13 @@
     "href": "slides/stats-probability-g11-pt2/index.html#practice-problem",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Practice Problem",
-    "text": "Practice Problem\nScenario: Heights of adult males in a population are normally distributed with a mean of 175 cm and a standard deviation of 8 cm.\nQuestions:\n\nWhat percentage of men have heights between 167 cm and 183 cm?\nWhat percentage of men are taller than 191 cm?\nIf a man is 159 cm tall, how many standard deviations is he from the mean?\nWould a height of 159 cm be considered unusual? Why or why not?\n\n\nSolutions:\n\n167 to 183 cm = \\(\\mu \\pm 1\\sigma\\). It should be 68%\n191 cm = \\(\\mu + 2\\sigma\\)\n\nBeyond \\(2\\sigma\\) above mean\n\\((100\\% - 95\\%) / 2\\) = 2.5%\n\n\\(z = \\frac{159 - 175}{8} = \\frac{-16}{8} = -2\\) → 2 standard deviations below\nYes, unusual because it’s exactly 2σ below the mean (only 2.5% are this short or shorter)"
+    "text": "Practice Problem\nScenario: Heights of adult males in a population are normally distributed with a mean of 175 cm and a standard deviation of 8 cm.\nQuestions:\n\nWhat percentage of men have heights between 167 cm and 183 cm?\nWhat percentage of men are taller than 191 cm?\nIf a man is 159 cm tall, how many standard deviations is he from the mean?\nWould a height of 159 cm be considered unusual? Why or why not?\n\n\nSolutions:\n\n167 to 183 cm = \\(\\mu \\pm 1\\sigma\\). It should be 68%\n191 cm = \\(\\mu + 2\\sigma\\)\n\nBeyond \\(2\\sigma\\) above mean\n\\((100\\% - 95\\%) / 2\\) = 2.5%\n\n\\(z = \\frac{159 - 175}{8} = \\frac{-16}{8} = -2\\) — 2 standard deviations below\nYes, unusual because it’s exactly \\(2\\sigma\\) below the mean (only 2.5% are this short or shorter)"
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#assignment",
     "href": "slides/stats-probability-g11-pt2/index.html#assignment",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Assignment",
-    "text": "Assignment\nOpen the link"
+    "text": "Assignment\nInstructions:\n\nOpen the link for the exercise:"
   }
 ]
