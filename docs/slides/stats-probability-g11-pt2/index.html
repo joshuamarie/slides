@@ -7,12 +7,7 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<meta name="shinylive:serviceworker_dir" content="../..">
-<script src="../../site_libs/quarto-contrib/shinylive-0.9.1/shinylive/load-shinylive-sw.js" type="module"></script>
-<script src="../../site_libs/quarto-contrib/shinylive-0.9.1/shinylive/run-python-blocks.js" type="module"></script>
-<link href="../../site_libs/quarto-contrib/shinylive-0.9.1/shinylive/shinylive.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Joshua Marie">
@@ -560,162 +555,246 @@ f(x)=\frac{1}{\sigma\sqrt{2\pi}}
 </section>
 <section id="the-empirical-rule-68-95-99.7-rule" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
 <h2>The Empirical Rule (68-95-99.7 Rule)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>#| '!! shinylive warning !!': |</span>
-<span id="cb3-2"><a></a>#|   shinylive does not work in self-contained HTML documents.</span>
-<span id="cb3-3"><a></a>#|   Please set `embed-resources: false` in your metadata.</span>
-<span id="cb3-4"><a></a>#| standalone: true</span>
-<span id="cb3-5"><a></a>#| viewerHeight: 800</span>
-<span id="cb3-6"><a></a>#| components: [viewer]</span>
-<span id="cb3-7"><a></a>library(shiny)</span>
-<span id="cb3-8"><a></a>library(ggplot2)</span>
-<span id="cb3-9"><a></a>library(bslib)</span>
-<span id="cb3-10"><a></a># box::use(</span>
-<span id="cb3-11"><a></a>#     shiny[</span>
-<span id="cb3-12"><a></a>#         sliderInput, radioButtons, hr, h4, textOutput, </span>
-<span id="cb3-13"><a></a>#         plotOutput, uiOutput, renderPlot, renderText, </span>
-<span id="cb3-14"><a></a>#         renderUI, shinyApp, HTML</span>
-<span id="cb3-15"><a></a>#     ],</span>
-<span id="cb3-16"><a></a>#     ggplot2[</span>
-<span id="cb3-17"><a></a>#         ggplot, aes, geom_line, geom_area, geom_vline, </span>
-<span id="cb3-18"><a></a>#         theme_minimal, labs, </span>
-<span id="cb3-19"><a></a>#         theme, element_text, linewidth</span>
-<span id="cb3-20"><a></a>#     ],</span>
-<span id="cb3-21"><a></a>#     bslib[page_sidebar, sidebar, card, card_header],</span>
-<span id="cb3-22"><a></a>#     stats[dnorm]</span>
-<span id="cb3-23"><a></a># )</span>
-<span id="cb3-24"><a></a></span>
-<span id="cb3-25"><a></a>ui = page_sidebar(</span>
-<span id="cb3-26"><a></a>    title = "Empirical Rule Interactive Visualization",</span>
-<span id="cb3-27"><a></a>    sidebar = sidebar(</span>
-<span id="cb3-28"><a></a>        sliderInput(</span>
-<span id="cb3-29"><a></a>            "mean_val", "Mean (μ):", </span>
-<span id="cb3-30"><a></a>            min = -10, max = 10, value = 0, step = 0.5</span>
-<span id="cb3-31"><a></a>        ),</span>
-<span id="cb3-32"><a></a>        sliderInput(</span>
-<span id="cb3-33"><a></a>            "sd_val", "Standard Deviation (σ):", </span>
-<span id="cb3-34"><a></a>            min = 0.5, max = 5, value = 1, step = 0.1</span>
-<span id="cb3-35"><a></a>        ),</span>
-<span id="cb3-36"><a></a>        radioButtons(</span>
-<span id="cb3-37"><a></a>            "rule_select", "Show Rule:",</span>
-<span id="cb3-38"><a></a>            choices = list(</span>
-<span id="cb3-39"><a></a>                "68% Rule (±1σ)" = 1,</span>
-<span id="cb3-40"><a></a>                "95% Rule (±2σ)" = 2,</span>
-<span id="cb3-41"><a></a>                "99.7% Rule (±3σ)" = 3,</span>
-<span id="cb3-42"><a></a>                "All Rules" = 4</span>
-<span id="cb3-43"><a></a>            ),</span>
-<span id="cb3-44"><a></a>            selected = 1</span>
-<span id="cb3-45"><a></a>        ),</span>
-<span id="cb3-46"><a></a>        hr(),</span>
-<span id="cb3-47"><a></a>        h4("Current Values:"),</span>
-<span id="cb3-48"><a></a>        textOutput("range_text")</span>
-<span id="cb3-49"><a></a>    ),</span>
-<span id="cb3-50"><a></a>    card(</span>
-<span id="cb3-51"><a></a>        card_header("Normal Distribution Visualization"),</span>
-<span id="cb3-52"><a></a>        plotOutput("normal_plot", height = "400px")</span>
-<span id="cb3-53"><a></a>    ),</span>
-<span id="cb3-54"><a></a>    card(</span>
-<span id="cb3-55"><a></a>        card_header("Explanation"),</span>
-<span id="cb3-56"><a></a>        uiOutput("explanation")</span>
-<span id="cb3-57"><a></a>    )</span>
-<span id="cb3-58"><a></a>)</span>
-<span id="cb3-59"><a></a></span>
-<span id="cb3-60"><a></a>server = function(input, output, session) {</span>
-<span id="cb3-61"><a></a>    output$normal_plot = renderPlot({</span>
-<span id="cb3-62"><a></a>        mu = input$mean_val</span>
-<span id="cb3-63"><a></a>        sigma = input$sd_val</span>
-<span id="cb3-64"><a></a>        rule = as.numeric(input$rule_select)</span>
-<span id="cb3-65"><a></a>        </span>
-<span id="cb3-66"><a></a>        x = seq(mu - 4 * sigma, mu + 4 * sigma, length.out = 1000)</span>
-<span id="cb3-67"><a></a>        y = dnorm(x, mean = mu, sd = sigma)</span>
-<span id="cb3-68"><a></a>        </span>
-<span id="cb3-69"><a></a>        df = data.frame(x = x, y = y)</span>
-<span id="cb3-70"><a></a>        </span>
-<span id="cb3-71"><a></a>        p = ggplot(df, aes(x = x, y = y)) +</span>
-<span id="cb3-72"><a></a>            geom_line(color = "#2E86AB", linewidth = 1.5) +</span>
-<span id="cb3-73"><a></a>            theme_minimal(base_size = 16) +</span>
-<span id="cb3-74"><a></a>            labs(x = "Value", y = "Density", </span>
-<span id="cb3-75"><a></a>                 title = "Normal Distribution with Empirical Rule") +</span>
-<span id="cb3-76"><a></a>            theme(plot.title = element_text(hjust = 0.5, face = "bold"))</span>
-<span id="cb3-77"><a></a>        </span>
-<span id="cb3-78"><a></a>        if (rule == 1 || rule == 4) {</span>
-<span id="cb3-79"><a></a>            p = p + geom_area(data = subset(df, x &gt;= mu - sigma &amp; x &lt;= mu + sigma),</span>
-<span id="cb3-80"><a></a>                              aes(x = x, y = y), fill = "#A23B72", alpha = 0.4)</span>
-<span id="cb3-81"><a></a>        }</span>
-<span id="cb3-82"><a></a>        </span>
-<span id="cb3-83"><a></a>        if (rule == 2 || rule == 4) {</span>
-<span id="cb3-84"><a></a>            p = p + geom_area(data = subset(df, x &gt;= mu - 2*sigma &amp; x &lt;= mu + 2*sigma),</span>
-<span id="cb3-85"><a></a>                              aes(x = x, y = y), fill = "#F18F01", alpha = 0.3)</span>
-<span id="cb3-86"><a></a>        }</span>
-<span id="cb3-87"><a></a>        </span>
-<span id="cb3-88"><a></a>        if (rule == 3 || rule == 4) {</span>
-<span id="cb3-89"><a></a>            p = p + geom_area(data = subset(df, x &gt;= mu - 3*sigma &amp; x &lt;= mu + 3*sigma),</span>
-<span id="cb3-90"><a></a>                              aes(x = x, y = y), fill = "#C73E1D", alpha = 0.2)</span>
-<span id="cb3-91"><a></a>        }</span>
-<span id="cb3-92"><a></a>        </span>
-<span id="cb3-93"><a></a>        p = p + geom_vline(xintercept = mu, linetype = "dashed", </span>
-<span id="cb3-94"><a></a>                           color = "red", linewidth = 1)</span>
-<span id="cb3-95"><a></a>        </span>
-<span id="cb3-96"><a></a>        if (rule == 1 || rule == 4) {</span>
-<span id="cb3-97"><a></a>            p = p + geom_vline(xintercept = c(mu - sigma, mu + sigma), </span>
-<span id="cb3-98"><a></a>                               linetype = "dotted", color = "#A23B72", linewidth = 1)</span>
-<span id="cb3-99"><a></a>        }</span>
-<span id="cb3-100"><a></a>        if (rule == 2 || rule == 4) {</span>
-<span id="cb3-101"><a></a>            p = p + geom_vline(xintercept = c(mu - 2*sigma, mu + 2*sigma), </span>
-<span id="cb3-102"><a></a>                               linetype = "dotted", color = "#F18F01", linewidth = 1)</span>
-<span id="cb3-103"><a></a>        }</span>
-<span id="cb3-104"><a></a>        if (rule == 3 || rule == 4) {</span>
-<span id="cb3-105"><a></a>            p = p + geom_vline(xintercept = c(mu - 3*sigma, mu + 3*sigma), </span>
-<span id="cb3-106"><a></a>                               linetype = "dotted", color = "#C73E1D", linewidth = 1)</span>
-<span id="cb3-107"><a></a>        }</span>
-<span id="cb3-108"><a></a>        </span>
-<span id="cb3-109"><a></a>        p</span>
-<span id="cb3-110"><a></a>    })</span>
-<span id="cb3-111"><a></a>    </span>
-<span id="cb3-112"><a></a>    output$range_text = renderText({</span>
-<span id="cb3-113"><a></a>        mu = input$mean_val</span>
-<span id="cb3-114"><a></a>        sigma = input$sd_val</span>
-<span id="cb3-115"><a></a>        rule = as.numeric(input$rule_select)</span>
-<span id="cb3-116"><a></a>        </span>
-<span id="cb3-117"><a></a>        if (rule == 1) {</span>
-<span id="cb3-118"><a></a>            paste0("68% of data falls between ", </span>
-<span id="cb3-119"><a></a>                   round(mu - sigma, 2), " and ", round(mu + sigma, 2))</span>
-<span id="cb3-120"><a></a>        } else if (rule == 2) {</span>
-<span id="cb3-121"><a></a>            paste0("95% of data falls between ", </span>
-<span id="cb3-122"><a></a>                   round(mu - 2*sigma, 2), " and ", round(mu + 2*sigma, 2))</span>
-<span id="cb3-123"><a></a>        } else if (rule == 3) {</span>
-<span id="cb3-124"><a></a>            paste0("99.7% of data falls between ", </span>
-<span id="cb3-125"><a></a>                   round(mu - 3*sigma, 2), " and ", round(mu + 3*sigma, 2))</span>
-<span id="cb3-126"><a></a>        } else {</span>
-<span id="cb3-127"><a></a>            paste0("μ ± 1σ: [", round(mu - sigma, 2), ", ", round(mu + sigma, 2), "]\n",</span>
-<span id="cb3-128"><a></a>                   "μ ± 2σ: [", round(mu - 2*sigma, 2), ", ", round(mu + 2*sigma, 2), "]\n",</span>
-<span id="cb3-129"><a></a>                   "μ ± 3σ: [", round(mu - 3*sigma, 2), ", ", round(mu + 3*sigma, 2), "]")</span>
-<span id="cb3-130"><a></a>        }</span>
-<span id="cb3-131"><a></a>    })</span>
-<span id="cb3-132"><a></a>    </span>
-<span id="cb3-133"><a></a>    output$explanation = renderUI({</span>
-<span id="cb3-134"><a></a>        rule = as.numeric(input$rule_select)</span>
-<span id="cb3-135"><a></a>        </span>
-<span id="cb3-136"><a></a>        if (rule == 1) {</span>
-<span id="cb3-137"><a></a>            HTML("&lt;p&gt;&lt;b&gt;68% Rule:&lt;/b&gt; Approximately 68% of all data values fall within </span>
-<span id="cb3-138"><a></a>           ONE standard deviation of the mean (μ ± σ).&lt;/p&gt;")</span>
-<span id="cb3-139"><a></a>        } else if (rule == 2) {</span>
-<span id="cb3-140"><a></a>            HTML("&lt;p&gt;&lt;b&gt;95% Rule:&lt;/b&gt; Approximately 95% of all data values fall within </span>
-<span id="cb3-141"><a></a>           TWO standard deviations of the mean (μ ± 2σ).&lt;/p&gt;")</span>
-<span id="cb3-142"><a></a>        } else if (rule == 3) {</span>
-<span id="cb3-143"><a></a>            HTML("&lt;p&gt;&lt;b&gt;99.7% Rule:&lt;/b&gt; Approximately 99.7% of all data values fall within </span>
-<span id="cb3-144"><a></a>           THREE standard deviations of the mean (μ ± 3σ).&lt;/p&gt;")</span>
-<span id="cb3-145"><a></a>        } else {</span>
-<span id="cb3-146"><a></a>            HTML("&lt;p&gt;&lt;b&gt;Complete Empirical Rule:&lt;/b&gt; This shows all three rules simultaneously:</span>
-<span id="cb3-147"><a></a>           &lt;ul&gt;</span>
-<span id="cb3-148"><a></a>           &lt;li&gt;68% within μ ± σ (purple)&lt;/li&gt;</span>
-<span id="cb3-149"><a></a>           &lt;li&gt;95% within μ ± 2σ (orange)&lt;/li&gt;</span>
-<span id="cb3-150"><a></a>           &lt;li&gt;99.7% within μ ± 3σ (red)&lt;/li&gt;</span>
-<span id="cb3-151"><a></a>           &lt;/ul&gt;&lt;/p&gt;")</span>
-<span id="cb3-152"><a></a>        }</span>
-<span id="cb3-153"><a></a>    })</span>
-<span id="cb3-154"><a></a>}</span>
-<span id="cb3-155"><a></a></span>
-<span id="cb3-156"><a></a>shinyApp(ui = ui, server = server)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="layout-sidebar layout-sidebar-left">
+<div class="cell panel-sidebar">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="342" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 341;"><span id="cb3-342"><a></a>viewof mu_empirical <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {</span>
+<span id="cb3-343"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Mean (μ)"</span><span class="op">,</span></span>
+<span id="cb3-344"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-345"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.5</span></span>
+<span id="cb3-346"><a></a>})</span>
+<span id="cb3-347"><a></a></span>
+<span id="cb3-348"><a></a>viewof sigma_empirical <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.5</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span> {</span>
+<span id="cb3-349"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Standard Deviation (σ)"</span><span class="op">,</span></span>
+<span id="cb3-350"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb3-351"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span></span>
+<span id="cb3-352"><a></a>})</span>
+<span id="cb3-353"><a></a></span>
+<span id="cb3-354"><a></a>viewof ruleSelect <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(</span>
+<span id="cb3-355"><a></a>    <span class="kw">new</span> <span class="bu">Map</span>([</span>
+<span id="cb3-356"><a></a>        [<span class="st">"68% Rule (±1σ)"</span><span class="op">,</span> <span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb3-357"><a></a>        [<span class="st">"95% Rule (±2σ)"</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span></span>
+<span id="cb3-358"><a></a>        [<span class="st">"99.7% Rule (±3σ)"</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span></span>
+<span id="cb3-359"><a></a>        [<span class="st">"All Rules"</span><span class="op">,</span> <span class="dv">4</span>]</span>
+<span id="cb3-360"><a></a>    ])<span class="op">,</span></span>
+<span id="cb3-361"><a></a>    {<span class="dt">label</span><span class="op">:</span> <span class="st">"Show Rule:"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span>}</span>
+<span id="cb3-362"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell panel-fill">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="366" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 365;"><span id="cb4-366"><a></a>{</span>
+<span id="cb4-367"><a></a>    <span class="kw">const</span> width <span class="op">=</span> <span class="dv">900</span><span class="op">;</span></span>
+<span id="cb4-368"><a></a>    <span class="kw">const</span> height <span class="op">=</span> <span class="dv">500</span><span class="op">;</span></span>
+<span id="cb4-369"><a></a>    <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">60</span>}<span class="op">;</span></span>
+<span id="cb4-370"><a></a>    </span>
+<span id="cb4-371"><a></a>    <span class="kw">const</span> xMin <span class="op">=</span> mu_empirical <span class="op">-</span> <span class="dv">4</span> <span class="op">*</span> sigma_empirical<span class="op">;</span></span>
+<span id="cb4-372"><a></a>    <span class="kw">const</span> xMax <span class="op">=</span> mu_empirical <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> sigma_empirical<span class="op">;</span></span>
+<span id="cb4-373"><a></a>    </span>
+<span id="cb4-374"><a></a>    <span class="co">// Generate normal distribution data</span></span>
+<span id="cb4-375"><a></a>    <span class="kw">const</span> data <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb4-376"><a></a>    <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> xMin<span class="op">;</span> x <span class="op">&lt;=</span> xMax<span class="op">;</span> x <span class="op">+=</span> (xMax <span class="op">-</span> xMin) <span class="op">/</span> <span class="dv">1000</span>) {</span>
+<span id="cb4-377"><a></a>        <span class="kw">const</span> y <span class="op">=</span> (<span class="dv">1</span> <span class="op">/</span> (sigma_empirical <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))) <span class="op">*</span> </span>
+<span id="cb4-378"><a></a>                  <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">pow</span>((x <span class="op">-</span> mu_empirical) <span class="op">/</span> sigma_empirical<span class="op">,</span> <span class="dv">2</span>))<span class="op">;</span></span>
+<span id="cb4-379"><a></a>        data<span class="op">.</span><span class="fu">push</span>({x<span class="op">,</span> y})<span class="op">;</span></span>
+<span id="cb4-380"><a></a>    }</span>
+<span id="cb4-381"><a></a>    </span>
+<span id="cb4-382"><a></a>    <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb4-383"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width)</span>
+<span id="cb4-384"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
+<span id="cb4-385"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width<span class="op">,</span> height])<span class="op">;</span></span>
+<span id="cb4-386"><a></a>    </span>
+<span id="cb4-387"><a></a>    <span class="kw">const</span> xScale <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb4-388"><a></a>        <span class="op">.</span><span class="fu">domain</span>([xMin<span class="op">,</span> xMax])</span>
+<span id="cb4-389"><a></a>        <span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb4-390"><a></a>    </span>
+<span id="cb4-391"><a></a>    <span class="kw">const</span> yMax <span class="op">=</span> (<span class="dv">1</span> <span class="op">/</span> (sigma_empirical <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)))<span class="op">;</span></span>
+<span id="cb4-392"><a></a>    <span class="kw">const</span> yScale <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb4-393"><a></a>        <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> yMax <span class="op">*</span> <span class="fl">1.1</span>])</span>
+<span id="cb4-394"><a></a>        <span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb4-395"><a></a>    </span>
+<span id="cb4-396"><a></a>    <span class="co">// Helper function to create area</span></span>
+<span id="cb4-397"><a></a>    <span class="kw">const</span> createArea <span class="op">=</span> (sigma_mult<span class="op">,</span> color) <span class="kw">=&gt;</span> {</span>
+<span id="cb4-398"><a></a>        <span class="kw">const</span> areaData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> </span>
+<span id="cb4-399"><a></a>            d<span class="op">.</span><span class="at">x</span> <span class="op">&gt;=</span> mu_empirical <span class="op">-</span> sigma_mult <span class="op">*</span> sigma_empirical <span class="op">&amp;&amp;</span> </span>
+<span id="cb4-400"><a></a>            d<span class="op">.</span><span class="at">x</span> <span class="op">&lt;=</span> mu_empirical <span class="op">+</span> sigma_mult <span class="op">*</span> sigma_empirical</span>
+<span id="cb4-401"><a></a>        )<span class="op">;</span></span>
+<span id="cb4-402"><a></a>        </span>
+<span id="cb4-403"><a></a>        <span class="kw">const</span> area <span class="op">=</span> d3<span class="op">.</span><span class="fu">area</span>()</span>
+<span id="cb4-404"><a></a>            <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">xScale</span>(d<span class="op">.</span><span class="at">x</span>))</span>
+<span id="cb4-405"><a></a>            <span class="op">.</span><span class="fu">y0</span>(height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb4-406"><a></a>            <span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">yScale</span>(d<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb4-407"><a></a>        </span>
+<span id="cb4-408"><a></a>        svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb4-409"><a></a>            <span class="op">.</span><span class="fu">datum</span>(areaData)</span>
+<span id="cb4-410"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> color)</span>
+<span id="cb4-411"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"opacity"</span><span class="op">,</span> <span class="fl">0.3</span>)</span>
+<span id="cb4-412"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> area)<span class="op">;</span></span>
+<span id="cb4-413"><a></a>    }<span class="op">;</span></span>
+<span id="cb4-414"><a></a>    </span>
+<span id="cb4-415"><a></a>    <span class="co">// Draw shaded areas based on selected rule</span></span>
+<span id="cb4-416"><a></a>    <span class="cf">if</span> (ruleSelect <span class="op">===</span> <span class="dv">3</span> <span class="op">||</span> ruleSelect <span class="op">===</span> <span class="dv">4</span>) {</span>
+<span id="cb4-417"><a></a>        <span class="fu">createArea</span>(<span class="dv">3</span><span class="op">,</span> <span class="st">"#C73E1D"</span>)<span class="op">;</span></span>
+<span id="cb4-418"><a></a>    }</span>
+<span id="cb4-419"><a></a>    <span class="cf">if</span> (ruleSelect <span class="op">===</span> <span class="dv">2</span> <span class="op">||</span> ruleSelect <span class="op">===</span> <span class="dv">4</span>) {</span>
+<span id="cb4-420"><a></a>        <span class="fu">createArea</span>(<span class="dv">2</span><span class="op">,</span> <span class="st">"#F18F01"</span>)<span class="op">;</span></span>
+<span id="cb4-421"><a></a>    }</span>
+<span id="cb4-422"><a></a>    <span class="cf">if</span> (ruleSelect <span class="op">===</span> <span class="dv">1</span> <span class="op">||</span> ruleSelect <span class="op">===</span> <span class="dv">4</span>) {</span>
+<span id="cb4-423"><a></a>        <span class="fu">createArea</span>(<span class="dv">1</span><span class="op">,</span> <span class="st">"#A23B72"</span>)<span class="op">;</span></span>
+<span id="cb4-424"><a></a>    }</span>
+<span id="cb4-425"><a></a>    </span>
+<span id="cb4-426"><a></a>    <span class="co">// Draw main curve</span></span>
+<span id="cb4-427"><a></a>    <span class="kw">const</span> line <span class="op">=</span> d3<span class="op">.</span><span class="fu">line</span>()</span>
+<span id="cb4-428"><a></a>        <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">xScale</span>(d<span class="op">.</span><span class="at">x</span>))</span>
+<span id="cb4-429"><a></a>        <span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">yScale</span>(d<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb4-430"><a></a>    </span>
+<span id="cb4-431"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb4-432"><a></a>        <span class="op">.</span><span class="fu">datum</span>(data)</span>
+<span id="cb4-433"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)</span>
+<span id="cb4-434"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#2E86AB"</span>)</span>
+<span id="cb4-435"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="fl">2.5</span>)</span>
+<span id="cb4-436"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> line)<span class="op">;</span></span>
+<span id="cb4-437"><a></a>    </span>
+<span id="cb4-438"><a></a>    <span class="co">// Draw vertical lines</span></span>
+<span id="cb4-439"><a></a>    <span class="kw">const</span> drawVLine <span class="op">=</span> (x<span class="op">,</span> color<span class="op">,</span> dasharray <span class="op">=</span> <span class="st">"5,5"</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb4-440"><a></a>        svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
+<span id="cb4-441"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> <span class="fu">xScale</span>(x))</span>
+<span id="cb4-442"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> <span class="fu">xScale</span>(x))</span>
+<span id="cb4-443"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb4-444"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb4-445"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> color)</span>
+<span id="cb4-446"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb4-447"><a></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> dasharray)<span class="op">;</span></span>
+<span id="cb4-448"><a></a>    }<span class="op">;</span></span>
+<span id="cb4-449"><a></a>    </span>
+<span id="cb4-450"><a></a>    <span class="co">// Mean line</span></span>
+<span id="cb4-451"><a></a>    <span class="fu">drawVLine</span>(mu_empirical<span class="op">,</span> <span class="st">"red"</span><span class="op">,</span> <span class="st">"5,5"</span>)<span class="op">;</span></span>
+<span id="cb4-452"><a></a>    </span>
+<span id="cb4-453"><a></a>    <span class="co">// Standard deviation lines</span></span>
+<span id="cb4-454"><a></a>    <span class="cf">if</span> (ruleSelect <span class="op">===</span> <span class="dv">1</span> <span class="op">||</span> ruleSelect <span class="op">===</span> <span class="dv">4</span>) {</span>
+<span id="cb4-455"><a></a>        <span class="fu">drawVLine</span>(mu_empirical <span class="op">-</span> sigma_empirical<span class="op">,</span> <span class="st">"#A23B72"</span><span class="op">,</span> <span class="st">"3,3"</span>)<span class="op">;</span></span>
+<span id="cb4-456"><a></a>        <span class="fu">drawVLine</span>(mu_empirical <span class="op">+</span> sigma_empirical<span class="op">,</span> <span class="st">"#A23B72"</span><span class="op">,</span> <span class="st">"3,3"</span>)<span class="op">;</span></span>
+<span id="cb4-457"><a></a>    }</span>
+<span id="cb4-458"><a></a>    <span class="cf">if</span> (ruleSelect <span class="op">===</span> <span class="dv">2</span> <span class="op">||</span> ruleSelect <span class="op">===</span> <span class="dv">4</span>) {</span>
+<span id="cb4-459"><a></a>        <span class="fu">drawVLine</span>(mu_empirical <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> sigma_empirical<span class="op">,</span> <span class="st">"#F18F01"</span><span class="op">,</span> <span class="st">"3,3"</span>)<span class="op">;</span></span>
+<span id="cb4-460"><a></a>        <span class="fu">drawVLine</span>(mu_empirical <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> sigma_empirical<span class="op">,</span> <span class="st">"#F18F01"</span><span class="op">,</span> <span class="st">"3,3"</span>)<span class="op">;</span></span>
+<span id="cb4-461"><a></a>    }</span>
+<span id="cb4-462"><a></a>    <span class="cf">if</span> (ruleSelect <span class="op">===</span> <span class="dv">3</span> <span class="op">||</span> ruleSelect <span class="op">===</span> <span class="dv">4</span>) {</span>
+<span id="cb4-463"><a></a>        <span class="fu">drawVLine</span>(mu_empirical <span class="op">-</span> <span class="dv">3</span> <span class="op">*</span> sigma_empirical<span class="op">,</span> <span class="st">"#C73E1D"</span><span class="op">,</span> <span class="st">"3,3"</span>)<span class="op">;</span></span>
+<span id="cb4-464"><a></a>        <span class="fu">drawVLine</span>(mu_empirical <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> sigma_empirical<span class="op">,</span> <span class="st">"#C73E1D"</span><span class="op">,</span> <span class="st">"3,3"</span>)<span class="op">;</span></span>
+<span id="cb4-465"><a></a>    }</span>
+<span id="cb4-466"><a></a>    </span>
+<span id="cb4-467"><a></a>    <span class="co">// Axes</span></span>
+<span id="cb4-468"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb4-469"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
+<span id="cb4-470"><a></a>        <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(xScale)<span class="op">.</span><span class="fu">ticks</span>(<span class="dv">10</span>))</span>
+<span id="cb4-471"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"14px"</span>)<span class="op">;</span></span>
+<span id="cb4-472"><a></a>    </span>
+<span id="cb4-473"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb4-474"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
+<span id="cb4-475"><a></a>        <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(yScale)<span class="op">.</span><span class="fu">ticks</span>(<span class="dv">6</span>))</span>
+<span id="cb4-476"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"14px"</span>)<span class="op">;</span></span>
+<span id="cb4-477"><a></a>    </span>
+<span id="cb4-478"><a></a>    <span class="co">// Labels</span></span>
+<span id="cb4-479"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb4-480"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb4-481"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> height <span class="op">-</span> <span class="dv">10</span>)</span>
+<span id="cb4-482"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)</span>
+<span id="cb4-483"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"16px"</span>)</span>
+<span id="cb4-484"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)</span>
+<span id="cb4-485"><a></a>        <span class="op">.</span><span class="fu">text</span>(<span class="st">"Value"</span>)<span class="op">;</span></span>
+<span id="cb4-486"><a></a>    </span>
+<span id="cb4-487"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb4-488"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="st">"rotate(-90)"</span>)</span>
+<span id="cb4-489"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> <span class="op">-</span>height <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb4-490"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="dv">15</span>)</span>
+<span id="cb4-491"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)</span>
+<span id="cb4-492"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"16px"</span>)</span>
+<span id="cb4-493"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)</span>
+<span id="cb4-494"><a></a>        <span class="op">.</span><span class="fu">text</span>(<span class="st">"Density"</span>)<span class="op">;</span></span>
+<span id="cb4-495"><a></a>    </span>
+<span id="cb4-496"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb4-497"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb4-498"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> <span class="dv">25</span>)</span>
+<span id="cb4-499"><a></a>        <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)</span>
+<span id="cb4-500"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"18px"</span>)</span>
+<span id="cb4-501"><a></a>        <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)</span>
+<span id="cb4-502"><a></a>        <span class="op">.</span><span class="fu">text</span>(<span class="st">"Normal Distribution with Empirical Rule"</span>)<span class="op">;</span></span>
+<span id="cb4-503"><a></a>    </span>
+<span id="cb4-504"><a></a>    <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb4-505"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="layout-sidebar layout-sidebar-left">
+<div class="cell panel-sidebar">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="511" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 510;"><span id="cb5-511"><a></a><span class="fu">html</span><span class="vs">`&lt;hr&gt;&lt;h4&gt;Current Values:&lt;/h4&gt;`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="513" data-source-offset="-38"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 512;"><span id="cb6-513"><a></a><span class="fu">md</span><span class="vs">`</span><span class="sc">${</span></span>
+<span id="cb6-514"><a></a>    ruleSelect <span class="op">===</span> <span class="dv">1</span> <span class="op">?</span> <span class="vs">`**68% of data falls between </span><span class="sc">${</span>(mu_empirical <span class="op">-</span> sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs"> and </span><span class="sc">${</span>(mu_empirical <span class="op">+</span> sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">**`</span> <span class="op">:</span></span>
+<span id="cb6-515"><a></a>    ruleSelect <span class="op">===</span> <span class="dv">2</span> <span class="op">?</span> <span class="vs">`**95% of data falls between </span><span class="sc">${</span>(mu_empirical <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs"> and </span><span class="sc">${</span>(mu_empirical <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">**`</span> <span class="op">:</span></span>
+<span id="cb6-516"><a></a>    ruleSelect <span class="op">===</span> <span class="dv">3</span> <span class="op">?</span> <span class="vs">`**99.7% of data falls between </span><span class="sc">${</span>(mu_empirical <span class="op">-</span> <span class="dv">3</span><span class="op">*</span>sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs"> and </span><span class="sc">${</span>(mu_empirical <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">**`</span> <span class="op">:</span></span>
+<span id="cb6-517"><a></a>    <span class="vs">`**μ ± 1σ:** [</span><span class="sc">${</span>(mu_empirical <span class="op">-</span> sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>(mu_empirical <span class="op">+</span> sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">]</span></span>
+<span id="cb6-518"><a></a><span class="vs">    </span></span>
+<span id="cb6-519"><a></a><span class="vs">**μ ± 2σ:** [</span><span class="sc">${</span>(mu_empirical <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>(mu_empirical <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">]</span></span>
+<span id="cb6-520"><a></a></span>
+<span id="cb6-521"><a></a><span class="vs">**μ ± 3σ:** [</span><span class="sc">${</span>(mu_empirical <span class="op">-</span> <span class="dv">3</span><span class="op">*</span>sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">, </span><span class="sc">${</span>(mu_empirical <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>sigma_empirical)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">]`</span></span>
+<span id="cb6-522"><a></a><span class="sc">}</span><span class="vs">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="525" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 524;"><span id="cb7-525"><a></a><span class="fu">md</span><span class="vs">`</span><span class="sc">${</span></span>
+<span id="cb7-526"><a></a>    ruleSelect <span class="op">===</span> <span class="dv">1</span> <span class="op">?</span> <span class="vs">`**68% Rule:** Approximately 68% of all data values fall within ONE standard deviation of the mean (μ ± σ).`</span> <span class="op">:</span></span>
+<span id="cb7-527"><a></a>    ruleSelect <span class="op">===</span> <span class="dv">2</span> <span class="op">?</span> <span class="vs">`**95% Rule:** Approximately 95% of all data values fall within TWO standard deviations of the mean (μ ± 2σ).`</span> <span class="op">:</span></span>
+<span id="cb7-528"><a></a>    ruleSelect <span class="op">===</span> <span class="dv">3</span> <span class="op">?</span> <span class="vs">`**99.7% Rule:** Approximately 99.7% of all data values fall within THREE standard deviations of the mean (μ ± 3σ).`</span> <span class="op">:</span></span>
+<span id="cb7-529"><a></a>    <span class="vs">`**Complete Empirical Rule:** This shows all three rules simultaneously:</span></span>
+<span id="cb7-530"><a></a><span class="vs">- 68% within μ ± σ (purple)</span></span>
+<span id="cb7-531"><a></a><span class="vs">- 95% within μ ± 2σ (orange)  </span></span>
+<span id="cb7-532"><a></a><span class="vs">- 99.7% within μ ± 3σ (red)`</span></span>
+<span id="cb7-533"><a></a><span class="sc">}</span><span class="vs">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-6" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="the-empirical-rule-68-95-99.7-rule-1" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
 <h2>The Empirical Rule (68-95-99.7 Rule)</h2>
@@ -969,7 +1048,7 @@ f(x)=\frac{1}{\sigma\sqrt{2\pi}}
       });
     </script>
     <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gXCIuL2Jpbm9taWFsX3NpbS5qc1wiXHJcblxyXG4vLyBTYW1wbGUgU2l6ZVxyXG52aWV3b2Ygc2FtcGxlU2l6ZSA9IElucHV0cy5yYW5nZShbNTAsIDEwMDAwMF0sIHtcclxuICAgIGxhYmVsOiBcIlNpemVcIixcclxuICAgIHZhbHVlOiA1MCxcclxuICAgIHN0ZXA6IDEwXHJcbn0pXHJcblxyXG4vLyBOdW1iZXIgb2YgVHJpYWxzXHJcbnZpZXdvZiBuID0gSW5wdXRzLnJhbmdlKFsxLCAzMDBdLCB7XHJcbiAgICBsYWJlbDogXCIobilcIixcclxuICAgIHZhbHVlOiAxLFxyXG4gICAgc3RlcDogMVxyXG59KVxyXG5cclxuLy8gUHJvYmFiaWxpdHkgb2YgU3VjY2Vzc1xyXG52aWV3b2YgcCA9IElucHV0cy5yYW5nZShbMC4wMDEsIDAuOTk5XSwge1xyXG4gICAgbGFiZWw6IFwiKHApXCIsXHJcbiAgICB2YWx1ZTogMC41LFxyXG4gICAgc3RlcDogMC4wMDFcclxufSlcclxuXHJcbnBsb3RCaW5vbWlhbChzYW1wbGVTaXplLCBuLCBwKVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgbXUgPSBJbnB1dHMucmFuZ2UoWy03LCA3XSwge1xyXG4gICAgbGFiZWw6IFwiTWVhbiAozrwpXCIsXHJcbiAgICB2YWx1ZTogMCxcclxuICAgIHN0ZXA6IDAuMVxyXG59KVxyXG5cclxudmlld29mIHNpZ21hID0gSW5wdXRzLnJhbmdlKFswLjAwMSwgNV0sIHtcclxuICAgIGxhYmVsOiBcIlN0YW5kYXJkIERldmlhdGlvbiAoz4MpXCIsXHJcbiAgICB2YWx1ZTogMSxcclxuICAgIHN0ZXA6IDAuMDFcclxufSlcclxuXHJcbntcclxuICAgIGNvbnN0IHdpZHRoID0gODAwO1xyXG4gICAgY29uc3QgaGVpZ2h0ID0gNDAwO1xyXG4gICAgY29uc3QgbWFyZ2luID0ge3RvcDogMjAsIHJpZ2h0OiAzMCwgYm90dG9tOiA0MCwgbGVmdDogNTB9O1xyXG4gICAgXHJcbiAgICBjb25zdCB4TWluID0gLTEwO1xyXG4gICAgY29uc3QgeE1heCA9IDEwO1xyXG4gICAgXHJcbiAgICBjb25zdCBkYXRhID0gW107XHJcbiAgICBmb3IgKGxldCB4ID0geE1pbjsgeCA8PSB4TWF4OyB4ICs9IDAuMSkge1xyXG4gICAgICAgIGNvbnN0IHkgPSAoMSAvIChzaWdtYSAqIE1hdGguc3FydCgyICogTWF0aC5QSSkpKSAqIFxyXG4gICAgICAgICAgICAgICAgICBNYXRoLmV4cCgtMC41ICogTWF0aC5wb3coKHggLSBtdSkgLyBzaWdtYSwgMikpO1xyXG4gICAgICAgIGRhdGEucHVzaCh7eCwgeX0pO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICBjb25zdCBzdmcgPSBkMy5jcmVhdGUoXCJzdmdcIilcclxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoKVxyXG4gICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodClcclxuICAgICAgICAuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIHdpZHRoLCBoZWlnaHRdKTtcclxuICAgIFxyXG4gICAgY29uc3QgeFNjYWxlID0gZDMuc2NhbGVMaW5lYXIoKVxyXG4gICAgICAgIC5kb21haW4oW3hNaW4sIHhNYXhdKVxyXG4gICAgICAgIC5yYW5nZShbbWFyZ2luLmxlZnQsIHdpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XHJcbiAgICBcclxuICAgIGNvbnN0IHlTY2FsZSA9IGQzLnNjYWxlTGluZWFyKClcclxuICAgICAgICAuZG9tYWluKFswLCAwLjldKVxyXG4gICAgICAgIC5yYW5nZShbaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSwgbWFyZ2luLnRvcF0pO1xyXG4gICAgXHJcbiAgICBjb25zdCBsaW5lID0gZDMubGluZSgpXHJcbiAgICAgICAgLngoZCA9PiB4U2NhbGUoZC54KSlcclxuICAgICAgICAueShkID0+IHlTY2FsZShkLnkpKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcInBhdGhcIilcclxuICAgICAgICAuZGF0dW0oZGF0YSlcclxuICAgICAgICAuYXR0cihcImZpbGxcIiwgXCJub25lXCIpXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2VcIiwgXCIjNENBRjUwXCIpXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMi41KVxyXG4gICAgICAgIC5hdHRyKFwiZFwiLCBsaW5lKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcImdcIilcclxuICAgICAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKDAsJHtoZWlnaHQgLSBtYXJnaW4uYm90dG9tfSlgKVxyXG4gICAgICAgIC5jYWxsKGQzLmF4aXNCb3R0b20oeFNjYWxlKSk7XHJcbiAgICBcclxuICAgIHN2Zy5hcHBlbmQoXCJnXCIpXHJcbiAgICAgICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgke21hcmdpbi5sZWZ0fSwwKWApXHJcbiAgICAgICAgLmNhbGwoZDMuYXhpc0xlZnQoeVNjYWxlKSk7XHJcbiAgICBcclxuICAgIHN2Zy5hcHBlbmQoXCJsaW5lXCIpXHJcbiAgICAgICAgLmF0dHIoXCJ4MVwiLCB4U2NhbGUobXUpKVxyXG4gICAgICAgIC5hdHRyKFwieDJcIiwgeFNjYWxlKG11KSlcclxuICAgICAgICAuYXR0cihcInkxXCIsIG1hcmdpbi50b3ApXHJcbiAgICAgICAgLmF0dHIoXCJ5MlwiLCBoZWlnaHQgLSBtYXJnaW4uYm90dG9tKVxyXG4gICAgICAgIC5hdHRyKFwic3Ryb2tlXCIsIFwicmVkXCIpXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMilcclxuICAgICAgICAuYXR0cihcInN0cm9rZS1kYXNoYXJyYXlcIiwgXCI1LDVcIik7XHJcbiAgICBcclxuICAgIHJldHVybiBzdmcubm9kZSgpO1xyXG59XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2FtcGxlU2l6ZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCduJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3AnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnbXUnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2lnbWEnKSJ9XX0=
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHBsb3RCaW5vbWlhbCB9IGZyb20gXCIuL2Jpbm9taWFsX3NpbS5qc1wiXHJcblxyXG4vLyBTYW1wbGUgU2l6ZVxyXG52aWV3b2Ygc2FtcGxlU2l6ZSA9IElucHV0cy5yYW5nZShbNTAsIDEwMDAwMF0sIHtcclxuICAgIGxhYmVsOiBcIlNpemVcIixcclxuICAgIHZhbHVlOiA1MCxcclxuICAgIHN0ZXA6IDEwXHJcbn0pXHJcblxyXG4vLyBOdW1iZXIgb2YgVHJpYWxzXHJcbnZpZXdvZiBuID0gSW5wdXRzLnJhbmdlKFsxLCAzMDBdLCB7XHJcbiAgICBsYWJlbDogXCIobilcIixcclxuICAgIHZhbHVlOiAxLFxyXG4gICAgc3RlcDogMVxyXG59KVxyXG5cclxuLy8gUHJvYmFiaWxpdHkgb2YgU3VjY2Vzc1xyXG52aWV3b2YgcCA9IElucHV0cy5yYW5nZShbMC4wMDEsIDAuOTk5XSwge1xyXG4gICAgbGFiZWw6IFwiKHApXCIsXHJcbiAgICB2YWx1ZTogMC41LFxyXG4gICAgc3RlcDogMC4wMDFcclxufSlcclxuXHJcbnBsb3RCaW5vbWlhbChzYW1wbGVTaXplLCBuLCBwKVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgbXUgPSBJbnB1dHMucmFuZ2UoWy03LCA3XSwge1xyXG4gICAgbGFiZWw6IFwiTWVhbiAozrwpXCIsXHJcbiAgICB2YWx1ZTogMCxcclxuICAgIHN0ZXA6IDAuMVxyXG59KVxyXG5cclxudmlld29mIHNpZ21hID0gSW5wdXRzLnJhbmdlKFswLjAwMSwgNV0sIHtcclxuICAgIGxhYmVsOiBcIlN0YW5kYXJkIERldmlhdGlvbiAoz4MpXCIsXHJcbiAgICB2YWx1ZTogMSxcclxuICAgIHN0ZXA6IDAuMDFcclxufSlcclxuXHJcbntcclxuICAgIGNvbnN0IHdpZHRoID0gODAwO1xyXG4gICAgY29uc3QgaGVpZ2h0ID0gNDAwO1xyXG4gICAgY29uc3QgbWFyZ2luID0ge3RvcDogMjAsIHJpZ2h0OiAzMCwgYm90dG9tOiA0MCwgbGVmdDogNTB9O1xyXG4gICAgXHJcbiAgICBjb25zdCB4TWluID0gLTEwO1xyXG4gICAgY29uc3QgeE1heCA9IDEwO1xyXG4gICAgXHJcbiAgICBjb25zdCBkYXRhID0gW107XHJcbiAgICBmb3IgKGxldCB4ID0geE1pbjsgeCA8PSB4TWF4OyB4ICs9IDAuMSkge1xyXG4gICAgICAgIGNvbnN0IHkgPSAoMSAvIChzaWdtYSAqIE1hdGguc3FydCgyICogTWF0aC5QSSkpKSAqIFxyXG4gICAgICAgICAgICAgICAgICBNYXRoLmV4cCgtMC41ICogTWF0aC5wb3coKHggLSBtdSkgLyBzaWdtYSwgMikpO1xyXG4gICAgICAgIGRhdGEucHVzaCh7eCwgeX0pO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICBjb25zdCBzdmcgPSBkMy5jcmVhdGUoXCJzdmdcIilcclxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoKVxyXG4gICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodClcclxuICAgICAgICAuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIHdpZHRoLCBoZWlnaHRdKTtcclxuICAgIFxyXG4gICAgY29uc3QgeFNjYWxlID0gZDMuc2NhbGVMaW5lYXIoKVxyXG4gICAgICAgIC5kb21haW4oW3hNaW4sIHhNYXhdKVxyXG4gICAgICAgIC5yYW5nZShbbWFyZ2luLmxlZnQsIHdpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XHJcbiAgICBcclxuICAgIGNvbnN0IHlTY2FsZSA9IGQzLnNjYWxlTGluZWFyKClcclxuICAgICAgICAuZG9tYWluKFswLCAwLjldKVxyXG4gICAgICAgIC5yYW5nZShbaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSwgbWFyZ2luLnRvcF0pO1xyXG4gICAgXHJcbiAgICBjb25zdCBsaW5lID0gZDMubGluZSgpXHJcbiAgICAgICAgLngoZCA9PiB4U2NhbGUoZC54KSlcclxuICAgICAgICAueShkID0+IHlTY2FsZShkLnkpKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcInBhdGhcIilcclxuICAgICAgICAuZGF0dW0oZGF0YSlcclxuICAgICAgICAuYXR0cihcImZpbGxcIiwgXCJub25lXCIpXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2VcIiwgXCIjNENBRjUwXCIpXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMi41KVxyXG4gICAgICAgIC5hdHRyKFwiZFwiLCBsaW5lKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcImdcIilcclxuICAgICAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKDAsJHtoZWlnaHQgLSBtYXJnaW4uYm90dG9tfSlgKVxyXG4gICAgICAgIC5jYWxsKGQzLmF4aXNCb3R0b20oeFNjYWxlKSk7XHJcbiAgICBcclxuICAgIHN2Zy5hcHBlbmQoXCJnXCIpXHJcbiAgICAgICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgke21hcmdpbi5sZWZ0fSwwKWApXHJcbiAgICAgICAgLmNhbGwoZDMuYXhpc0xlZnQoeVNjYWxlKSk7XHJcbiAgICBcclxuICAgIHN2Zy5hcHBlbmQoXCJsaW5lXCIpXHJcbiAgICAgICAgLmF0dHIoXCJ4MVwiLCB4U2NhbGUobXUpKVxyXG4gICAgICAgIC5hdHRyKFwieDJcIiwgeFNjYWxlKG11KSlcclxuICAgICAgICAuYXR0cihcInkxXCIsIG1hcmdpbi50b3ApXHJcbiAgICAgICAgLmF0dHIoXCJ5MlwiLCBoZWlnaHQgLSBtYXJnaW4uYm90dG9tKVxyXG4gICAgICAgIC5hdHRyKFwic3Ryb2tlXCIsIFwicmVkXCIpXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMilcclxuICAgICAgICAuYXR0cihcInN0cm9rZS1kYXNoYXJyYXlcIiwgXCI1LDVcIik7XHJcbiAgICBcclxuICAgIHJldHVybiBzdmcubm9kZSgpO1xyXG59XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBtdV9lbXBpcmljYWwgPSBJbnB1dHMucmFuZ2UoWy0xMCwgMTBdLCB7XHJcbiAgICBsYWJlbDogXCJNZWFuICjOvClcIixcclxuICAgIHZhbHVlOiAwLFxyXG4gICAgc3RlcDogMC41XHJcbn0pXHJcblxyXG52aWV3b2Ygc2lnbWFfZW1waXJpY2FsID0gSW5wdXRzLnJhbmdlKFswLjUsIDVdLCB7XHJcbiAgICBsYWJlbDogXCJTdGFuZGFyZCBEZXZpYXRpb24gKM+DKVwiLFxyXG4gICAgdmFsdWU6IDEsXHJcbiAgICBzdGVwOiAwLjFcclxufSlcclxuXHJcbnZpZXdvZiBydWxlU2VsZWN0ID0gSW5wdXRzLnJhZGlvKFxyXG4gICAgbmV3IE1hcChbXHJcbiAgICAgICAgW1wiNjglIFJ1bGUgKMKxMc+DKVwiLCAxXSxcclxuICAgICAgICBbXCI5NSUgUnVsZSAowrEyz4MpXCIsIDJdLFxyXG4gICAgICAgIFtcIjk5LjclIFJ1bGUgKMKxM8+DKVwiLCAzXSxcclxuICAgICAgICBbXCJBbGwgUnVsZXNcIiwgNF1cclxuICAgIF0pLFxyXG4gICAge2xhYmVsOiBcIlNob3cgUnVsZTpcIiwgdmFsdWU6IDF9XHJcbilcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoie1xyXG4gICAgY29uc3Qgd2lkdGggPSA5MDA7XHJcbiAgICBjb25zdCBoZWlnaHQgPSA1MDA7XHJcbiAgICBjb25zdCBtYXJnaW4gPSB7dG9wOiA0MCwgcmlnaHQ6IDMwLCBib3R0b206IDYwLCBsZWZ0OiA2MH07XHJcbiAgICBcclxuICAgIGNvbnN0IHhNaW4gPSBtdV9lbXBpcmljYWwgLSA0ICogc2lnbWFfZW1waXJpY2FsO1xyXG4gICAgY29uc3QgeE1heCA9IG11X2VtcGlyaWNhbCArIDQgKiBzaWdtYV9lbXBpcmljYWw7XHJcbiAgICBcclxuICAgIC8vIEdlbmVyYXRlIG5vcm1hbCBkaXN0cmlidXRpb24gZGF0YVxyXG4gICAgY29uc3QgZGF0YSA9IFtdO1xyXG4gICAgZm9yIChsZXQgeCA9IHhNaW47IHggPD0geE1heDsgeCArPSAoeE1heCAtIHhNaW4pIC8gMTAwMCkge1xyXG4gICAgICAgIGNvbnN0IHkgPSAoMSAvIChzaWdtYV9lbXBpcmljYWwgKiBNYXRoLnNxcnQoMiAqIE1hdGguUEkpKSkgKiBcclxuICAgICAgICAgICAgICAgICAgTWF0aC5leHAoLTAuNSAqIE1hdGgucG93KCh4IC0gbXVfZW1waXJpY2FsKSAvIHNpZ21hX2VtcGlyaWNhbCwgMikpO1xyXG4gICAgICAgIGRhdGEucHVzaCh7eCwgeX0pO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICBjb25zdCBzdmcgPSBkMy5jcmVhdGUoXCJzdmdcIilcclxuICAgICAgICAuYXR0cihcIndpZHRoXCIsIHdpZHRoKVxyXG4gICAgICAgIC5hdHRyKFwiaGVpZ2h0XCIsIGhlaWdodClcclxuICAgICAgICAuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIHdpZHRoLCBoZWlnaHRdKTtcclxuICAgIFxyXG4gICAgY29uc3QgeFNjYWxlID0gZDMuc2NhbGVMaW5lYXIoKVxyXG4gICAgICAgIC5kb21haW4oW3hNaW4sIHhNYXhdKVxyXG4gICAgICAgIC5yYW5nZShbbWFyZ2luLmxlZnQsIHdpZHRoIC0gbWFyZ2luLnJpZ2h0XSk7XHJcbiAgICBcclxuICAgIGNvbnN0IHlNYXggPSAoMSAvIChzaWdtYV9lbXBpcmljYWwgKiBNYXRoLnNxcnQoMiAqIE1hdGguUEkpKSk7XHJcbiAgICBjb25zdCB5U2NhbGUgPSBkMy5zY2FsZUxpbmVhcigpXHJcbiAgICAgICAgLmRvbWFpbihbMCwgeU1heCAqIDEuMV0pXHJcbiAgICAgICAgLnJhbmdlKFtoZWlnaHQgLSBtYXJnaW4uYm90dG9tLCBtYXJnaW4udG9wXSk7XHJcbiAgICBcclxuICAgIC8vIEhlbHBlciBmdW5jdGlvbiB0byBjcmVhdGUgYXJlYVxyXG4gICAgY29uc3QgY3JlYXRlQXJlYSA9IChzaWdtYV9tdWx0LCBjb2xvcikgPT4ge1xyXG4gICAgICAgIGNvbnN0IGFyZWFEYXRhID0gZGF0YS5maWx0ZXIoZCA9PiBcclxuICAgICAgICAgICAgZC54ID49IG11X2VtcGlyaWNhbCAtIHNpZ21hX211bHQgKiBzaWdtYV9lbXBpcmljYWwgJiYgXHJcbiAgICAgICAgICAgIGQueCA8PSBtdV9lbXBpcmljYWwgKyBzaWdtYV9tdWx0ICogc2lnbWFfZW1waXJpY2FsXHJcbiAgICAgICAgKTtcclxuICAgICAgICBcclxuICAgICAgICBjb25zdCBhcmVhID0gZDMuYXJlYSgpXHJcbiAgICAgICAgICAgIC54KGQgPT4geFNjYWxlKGQueCkpXHJcbiAgICAgICAgICAgIC55MChoZWlnaHQgLSBtYXJnaW4uYm90dG9tKVxyXG4gICAgICAgICAgICAueTEoZCA9PiB5U2NhbGUoZC55KSk7XHJcbiAgICAgICAgXHJcbiAgICAgICAgc3ZnLmFwcGVuZChcInBhdGhcIilcclxuICAgICAgICAgICAgLmRhdHVtKGFyZWFEYXRhKVxyXG4gICAgICAgICAgICAuYXR0cihcImZpbGxcIiwgY29sb3IpXHJcbiAgICAgICAgICAgIC5hdHRyKFwib3BhY2l0eVwiLCAwLjMpXHJcbiAgICAgICAgICAgIC5hdHRyKFwiZFwiLCBhcmVhKTtcclxuICAgIH07XHJcbiAgICBcclxuICAgIC8vIERyYXcgc2hhZGVkIGFyZWFzIGJhc2VkIG9uIHNlbGVjdGVkIHJ1bGVcclxuICAgIGlmIChydWxlU2VsZWN0ID09PSAzIHx8IHJ1bGVTZWxlY3QgPT09IDQpIHtcclxuICAgICAgICBjcmVhdGVBcmVhKDMsIFwiI0M3M0UxRFwiKTtcclxuICAgIH1cclxuICAgIGlmIChydWxlU2VsZWN0ID09PSAyIHx8IHJ1bGVTZWxlY3QgPT09IDQpIHtcclxuICAgICAgICBjcmVhdGVBcmVhKDIsIFwiI0YxOEYwMVwiKTtcclxuICAgIH1cclxuICAgIGlmIChydWxlU2VsZWN0ID09PSAxIHx8IHJ1bGVTZWxlY3QgPT09IDQpIHtcclxuICAgICAgICBjcmVhdGVBcmVhKDEsIFwiI0EyM0I3MlwiKTtcclxuICAgIH1cclxuICAgIFxyXG4gICAgLy8gRHJhdyBtYWluIGN1cnZlXHJcbiAgICBjb25zdCBsaW5lID0gZDMubGluZSgpXHJcbiAgICAgICAgLngoZCA9PiB4U2NhbGUoZC54KSlcclxuICAgICAgICAueShkID0+IHlTY2FsZShkLnkpKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcInBhdGhcIilcclxuICAgICAgICAuZGF0dW0oZGF0YSlcclxuICAgICAgICAuYXR0cihcImZpbGxcIiwgXCJub25lXCIpXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2VcIiwgXCIjMkU4NkFCXCIpXHJcbiAgICAgICAgLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMi41KVxyXG4gICAgICAgIC5hdHRyKFwiZFwiLCBsaW5lKTtcclxuICAgIFxyXG4gICAgLy8gRHJhdyB2ZXJ0aWNhbCBsaW5lc1xyXG4gICAgY29uc3QgZHJhd1ZMaW5lID0gKHgsIGNvbG9yLCBkYXNoYXJyYXkgPSBcIjUsNVwiKSA9PiB7XHJcbiAgICAgICAgc3ZnLmFwcGVuZChcImxpbmVcIilcclxuICAgICAgICAgICAgLmF0dHIoXCJ4MVwiLCB4U2NhbGUoeCkpXHJcbiAgICAgICAgICAgIC5hdHRyKFwieDJcIiwgeFNjYWxlKHgpKVxyXG4gICAgICAgICAgICAuYXR0cihcInkxXCIsIG1hcmdpbi50b3ApXHJcbiAgICAgICAgICAgIC5hdHRyKFwieTJcIiwgaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSlcclxuICAgICAgICAgICAgLmF0dHIoXCJzdHJva2VcIiwgY29sb3IpXHJcbiAgICAgICAgICAgIC5hdHRyKFwic3Ryb2tlLXdpZHRoXCIsIDIpXHJcbiAgICAgICAgICAgIC5hdHRyKFwic3Ryb2tlLWRhc2hhcnJheVwiLCBkYXNoYXJyYXkpO1xyXG4gICAgfTtcclxuICAgIFxyXG4gICAgLy8gTWVhbiBsaW5lXHJcbiAgICBkcmF3VkxpbmUobXVfZW1waXJpY2FsLCBcInJlZFwiLCBcIjUsNVwiKTtcclxuICAgIFxyXG4gICAgLy8gU3RhbmRhcmQgZGV2aWF0aW9uIGxpbmVzXHJcbiAgICBpZiAocnVsZVNlbGVjdCA9PT0gMSB8fCBydWxlU2VsZWN0ID09PSA0KSB7XHJcbiAgICAgICAgZHJhd1ZMaW5lKG11X2VtcGlyaWNhbCAtIHNpZ21hX2VtcGlyaWNhbCwgXCIjQTIzQjcyXCIsIFwiMywzXCIpO1xyXG4gICAgICAgIGRyYXdWTGluZShtdV9lbXBpcmljYWwgKyBzaWdtYV9lbXBpcmljYWwsIFwiI0EyM0I3MlwiLCBcIjMsM1wiKTtcclxuICAgIH1cclxuICAgIGlmIChydWxlU2VsZWN0ID09PSAyIHx8IHJ1bGVTZWxlY3QgPT09IDQpIHtcclxuICAgICAgICBkcmF3VkxpbmUobXVfZW1waXJpY2FsIC0gMiAqIHNpZ21hX2VtcGlyaWNhbCwgXCIjRjE4RjAxXCIsIFwiMywzXCIpO1xyXG4gICAgICAgIGRyYXdWTGluZShtdV9lbXBpcmljYWwgKyAyICogc2lnbWFfZW1waXJpY2FsLCBcIiNGMThGMDFcIiwgXCIzLDNcIik7XHJcbiAgICB9XHJcbiAgICBpZiAocnVsZVNlbGVjdCA9PT0gMyB8fCBydWxlU2VsZWN0ID09PSA0KSB7XHJcbiAgICAgICAgZHJhd1ZMaW5lKG11X2VtcGlyaWNhbCAtIDMgKiBzaWdtYV9lbXBpcmljYWwsIFwiI0M3M0UxRFwiLCBcIjMsM1wiKTtcclxuICAgICAgICBkcmF3VkxpbmUobXVfZW1waXJpY2FsICsgMyAqIHNpZ21hX2VtcGlyaWNhbCwgXCIjQzczRTFEXCIsIFwiMywzXCIpO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICAvLyBBeGVzXHJcbiAgICBzdmcuYXBwZW5kKFwiZ1wiKVxyXG4gICAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2hlaWdodCAtIG1hcmdpbi5ib3R0b219KWApXHJcbiAgICAgICAgLmNhbGwoZDMuYXhpc0JvdHRvbSh4U2NhbGUpLnRpY2tzKDEwKSlcclxuICAgICAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIxNHB4XCIpO1xyXG4gICAgXHJcbiAgICBzdmcuYXBwZW5kKFwiZ1wiKVxyXG4gICAgICAgIC5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoJHttYXJnaW4ubGVmdH0sMClgKVxyXG4gICAgICAgIC5jYWxsKGQzLmF4aXNMZWZ0KHlTY2FsZSkudGlja3MoNikpXHJcbiAgICAgICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiMTRweFwiKTtcclxuICAgIFxyXG4gICAgLy8gTGFiZWxzXHJcbiAgICBzdmcuYXBwZW5kKFwidGV4dFwiKVxyXG4gICAgICAgIC5hdHRyKFwieFwiLCB3aWR0aCAvIDIpXHJcbiAgICAgICAgLmF0dHIoXCJ5XCIsIGhlaWdodCAtIDEwKVxyXG4gICAgICAgIC5hdHRyKFwidGV4dC1hbmNob3JcIiwgXCJtaWRkbGVcIilcclxuICAgICAgICAuc3R5bGUoXCJmb250LXNpemVcIiwgXCIxNnB4XCIpXHJcbiAgICAgICAgLnN0eWxlKFwiZm9udC13ZWlnaHRcIiwgXCJib2xkXCIpXHJcbiAgICAgICAgLnRleHQoXCJWYWx1ZVwiKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcInRleHRcIilcclxuICAgICAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBcInJvdGF0ZSgtOTApXCIpXHJcbiAgICAgICAgLmF0dHIoXCJ4XCIsIC1oZWlnaHQgLyAyKVxyXG4gICAgICAgIC5hdHRyKFwieVwiLCAxNSlcclxuICAgICAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpXHJcbiAgICAgICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiMTZweFwiKVxyXG4gICAgICAgIC5zdHlsZShcImZvbnQtd2VpZ2h0XCIsIFwiYm9sZFwiKVxyXG4gICAgICAgIC50ZXh0KFwiRGVuc2l0eVwiKTtcclxuICAgIFxyXG4gICAgc3ZnLmFwcGVuZChcInRleHRcIilcclxuICAgICAgICAuYXR0cihcInhcIiwgd2lkdGggLyAyKVxyXG4gICAgICAgIC5hdHRyKFwieVwiLCAyNSlcclxuICAgICAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpXHJcbiAgICAgICAgLnN0eWxlKFwiZm9udC1zaXplXCIsIFwiMThweFwiKVxyXG4gICAgICAgIC5zdHlsZShcImZvbnQtd2VpZ2h0XCIsIFwiYm9sZFwiKVxyXG4gICAgICAgIC50ZXh0KFwiTm9ybWFsIERpc3RyaWJ1dGlvbiB3aXRoIEVtcGlyaWNhbCBSdWxlXCIpO1xyXG4gICAgXHJcbiAgICByZXR1cm4gc3ZnLm5vZGUoKTtcclxufVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJodG1sYDxocj48aDQ+Q3VycmVudCBWYWx1ZXM6PC9oND5gXHJcblxyXG5tZGAke1xyXG4gICAgcnVsZVNlbGVjdCA9PT0gMSA/IGAqKjY4JSBvZiBkYXRhIGZhbGxzIGJldHdlZW4gJHsobXVfZW1waXJpY2FsIC0gc2lnbWFfZW1waXJpY2FsKS50b0ZpeGVkKDIpfSBhbmQgJHsobXVfZW1waXJpY2FsICsgc2lnbWFfZW1waXJpY2FsKS50b0ZpeGVkKDIpfSoqYCA6XHJcbiAgICBydWxlU2VsZWN0ID09PSAyID8gYCoqOTUlIG9mIGRhdGEgZmFsbHMgYmV0d2VlbiAkeyhtdV9lbXBpcmljYWwgLSAyKnNpZ21hX2VtcGlyaWNhbCkudG9GaXhlZCgyKX0gYW5kICR7KG11X2VtcGlyaWNhbCArIDIqc2lnbWFfZW1waXJpY2FsKS50b0ZpeGVkKDIpfSoqYCA6XHJcbiAgICBydWxlU2VsZWN0ID09PSAzID8gYCoqOTkuNyUgb2YgZGF0YSBmYWxscyBiZXR3ZWVuICR7KG11X2VtcGlyaWNhbCAtIDMqc2lnbWFfZW1waXJpY2FsKS50b0ZpeGVkKDIpfSBhbmQgJHsobXVfZW1waXJpY2FsICsgMypzaWdtYV9lbXBpcmljYWwpLnRvRml4ZWQoMil9KipgIDpcclxuICAgIGAqKs68IMKxIDHPgzoqKiBbJHsobXVfZW1waXJpY2FsIC0gc2lnbWFfZW1waXJpY2FsKS50b0ZpeGVkKDIpfSwgJHsobXVfZW1waXJpY2FsICsgc2lnbWFfZW1waXJpY2FsKS50b0ZpeGVkKDIpfV1cclxuICAgIFxyXG4qKs68IMKxIDLPgzoqKiBbJHsobXVfZW1waXJpY2FsIC0gMipzaWdtYV9lbXBpcmljYWwpLnRvRml4ZWQoMil9LCAkeyhtdV9lbXBpcmljYWwgKyAyKnNpZ21hX2VtcGlyaWNhbCkudG9GaXhlZCgyKX1dXHJcblxyXG4qKs68IMKxIDPPgzoqKiBbJHsobXVfZW1waXJpY2FsIC0gMypzaWdtYV9lbXBpcmljYWwpLnRvRml4ZWQoMil9LCAkeyhtdV9lbXBpcmljYWwgKyAzKnNpZ21hX2VtcGlyaWNhbCkudG9GaXhlZCgyKX1dYFxyXG59YFxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtZGAke1xyXG4gICAgcnVsZVNlbGVjdCA9PT0gMSA/IGAqKjY4JSBSdWxlOioqIEFwcHJveGltYXRlbHkgNjglIG9mIGFsbCBkYXRhIHZhbHVlcyBmYWxsIHdpdGhpbiBPTkUgc3RhbmRhcmQgZGV2aWF0aW9uIG9mIHRoZSBtZWFuICjOvCDCsSDPgykuYCA6XHJcbiAgICBydWxlU2VsZWN0ID09PSAyID8gYCoqOTUlIFJ1bGU6KiogQXBwcm94aW1hdGVseSA5NSUgb2YgYWxsIGRhdGEgdmFsdWVzIGZhbGwgd2l0aGluIFRXTyBzdGFuZGFyZCBkZXZpYXRpb25zIG9mIHRoZSBtZWFuICjOvCDCsSAyz4MpLmAgOlxyXG4gICAgcnVsZVNlbGVjdCA9PT0gMyA/IGAqKjk5LjclIFJ1bGU6KiogQXBwcm94aW1hdGVseSA5OS43JSBvZiBhbGwgZGF0YSB2YWx1ZXMgZmFsbCB3aXRoaW4gVEhSRUUgc3RhbmRhcmQgZGV2aWF0aW9ucyBvZiB0aGUgbWVhbiAozrwgwrEgM8+DKS5gIDpcclxuICAgIGAqKkNvbXBsZXRlIEVtcGlyaWNhbCBSdWxlOioqIFRoaXMgc2hvd3MgYWxsIHRocmVlIHJ1bGVzIHNpbXVsdGFuZW91c2x5OlxyXG4tIDY4JSB3aXRoaW4gzrwgwrEgz4MgKHB1cnBsZSlcclxuLSA5NSUgd2l0aGluIM68IMKxIDLPgyAob3JhbmdlKSAgXHJcbi0gOTkuNyUgd2l0aGluIM68IMKxIDPPgyAocmVkKWBcclxufWBcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzYW1wbGVTaXplJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ24nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtdScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzaWdtYScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtdV9lbXBpcmljYWwnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2lnbWFfZW1waXJpY2FsJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3J1bGVTZWxlY3QnKSJ9XX0=
     </script>
     <script type="module">
     if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
