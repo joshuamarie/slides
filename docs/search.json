@@ -445,14 +445,14 @@
     "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-2",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Normal distribution",
-    "text": "Normal distribution\nIt has its own closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]"
+    "text": "Normal distribution\nIt has its own closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function.\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “x follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
     "href": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Characteristics of the normal distribution",
-    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis\n\n\nMathematical Properties\n\nMean = Median = Mode\nTotal area = 1 (100%)\nDetermined by two parameters:\n\n\\(\\mu\\) (mean): location\n\\(\\sigma\\) (standard deviation): spread"
+    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis"
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-3",
@@ -480,7 +480,7 @@
     "href": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule",
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "The Empirical Rule (68-95-99.7 Rule)",
-    "text": "The Empirical Rule (68-95-99.7 Rule)"
+    "text": "The Empirical Rule (68-95-99.7 Rule)\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 800\n#| components: [viewer]\nbox::use(\n    shiny[\n        sliderInput, radioButtons, hr, h4, textOutput, \n        plotOutput, uiOutput, renderPlot, renderText, \n        renderUI, shinyApp, HTML\n    ],\n    ggplot2[\n        ggplot, aes, geom_line, geom_area, geom_vline, \n        theme_minimal, labs, \n        theme, element_text, linewidth\n    ],\n    bslib[page_sidebar, sidebar, card, card_header],\n    stats[dnorm]\n)\n\nui = page_sidebar(\n    title = \"Empirical Rule Interactive Visualization\",\n    sidebar = sidebar(\n        sliderInput(\n            \"mean_val\", \"Mean (μ):\", \n            min = -10, max = 10, value = 0, step = 0.5\n        ),\n        sliderInput(\n            \"sd_val\", \"Standard Deviation (σ):\", \n            min = 0.5, max = 5, value = 1, step = 0.1\n        ),\n        radioButtons(\n            \"rule_select\", \"Show Rule:\",\n            choices = list(\n                \"68% Rule (±1σ)\" = 1,\n                \"95% Rule (±2σ)\" = 2,\n                \"99.7% Rule (±3σ)\" = 3,\n                \"All Rules\" = 4\n            ),\n            selected = 1\n        ),\n        hr(),\n        h4(\"Current Values:\"),\n        textOutput(\"range_text\")\n    ),\n    card(\n        card_header(\"Normal Distribution Visualization\"),\n        plotOutput(\"normal_plot\", height = \"400px\")\n    ),\n    card(\n        card_header(\"Explanation\"),\n        uiOutput(\"explanation\")\n    )\n)\n\nserver = function(input, output, session) {\n    output$normal_plot = renderPlot({\n        mu = input$mean_val\n        sigma = input$sd_val\n        rule = as.numeric(input$rule_select)\n        \n        x = seq(mu - 4 * sigma, mu + 4 * sigma, length.out = 1000)\n        y = dnorm(x, mean = mu, sd = sigma)\n        \n        df = data.frame(x = x, y = y)\n        \n        p = ggplot(df, aes(x = x, y = y)) +\n            geom_line(color = \"#2E86AB\", linewidth = 1.5) +\n            theme_minimal(base_size = 16) +\n            labs(x = \"Value\", y = \"Density\", \n                 title = \"Normal Distribution with Empirical Rule\") +\n            theme(plot.title = element_text(hjust = 0.5, face = \"bold\"))\n        \n        if (rule == 1 || rule == 4) {\n            p = p + geom_area(data = subset(df, x &gt;= mu - sigma & x &lt;= mu + sigma),\n                              aes(x = x, y = y), fill = \"#A23B72\", alpha = 0.4)\n        }\n        \n        if (rule == 2 || rule == 4) {\n            p = p + geom_area(data = subset(df, x &gt;= mu - 2*sigma & x &lt;= mu + 2*sigma),\n                              aes(x = x, y = y), fill = \"#F18F01\", alpha = 0.3)\n        }\n        \n        if (rule == 3 || rule == 4) {\n            p = p + geom_area(data = subset(df, x &gt;= mu - 3*sigma & x &lt;= mu + 3*sigma),\n                              aes(x = x, y = y), fill = \"#C73E1D\", alpha = 0.2)\n        }\n        \n        p = p + geom_vline(xintercept = mu, linetype = \"dashed\", \n                           color = \"red\", linewidth = 1)\n        \n        if (rule == 1 || rule == 4) {\n            p = p + geom_vline(xintercept = c(mu - sigma, mu + sigma), \n                               linetype = \"dotted\", color = \"#A23B72\", linewidth = 1)\n        }\n        if (rule == 2 || rule == 4) {\n            p = p + geom_vline(xintercept = c(mu - 2*sigma, mu + 2*sigma), \n                               linetype = \"dotted\", color = \"#F18F01\", linewidth = 1)\n        }\n        if (rule == 3 || rule == 4) {\n            p = p + geom_vline(xintercept = c(mu - 3*sigma, mu + 3*sigma), \n                               linetype = \"dotted\", color = \"#C73E1D\", linewidth = 1)\n        }\n        \n        p\n    })\n    \n    output$range_text = renderText({\n        mu = input$mean_val\n        sigma = input$sd_val\n        rule = as.numeric(input$rule_select)\n        \n        if (rule == 1) {\n            paste0(\"68% of data falls between \", \n                   round(mu - sigma, 2), \" and \", round(mu + sigma, 2))\n        } else if (rule == 2) {\n            paste0(\"95% of data falls between \", \n                   round(mu - 2*sigma, 2), \" and \", round(mu + 2*sigma, 2))\n        } else if (rule == 3) {\n            paste0(\"99.7% of data falls between \", \n                   round(mu - 3*sigma, 2), \" and \", round(mu + 3*sigma, 2))\n        } else {\n            paste0(\"μ ± 1σ: [\", round(mu - sigma, 2), \", \", round(mu + sigma, 2), \"]\\n\",\n                   \"μ ± 2σ: [\", round(mu - 2*sigma, 2), \", \", round(mu + 2*sigma, 2), \"]\\n\",\n                   \"μ ± 3σ: [\", round(mu - 3*sigma, 2), \", \", round(mu + 3*sigma, 2), \"]\")\n        }\n    })\n    \n    output$explanation = renderUI({\n        rule = as.numeric(input$rule_select)\n        \n        if (rule == 1) {\n            HTML(\"&lt;p&gt;&lt;b&gt;68% Rule:&lt;/b&gt; Approximately 68% of all data values fall within \n           ONE standard deviation of the mean (μ ± σ).&lt;/p&gt;\")\n        } else if (rule == 2) {\n            HTML(\"&lt;p&gt;&lt;b&gt;95% Rule:&lt;/b&gt; Approximately 95% of all data values fall within \n           TWO standard deviations of the mean (μ ± 2σ).&lt;/p&gt;\")\n        } else if (rule == 3) {\n            HTML(\"&lt;p&gt;&lt;b&gt;99.7% Rule:&lt;/b&gt; Approximately 99.7% of all data values fall within \n           THREE standard deviations of the mean (μ ± 3σ).&lt;/p&gt;\")\n        } else {\n            HTML(\"&lt;p&gt;&lt;b&gt;Complete Empirical Rule:&lt;/b&gt; This shows all three rules simultaneously:\n           &lt;ul&gt;\n           &lt;li&gt;68% within μ ± σ (purple)&lt;/li&gt;\n           &lt;li&gt;95% within μ ± 2σ (orange)&lt;/li&gt;\n           &lt;li&gt;99.7% within μ ± 3σ (red)&lt;/li&gt;\n           &lt;/ul&gt;&lt;/p&gt;\")\n        }\n    })\n}\n\nshinyApp(ui = ui, server = server)"
   },
   {
     "objectID": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution-z-distribution",
@@ -488,5 +488,47 @@
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Standard Normal Distribution (Z-Distribution)",
     "text": "Standard Normal Distribution (Z-Distribution)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Characteristics of the normal distribution",
+    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis\n\n\nMathematical Properties\n\nMean = Median = Mode\nTotal area = 1 (100%)\nDetermined by two parameters:\n\n\\(\\mu\\) (mean): location\n\\(\\sigma\\) (standard deviation): spread"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\nThe standard normal distribution is a special case where:\n\nMean \\(\\mu = 0\\)\nStandard deviation \\(\\sigma = 1\\)\n\nMost textbooks denotes the random variable \\(Z\\) of the standard normal distribution as \\(Z \\sim \\mathcal{N}(0, 1)\\)\n\nWe can scale down \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) to \\(Z \\sim \\mathcal{N}(0, 1)\\). We called it “standardization”."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#the-importance-of-z-scores",
+    "href": "slides/stats-probability-g11-pt2/index.html#the-importance-of-z-scores",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "The importance of z-scores",
+    "text": "The importance of z-scores\n\n\nCompare different distributions\nIt is much easier to compare different distribution (still normal) on the same scale\n\nDealing with probabilities\nAlthough we have softwares for us to calculate such probabilities, interpreting probabilities under z-score scale is much easier.\n\nIdentify outliers\nStandardization has a huge advantage to the application of outlier identification."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "The Empirical Rule (68-95-99.7 Rule)",
+    "text": "The Empirical Rule (68-95-99.7 Rule)\nThe Empirical Rule (also called the 68-95-99.7 Rule) tells us what percentage of data falls within certain distances from the mean in a normal distribution.\n\n\n68% Rule\nApproximately 68% of data falls within 1 standard deviation of the mean:\n\\[\\mu - \\sigma \\leq X \\leq \\mu + \\sigma\\]\n\n95% Rule\nApproximately 95% of data falls within 2 standard deviations of the mean:\n\\[\\mu - 2\\sigma \\leq X \\leq \\mu + 2\\sigma\\]\n\n99.7% Rule\nApproximately 99.7% of data falls within 3 standard deviations of the mean:\n\\[\\mu - 3\\sigma \\leq X \\leq \\mu + 3\\sigma\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#practice-problem",
+    "href": "slides/stats-probability-g11-pt2/index.html#practice-problem",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Practice Problem",
+    "text": "Practice Problem"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#assignment",
+    "href": "slides/stats-probability-g11-pt2/index.html#assignment",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Assignment",
+    "text": "Assignment\nOpen the link"
   }
 ]

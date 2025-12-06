@@ -1,5 +1,6 @@
 ---
 title: "Statistics and Probability for 11th Graders — Part 2"
+subtitle: "Probability distribution (continuation)"
 date: 2025-12-05
 categories: [statistics, probability]
 image: 'image-thumb.png'
@@ -8,6 +9,7 @@ format:
         transition: slide
         transition-speed: default
         background-transition: fade
+        embed-resources: false
         
         title-slide-attributes:
             data-background-image: "image-main.png"
@@ -31,6 +33,9 @@ format:
             
         quiz:
             resetKey: 'q'
+
+filters:
+  - shinylive
 
 revealjs-plugins:
   - quiz
@@ -163,6 +168,14 @@ f(x)=\frac{1}{\sigma\sqrt{2\pi}}
 \exp\!\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
 $$
 
+::: {.fragment .fade-in}
+The $f(x)$ there refers to the density function. 
+:::
+
+::: {.fragment .fade-in}
+The random variable for this distribution $X \sim \mathcal{N}(\mu, \sigma)$ (reads as "x follows the normal distribution with parameters mean $\mu$ and standard deviation $\sigma$"). 
+:::
+
 ## Visualization of the normal distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
 
 ```{ojs}
@@ -256,6 +269,21 @@ As you adjust $\mu$ and $\sigma$, notice how the curve shifts and spreads!
 4.  **Horizontally Asymptotic** Never touches the horizontal axis
 
 ::::
+:::::
+
+## Characteristics of the normal distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
+
+::::: {.columns}
+:::: {.column width="50%"}
+
+### Visual Properties
+
+1.  **Bell-shaped** with highest peak at center
+2.  **Symmetrical** about the mean
+3.  **Continuous** on both sides
+4.  **Horizontally Asymptotic** Never touches the horizontal axis
+
+::::
 
 :::: {.column width="50%"}
 
@@ -270,7 +298,230 @@ As you adjust $\mu$ and $\sigma$, notice how the curve shifts and spreads!
 ::::
 :::::
 
+## Standard Normal Distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+The **standard normal distribution** is a special case where:
+
+- Mean $\mu = 0$
+- Standard deviation $\sigma = 1$
+
+Most textbooks denotes the random variable $Z$ of the **standard normal distribution** as $Z \sim \mathcal{N}(0, 1)$
+
+::: {.fragment .fade-in}
+We can scale down $X \sim \mathcal{N}(\mu, \sigma)$ to $Z \sim \mathcal{N}(0, 1)$. We called it "**standardization**". 
+:::
+
+## The importance of z-scores {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+
+:::: columns
+
+::: {.column width="25%"} 
+### Compare different distributions
+
+It is much easier to compare different distribution (still normal) on the same scale
+:::
+
+::: {.column width="25%"}
+### Dealing with probabilities
+
+Although we have softwares for us to calculate such probabilities, interpreting probabilities under z-score scale is much easier. 
+:::
+
+::: {.column width="50%"}
+### Identify outliers
+
+**Standardization** has a huge advantage to the application of outlier identification. 
+:::
+
+::::
+
 ## The Empirical Rule (68-95-99.7 Rule) {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-## Standard Normal Distribution (Z-Distribution) {background-image="image-main.png" transition="fade" transition-speed="fast"}
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 800
+#| components: [viewer]
+box::use(
+    shiny[
+        sliderInput, radioButtons, hr, h4, textOutput, 
+        plotOutput, uiOutput, renderPlot, renderText, 
+        renderUI, shinyApp, HTML
+    ],
+    ggplot2[
+        ggplot, aes, geom_line, geom_area, geom_vline, 
+        theme_minimal, labs, 
+        theme, element_text, linewidth
+    ],
+    bslib[page_sidebar, sidebar, card, card_header],
+    stats[dnorm]
+)
+
+ui = page_sidebar(
+    title = "Empirical Rule Interactive Visualization",
+    sidebar = sidebar(
+        sliderInput(
+            "mean_val", "Mean (μ):", 
+            min = -10, max = 10, value = 0, step = 0.5
+        ),
+        sliderInput(
+            "sd_val", "Standard Deviation (σ):", 
+            min = 0.5, max = 5, value = 1, step = 0.1
+        ),
+        radioButtons(
+            "rule_select", "Show Rule:",
+            choices = list(
+                "68% Rule (±1σ)" = 1,
+                "95% Rule (±2σ)" = 2,
+                "99.7% Rule (±3σ)" = 3,
+                "All Rules" = 4
+            ),
+            selected = 1
+        ),
+        hr(),
+        h4("Current Values:"),
+        textOutput("range_text")
+    ),
+    card(
+        card_header("Normal Distribution Visualization"),
+        plotOutput("normal_plot", height = "400px")
+    ),
+    card(
+        card_header("Explanation"),
+        uiOutput("explanation")
+    )
+)
+
+server = function(input, output, session) {
+    output$normal_plot = renderPlot({
+        mu = input$mean_val
+        sigma = input$sd_val
+        rule = as.numeric(input$rule_select)
+        
+        x = seq(mu - 4 * sigma, mu + 4 * sigma, length.out = 1000)
+        y = dnorm(x, mean = mu, sd = sigma)
+        
+        df = data.frame(x = x, y = y)
+        
+        p = ggplot(df, aes(x = x, y = y)) +
+            geom_line(color = "#2E86AB", linewidth = 1.5) +
+            theme_minimal(base_size = 16) +
+            labs(x = "Value", y = "Density", 
+                 title = "Normal Distribution with Empirical Rule") +
+            theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+        
+        if (rule == 1 || rule == 4) {
+            p = p + geom_area(data = subset(df, x >= mu - sigma & x <= mu + sigma),
+                              aes(x = x, y = y), fill = "#A23B72", alpha = 0.4)
+        }
+        
+        if (rule == 2 || rule == 4) {
+            p = p + geom_area(data = subset(df, x >= mu - 2*sigma & x <= mu + 2*sigma),
+                              aes(x = x, y = y), fill = "#F18F01", alpha = 0.3)
+        }
+        
+        if (rule == 3 || rule == 4) {
+            p = p + geom_area(data = subset(df, x >= mu - 3*sigma & x <= mu + 3*sigma),
+                              aes(x = x, y = y), fill = "#C73E1D", alpha = 0.2)
+        }
+        
+        p = p + geom_vline(xintercept = mu, linetype = "dashed", 
+                           color = "red", linewidth = 1)
+        
+        if (rule == 1 || rule == 4) {
+            p = p + geom_vline(xintercept = c(mu - sigma, mu + sigma), 
+                               linetype = "dotted", color = "#A23B72", linewidth = 1)
+        }
+        if (rule == 2 || rule == 4) {
+            p = p + geom_vline(xintercept = c(mu - 2*sigma, mu + 2*sigma), 
+                               linetype = "dotted", color = "#F18F01", linewidth = 1)
+        }
+        if (rule == 3 || rule == 4) {
+            p = p + geom_vline(xintercept = c(mu - 3*sigma, mu + 3*sigma), 
+                               linetype = "dotted", color = "#C73E1D", linewidth = 1)
+        }
+        
+        p
+    })
+    
+    output$range_text = renderText({
+        mu = input$mean_val
+        sigma = input$sd_val
+        rule = as.numeric(input$rule_select)
+        
+        if (rule == 1) {
+            paste0("68% of data falls between ", 
+                   round(mu - sigma, 2), " and ", round(mu + sigma, 2))
+        } else if (rule == 2) {
+            paste0("95% of data falls between ", 
+                   round(mu - 2*sigma, 2), " and ", round(mu + 2*sigma, 2))
+        } else if (rule == 3) {
+            paste0("99.7% of data falls between ", 
+                   round(mu - 3*sigma, 2), " and ", round(mu + 3*sigma, 2))
+        } else {
+            paste0("μ ± 1σ: [", round(mu - sigma, 2), ", ", round(mu + sigma, 2), "]\n",
+                   "μ ± 2σ: [", round(mu - 2*sigma, 2), ", ", round(mu + 2*sigma, 2), "]\n",
+                   "μ ± 3σ: [", round(mu - 3*sigma, 2), ", ", round(mu + 3*sigma, 2), "]")
+        }
+    })
+    
+    output$explanation = renderUI({
+        rule = as.numeric(input$rule_select)
+        
+        if (rule == 1) {
+            HTML("<p><b>68% Rule:</b> Approximately 68% of all data values fall within 
+           ONE standard deviation of the mean (μ ± σ).</p>")
+        } else if (rule == 2) {
+            HTML("<p><b>95% Rule:</b> Approximately 95% of all data values fall within 
+           TWO standard deviations of the mean (μ ± 2σ).</p>")
+        } else if (rule == 3) {
+            HTML("<p><b>99.7% Rule:</b> Approximately 99.7% of all data values fall within 
+           THREE standard deviations of the mean (μ ± 3σ).</p>")
+        } else {
+            HTML("<p><b>Complete Empirical Rule:</b> This shows all three rules simultaneously:
+           <ul>
+           <li>68% within μ ± σ (purple)</li>
+           <li>95% within μ ± 2σ (orange)</li>
+           <li>99.7% within μ ± 3σ (red)</li>
+           </ul></p>")
+        }
+    })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+## The Empirical Rule (68-95-99.7 Rule) {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+The **Empirical Rule** (also called the **68-95-99.7 Rule**) tells us what percentage of data falls within certain distances from the mean in a normal distribution.
+
+::::: {.columns}
+
+:::: {.column width="33%"}
+### 68% Rule
+Approximately **68%** of data falls within **1 standard deviation** of the mean:
+
+$$\mu - \sigma \leq X \leq \mu + \sigma$$
+::::
+
+:::: {.column width="33%"}
+### 95% Rule
+Approximately **95%** of data falls within **2 standard deviations** of the mean:
+
+$$\mu - 2\sigma \leq X \leq \mu + 2\sigma$$
+::::
+
+:::: {.column width="33%"}
+### 99.7% Rule
+Approximately **99.7%** of data falls within **3 standard deviations** of the mean:
+
+$$\mu - 3\sigma \leq X \leq \mu + 3\sigma$$
+::::
+
+:::::
+
+## Practice Problem {background-image="image-main.png" .scrollable}
+
+## Assignment {background-image="image-main.png" .scrollable}
+
+Open the link 
 
