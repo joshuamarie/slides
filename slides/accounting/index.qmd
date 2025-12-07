@@ -1,0 +1,204 @@
+---
+title: "Fundamentals of Accounting"
+subtitle: "The Accounting Concepts and Principles"
+format:
+  revealjs:
+    theme: default
+    transition: slide
+    slide-number: true
+    width: 1600
+    height: 900
+    css: styles.css
+---
+
+# Introduction {transition="zoom"}
+
+## Objectives {transition="fade" transition-speed="fast"}
+
+::: {.incremental}
+- Define accounting
+- Identify generally accepted accounting principles
+- Cite examples of accounting concepts and principles
+- Solve exercises on accounting principles
+:::
+
+## What is Accounting? {auto-animate="true"}
+
+::: {.framework-box}
+::: {.framework-item}
+**I**dentifying
+:::
+::: {.framework-item}
+**R**ecording
+:::
+::: {.framework-item}
+**C**ommunicating
+:::
+:::
+
+# Fundamental Concepts {transition="convex"}
+
+## Business Entity Concept {transition="fade" transition-speed="fast"}
+
+::: {.concept-card}
+Business is separate from owner
+
+::: {.example-box}
+**Example:** Owner's personal expenses ≠ Business expenses
+:::
+:::
+
+## Going Concern Concept {transition="fade" transition-speed="fast"}
+
+::: {.concept-card}
+Business continues indefinitely
+
+::: {.example-box}
+**Example:** Asset depreciation spread over useful life
+:::
+:::
+
+## Periodicity {transition="fade" transition-speed="fast"}
+
+::: {.concept-card}
+Financial statements in equal time intervals
+
+- **Calendar Year:** Jan 1 - Dec 31
+- **Fiscal Year:** Any 12-month period
+:::
+
+## Monetary Unit Concept {transition="fade" transition-speed="fast"}
+
+::: {.concept-card}
+All transactions in peso terms
+
+::: {.example-box}
+**Example:** Hiring employees not recorded (no monetary value)
+:::
+:::
+
+## Accrual Basis Concept {transition="fade" transition-speed="fast"}
+
+::: {.concept-card}
+- Revenue: recognized when <span class="highlight">earned</span>
+- Expenses: recognized when <span class="highlight">incurred</span>
+
+::: {.example-box}
+**Example:** Services rendered = revenue (even if unpaid)
+:::
+:::
+
+# Basic Principles {transition="convex"}
+
+## The Six Principles {transition="fade" transition-speed="fast"}
+
+::: {.principle-grid}
+::: {.principle-item}
+**Objectivity**
+Supported by evidence
+:::
+::: {.principle-item}
+**Cost**
+Original acquisition cost
+:::
+::: {.principle-item}
+**Full Disclosure**
+All relevant information
+:::
+::: {.principle-item}
+**Matching**
+Costs match revenues
+:::
+::: {.principle-item}
+**Consistency**
+Uniform approaches
+:::
+::: {.principle-item}
+**Materiality**
+Focus on important info
+:::
+:::
+
+# Application {transition="convex"}
+
+## Case 1: Business Entity {transition="fade" transition-speed="fast"}
+
+**Mrs. Labandera's expenses:**
+
+| Item | Amount | Include? |
+|------|--------|----------|
+| Health Insurance | ₱15,000 | No |
+| Rent Expense | ₱35,000 | Yes |
+| Home Utilities | ₱8,000 | No |
+| Store Utilities | ₱12,000 | Yes |
+| Withdrawal | ₱30,000 | No |
+
+<div style="margin-top: 30px; font-size: 1.5em; color: #27ae60; font-weight: 700;">
+Total Business Expenses: ₱47,000
+</div>
+
+## Case 2: Accrual & Matching {transition="fade" transition-speed="fast"}
+
+::: {.concept-card}
+**Ocean Deep Resort:**
+
+- Received ₱150,000 advance payment
+- When recognize revenue? <span class="highlight">When service rendered</span>
+- When recognize expenses? <span class="highlight">Match with revenue period</span>
+:::
+
+# Exercise
+
+## Problem {transition="fade" transition-speed="fast"}
+
+::: {.concept-card}
+**Mr. Castro's A&Z Aquatic Fishes - February 2021**
+
+Revenue: ₱150,000 | Recorded expenses: ₱100,000
+:::
+
+| Expense | Amount |
+|---------|--------|
+| Aircon Repair (residence) | ₱12,000 |
+| Life Insurance | ₱15,000 |
+| Rent Expense | ₱20,000 |
+| Home Utilities | ₱4,800 |
+| Store Utilities | ₱5,200 |
+| Salaries | ₱35,000 |
+| Family Dinner | ₱8,000 |
+
+## Solution
+
+::: {.concept-card}
+**Business Expenses:**
+
+- Rent: ₱20,000
+- Store Utilities: ₱5,200
+- Salaries: ₱35,000
+
+<div style="margin-top: 20px; font-size: 1.5em; color: #27ae60;">
+✓ Total: ₱60,200
+</div>
+
+<div style="margin-top: 20px; font-size: 1.5em; color: #2980b9;">
+📊 Net Income: ₱89,800
+</div>
+:::
+
+# Summary {transition="zoom"}
+
+## Key Takeaways {transition="fade" transition-speed="fast"}
+
+::: {.incremental}
+- Accounting = <span class="highlight">I-R-C</span>
+- <span class="highlight">5</span> Fundamental Concepts
+- <span class="highlight">6</span> Basic Principles
+- GAAP ensures standardization
+- Apply principles to real situations
+:::
+
+## Questions?
+
+::: {style="text-align: center; font-size: 2em; margin-top: 50px; color: #667eea;"}
+Thank you! 🎓
+:::

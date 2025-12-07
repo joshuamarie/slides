@@ -677,5 +677,145 @@
     "title": "Statistics and Probability for 11th Graders — Part 2",
     "section": "Assignment",
     "text": "Assignment\nInstructions:\n\nOpen the link for the exercise:"
+  },
+  {
+    "objectID": "slides/accounting/index.html#objectives",
+    "href": "slides/accounting/index.html#objectives",
+    "title": "Fundamentals of Accounting",
+    "section": "Objectives",
+    "text": "Objectives\n\nDefine accounting\nIdentify generally accepted accounting principles\nCite examples of accounting concepts and principles\nSolve exercises on accounting principles"
+  },
+  {
+    "objectID": "slides/accounting/index.html#what-is-accounting",
+    "href": "slides/accounting/index.html#what-is-accounting",
+    "title": "Fundamentals of Accounting",
+    "section": "What is Accounting?",
+    "text": "What is Accounting?\n\n\nIdentifying\n\n\nRecording\n\n\nCommunicating"
+  },
+  {
+    "objectID": "slides/accounting/index.html#business-entity-concept",
+    "href": "slides/accounting/index.html#business-entity-concept",
+    "title": "Fundamentals of Accounting",
+    "section": "Business Entity Concept",
+    "text": "Business Entity Concept\n\nBusiness is separate from owner\n\nExample: Owner’s personal expenses ≠ Business expenses"
+  },
+  {
+    "objectID": "slides/accounting/index.html#going-concern-concept",
+    "href": "slides/accounting/index.html#going-concern-concept",
+    "title": "Fundamentals of Accounting",
+    "section": "Going Concern Concept",
+    "text": "Going Concern Concept\n\nBusiness continues indefinitely\n\nExample: Asset depreciation spread over useful life"
+  },
+  {
+    "objectID": "slides/accounting/index.html#periodicity",
+    "href": "slides/accounting/index.html#periodicity",
+    "title": "Fundamentals of Accounting",
+    "section": "Periodicity",
+    "text": "Periodicity\n\nFinancial statements in equal time intervals\n\nCalendar Year: Jan 1 - Dec 31\nFiscal Year: Any 12-month period"
+  },
+  {
+    "objectID": "slides/accounting/index.html#monetary-unit-concept",
+    "href": "slides/accounting/index.html#monetary-unit-concept",
+    "title": "Fundamentals of Accounting",
+    "section": "Monetary Unit Concept",
+    "text": "Monetary Unit Concept\n\nAll transactions in peso terms\n\nExample: Hiring employees not recorded (no monetary value)"
+  },
+  {
+    "objectID": "slides/accounting/index.html#accrual-basis-concept",
+    "href": "slides/accounting/index.html#accrual-basis-concept",
+    "title": "Fundamentals of Accounting",
+    "section": "Accrual Basis Concept",
+    "text": "Accrual Basis Concept\n\n\nRevenue: recognized when earned\nExpenses: recognized when incurred\n\n\nExample: Services rendered = revenue (even if unpaid)"
+  },
+  {
+    "objectID": "slides/accounting/index.html#objectivity-principle",
+    "href": "slides/accounting/index.html#objectivity-principle",
+    "title": "Fundamentals of Accounting",
+    "section": "Objectivity Principle",
+    "text": "Objectivity Principle\nFinancial statements supported by evidence"
+  },
+  {
+    "objectID": "slides/accounting/index.html#cost-principle",
+    "href": "slides/accounting/index.html#cost-principle",
+    "title": "Fundamentals of Accounting",
+    "section": "Cost Principle",
+    "text": "Cost Principle\nAssets recorded at original cost"
+  },
+  {
+    "objectID": "slides/accounting/index.html#full-disclosure-principle",
+    "href": "slides/accounting/index.html#full-disclosure-principle",
+    "title": "Fundamentals of Accounting",
+    "section": "Full Disclosure Principle",
+    "text": "Full Disclosure Principle\nReport all relevant material information"
+  },
+  {
+    "objectID": "slides/accounting/index.html#matching-principle",
+    "href": "slides/accounting/index.html#matching-principle",
+    "title": "Fundamentals of Accounting",
+    "section": "Matching Principle",
+    "text": "Matching Principle\nMatch costs with revenues"
+  },
+  {
+    "objectID": "slides/accounting/index.html#consistency-principle",
+    "href": "slides/accounting/index.html#consistency-principle",
+    "title": "Fundamentals of Accounting",
+    "section": "Consistency Principle",
+    "text": "Consistency Principle\nUniform approaches across periods"
+  },
+  {
+    "objectID": "slides/accounting/index.html#materiality-principle",
+    "href": "slides/accounting/index.html#materiality-principle",
+    "title": "Fundamentals of Accounting",
+    "section": "Materiality Principle",
+    "text": "Materiality Principle\nFocus on information influencing decisions"
+  },
+  {
+    "objectID": "slides/accounting/index.html#case-1-business-entity",
+    "href": "slides/accounting/index.html#case-1-business-entity",
+    "title": "Fundamentals of Accounting",
+    "section": "Case 1: Business Entity",
+    "text": "Case 1: Business Entity\nMrs. Labandera’s expenses:\n\n\n\nItem\nAmount\nInclude?\n\n\n\n\nHealth Insurance\n₱15,000\nNo\n\n\nRent Expense\n₱35,000\nYes\n\n\nHome Utilities\n₱8,000\nNo\n\n\nStore Utilities\n₱12,000\nYes\n\n\nWithdrawal\n₱30,000\nNo\n\n\n\n\nTotal Business Expenses: ₱47,000"
+  },
+  {
+    "objectID": "slides/accounting/index.html#case-2-accrual-matching",
+    "href": "slides/accounting/index.html#case-2-accrual-matching",
+    "title": "Fundamentals of Accounting",
+    "section": "Case 2: Accrual & Matching",
+    "text": "Case 2: Accrual & Matching\n\nOcean Deep Resort:\n\nReceived ₱150,000 advance payment\nWhen recognize revenue? When service rendered\nWhen recognize expenses? Match with revenue period"
+  },
+  {
+    "objectID": "slides/accounting/index.html#problem",
+    "href": "slides/accounting/index.html#problem",
+    "title": "Fundamentals of Accounting",
+    "section": "Problem",
+    "text": "Problem\n\nMr. Castro’s A&Z Aquatic Fishes - February 2021\nRevenue: ₱150,000 | Recorded expenses: ₱100,000\n\n\n\n\nExpense\nAmount\n\n\n\n\nAircon Repair (residence)\n₱12,000\n\n\nLife Insurance\n₱15,000\n\n\nRent Expense\n₱20,000\n\n\nHome Utilities\n₱4,800\n\n\nStore Utilities\n₱5,200\n\n\nSalaries\n₱35,000\n\n\nFamily Dinner\n₱8,000"
+  },
+  {
+    "objectID": "slides/accounting/index.html#solution",
+    "href": "slides/accounting/index.html#solution",
+    "title": "Fundamentals of Accounting",
+    "section": "Solution",
+    "text": "Solution\n\nBusiness Expenses:\n\nRent: ₱20,000\nStore Utilities: ₱5,200\nSalaries: ₱35,000\n\n\n✓ Total: ₱60,200\n\n\n📊 Net Income: ₱89,800"
+  },
+  {
+    "objectID": "slides/accounting/index.html#key-takeaways",
+    "href": "slides/accounting/index.html#key-takeaways",
+    "title": "Fundamentals of Accounting",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nAccounting = I-R-C\n5 Fundamental Concepts\n6 Basic Principles\nGAAP ensures standardization\nApply principles to real situations"
+  },
+  {
+    "objectID": "slides/accounting/index.html#questions",
+    "href": "slides/accounting/index.html#questions",
+    "title": "Fundamentals of Accounting",
+    "section": "Questions?",
+    "text": "Questions?\n\nThank you! 🎓"
+  },
+  {
+    "objectID": "slides/accounting/index.html#the-six-principles",
+    "href": "slides/accounting/index.html#the-six-principles",
+    "title": "Fundamentals of Accounting",
+    "section": "The Six Principles",
+    "text": "The Six Principles\n\n\nObjectivity Supported by evidence\n\n\nCost Original acquisition cost\n\n\nFull Disclosure All relevant information\n\n\nMatching Costs match revenues\n\n\nConsistency Uniform approaches\n\n\nMateriality Focus on important info"
   }
 ]

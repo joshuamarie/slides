@@ -1,0 +1,267 @@
+/* Import Roboto Slab font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&display=swap');
+
+/* Global reveal settings */
+.reveal {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  font-size: 32px;
+  font-family: 'Roboto Slab', serif;
+}
+
+.reveal .slide-background {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+/* Slide container with proper padding */
+.reveal .slides section {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+  padding: 60px 80px !important;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Title slide - center everything both horizontally and vertically */
+.reveal .slides section:has(h1:only-child),
+.reveal .slides section:has(h1):not(:has(h2)):not(:has(ul)):not(:has(table)) {
+  text-align: center;
+  padding: 80px 100px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 100%;
+}
+
+/* Ensure H1 wrapper centers properly */
+.reveal .slides section:has(h1:only-child) > *,
+.reveal .slides section:has(h1):not(:has(h2)):not(:has(ul)):not(:has(table)) > * {
+  margin: auto 0;
+}
+
+/* Headings */
+.reveal h1 {
+  color: #2c3e50;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  font-size: 2.5em;
+  line-height: 1.2;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* Subtitle and author styling */
+.reveal h1 + p,
+.reveal .subtitle {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 30px;
+  font-weight: 400;
+}
+
+.reveal h2 {
+  color: #3498db;
+  font-weight: 600;
+  border-bottom: 4px solid #3498db;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+  font-size: 1.8em;
+  line-height: 1.3;
+}
+
+.reveal h3 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 25px;
+  font-size: 1.4em;
+}
+
+/* Paragraphs and lists */
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.reveal ul,
+.reveal ol {
+  margin: 25px 0;
+  padding-left: 40px;
+}
+
+.reveal li {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+/* Tables */
+.reveal table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  font-size: 0.9em;
+  width: auto;
+  max-width: 100%;
+}
+
+.reveal table thead {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+}
+
+.reveal table th {
+  padding: 18px 30px;
+  font-weight: 600;
+  text-align: left;
+  font-size: 1.05em;
+}
+
+.reveal table td {
+  padding: 16px 30px;
+  border-bottom: 1px solid #ecf0f1;
+  text-align: left;
+}
+
+.reveal table tbody tr:hover {
+  background: #f8f9fa;
+  transition: background 0.2s ease;
+}
+
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Custom boxes and cards */
+.example-box {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  border-left: 6px solid #667eea;
+  padding: 25px 30px;
+  border-radius: 10px;
+  margin: 30px 0;
+  line-height: 1.6;
+}
+
+.concept-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 35px 40px;
+  margin: 30px 0;
+  border-left: 6px solid #3498db;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  line-height: 1.7;
+}
+
+/* Grid layouts */
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.principle-item {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1.5;
+  transition: transform 0.3s ease;
+}
+
+.principle-item:hover {
+  transform: translateY(-5px);
+}
+
+.framework-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.framework-item {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  padding: 40px 30px;
+  border-radius: 15px;
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-size: 1.4em;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.framework-item:hover {
+  transform: translateY(-8px);
+}
+
+/* Highlight */
+.highlight {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Result boxes */
+.reveal div[style*="color: #27ae60"] {
+  background: linear-gradient(135deg, #27ae6015 0%, #2ecc7115 100%);
+  border-left: 6px solid #27ae60;
+  padding: 25px 30px;
+  border-radius: 10px;
+  margin-top: 30px !important;
+}
+
+.reveal div[style*="color: #2980b9"] {
+  background: linear-gradient(135deg, #2980b915 0%, #3498db15 100%);
+  border-left: 6px solid #2980b9;
+  padding: 25px 30px;
+  border-radius: 10px;
+  margin-top: 30px !important;
+}
+
+/* Incremental lists */
+.reveal .slides section .incremental > * {
+  margin: 20px 0;
+}
+
+/* Strong text */
+.reveal strong {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* Improve slide number positioning */
+.reveal .slide-number {
+  background: rgba(52, 152, 219, 0.9);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Better spacing for nested content */
+.reveal .concept-card ul,
+.reveal .concept-card ol {
+  margin: 20px 0 20px 30px;
+}
+
+.reveal .concept-card li {
+  margin: 12px 0;
+}
+
+/* Center alignment helper */
+.reveal div[style*="text-align: center"] {
+  padding: 40px 0;
+}
