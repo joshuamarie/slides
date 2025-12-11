@@ -2,11 +2,23 @@
   {
     "listing": "/index.html",
     "items": [
+      "/slides/stats-probability-g11-pt3/index.html",
       "/slides/accounting/index.html",
       "/slides/stats-probability-g11-pt2/index.html",
       "/slides/stats-probability-g11-pt2-light/index.html",
+      "/slides/stats-probability-g11-pt3-light/index.html",
       "/slides/stats-probability-g11/index.html",
       "/slides/stats-probability-g11-light/index.html"
+    ]
+  },
+  {
+    "listing": "/resources/assignments.html",
+    "items": []
+  },
+  {
+    "listing": "/resources/materials.html",
+    "items": [
+      "/resources/materials/z-table/index.html"
     ]
   }
 ]

@@ -17,6 +17,12 @@ website:
       - icon: github
         href: https://github.com/joshuamarie
         aria-label: GitHub
+      - text: Resources
+        menu:
+        - href: resources/materials.qmd
+          text: Materials
+        - href: resources/assignments.qmd
+          text: Assignments
   page-footer:
     center: "© 2025 Joshua Marie. Made with [Quarto](https://quarto.org/)"
     background: light

@@ -1,0 +1,17 @@
+---
+title: "List of the materials in my lectures"
+listing:
+  - id: "materials"
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    type: grid
+    page-size: 5
+    fields: [title, description, categories]
+    contents: 
+      - "/materials/*/*.qmd"
+    feed: true
+---
+
+::: {#materials}
+:::

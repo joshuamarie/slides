@@ -1,533 +1,148 @@
 [
   {
-    "objectID": "slides/stats-probability-g11/index.html#random-variables",
-    "href": "slides/stats-probability-g11/index.html#random-variables",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Random Variables",
-    "text": "Random Variables\nDefinition\nA random variable is a function that assigns a numerical value to each outcome in the sample space of a random experiment.\nNotation: We use capital letters (X, Y, Z) for random variables\nHow it works:\n\nPerform a random experiment \\(\\rightarrow\\) get outcomes in sample space \\(S\\)\nThe random variable \\(X\\) maps each outcome to a number\nWe can then calculate probabilities: \\(P(X = x)\\)\n\n\nIntuition: Tossing two coins\n\nSample space: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)\nLet \\(X\\) = number of heads\nMapping: \\(HH \\rightarrow 2\\), \\(HT \\rightarrow 1\\), \\(TH \\rightarrow 1\\), \\(TT \\rightarrow 0\\)\nSo \\(X\\) can be 0, 1, or 2\n\\(P(X = 1) = \\frac{2}{4} = \\frac{1}{2}\\) (since HT and TH both give 1 head)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#types-of-random-variables",
-    "href": "slides/stats-probability-g11/index.html#types-of-random-variables",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Types of Random Variables",
-    "text": "Types of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#probability-distribution",
-    "href": "slides/stats-probability-g11/index.html#probability-distribution",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Probability Distribution",
-    "text": "Probability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\n\\(X\\)\n1\n2\n3\n4\n5\n6\n\n\n\n\n\\(P(X)\\)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#expected-value-mean",
-    "href": "slides/stats-probability-g11/index.html#expected-value-mean",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Expected Value (Mean)",
-    "text": "Expected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i}^{\\infty} x_i \\cdot P(X = x_i)\\]\n\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\n\n\\[E(X) = \\frac{21}{6} = 3.5\\]"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#variance-and-standard-deviation",
-    "href": "slides/stats-probability-g11/index.html#variance-and-standard-deviation",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\nVariance \\(\\sigma^2\\)\n\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#common-discrete-distributions",
-    "href": "slides/stats-probability-g11/index.html#common-discrete-distributions",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Common Discrete Distributions",
-    "text": "Common Discrete Distributions\nHere are common discrete probability distribution.\n\nBernoulli DistributionBinomial Distribution\n\n\nScenario: A single trial with only two possible outcomes (success or failure)\n\\[P(X = x) = \\begin{cases}\np & \\text{if } x = 1 \\text{ (success)} \\\\\n1-p & \\text{if } x = 0 \\text{ (failure)}\n\\end{cases}\\]\n\\[P(X = x)=p^x(1-p)^{1-x}\\]\nProperties: - \\(E(X) = p\\) - \\(\\text{Var}(X) = p(1-p)\\)\nExample: Flipping a coin once, \\(X = 1\\) if heads, \\(X = 0\\) if tails - \\(p = 0.5\\) - \\(E(X) = 0.5\\) - \\(\\text{Var}(X) = 0.5(0.5) = 0.25\\)\n\n\nScenario: n independent trials, each with probability p of success\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\nExample: Flipping a coin 10 times, X = number of heads\n\n\\(n = 10\\), \\(p = 0.5\\)\n\\(E(X) = np = 5\\)\n\\(\\text{Var}(X) = np(1-p) = 2.5\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#practice-problem",
-    "href": "slides/stats-probability-g11/index.html#practice-problem",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Practice Problem",
-    "text": "Practice Problem\nProblem: A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.\nFind:\n\nThe probability distribution of \\(X\\)\n\\(E(X)\\)\n\\(Var(X)\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#solution",
-    "href": "slides/stats-probability-g11/index.html#solution",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Solution",
-    "text": "Solution\nProbability Distribution:\n\n\\(P(X = 0) = P(\\text{2 blue}) = (2/5)(1/4) = 2/20 = 1/10\\)\n\\(P(X = 1) = P(\\text{1 red, 1 blue}) = (2)(3/5)(2/4) = 12/20 = 3/5\\)\n\\(P(X = 2) = P(\\text{2 red}) = (3/5)(2/4) = 6/20 = 3/10\\)\n\nExpected Value:\nE(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = 1.2\nVariance:\nVar(X) = (0-1.2)²(1/10) + (1-1.2)²(3/5) + (2-1.2)²(3/10) = 0.36"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#random-variables-1",
-    "href": "slides/stats-probability-g11/index.html#random-variables-1",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Random Variables",
-    "text": "Random Variables\n\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous\n\n\nExample\nRolling a die: \\(X = \\text{number shown}\\)\n\n\\(X\\) can be 1, 2, 3, 4, 5, or 6\nEach outcome has equal probability\n\\(P(X = k) = \\frac{1}{6}; k \\in {\\{1,2,3,4,5,6}\\}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#variance-and-standard-deviation-1",
-    "href": "slides/stats-probability-g11/index.html#variance-and-standard-deviation-1",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation:\n\nSmall \\(\\sigma\\): values clustered near mean\nLarge \\(\\sigma\\): values spread out"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#sample-space",
-    "href": "slides/stats-probability-g11/index.html#sample-space",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Sample Space",
-    "text": "Sample Space\nDefinition\nA sample space (S) is the collection or set of all possible outcomes of a random experiment.\n\nRepresented using the symbol “S” or \\(\\Omega\\) in some textbooks\nContains all outcomes that could occur\nCan be finite or infinite\n\n\nExamples:\n\n\nTossing a coin: \\(S = \\{H, T\\}\\)\nRolling a die: \\(S = \\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\)\nTossing two coins: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#events",
-    "href": "slides/stats-probability-g11/index.html#events",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events",
-    "text": "Events\nDefinition\nAn event is a subset of possible outcomes from the sample space.\n\nCan be a single outcome or multiple outcomes\nDenoted by capital letters (A, B, C)\n\n\n\n\n\n\n\n\nImportant\n\n\nWhen you calculate the probability of the event \\(P(E)\\), it is ALWAYS a decimal number, a fractional number, ranges from 0 to 1.\nFor example:\nWhen tossing a coin, what’s the probability of getting heads? There should be two outcomes: getting a head & getting a tail . The sample space would be: \\(S=\\{H,\\ T\\}\\) And the event A is getting head Thus, \\(x=1;\\ n=2\\), and the probability would be:\n\\[P(A)=\\frac{1}{2}=0.5\\]"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#events-1",
-    "href": "slides/stats-probability-g11/index.html#events-1",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events",
-    "text": "Events\nDefinition\n\nAn event is any subset of possible outcomes in the sample space \\(\\Omega\\).\nCompound event: contains two or more outcomes (e.g., “rolling an even number”)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#events-2",
-    "href": "slides/stats-probability-g11/index.html#events-2",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events",
-    "text": "Events\n\nMutually Exclusive (Disjoint) Events\nTwo events \\(A\\) and \\(B\\) are mutually exclusive if they have no outcomes in common:\n\\[A \\cap B = \\emptyset\\]\nConsequence for probabilities:\n\\[P(A \\cup B) = P(A) + P(B)\\] (no overlap to double-count)\nClassic example – Die roll\n\n\\(A\\): Rolling an even number \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling an odd number \\(\\{1,\\ 3,\\ 5\\}\\)\n\n\\(\\rightarrow\\) \\(A \\cap B = \\emptyset\\) \\(\\rightarrow\\) mutually exclusive\n\nAnother example: Drawing one card\n\n\\(A\\): Drawing a heart\n\\(B\\): Drawing a spade\n\n\\(\\rightarrow\\) also mutually exclusive"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#events-visual-summary-venn-diagrams",
-    "href": "slides/stats-probability-g11/index.html#events-visual-summary-venn-diagrams",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events: Visual Summary (Venn Diagrams)",
-    "text": "Events: Visual Summary (Venn Diagrams)\n\n\nMutually Exclusive\n\n\n\n\n\ngraph TD\n    A[Event A] --- circleA(( ))\n    B[Event B] --- circleB(( ))\n    style circleA fill:#ff9999,stroke:#333\n    style circleB fill:#99ccff,stroke:#333\n    classDef gap fill:none,stroke:none;\n    linkStyle default stroke-width:0px;\n\n\n\n\n\n\n\nRandom Variables\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous\n\n\n\n\nRandom Variables\n\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous\n\n\nExample\nRolling a die: \\(X = \\text{number shown}\\)\n\n\\(X\\) can be 1, 2, 3, 4, 5, or 6\nEach outcome has equal probability\n\\(P(X = k) = \\frac{1}{6}; k \\in {\\{1,2,3,4,5,6}\\}\\)\n\n\n\n\nTypes of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time\n\n\n\n\n\nProbability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\n\\(X\\)\n1\n2\n3\n4\n5\n6\n\n\n\n\n\\(P(X)\\)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6\n\n\n\n\n\n\nExpected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i}^{\\infty} x_i \\cdot P(X = x_i)\\]\n\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\n\n\\[E(X) = \\frac{21}{6} = 3.5\\]\n\n\n\nVariance and Standard Deviation\nVariance \\(\\sigma^2\\)\n\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\n\nVariance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation:\n\n\nSmall \\(\\sigma\\): values clustered near mean\nLarge \\(\\sigma\\): values spread out\n\n\n\n\n\nCommon Discrete Distributions\nBinomial Distribution\nScenario: n independent trials, each with probability p of success\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\nExample: Flipping a coin 10 times, X = number of heads\n\n\\(n = 10\\), \\(p = 0.5\\)\n\\(E(X) = np = 5\\)\n\\(\\text{Var}(X) = np(1-p) = 2.5\\)\n\n\n\nPractice Problem\nProblem: A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.\nFind:\n\nThe probability distribution of X\nE(X)\nVar(X)\n\n\n\nSolution\nProbability Distribution:\n\nP(X = 0) = P(2 blue) = (2/5)(1/4) = 2/20 = 1/10\nP(X = 1) = P(1 red, 1 blue) = 2(3/5)(2/4) = 12/20 = 3/5\nP(X = 2) = P(2 red) = (3/5)(2/4) = 6/20 = 3/10\n\nExpected Value:\nE(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = 1.2\nVariance:\nVar(X) = (0-1.2)²(1/10) + (1-1.2)²(3/5) + (2-1.2)²(3/10) = 0.36"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#events-3",
-    "href": "slides/stats-probability-g11/index.html#events-3",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events",
-    "text": "Events\n\nNon-Mutually Exclusive Events\nTwo events \\(A\\) and \\(B\\) are non-mutually exclusive if they share at least one outcome:\n\\[A \\cap B \\neq \\emptyset\\]\nAddition rule becomes:\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\] (we subtract the overlap so it’s not counted twice)\nDie roll example\n\n\\(A\\): Rolling an even number: \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling a number $ &gt;4 : {5, 6}$\n\n\\(\\rightarrow\\) \\(A \\cap B = \\{6\\} \\neq \\emptyset\\) \\(\\rightarrow\\) not mutually exclusive\n\\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B) = \\frac{3}{6} + \\frac{2}{6} - \\frac{1}{6} = \\frac{4}{6} = \\frac{2}{3}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#what-is-statistics",
-    "href": "slides/stats-probability-g11/index.html#what-is-statistics",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "What is Statistics?",
-    "text": "What is Statistics?\nDefinition\nStatistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making\n\nTwo kinds of statistics:\n\n\nDescriptive Statistics: The way to summarize and describe data (mean, median, mode, graphs)\nInferential Statistics: Meticulous way to make generalizations, i.e. predictions or inferences, about a population based on sample data"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#what-is-probability",
-    "href": "slides/stats-probability-g11/index.html#what-is-probability",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "What is Probability?",
-    "text": "What is Probability?\nDefinition\nProbability is the measure of the likelihood that an event will occur.\n\nExpressed as a decimal number between 0 and 1 (or 0% to 100%)\n\\(P(E) = 0\\) means the event is impossible\n\\(P(E) = 1\\) means the event is certain\nHelps us make predictions about random events"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#calculating-basic-probability",
-    "href": "slides/stats-probability-g11/index.html#calculating-basic-probability",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Calculating Basic Probability",
-    "text": "Calculating Basic Probability\nFormula for Probability\n\\[P(\\text{Event}) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of possible outcomes}}=\\frac{x}{n}\\]\n\nExample: Rolling a die\nWhat is the probability of rolling a 4 in a die?\n\nFavorable outcomes: {4} \\(\\rightarrow\\) 1 outcome\nTotal outcomes: \\(\\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\) \\(\\rightarrow\\) 6 outcomes\n\\(P(\\text{rolling a 4}) = \\frac{1}{6}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#event",
-    "href": "slides/stats-probability-g11/index.html#event",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Event",
-    "text": "Event\n\n\n\n\n\ngraph LR\n    subgraph Venn1\n        A1[ ]:::empty\n        circleA(((A))):::circleA\n        circleB(((B))):::circleB\n    end\n    classDef circleA fill:#ff9999,stroke:#c33,stroke-width:3px\n    classDef circleB fill:#99ccff,stroke:#33c,stroke-width:3px\n    classDef empty fill:none,stroke:none\n    style A1 height:0px"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#events-mutually-exclusive-vs.-not",
-    "href": "slides/stats-probability-g11/index.html#events-mutually-exclusive-vs.-not",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events – Mutually Exclusive vs. Not",
-    "text": "Events – Mutually Exclusive vs. Not\n\n\n{.fragment .fade-out current-visible} ### Mutually Exclusive Events\nNo outcomes in common → \\(A \\cap B = \\emptyset\\)\n\nA B\n\n→ \\(P(A \\cup B) = P(A) + P(B)\\)\n\n{.fragment .fade-in current-visible} ### Non-Mutually Exclusive Events\nShare some outcomes → \\(A \\cap B \\neq \\emptyset\\)\n\n\n∩\n\nA B\n\n→ \\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#calculating-probability-of-events",
-    "href": "slides/stats-probability-g11/index.html#calculating-probability-of-events",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Calculating Probability of Events",
-    "text": "Calculating Probability of Events\nPractice Problem:\nA bag contains 5 red balls, 3 blue balls, and 2 green balls.\n\nWhat is the probability of drawing a red ball?\nWhat is the probability of drawing a blue or green ball?\nWhat is the probability of NOT drawing a red ball?\n\n\n\n\\(P(\\text{red}) = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{blue or green}) = \\frac{3}{10} + \\frac{2}{10} = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{not red}) = 1 - P(\\text{red}) = 1 - \\frac{1}{2} = \\frac{1}{2}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11/index.html#where-do-all-these-distributions-come-from",
-    "href": "slides/stats-probability-g11/index.html#where-do-all-these-distributions-come-from",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Where Do All These Distributions Come From?",
-    "text": "Where Do All These Distributions Come From?\nMany real-life situations follow repeatable patterns. When we study those patterns carefully, we discover a handful of probability distributions that keep showing up again and again.\nThe normal distribution (the bell curve) is the most famous distribution out there. Yes, it is only a member of a much larger family."
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz",
-    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Hands-on Quiz",
     "text": "Hands-on Quiz\nWhat defines the population and sample?\n\nPopulation refers to a subset of data while sample refers to all data\nPopulation refers to estimates while sample refers to parameters\nPopulation refers to small groups while sample refers to large groups\nPopulation refers to the entire group being studied while sample refers to a subset selected from that group"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution",
-    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Probability distribution",
-    "text": "Probability distribution\nLet us continue…"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-1",
-    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-1",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Probability distribution",
-    "text": "Probability distribution\nLet us continue…\nRemember: For \\(n\\) independent trials with probability \\(p\\):\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\n\nSide question: What shape do you notice as \\(n\\) gets larger?"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-1",
-    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-1",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz-1",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Hands-on Quiz",
     "text": "Hands-on Quiz\nWhat is the probability of drawing a “king” from the deck of card?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-2",
-    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-2",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Probability distribution",
-    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution",
-    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Normal distribution",
-    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve."
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution-1",
-    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-1",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Normal distribution",
-    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve.\nKey characteristics:\n\nBell-shaped and symmetric\nMean = Median = Mode (all at the center)\nTotal area under curve = 1 (or 100%)\nExtends indefinitely in both directions (left and right of the mean \\(\\mu\\))"
-  },
-  {
-    "objectID": "slides/try.html#what-is-the-capital-of-france",
-    "href": "slides/try.html#what-is-the-capital-of-france",
-    "title": "Multiple Choice Quiz Example",
-    "section": "What is the capital of France?",
-    "text": "What is the capital of France?\n\nLondon\nParis\nBerlin\nMadrid\n\n\nClick on one of the options then click the check button. If you got it wrong click reset and try again."
-  },
-  {
-    "objectID": "slides/try.html#what-is-the-capital-of-the-usa",
-    "href": "slides/try.html#what-is-the-capital-of-the-usa",
-    "title": "Multiple Choice Quiz Example",
-    "section": "What is the capital of the USA?",
-    "text": "What is the capital of the USA?\n\nParis\nBerlin\nMadrid\nWashington, D.C.\n\n\nAlternatively, you can select each option using your number keypad. For example, click “2” to select the second option."
-  },
-  {
-    "objectID": "slides/try.html#what-is-the-capital-of-spain",
-    "href": "slides/try.html#what-is-the-capital-of-spain",
-    "title": "Multiple Choice Quiz Example",
-    "section": "What is the capital of Spain?",
-    "text": "What is the capital of Spain?\n\nParis\nBerlin\nMadrid\n\n\nYou can use the “c” key to check your answer, the “q” key to reset the question, and the “t” key to shuffle the question slides."
-  },
-  {
-    "objectID": "slides/try.html#what-is-the-capital-of-germany",
-    "href": "slides/try.html#what-is-the-capital-of-germany",
-    "title": "Multiple Choice Quiz Example",
-    "section": "What is the capital of Germany?",
-    "text": "What is the capital of Germany?\n\nParis\nBerlin\nMadrid\nLondon\n\n\nKeyboard shortcuts can be changed in the YAML header of your Quarto file. See README.md for more info."
-  },
-  {
-    "objectID": "slides/try.html#python-lists",
-    "href": "slides/try.html#python-lists",
-    "title": "Multiple Choice Quiz Example",
-    "section": "Python lists",
-    "text": "Python lists\nWhat is the value of x[2]? \n\n2\n3\n4\n\n\nYou can also include code or other content prior to the question."
-  },
-  {
-    "objectID": "slides/try.html#section",
-    "href": "slides/try.html#section",
-    "title": "Multiple Choice Quiz Example",
-    "section": "",
-    "text": "What is the name of Ross and Carol’s son in the TV show “Friends”?\n\nJack\nJoey\nBen\nChandler\n\n\nYou can specify an explanation for each option using the data-explanation attribute."
-  },
-  {
-    "objectID": "slides/try.html#what-is-the-formula-for-the-area-of-a-circle",
-    "href": "slides/try.html#what-is-the-formula-for-the-area-of-a-circle",
-    "title": "Multiple Choice Quiz Example",
-    "section": "What is the formula for the area of a circle?",
-    "text": "What is the formula for the area of a circle?\n\n\\(πr^2\\)\n\\(2πr\\)\n\\(4πr^2\\)\n\\(\\frac{4}{3}r^3\\)\n\n\nYou can also include math expressions using LaTeX in the options."
-  },
-  {
-    "objectID": "slides/try.html#which-one-is-chandler",
-    "href": "slides/try.html#which-one-is-chandler",
-    "title": "Multiple Choice Quiz Example",
-    "section": "Which one is Chandler?",
-    "text": "Which one is Chandler?\n\n\n\n\n\nOr you can try to embed images in the options."
-  },
-  {
-    "objectID": "slides/try.html#which-of-the-following-are-programming-languages",
-    "href": "slides/try.html#which-of-the-following-are-programming-languages",
-    "title": "Multiple Choice Quiz Example",
-    "section": "Which of the following are programming languages?",
-    "text": "Which of the following are programming languages?\n\nPython\nJavaScript\nHTML\nCSS\n\n\nYou can create multiple-choice questions by adding the quiz-multiple class to the question. Select ALL correct answers to get it right!"
-  },
-  {
-    "objectID": "slides/trial/index.html#hands-on-quiz",
-    "href": "slides/trial/index.html#hands-on-quiz",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Hands-on Quiz",
-    "text": "Hands-on Quiz\nWhat is the probability of drawing a “king” from the deck of card?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
-  },
-  {
-    "objectID": "slides/trial/index.html#hands-on-quiz-1",
-    "href": "slides/trial/index.html#hands-on-quiz-1",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Hands-on Quiz",
-    "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cup B) \\neq 0\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#what-is-statistics",
-    "href": "slides/stats-probability-g11-light/index.html#what-is-statistics",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "What is Statistics?",
-    "text": "What is Statistics?\nDefinition\nStatistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making\n\nTwo kinds of statistics:\n\n\nDescriptive Statistics: The way to summarize and describe data (mean, median, mode, graphs)\nInferential Statistics: Meticulous way to make generalizations, i.e. predictions or inferences, about a population based on sample data"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#what-is-probability",
-    "href": "slides/stats-probability-g11-light/index.html#what-is-probability",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "What is Probability?",
-    "text": "What is Probability?\nDefinition\nProbability is the measure of the likelihood that an event will occur.\n\nExpressed as a decimal number between 0 and 1 (or 0% to 100%)\n\\(P(E) = 0\\) means the event is impossible\n\\(P(E) = 1\\) means the event is certain\nHelps us make predictions about random events"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#calculating-basic-probability",
-    "href": "slides/stats-probability-g11-light/index.html#calculating-basic-probability",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Calculating Basic Probability",
-    "text": "Calculating Basic Probability\nFormula for Probability\n\\[P(\\text{Event}) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of possible outcomes}}=\\frac{x}{n}\\]\n\nExample: Rolling a die\nWhat is the probability of rolling a 4 in a die?\n\nFavorable outcomes: {4} \\(\\rightarrow\\) 1 outcome\nTotal outcomes: \\(\\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\) \\(\\rightarrow\\) 6 outcomes\n\\(P(\\text{rolling a 4}) = \\frac{1}{6}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#sample-space",
-    "href": "slides/stats-probability-g11-light/index.html#sample-space",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Sample Space",
-    "text": "Sample Space\nDefinition\nA sample space (S) is the collection or set of all possible outcomes of a random experiment.\n\nRepresented using the symbol “S” or \\(\\Omega\\) in some textbooks\nContains all outcomes that could occur\nCan be finite or infinite\n\n\nExamples:\n\n\nTossing a coin: \\(S = \\{H, T\\}\\)\nRolling a die: \\(S = \\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\)\nTossing two coins: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#events",
-    "href": "slides/stats-probability-g11-light/index.html#events",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events",
-    "text": "Events\nDefinition\nAn event is a subset of possible outcomes from the sample space.\n\nCan be a single outcome or multiple outcomes\nDenoted by capital letters (A, B, C)\n\n\n\n\n\n\n\n\nImportant\n\n\nWhen you calculate the probability of the event \\(P(E)\\), it is ALWAYS a decimal number, a fractional number, ranges from 0 to 1.\nFor example:\nWhen tossing a coin, what’s the probability of getting heads? There should be two outcomes: getting a head & getting a tail . The sample space would be: \\(S=\\{H,\\ T\\}\\) And the event A is getting head Thus, \\(x=1;\\ n=2\\), and the probability would be:\n\\[P(A)=\\frac{1}{2}=0.5\\]"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#events-1",
-    "href": "slides/stats-probability-g11-light/index.html#events-1",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events",
-    "text": "Events\nDefinition\n\nAn event is any subset of possible outcomes in the sample space \\(\\Omega\\).\nCompound event: contains two or more outcomes (e.g., “rolling an even number”)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#calculating-probability-of-events",
-    "href": "slides/stats-probability-g11-light/index.html#calculating-probability-of-events",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Calculating Probability of Events",
-    "text": "Calculating Probability of Events\nPractice Problem:\nA bag contains 5 red balls, 3 blue balls, and 2 green balls.\n\nWhat is the probability of drawing a red ball?\nWhat is the probability of drawing a blue or green ball?\nWhat is the probability of NOT drawing a red ball?\n\n\n\n\\(P(\\text{red}) = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{blue or green}) = \\frac{3}{10} + \\frac{2}{10} = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{not red}) = 1 - P(\\text{red}) = 1 - \\frac{1}{2} = \\frac{1}{2}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#events-2",
-    "href": "slides/stats-probability-g11-light/index.html#events-2",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events",
-    "text": "Events\n\nMutually Exclusive (Disjoint) Events\nTwo events \\(A\\) and \\(B\\) are mutually exclusive if they have no outcomes in common:\n\\[A \\cap B = \\emptyset\\]\nConsequence for probabilities:\n\\[P(A \\cup B) = P(A) + P(B)\\] (no overlap to double-count)\nClassic example – Die roll\n\n\\(A\\): Rolling an even number \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling an odd number \\(\\{1,\\ 3,\\ 5\\}\\)\n\n\\(\\rightarrow\\) \\(A \\cap B = \\emptyset\\) \\(\\rightarrow\\) mutually exclusive\n\nAnother example: Drawing one card\n\n\\(A\\): Drawing a heart\n\\(B\\): Drawing a spade\n\n\\(\\rightarrow\\) also mutually exclusive"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#events-3",
-    "href": "slides/stats-probability-g11-light/index.html#events-3",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Events",
-    "text": "Events\n\nNon-Mutually Exclusive Events\nTwo events \\(A\\) and \\(B\\) are non-mutually exclusive if they share at least one outcome:\n\\[A \\cap B \\neq \\emptyset\\]\nAddition rule becomes:\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\] (we subtract the overlap so it’s not counted twice)\nDie roll example\n\n\\(A\\): Rolling an even number: \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling a number $ &gt;4 : {5, 6}$\n\n\\(\\rightarrow\\) \\(A \\cap B = \\{6\\} \\neq \\emptyset\\) \\(\\rightarrow\\) not mutually exclusive\n\\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B) = \\frac{3}{6} + \\frac{2}{6} - \\frac{1}{6} = \\frac{4}{6} = \\frac{2}{3}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#random-variables",
-    "href": "slides/stats-probability-g11-light/index.html#random-variables",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Random Variables",
-    "text": "Random Variables\nDefinition\nA random variable is a function that assigns a numerical value to each outcome in the sample space of a random experiment.\nNotation: We use capital letters (X, Y, Z) for random variables\nHow it works:\n\nPerform a random experiment \\(\\rightarrow\\) get outcomes in sample space \\(S\\)\nThe random variable \\(X\\) maps each outcome to a number\nWe can then calculate probabilities: \\(P(X = x)\\)\n\n\nIntuition: Tossing two coins\n\nSample space: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)\nLet \\(X\\) = number of heads\nMapping: \\(HH \\rightarrow 2\\), \\(HT \\rightarrow 1\\), \\(TH \\rightarrow 1\\), \\(TT \\rightarrow 0\\)\nSo \\(X\\) can be 0, 1, or 2\n\\(P(X = 1) = \\frac{2}{4} = \\frac{1}{2}\\) (since HT and TH both give 1 head)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#random-variables-1",
-    "href": "slides/stats-probability-g11-light/index.html#random-variables-1",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Random Variables",
-    "text": "Random Variables\n\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous\n\n\nExample\nRolling a die: \\(X = \\text{number shown}\\)\n\n\\(X\\) can be 1, 2, 3, 4, 5, or 6\nEach outcome has equal probability\n\\(P(X = k) = \\frac{1}{6}; k \\in {\\{1,2,3,4,5,6}\\}\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#types-of-random-variables",
-    "href": "slides/stats-probability-g11-light/index.html#types-of-random-variables",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Types of Random Variables",
-    "text": "Types of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#probability-distribution",
-    "href": "slides/stats-probability-g11-light/index.html#probability-distribution",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Probability Distribution",
-    "text": "Probability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\n\\(X\\)\n1\n2\n3\n4\n5\n6\n\n\n\n\n\\(P(X)\\)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#expected-value-mean",
-    "href": "slides/stats-probability-g11-light/index.html#expected-value-mean",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Expected Value (Mean)",
-    "text": "Expected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i}^{\\infty} x_i \\cdot P(X = x_i)\\]\n\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\n\n\\[E(X) = \\frac{21}{6} = 3.5\\]"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation",
-    "href": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\nVariance \\(\\sigma^2\\)\n\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation-1",
-    "href": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation-1",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation:\n\nSmall \\(\\sigma\\): values clustered near mean\nLarge \\(\\sigma\\): values spread out"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#where-do-all-these-distributions-come-from",
-    "href": "slides/stats-probability-g11-light/index.html#where-do-all-these-distributions-come-from",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Where Do All These Distributions Come From?",
-    "text": "Where Do All These Distributions Come From?\nMany real-life situations follow repeatable patterns. When we study those patterns carefully, we discover a handful of probability distributions that keep showing up again and again.\nThe normal distribution (the bell curve) is the most famous distribution out there. Yes, it is only a member of a much larger family."
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#common-discrete-distributions",
-    "href": "slides/stats-probability-g11-light/index.html#common-discrete-distributions",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Common Discrete Distributions",
-    "text": "Common Discrete Distributions\nHere are common discrete probability distribution.\n\nBernoulli DistributionBinomial Distribution\n\n\nScenario: A single trial with only two possible outcomes (success or failure)\n\\[P(X = x) = \\begin{cases}\np & \\text{if } x = 1 \\text{ (success)} \\\\\n1-p & \\text{if } x = 0 \\text{ (failure)}\n\\end{cases}\\]\n\\[P(X = x)=p^x(1-p)^{1-x}\\]\nProperties: - \\(E(X) = p\\) - \\(\\text{Var}(X) = p(1-p)\\)\nExample: Flipping a coin once, \\(X = 1\\) if heads, \\(X = 0\\) if tails - \\(p = 0.5\\) - \\(E(X) = 0.5\\) - \\(\\text{Var}(X) = 0.5(0.5) = 0.25\\)\n\n\nScenario: n independent trials, each with probability p of success\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\nExample: Flipping a coin 10 times, X = number of heads\n\n\\(n = 10\\), \\(p = 0.5\\)\n\\(E(X) = np = 5\\)\n\\(\\text{Var}(X) = np(1-p) = 2.5\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#practice-problem",
-    "href": "slides/stats-probability-g11-light/index.html#practice-problem",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Practice Problem",
-    "text": "Practice Problem\nProblem: A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.\nFind:\n\nThe probability distribution of \\(X\\)\n\\(E(X)\\)\n\\(Var(X)\\)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-light/index.html#solution",
-    "href": "slides/stats-probability-g11-light/index.html#solution",
-    "title": "Statistics and Probability for 11th Graders",
-    "section": "Solution",
-    "text": "Solution\nProbability Distribution:\n\n\\(P(X = 0) = P(\\text{2 blue}) = (2/5)(1/4) = 2/20 = 1/10\\)\n\\(P(X = 1) = P(\\text{1 red, 1 blue}) = (2)(3/5)(2/4) = 12/20 = 3/5\\)\n\\(P(X = 2) = P(\\text{2 red}) = (3/5)(2/4) = 6/20 = 3/10\\)\n\nExpected Value:\nE(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = 1.2\nVariance:\nVar(X) = (0-1.2)²(1/10) + (1-1.2)²(3/5) + (2-1.2)²(3/10) = 0.36"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-2",
-    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-2",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz-2",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz-2",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Hands-on Quiz",
     "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cap B) \\neq 0\\)"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-3",
-    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-3",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Probability distribution",
-    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\nimport { plotBinomial } from \"./binomial_sim.js\"\n\n// Sample Size\nviewof sampleSize = Inputs.range([50, 100000], {\n    label: \"Size\",\n    value: 50,\n    step: 10\n})\n\n// Number of Trials\nviewof n = Inputs.range([1, 300], {\n    label: \"(n)\",\n    value: 1,\n    step: 1\n})\n\n// Probability of Success\nviewof p = Inputs.range([0.001, 0.999], {\n    label: \"(p)\",\n    value: 0.5,\n    step: 0.001\n})\n\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, we define what we called the normal distribution."
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution-2",
-    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-2",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Normal distribution",
-    "text": "Normal distribution\nIt has its own closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function. Some textbooks denotes the density function as \\(f_X(x)\\).\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “X follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
-    "href": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Characteristics of the normal distribution",
-    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-3",
-    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-3",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz-3",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz-3",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Hands-on Quiz",
     "text": "Hands-on Quiz\nA binomial distribution requires which conditions?\n\nTrials are dependent and probability changes\nFixed number of independent trials with constant probability\nContinuous outcomes with no upper limit\nOnly two trials are needed"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-4",
-    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-4",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz-4",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#hands-on-quiz-4",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Hands-on Quiz",
     "text": "Hands-on Quiz\nWhat is the expected value of rolling a fair six-sided die?\n\n3.2\n3.5\n4.5\n5.3"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#visualization-of-the-normal-distribution",
-    "href": "slides/stats-probability-g11-pt2/index.html#visualization-of-the-normal-distribution",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#probability-distribution",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#probability-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nLet us continue…"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#probability-distribution-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#probability-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nLet us continue…\nRemember: For \\(n\\) independent trials with probability \\(p\\):\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\n\nSide question: What shape do you notice as \\(n\\) gets larger?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#probability-distribution-2",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#probability-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#probability-distribution-3",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#probability-distribution-3",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\nimport { plotBinomial } from \"./binomial_sim.js\"\n\n// Sample Size\nviewof sampleSize = Inputs.range([50, 100000], {\n    label: \"Size\",\n    value: 50,\n    step: 10\n})\n\n// Number of Trials\nviewof n = Inputs.range([1, 300], {\n    label: \"(n)\",\n    value: 1,\n    step: 1\n})\n\n// Probability of Success\nviewof p = Inputs.range([0.001, 0.999], {\n    label: \"(p)\",\n    value: 0.5,\n    step: 0.001\n})\n\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, we define what we called the normal distribution."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#normal-distribution",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve.\nKey characteristics:\n\nBell-shaped and symmetric\nMean = Median = Mode (all at the center)\nTotal area under curve = 1 (or 100%)\nExtends indefinitely in both directions (left and right of the mean \\(\\mu\\))"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#normal-distribution-2",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#normal-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nIt has the closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function. Some textbooks denotes the density function as \\(f_X(x)\\).\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “X follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#visualization-of-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#visualization-of-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Visualization of the normal distribution",
     "text": "Visualization of the normal distribution\n\nviewof mu = Inputs.range([-7, 7], {\n    label: \"Mean (μ)\",\n    value: 0,\n    step: 0.1\n})\n\nviewof sigma = Inputs.range([0.001, 5], {\n    label: \"Standard Deviation (σ)\",\n    value: 1,\n    step: 0.01\n})\n\n{\n    const width = 800;\n    const height = 400;\n    const margin = {top: 20, right: 30, bottom: 40, left: 50};\n    \n    const xMin = -10;\n    const xMax = 10;\n    \n    const data = [];\n    for (let x = xMin; x &lt;= xMax; x += 0.1) {\n        const y = (1 / (sigma * Math.sqrt(2 * Math.PI))) * \n                  Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));\n        data.push({x, y});\n    }\n    \n    const svg = d3.create(\"svg\")\n        .attr(\"width\", width)\n        .attr(\"height\", height)\n        .attr(\"viewBox\", [0, 0, width, height]);\n    \n    const xScale = d3.scaleLinear()\n        .domain([xMin, xMax])\n        .range([margin.left, width - margin.right]);\n    \n    const yScale = d3.scaleLinear()\n        .domain([0, 0.9])\n        .range([height - margin.bottom, margin.top]);\n    \n    const line = d3.line()\n        .x(d =&gt; xScale(d.x))\n        .y(d =&gt; yScale(d.y));\n    \n    svg.append(\"path\")\n        .datum(data)\n        .attr(\"fill\", \"none\")\n        .attr(\"stroke\", \"#4CAF50\")\n        .attr(\"stroke-width\", 2.5)\n        .attr(\"d\", line);\n    \n    svg.append(\"g\")\n        .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n        .call(d3.axisBottom(xScale));\n    \n    svg.append(\"g\")\n        .attr(\"transform\", `translate(${margin.left},0)`)\n        .call(d3.axisLeft(yScale));\n    \n    svg.append(\"line\")\n        .attr(\"x1\", xScale(mu))\n        .attr(\"x2\", xScale(mu))\n        .attr(\"y1\", margin.top)\n        .attr(\"y2\", height - margin.bottom)\n        .attr(\"stroke\", \"red\")\n        .attr(\"stroke-width\", 2)\n        .attr(\"stroke-dasharray\", \"5,5\");\n    \n    return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObserve\n\n\nAs you adjust \\(\\mu\\) and \\(\\sigma\\), notice how the curve shifts and spreads!"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule",
-    "href": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "The Empirical Rule (68-95-99.7 Rule)",
-    "text": "The Empirical Rule (68-95-99.7 Rule)\n\n\nviewof mu_empirical = Inputs.range([-10, 10], {\n    label: \"Mean (μ)\",\n    value: 0,\n    step: 0.5\n})\n\nviewof sigma_empirical = Inputs.range([0.001, 5], {\n    label: \"Std. Dev. (σ)\",\n    value: 1,\n    step: 0.01\n})\n\nviewof ruleSelect = Inputs.radio(\n    new Map([\n        [\"68% Rule (±1σ)\", 1],\n        [\"95% Rule (±2σ)\", 2],\n        [\"99.7% Rule (±3σ)\", 3],\n        [\"All Rules\", 4]\n    ]),\n    {label: \"Show Rule:\", value: 1}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotEmpiricalRule } from \"./normal_empirical_rule.js\"\n\nplotEmpiricalRule(mu_empirical, sigma_empirical, ruleSelect)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`&lt;hr&gt;&lt;h4&gt;Current Values:&lt;/h4&gt;`\n\n\n\n\n\n\n\nmd`${\n    ruleSelect === 1 ? `**68% of data falls between ${(mu_empirical - sigma_empirical).toFixed(2)} and ${(mu_empirical + sigma_empirical).toFixed(2)}**` :\n    ruleSelect === 2 ? `**95% of data falls between ${(mu_empirical - 2*sigma_empirical).toFixed(2)} and ${(mu_empirical + 2*sigma_empirical).toFixed(2)}**` :\n    ruleSelect === 3 ? `**99.7% of data falls between ${(mu_empirical - 3*sigma_empirical).toFixed(2)} and ${(mu_empirical + 3*sigma_empirical).toFixed(2)}**` :\n    `**μ ± 1σ:** [${(mu_empirical - sigma_empirical).toFixed(2)}, ${(mu_empirical + sigma_empirical).toFixed(2)}]\n    \n**μ ± 2σ:** [${(mu_empirical - 2*sigma_empirical).toFixed(2)}, ${(mu_empirical + 2*sigma_empirical).toFixed(2)}]\n\n**μ ± 3σ:** [${(mu_empirical - 3*sigma_empirical).toFixed(2)}, ${(mu_empirical + 3*sigma_empirical).toFixed(2)}]`\n}`\n\n\n\n\n\n\n\n\n\n\nmd`${\n    ruleSelect === 1 ? `**68% Rule:** Approximately 68% of all data values fall within ONE standard deviation of the mean (μ ± σ).` :\n    ruleSelect === 2 ? `**95% Rule:** Approximately 95% of all data values fall within TWO standard deviations of the mean (μ ± 2σ).` :\n    ruleSelect === 3 ? `**99.7% Rule:** Approximately 99.7% of all data values fall within THREE standard deviations of the mean (μ ± 3σ).` :\n    `**Complete Empirical Rule:** This shows all three rules simultaneously:\n- 68% within μ ± σ (purple)\n- 95% within μ ± 2σ (orange)  \n- 99.7% within μ ± 3σ (red)`\n}`"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution-z-distribution",
-    "href": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution-z-distribution",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
-    "section": "Standard Normal Distribution (Z-Distribution)",
-    "text": "Standard Normal Distribution (Z-Distribution)"
-  },
-  {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution-1",
-    "href": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution-1",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#characteristics-of-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#characteristics-of-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Characteristics of the normal distribution",
-    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis\n\n\nMathematical Properties\n\nMean = Median = Mode\nTotal area $  (100%)$\nDetermined by two parameters:\n\n\\(\\mu\\) (mean): location\n\\(\\sigma\\) (standard deviation): spread"
+    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution",
-    "href": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#characteristics-of-the-normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#characteristics-of-the-normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Characteristics of the normal distribution",
+    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis\n\n\nMathematical Properties\n\nMean = Median = Mode\nTotal area = 1 (100%)\nDetermined by two parameters:\n\n\\(\\mu\\) (mean): location\n\\(\\sigma\\) (standard deviation): spread"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#standard-normal-distribution",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#standard-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Standard Normal Distribution",
     "text": "Standard Normal Distribution\nThe standard normal distribution is a special case where:\n\nMean \\(\\mu = 0\\)\nStandard deviation \\(\\sigma = 1\\)\n\nMost textbooks denotes the random variable \\(Z\\) of the standard normal distribution as \\(Z \\sim \\mathcal{N}(0, 1)\\)\n\nWe can scale down \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) to \\(Z \\sim \\mathcal{N}(0, 1)\\). We called it “standardization”."
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#the-importance-of-z-scores",
-    "href": "slides/stats-probability-g11-pt2/index.html#the-importance-of-z-scores",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#the-importance-of-z-scores",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#the-importance-of-z-scores",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "The importance of z-scores",
     "text": "The importance of z-scores\n\n\nCompare different distributions\nIt is much easier to compare different distribution (still normal) on the same scale\n\nDealing with probabilities\nAlthough we have softwares for us to calculate such probabilities, interpreting probabilities under z-score scale is much easier.\n\nIdentify outliers\nStandardization has a huge advantage to the application of outlier identification."
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule-1",
-    "href": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule-1",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#the-empirical-rule-68-95-99.7-rule",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#the-empirical-rule-68-95-99.7-rule",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "The Empirical Rule (68-95-99.7 Rule)",
+    "text": "The Empirical Rule (68-95-99.7 Rule)\n\n\nviewof mu_empirical = Inputs.range([-10, 10], {\n    label: \"Mean (μ)\",\n    value: 0,\n    step: 0.5\n})\n\nviewof sigma_empirical = Inputs.range([0.001, 5], {\n    label: \"Std. Dev. (σ)\",\n    value: 1,\n    step: 0.01\n})\n\nviewof ruleSelect = Inputs.radio(\n    new Map([\n        [\"68% Rule (±1σ)\", 1],\n        [\"95% Rule (±2σ)\", 2],\n        [\"99.7% Rule (±3σ)\", 3],\n        [\"All Rules\", 4]\n    ]),\n    {label: \"Show Rule:\", value: 1}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotEmpiricalRule } from \"./normal_empirical_rule.js\"\n\nplotEmpiricalRule(mu_empirical, sigma_empirical, ruleSelect)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`&lt;hr&gt;&lt;h4&gt;Current Values:&lt;/h4&gt;`\n\n\n\n\n\n\n\nmd`${\n    ruleSelect === 1 ? `**68% of data falls between ${(mu_empirical - sigma_empirical).toFixed(2)} and ${(mu_empirical + sigma_empirical).toFixed(2)}**` :\n    ruleSelect === 2 ? `**95% of data falls between ${(mu_empirical - 2*sigma_empirical).toFixed(2)} and ${(mu_empirical + 2*sigma_empirical).toFixed(2)}**` :\n    ruleSelect === 3 ? `**99.7% of data falls between ${(mu_empirical - 3*sigma_empirical).toFixed(2)} and ${(mu_empirical + 3*sigma_empirical).toFixed(2)}**` :\n    `**μ ± 1σ:** [${(mu_empirical - sigma_empirical).toFixed(2)}, ${(mu_empirical + sigma_empirical).toFixed(2)}]\n    \n**μ ± 2σ:** [${(mu_empirical - 2*sigma_empirical).toFixed(2)}, ${(mu_empirical + 2*sigma_empirical).toFixed(2)}]\n\n**μ ± 3σ:** [${(mu_empirical - 3*sigma_empirical).toFixed(2)}, ${(mu_empirical + 3*sigma_empirical).toFixed(2)}]`\n}`\n\n\n\n\n\n\n\n\n\n\nmd`${\n    ruleSelect === 1 ? `**68% Rule:** Approximately 68% of all data values fall within ONE standard deviation of the mean (μ ± σ).` :\n    ruleSelect === 2 ? `**95% Rule:** Approximately 95% of all data values fall within TWO standard deviations of the mean (μ ± 2σ).` :\n    ruleSelect === 3 ? `**99.7% Rule:** Approximately 99.7% of all data values fall within THREE standard deviations of the mean (μ ± 3σ).` :\n    `**Complete Empirical Rule:** This shows all three rules simultaneously:\n- 68% within μ ± σ (purple)\n- 95% within μ ± 2σ (orange)  \n- 99.7% within μ ± 3σ (red)`\n}`"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#the-empirical-rule-68-95-99.7-rule-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#the-empirical-rule-68-95-99.7-rule-1",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "The Empirical Rule (68-95-99.7 Rule)",
     "text": "The Empirical Rule (68-95-99.7 Rule)\nThe Empirical Rule (also called the 68-95-99.7 Rule) tells us what percentage of data falls within certain distances from the mean in a normal distribution.\n\n\n68% Rule\nApproximately 68% of data falls within 1 standard deviation of the mean:\n\\[\\mu - \\sigma \\leq X \\leq \\mu + \\sigma\\]\n\n95% Rule\nApproximately 95% of data falls within 2 standard deviations of the mean:\n\\[\\mu - 2\\sigma \\leq X \\leq \\mu + 2\\sigma\\]\n\n99.7% Rule\nApproximately 99.7% of data falls within 3 standard deviations of the mean:\n\\[\\mu - 3\\sigma \\leq X \\leq \\mu + 3\\sigma\\]"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#practice-problem",
-    "href": "slides/stats-probability-g11-pt2/index.html#practice-problem",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#practice-problem",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#practice-problem",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Practice Problem",
     "text": "Practice Problem\nScenario: Heights of adult males in a population are normally distributed with a mean of 175 cm and a standard deviation of 8 cm.\nQuestions:\n\nWhat percentage of men have heights between 167 cm and 183 cm?\nWhat percentage of men are taller than 191 cm?\nIf a man is 159 cm tall, how many standard deviations is he from the mean?\nWould a height of 159 cm be considered unusual? Why or why not?\n\n\nSolutions:\n\n167 to 183 cm = \\(\\mu \\pm 1\\sigma\\). It should be 68%\n191 cm = \\(\\mu + 2\\sigma\\)\n\nBeyond \\(2\\sigma\\) above mean\n\\((100\\% - 95\\%) / 2\\) = 2.5%\n\n\\(z = \\frac{159 - 175}{8} = \\frac{-16}{8} = -2\\) — 2 standard deviations below\nYes, unusual because it’s exactly \\(2\\sigma\\) below the mean (only 2.5% are this short or shorter)"
   },
   {
-    "objectID": "slides/stats-probability-g11-pt2/index.html#assignment",
-    "href": "slides/stats-probability-g11-pt2/index.html#assignment",
-    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#assignment",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#assignment",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
     "section": "Assignment",
     "text": "Assignment\nInstructions:\n\nOpen the link for the exercise:"
   },
@@ -679,6 +294,146 @@
     "text": "Assignment\nInstructions:\n\nOpen the link for the exercise:"
   },
   {
+    "objectID": "slides/stats-probability-g11-light/index.html#what-is-statistics",
+    "href": "slides/stats-probability-g11-light/index.html#what-is-statistics",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "What is Statistics?",
+    "text": "What is Statistics?\nDefinition\nStatistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making\n\nTwo kinds of statistics:\n\n\nDescriptive Statistics: The way to summarize and describe data (mean, median, mode, graphs)\nInferential Statistics: Meticulous way to make generalizations, i.e. predictions or inferences, about a population based on sample data"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#what-is-probability",
+    "href": "slides/stats-probability-g11-light/index.html#what-is-probability",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "What is Probability?",
+    "text": "What is Probability?\nDefinition\nProbability is the measure of the likelihood that an event will occur.\n\nExpressed as a decimal number between 0 and 1 (or 0% to 100%)\n\\(P(E) = 0\\) means the event is impossible\n\\(P(E) = 1\\) means the event is certain\nHelps us make predictions about random events"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#calculating-basic-probability",
+    "href": "slides/stats-probability-g11-light/index.html#calculating-basic-probability",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Calculating Basic Probability",
+    "text": "Calculating Basic Probability\nFormula for Probability\n\\[P(\\text{Event}) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of possible outcomes}}=\\frac{x}{n}\\]\n\nExample: Rolling a die\nWhat is the probability of rolling a 4 in a die?\n\nFavorable outcomes: {4} \\(\\rightarrow\\) 1 outcome\nTotal outcomes: \\(\\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\) \\(\\rightarrow\\) 6 outcomes\n\\(P(\\text{rolling a 4}) = \\frac{1}{6}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#sample-space",
+    "href": "slides/stats-probability-g11-light/index.html#sample-space",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Sample Space",
+    "text": "Sample Space\nDefinition\nA sample space (S) is the collection or set of all possible outcomes of a random experiment.\n\nRepresented using the symbol “S” or \\(\\Omega\\) in some textbooks\nContains all outcomes that could occur\nCan be finite or infinite\n\n\nExamples:\n\n\nTossing a coin: \\(S = \\{H, T\\}\\)\nRolling a die: \\(S = \\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\)\nTossing two coins: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#events",
+    "href": "slides/stats-probability-g11-light/index.html#events",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\nDefinition\nAn event is a subset of possible outcomes from the sample space.\n\nCan be a single outcome or multiple outcomes\nDenoted by capital letters (A, B, C)\n\n\n\n\n\n\n\n\nImportant\n\n\nWhen you calculate the probability of the event \\(P(E)\\), it is ALWAYS a decimal number, a fractional number, ranges from 0 to 1.\nFor example:\nWhen tossing a coin, what’s the probability of getting heads? There should be two outcomes: getting a head & getting a tail . The sample space would be: \\(S=\\{H,\\ T\\}\\) And the event A is getting head Thus, \\(x=1;\\ n=2\\), and the probability would be:\n\\[P(A)=\\frac{1}{2}=0.5\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#events-1",
+    "href": "slides/stats-probability-g11-light/index.html#events-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\nDefinition\n\nAn event is any subset of possible outcomes in the sample space \\(\\Omega\\).\nCompound event: contains two or more outcomes (e.g., “rolling an even number”)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#calculating-probability-of-events",
+    "href": "slides/stats-probability-g11-light/index.html#calculating-probability-of-events",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Calculating Probability of Events",
+    "text": "Calculating Probability of Events\nPractice Problem:\nA bag contains 5 red balls, 3 blue balls, and 2 green balls.\n\nWhat is the probability of drawing a red ball?\nWhat is the probability of drawing a blue or green ball?\nWhat is the probability of NOT drawing a red ball?\n\n\n\n\\(P(\\text{red}) = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{blue or green}) = \\frac{3}{10} + \\frac{2}{10} = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{not red}) = 1 - P(\\text{red}) = 1 - \\frac{1}{2} = \\frac{1}{2}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#events-2",
+    "href": "slides/stats-probability-g11-light/index.html#events-2",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\n\nMutually Exclusive (Disjoint) Events\nTwo events \\(A\\) and \\(B\\) are mutually exclusive if they have no outcomes in common:\n\\[A \\cap B = \\emptyset\\]\nConsequence for probabilities:\n\\[P(A \\cup B) = P(A) + P(B)\\] (no overlap to double-count)\nClassic example – Die roll\n\n\\(A\\): Rolling an even number \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling an odd number \\(\\{1,\\ 3,\\ 5\\}\\)\n\n\\(\\rightarrow\\) \\(A \\cap B = \\emptyset\\) \\(\\rightarrow\\) mutually exclusive\n\nAnother example: Drawing one card\n\n\\(A\\): Drawing a heart\n\\(B\\): Drawing a spade\n\n\\(\\rightarrow\\) also mutually exclusive"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#events-3",
+    "href": "slides/stats-probability-g11-light/index.html#events-3",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\n\nNon-Mutually Exclusive Events\nTwo events \\(A\\) and \\(B\\) are non-mutually exclusive if they share at least one outcome:\n\\[A \\cap B \\neq \\emptyset\\]\nAddition rule becomes:\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\] (we subtract the overlap so it’s not counted twice)\nDie roll example\n\n\\(A\\): Rolling an even number: \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling a number $ &gt;4 : {5, 6}$\n\n\\(\\rightarrow\\) \\(A \\cap B = \\{6\\} \\neq \\emptyset\\) \\(\\rightarrow\\) not mutually exclusive\n\\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B) = \\frac{3}{6} + \\frac{2}{6} - \\frac{1}{6} = \\frac{4}{6} = \\frac{2}{3}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#random-variables",
+    "href": "slides/stats-probability-g11-light/index.html#random-variables",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Random Variables",
+    "text": "Random Variables\nDefinition\nA random variable is a function that assigns a numerical value to each outcome in the sample space of a random experiment.\nNotation: We use capital letters (X, Y, Z) for random variables\nHow it works:\n\nPerform a random experiment \\(\\rightarrow\\) get outcomes in sample space \\(S\\)\nThe random variable \\(X\\) maps each outcome to a number\nWe can then calculate probabilities: \\(P(X = x)\\)\n\n\nIntuition: Tossing two coins\n\nSample space: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)\nLet \\(X\\) = number of heads\nMapping: \\(HH \\rightarrow 2\\), \\(HT \\rightarrow 1\\), \\(TH \\rightarrow 1\\), \\(TT \\rightarrow 0\\)\nSo \\(X\\) can be 0, 1, or 2\n\\(P(X = 1) = \\frac{2}{4} = \\frac{1}{2}\\) (since HT and TH both give 1 head)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#random-variables-1",
+    "href": "slides/stats-probability-g11-light/index.html#random-variables-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Random Variables",
+    "text": "Random Variables\n\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous\n\n\nExample\nRolling a die: \\(X = \\text{number shown}\\)\n\n\\(X\\) can be 1, 2, 3, 4, 5, or 6\nEach outcome has equal probability\n\\(P(X = k) = \\frac{1}{6}; k \\in {\\{1,2,3,4,5,6}\\}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#types-of-random-variables",
+    "href": "slides/stats-probability-g11-light/index.html#types-of-random-variables",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Types of Random Variables",
+    "text": "Types of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#probability-distribution",
+    "href": "slides/stats-probability-g11-light/index.html#probability-distribution",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Probability Distribution",
+    "text": "Probability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\n\\(X\\)\n1\n2\n3\n4\n5\n6\n\n\n\n\n\\(P(X)\\)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#expected-value-mean",
+    "href": "slides/stats-probability-g11-light/index.html#expected-value-mean",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Expected Value (Mean)",
+    "text": "Expected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i}^{\\infty} x_i \\cdot P(X = x_i)\\]\n\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\n\n\\[E(X) = \\frac{21}{6} = 3.5\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation",
+    "href": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\nVariance \\(\\sigma^2\\)\n\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation-1",
+    "href": "slides/stats-probability-g11-light/index.html#variance-and-standard-deviation-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation:\n\nSmall \\(\\sigma\\): values clustered near mean\nLarge \\(\\sigma\\): values spread out"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#where-do-all-these-distributions-come-from",
+    "href": "slides/stats-probability-g11-light/index.html#where-do-all-these-distributions-come-from",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Where Do All These Distributions Come From?",
+    "text": "Where Do All These Distributions Come From?\nMany real-life situations follow repeatable patterns. When we study those patterns carefully, we discover a handful of probability distributions that keep showing up again and again.\nThe normal distribution (the bell curve) is the most famous distribution out there. Yes, it is only a member of a much larger family."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#common-discrete-distributions",
+    "href": "slides/stats-probability-g11-light/index.html#common-discrete-distributions",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Common Discrete Distributions",
+    "text": "Common Discrete Distributions\nHere are common discrete probability distribution.\n\nBernoulli DistributionBinomial Distribution\n\n\nScenario: A single trial with only two possible outcomes (success or failure)\n\\[P(X = x) = \\begin{cases}\np & \\text{if } x = 1 \\text{ (success)} \\\\\n1-p & \\text{if } x = 0 \\text{ (failure)}\n\\end{cases}\\]\n\\[P(X = x)=p^x(1-p)^{1-x}\\]\nProperties: - \\(E(X) = p\\) - \\(\\text{Var}(X) = p(1-p)\\)\nExample: Flipping a coin once, \\(X = 1\\) if heads, \\(X = 0\\) if tails - \\(p = 0.5\\) - \\(E(X) = 0.5\\) - \\(\\text{Var}(X) = 0.5(0.5) = 0.25\\)\n\n\nScenario: n independent trials, each with probability p of success\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\nExample: Flipping a coin 10 times, X = number of heads\n\n\\(n = 10\\), \\(p = 0.5\\)\n\\(E(X) = np = 5\\)\n\\(\\text{Var}(X) = np(1-p) = 2.5\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#practice-problem",
+    "href": "slides/stats-probability-g11-light/index.html#practice-problem",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Practice Problem",
+    "text": "Practice Problem\nProblem: A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.\nFind:\n\nThe probability distribution of \\(X\\)\n\\(E(X)\\)\n\\(Var(X)\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-light/index.html#solution",
+    "href": "slides/stats-probability-g11-light/index.html#solution",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Solution",
+    "text": "Solution\nProbability Distribution:\n\n\\(P(X = 0) = P(\\text{2 blue}) = (2/5)(1/4) = 2/20 = 1/10\\)\n\\(P(X = 1) = P(\\text{1 red, 1 blue}) = (2)(3/5)(2/4) = 12/20 = 3/5\\)\n\\(P(X = 2) = P(\\text{2 red}) = (3/5)(2/4) = 6/20 = 3/10\\)\n\nExpected Value:\nE(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = 1.2\nVariance:\nVar(X) = (0-1.2)²(1/10) + (1-1.2)²(3/5) + (2-1.2)²(3/10) = 0.36"
+  },
+  {
     "objectID": "slides/accounting/index.html#objectives",
     "href": "slides/accounting/index.html#objectives",
     "title": "Fundamentals of Accounting",
@@ -728,46 +483,11 @@
     "text": "Accrual Basis Concept\n\n\nRevenue: recognized when earned\nExpenses: recognized when incurred\n\n\nExample: Services rendered = revenue (even if unpaid)"
   },
   {
-    "objectID": "slides/accounting/index.html#objectivity-principle",
-    "href": "slides/accounting/index.html#objectivity-principle",
+    "objectID": "slides/accounting/index.html#the-six-principles",
+    "href": "slides/accounting/index.html#the-six-principles",
     "title": "Fundamentals of Accounting",
-    "section": "Objectivity Principle",
-    "text": "Objectivity Principle\nFinancial statements supported by evidence"
-  },
-  {
-    "objectID": "slides/accounting/index.html#cost-principle",
-    "href": "slides/accounting/index.html#cost-principle",
-    "title": "Fundamentals of Accounting",
-    "section": "Cost Principle",
-    "text": "Cost Principle\nAssets recorded at original cost"
-  },
-  {
-    "objectID": "slides/accounting/index.html#full-disclosure-principle",
-    "href": "slides/accounting/index.html#full-disclosure-principle",
-    "title": "Fundamentals of Accounting",
-    "section": "Full Disclosure Principle",
-    "text": "Full Disclosure Principle\nReport all relevant material information"
-  },
-  {
-    "objectID": "slides/accounting/index.html#matching-principle",
-    "href": "slides/accounting/index.html#matching-principle",
-    "title": "Fundamentals of Accounting",
-    "section": "Matching Principle",
-    "text": "Matching Principle\nMatch costs with revenues"
-  },
-  {
-    "objectID": "slides/accounting/index.html#consistency-principle",
-    "href": "slides/accounting/index.html#consistency-principle",
-    "title": "Fundamentals of Accounting",
-    "section": "Consistency Principle",
-    "text": "Consistency Principle\nUniform approaches across periods"
-  },
-  {
-    "objectID": "slides/accounting/index.html#materiality-principle",
-    "href": "slides/accounting/index.html#materiality-principle",
-    "title": "Fundamentals of Accounting",
-    "section": "Materiality Principle",
-    "text": "Materiality Principle\nFocus on information influencing decisions"
+    "section": "The Six Principles",
+    "text": "The Six Principles\n\n\nObjectivity Supported by evidence\n\n\nCost Original acquisition cost\n\n\nFull Disclosure All relevant information\n\n\nMatching Costs match revenues\n\n\nConsistency Uniform approaches\n\n\nMateriality Focus on important info"
   },
   {
     "objectID": "slides/accounting/index.html#case-1-business-entity",
@@ -812,10 +532,402 @@
     "text": "Questions?\n\nThank you! 🎓"
   },
   {
-    "objectID": "slides/accounting/index.html#the-six-principles",
-    "href": "slides/accounting/index.html#the-six-principles",
-    "title": "Fundamentals of Accounting",
-    "section": "The Six Principles",
-    "text": "The Six Principles\n\n\nObjectivity Supported by evidence\n\n\nCost Original acquisition cost\n\n\nFull Disclosure All relevant information\n\n\nMatching Costs match revenues\n\n\nConsistency Uniform approaches\n\n\nMateriality Focus on important info"
+    "objectID": "resources/materials/z-table/index.html#about-the-z-table",
+    "href": "resources/materials/z-table/index.html#about-the-z-table",
+    "title": "Standard Normal Distribution (Z) Table",
+    "section": "About the Z-Table",
+    "text": "About the Z-Table\nThis table shows the cumulative probability (area under the curve) to the left of a given z-score in a standard normal distribution.\n\nRows: z-score to first decimal place | Columns: second decimal place | Values: Cumulative probability \\(P(Z \\leq z)\\)"
+  },
+  {
+    "objectID": "resources/materials/z-table/index.html#positive-z-scores",
+    "href": "resources/materials/z-table/index.html#positive-z-scores",
+    "title": "Standard Normal Distribution (Z) Table",
+    "section": "Positive Z-Scores",
+    "text": "Positive Z-Scores\n\n\n\n\nStandard Normal Distribution - Positive Z-Scores\n\n\nZ\n.00\n.01\n.02\n.03\n.04\n.05\n.06\n.07\n.08\n.09\n\n\n\n\n0.0\n0.5000\n0.5040\n0.5080\n0.5120\n0.5160\n0.5199\n0.5239\n0.5279\n0.5319\n0.5359\n\n\n0.1\n0.5398\n0.5438\n0.5478\n0.5517\n0.5557\n0.5596\n0.5636\n0.5675\n0.5714\n0.5753\n\n\n0.2\n0.5793\n0.5832\n0.5871\n0.5910\n0.5948\n0.5987\n0.6026\n0.6064\n0.6103\n0.6141\n\n\n0.3\n0.6179\n0.6217\n0.6255\n0.6293\n0.6331\n0.6368\n0.6406\n0.6443\n0.6480\n0.6517\n\n\n0.4\n0.6554\n0.6591\n0.6628\n0.6664\n0.6700\n0.6736\n0.6772\n0.6808\n0.6844\n0.6879\n\n\n0.5\n0.6915\n0.6950\n0.6985\n0.7019\n0.7054\n0.7088\n0.7123\n0.7157\n0.7190\n0.7224\n\n\n0.6\n0.7257\n0.7291\n0.7324\n0.7357\n0.7389\n0.7422\n0.7454\n0.7486\n0.7517\n0.7549\n\n\n0.7\n0.7580\n0.7611\n0.7642\n0.7673\n0.7704\n0.7734\n0.7764\n0.7794\n0.7823\n0.7852\n\n\n0.8\n0.7881\n0.7910\n0.7939\n0.7967\n0.7995\n0.8023\n0.8051\n0.8078\n0.8106\n0.8133\n\n\n0.9\n0.8159\n0.8186\n0.8212\n0.8238\n0.8264\n0.8289\n0.8315\n0.8340\n0.8365\n0.8389\n\n\n1.0\n0.8413\n0.8438\n0.8461\n0.8485\n0.8508\n0.8531\n0.8554\n0.8577\n0.8599\n0.8621\n\n\n1.1\n0.8643\n0.8665\n0.8686\n0.8708\n0.8729\n0.8749\n0.8770\n0.8790\n0.8810\n0.8830\n\n\n1.2\n0.8849\n0.8869\n0.8888\n0.8907\n0.8925\n0.8944\n0.8962\n0.8980\n0.8997\n0.9015\n\n\n1.3\n0.9032\n0.9049\n0.9066\n0.9082\n0.9099\n0.9115\n0.9131\n0.9147\n0.9162\n0.9177\n\n\n1.4\n0.9192\n0.9207\n0.9222\n0.9236\n0.9251\n0.9265\n0.9279\n0.9292\n0.9306\n0.9319\n\n\n1.5\n0.9332\n0.9345\n0.9357\n0.9370\n0.9382\n0.9394\n0.9406\n0.9418\n0.9429\n0.9441\n\n\n1.6\n0.9452\n0.9463\n0.9474\n0.9484\n0.9495\n0.9505\n0.9515\n0.9525\n0.9535\n0.9545\n\n\n1.7\n0.9554\n0.9564\n0.9573\n0.9582\n0.9591\n0.9599\n0.9608\n0.9616\n0.9625\n0.9633\n\n\n1.8\n0.9641\n0.9649\n0.9656\n0.9664\n0.9671\n0.9678\n0.9686\n0.9693\n0.9699\n0.9706\n\n\n1.9\n0.9713\n0.9719\n0.9726\n0.9732\n0.9738\n0.9744\n0.9750\n0.9756\n0.9761\n0.9767\n\n\n2.0\n0.9772\n0.9778\n0.9783\n0.9788\n0.9793\n0.9798\n0.9803\n0.9808\n0.9812\n0.9817\n\n\n2.1\n0.9821\n0.9826\n0.9830\n0.9834\n0.9838\n0.9842\n0.9846\n0.9850\n0.9854\n0.9857\n\n\n2.2\n0.9861\n0.9864\n0.9868\n0.9871\n0.9875\n0.9878\n0.9881\n0.9884\n0.9887\n0.9890\n\n\n2.3\n0.9893\n0.9896\n0.9898\n0.9901\n0.9904\n0.9906\n0.9909\n0.9911\n0.9913\n0.9916\n\n\n2.4\n0.9918\n0.9920\n0.9922\n0.9925\n0.9927\n0.9929\n0.9931\n0.9932\n0.9934\n0.9936\n\n\n2.5\n0.9938\n0.9940\n0.9941\n0.9943\n0.9945\n0.9946\n0.9948\n0.9949\n0.9951\n0.9952\n\n\n2.6\n0.9953\n0.9955\n0.9956\n0.9957\n0.9959\n0.9960\n0.9961\n0.9962\n0.9963\n0.9964\n\n\n2.7\n0.9965\n0.9966\n0.9967\n0.9968\n0.9969\n0.9970\n0.9971\n0.9972\n0.9973\n0.9974\n\n\n2.8\n0.9974\n0.9975\n0.9976\n0.9977\n0.9977\n0.9978\n0.9979\n0.9979\n0.9980\n0.9981\n\n\n2.9\n0.9981\n0.9982\n0.9982\n0.9983\n0.9984\n0.9984\n0.9985\n0.9985\n0.9986\n0.9986\n\n\n3.0\n0.9987\n0.9987\n0.9987\n0.9988\n0.9988\n0.9989\n0.9989\n0.9989\n0.9990\n0.9990\n\n\n3.1\n0.9990\n0.9991\n0.9991\n0.9991\n0.9992\n0.9992\n0.9992\n0.9992\n0.9993\n0.9993\n\n\n3.2\n0.9993\n0.9993\n0.9994\n0.9994\n0.9994\n0.9994\n0.9994\n0.9995\n0.9995\n0.9995\n\n\n3.3\n0.9995\n0.9995\n0.9995\n0.9996\n0.9996\n0.9996\n0.9996\n0.9996\n0.9996\n0.9997\n\n\n3.4\n0.9997\n0.9997\n0.9997\n0.9997\n0.9997\n0.9997\n0.9997\n0.9997\n0.9997\n0.9998\n\n\n3.5\n0.9998\n0.9998\n0.9998\n0.9998\n0.9998\n0.9998\n0.9998\n0.9998\n0.9998\n0.9998\n\n\n3.6\n0.9998\n0.9998\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n\n\n3.7\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n\n\n3.8\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n0.9999\n\n\n3.9\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n\n\n4.0\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000\n1.0000"
+  },
+  {
+    "objectID": "resources/materials/z-table/index.html#negative-z-scores",
+    "href": "resources/materials/z-table/index.html#negative-z-scores",
+    "title": "Standard Normal Distribution (Z) Table",
+    "section": "Negative Z-Scores",
+    "text": "Negative Z-Scores\n\n\n\n\nStandard Normal Distribution - Negative Z-Scores\n\n\nZ\n.09\n.08\n.07\n.06\n.05\n.04\n.03\n.02\n.01\n.00\n\n\n\n\n-4.0\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n\n\n-3.9\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n0.0000\n\n\n-3.8\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n\n\n-3.7\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n\n\n-3.6\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0001\n0.0002\n0.0002\n\n\n-3.5\n0.0002\n0.0002\n0.0002\n0.0002\n0.0002\n0.0002\n0.0002\n0.0002\n0.0002\n0.0002\n\n\n-3.4\n0.0002\n0.0003\n0.0003\n0.0003\n0.0003\n0.0003\n0.0003\n0.0003\n0.0003\n0.0003\n\n\n-3.3\n0.0003\n0.0004\n0.0004\n0.0004\n0.0004\n0.0004\n0.0004\n0.0005\n0.0005\n0.0005\n\n\n-3.2\n0.0005\n0.0005\n0.0005\n0.0006\n0.0006\n0.0006\n0.0006\n0.0006\n0.0007\n0.0007\n\n\n-3.1\n0.0007\n0.0007\n0.0008\n0.0008\n0.0008\n0.0008\n0.0009\n0.0009\n0.0009\n0.0010\n\n\n-3.0\n0.0010\n0.0010\n0.0011\n0.0011\n0.0011\n0.0012\n0.0012\n0.0013\n0.0013\n0.0013\n\n\n-2.9\n0.0014\n0.0014\n0.0015\n0.0015\n0.0016\n0.0016\n0.0017\n0.0018\n0.0018\n0.0019\n\n\n-2.8\n0.0019\n0.0020\n0.0021\n0.0021\n0.0022\n0.0023\n0.0023\n0.0024\n0.0025\n0.0026\n\n\n-2.7\n0.0026\n0.0027\n0.0028\n0.0029\n0.0030\n0.0031\n0.0032\n0.0033\n0.0034\n0.0035\n\n\n-2.6\n0.0036\n0.0037\n0.0038\n0.0039\n0.0040\n0.0041\n0.0043\n0.0044\n0.0045\n0.0047\n\n\n-2.5\n0.0048\n0.0049\n0.0051\n0.0052\n0.0054\n0.0055\n0.0057\n0.0059\n0.0060\n0.0062\n\n\n-2.4\n0.0064\n0.0066\n0.0068\n0.0069\n0.0071\n0.0073\n0.0075\n0.0078\n0.0080\n0.0082\n\n\n-2.3\n0.0084\n0.0087\n0.0089\n0.0091\n0.0094\n0.0096\n0.0099\n0.0102\n0.0104\n0.0107\n\n\n-2.2\n0.0110\n0.0113\n0.0116\n0.0119\n0.0122\n0.0125\n0.0129\n0.0132\n0.0136\n0.0139\n\n\n-2.1\n0.0143\n0.0146\n0.0150\n0.0154\n0.0158\n0.0162\n0.0166\n0.0170\n0.0174\n0.0179\n\n\n-2.0\n0.0183\n0.0188\n0.0192\n0.0197\n0.0202\n0.0207\n0.0212\n0.0217\n0.0222\n0.0228\n\n\n-1.9\n0.0233\n0.0239\n0.0244\n0.0250\n0.0256\n0.0262\n0.0268\n0.0274\n0.0281\n0.0287\n\n\n-1.8\n0.0294\n0.0301\n0.0307\n0.0314\n0.0322\n0.0329\n0.0336\n0.0344\n0.0351\n0.0359\n\n\n-1.7\n0.0367\n0.0375\n0.0384\n0.0392\n0.0401\n0.0409\n0.0418\n0.0427\n0.0436\n0.0446\n\n\n-1.6\n0.0455\n0.0465\n0.0475\n0.0485\n0.0495\n0.0505\n0.0516\n0.0526\n0.0537\n0.0548\n\n\n-1.5\n0.0559\n0.0571\n0.0582\n0.0594\n0.0606\n0.0618\n0.0630\n0.0643\n0.0655\n0.0668\n\n\n-1.4\n0.0681\n0.0694\n0.0708\n0.0721\n0.0735\n0.0749\n0.0764\n0.0778\n0.0793\n0.0808\n\n\n-1.3\n0.0823\n0.0838\n0.0853\n0.0869\n0.0885\n0.0901\n0.0918\n0.0934\n0.0951\n0.0968\n\n\n-1.2\n0.0985\n0.1003\n0.1020\n0.1038\n0.1056\n0.1075\n0.1093\n0.1112\n0.1131\n0.1151\n\n\n-1.1\n0.1170\n0.1190\n0.1210\n0.1230\n0.1251\n0.1271\n0.1292\n0.1314\n0.1335\n0.1357\n\n\n-1.0\n0.1379\n0.1401\n0.1423\n0.1446\n0.1469\n0.1492\n0.1515\n0.1539\n0.1562\n0.1587\n\n\n-0.9\n0.1611\n0.1635\n0.1660\n0.1685\n0.1711\n0.1736\n0.1762\n0.1788\n0.1814\n0.1841\n\n\n-0.8\n0.1867\n0.1894\n0.1922\n0.1949\n0.1977\n0.2005\n0.2033\n0.2061\n0.2090\n0.2119\n\n\n-0.7\n0.2148\n0.2177\n0.2206\n0.2236\n0.2266\n0.2296\n0.2327\n0.2358\n0.2389\n0.2420\n\n\n-0.6\n0.2451\n0.2483\n0.2514\n0.2546\n0.2578\n0.2611\n0.2643\n0.2676\n0.2709\n0.2743\n\n\n-0.5\n0.2776\n0.2810\n0.2843\n0.2877\n0.2912\n0.2946\n0.2981\n0.3015\n0.3050\n0.3085\n\n\n-0.4\n0.3121\n0.3156\n0.3192\n0.3228\n0.3264\n0.3300\n0.3336\n0.3372\n0.3409\n0.3446\n\n\n-0.3\n0.3483\n0.3520\n0.3557\n0.3594\n0.3632\n0.3669\n0.3707\n0.3745\n0.3783\n0.3821\n\n\n-0.2\n0.3859\n0.3897\n0.3936\n0.3974\n0.4013\n0.4052\n0.4090\n0.4129\n0.4168\n0.4207\n\n\n-0.1\n0.4247\n0.4286\n0.4325\n0.4364\n0.4404\n0.4443\n0.4483\n0.4522\n0.4562\n0.4602\n\n\n0.0\n0.4641\n0.4681\n0.4721\n0.4761\n0.4801\n0.4840\n0.4880\n0.4920\n0.4960\n0.5000"
+  },
+  {
+    "objectID": "resources/materials/z-table/index.html#how-to-use-this-table",
+    "href": "resources/materials/z-table/index.html#how-to-use-this-table",
+    "title": "Standard Normal Distribution (Z) Table",
+    "section": "How to Use This Table",
+    "text": "How to Use This Table\nExample: For \\(z = 1.96\\), find row “1.9” and column “.06”. The value 0.9750 means 97.50% of values fall below \\(z = 1.96\\)."
+  },
+  {
+    "objectID": "resources/assignments.html",
+    "href": "resources/assignments.html",
+    "title": "Link to my assignments",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "resources/materials.html",
+    "href": "resources/materials.html",
+    "title": "List of the materials in my lectures",
+    "section": "",
+    "text": "Standard Normal Distribution (Z) Table\n\n\nThe generated z-table, available for HTML and PDF formats\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#what-is-statistics",
+    "href": "slides/stats-probability-g11/index.html#what-is-statistics",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "What is Statistics?",
+    "text": "What is Statistics?\nDefinition\nStatistics is the science of collecting, organizing, analyzing, interpreting, and presenting data. Used in research, business, science, and everyday decision-making\n\nTwo kinds of statistics:\n\n\nDescriptive Statistics: The way to summarize and describe data (mean, median, mode, graphs)\nInferential Statistics: Meticulous way to make generalizations, i.e. predictions or inferences, about a population based on sample data"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#what-is-probability",
+    "href": "slides/stats-probability-g11/index.html#what-is-probability",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "What is Probability?",
+    "text": "What is Probability?\nDefinition\nProbability is the measure of the likelihood that an event will occur.\n\nExpressed as a decimal number between 0 and 1 (or 0% to 100%)\n\\(P(E) = 0\\) means the event is impossible\n\\(P(E) = 1\\) means the event is certain\nHelps us make predictions about random events"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#calculating-basic-probability",
+    "href": "slides/stats-probability-g11/index.html#calculating-basic-probability",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Calculating Basic Probability",
+    "text": "Calculating Basic Probability\nFormula for Probability\n\\[P(\\text{Event}) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of possible outcomes}}=\\frac{x}{n}\\]\n\nExample: Rolling a die\nWhat is the probability of rolling a 4 in a die?\n\nFavorable outcomes: {4} \\(\\rightarrow\\) 1 outcome\nTotal outcomes: \\(\\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\) \\(\\rightarrow\\) 6 outcomes\n\\(P(\\text{rolling a 4}) = \\frac{1}{6}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#sample-space",
+    "href": "slides/stats-probability-g11/index.html#sample-space",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Sample Space",
+    "text": "Sample Space\nDefinition\nA sample space (S) is the collection or set of all possible outcomes of a random experiment.\n\nRepresented using the symbol “S” or \\(\\Omega\\) in some textbooks\nContains all outcomes that could occur\nCan be finite or infinite\n\n\nExamples:\n\n\nTossing a coin: \\(S = \\{H, T\\}\\)\nRolling a die: \\(S = \\{1,\\ 2,\\ 3,\\ 4,\\ 5,\\ 6\\}\\)\nTossing two coins: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#events",
+    "href": "slides/stats-probability-g11/index.html#events",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\nDefinition\nAn event is a subset of possible outcomes from the sample space.\n\nCan be a single outcome or multiple outcomes\nDenoted by capital letters (A, B, C)\n\n\n\n\n\n\n\n\nImportant\n\n\nWhen you calculate the probability of the event \\(P(E)\\), it is ALWAYS a decimal number, a fractional number, ranges from 0 to 1.\nFor example:\nWhen tossing a coin, what’s the probability of getting heads? There should be two outcomes: getting a head & getting a tail . The sample space would be: \\(S=\\{H,\\ T\\}\\) And the event A is getting head Thus, \\(x=1;\\ n=2\\), and the probability would be:\n\\[P(A)=\\frac{1}{2}=0.5\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#events-1",
+    "href": "slides/stats-probability-g11/index.html#events-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\nDefinition\n\nAn event is any subset of possible outcomes in the sample space \\(\\Omega\\).\nCompound event: contains two or more outcomes (e.g., “rolling an even number”)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#calculating-probability-of-events",
+    "href": "slides/stats-probability-g11/index.html#calculating-probability-of-events",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Calculating Probability of Events",
+    "text": "Calculating Probability of Events\nPractice Problem:\nA bag contains 5 red balls, 3 blue balls, and 2 green balls.\n\nWhat is the probability of drawing a red ball?\nWhat is the probability of drawing a blue or green ball?\nWhat is the probability of NOT drawing a red ball?\n\n\n\n\\(P(\\text{red}) = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{blue or green}) = \\frac{3}{10} + \\frac{2}{10} = \\frac{5}{10} = \\frac{1}{2}\\)\n\\(P(\\text{not red}) = 1 - P(\\text{red}) = 1 - \\frac{1}{2} = \\frac{1}{2}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#events-2",
+    "href": "slides/stats-probability-g11/index.html#events-2",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\n\nMutually Exclusive (Disjoint) Events\nTwo events \\(A\\) and \\(B\\) are mutually exclusive if they have no outcomes in common:\n\\[A \\cap B = \\emptyset\\]\nConsequence for probabilities:\n\\[P(A \\cup B) = P(A) + P(B)\\] (no overlap to double-count)\nClassic example – Die roll\n\n\\(A\\): Rolling an even number \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling an odd number \\(\\{1,\\ 3,\\ 5\\}\\)\n\n\\(\\rightarrow\\) \\(A \\cap B = \\emptyset\\) \\(\\rightarrow\\) mutually exclusive\n\nAnother example: Drawing one card\n\n\\(A\\): Drawing a heart\n\\(B\\): Drawing a spade\n\n\\(\\rightarrow\\) also mutually exclusive"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#events-3",
+    "href": "slides/stats-probability-g11/index.html#events-3",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Events",
+    "text": "Events\n\nNon-Mutually Exclusive Events\nTwo events \\(A\\) and \\(B\\) are non-mutually exclusive if they share at least one outcome:\n\\[A \\cap B \\neq \\emptyset\\]\nAddition rule becomes:\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\] (we subtract the overlap so it’s not counted twice)\nDie roll example\n\n\\(A\\): Rolling an even number: \\(\\{2,\\ 4,\\ 6\\}\\)\n\\(B\\): Rolling a number $ &gt;4 : {5, 6}$\n\n\\(\\rightarrow\\) \\(A \\cap B = \\{6\\} \\neq \\emptyset\\) \\(\\rightarrow\\) not mutually exclusive\n\\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B) = \\frac{3}{6} + \\frac{2}{6} - \\frac{1}{6} = \\frac{4}{6} = \\frac{2}{3}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#random-variables",
+    "href": "slides/stats-probability-g11/index.html#random-variables",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Random Variables",
+    "text": "Random Variables\nDefinition\nA random variable is a function that assigns a numerical value to each outcome in the sample space of a random experiment.\nNotation: We use capital letters (X, Y, Z) for random variables\nHow it works:\n\nPerform a random experiment \\(\\rightarrow\\) get outcomes in sample space \\(S\\)\nThe random variable \\(X\\) maps each outcome to a number\nWe can then calculate probabilities: \\(P(X = x)\\)\n\n\nIntuition: Tossing two coins\n\nSample space: \\(S = \\{HH,\\ HT,\\ TH,\\ TT\\}\\)\nLet \\(X\\) = number of heads\nMapping: \\(HH \\rightarrow 2\\), \\(HT \\rightarrow 1\\), \\(TH \\rightarrow 1\\), \\(TT \\rightarrow 0\\)\nSo \\(X\\) can be 0, 1, or 2\n\\(P(X = 1) = \\frac{2}{4} = \\frac{1}{2}\\) (since HT and TH both give 1 head)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#random-variables-1",
+    "href": "slides/stats-probability-g11/index.html#random-variables-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Random Variables",
+    "text": "Random Variables\n\n\nDefinition\nA random variable is a function that assigns numerical values to outcomes of a random experiment.\n\nMaps outcomes to real numbers\nDenoted by capital letters (X, Y, Z)\nCan be discrete or continuous\n\n\nExample\nRolling a die: \\(X = \\text{number shown}\\)\n\n\\(X\\) can be 1, 2, 3, 4, 5, or 6\nEach outcome has equal probability\n\\(P(X = k) = \\frac{1}{6}; k \\in {\\{1,2,3,4,5,6}\\}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#types-of-random-variables",
+    "href": "slides/stats-probability-g11/index.html#types-of-random-variables",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Types of Random Variables",
+    "text": "Types of Random Variables\n\n\nDiscrete Random Variables\nTakes on countable values\n\nKey Property: Can list all discrete possible values\n\n\nExamples:\n\n\nNumber of heads in 10 coin flips\nNumber of students absent\nNumber of cars passing by\nNumber of balls drawn in an urn\n\n\nContinuous Random Variables\nTakes on uncountably infinite values\n\nKey Property: Any value in an interval is possible\n\n\nExamples:\n\n\nHeight of students\nTime until next bus arrives\nTemperature at noon\nWaiting time"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#probability-distribution",
+    "href": "slides/stats-probability-g11/index.html#probability-distribution",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Probability Distribution",
+    "text": "Probability Distribution\nFor Discrete Random Variables\nA probability distribution assigns probabilities to each possible value.\nRequirements:\n\n\\(0 \\leq P(X = x) \\leq 1\\) for all \\(x\\)\n\\(\\sum_{x}^{\\infty}P(X = x) = 1\\) (sum over all possible values)\n\n\nExample: Rolling a die\n\n\n\n\\(X\\)\n1\n2\n3\n4\n5\n6\n\n\n\n\n\\(P(X)\\)\n1/6\n1/6\n1/6\n1/6\n1/6\n1/6"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#expected-value-mean",
+    "href": "slides/stats-probability-g11/index.html#expected-value-mean",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Expected Value (Mean)",
+    "text": "Expected Value (Mean)\nThe expected value E(X) is the average value we expect from a random variable.\nFormula\n\\[E(X) = \\sum_{i}^{\\infty} x_i \\cdot P(X = x_i)\\]\n\nExample: Rolling a die\n\\[E(X) = 1 \\cdot \\frac{1}{6} + 2 \\cdot \\frac{1}{6} + 3 \\cdot \\frac{1}{6} + 4 \\cdot \\frac{1}{6} + 5 \\cdot \\frac{1}{6} + 6 \\cdot \\frac{1}{6}\\]\n\n\n\\[E(X) = \\frac{21}{6} = 3.5\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#variance-and-standard-deviation",
+    "href": "slides/stats-probability-g11/index.html#variance-and-standard-deviation",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\nVariance \\(\\sigma^2\\)\n\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#variance-and-standard-deviation-1",
+    "href": "slides/stats-probability-g11/index.html#variance-and-standard-deviation-1",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\n\nVariance \\(\\sigma^2\\)\nMeasures how spread out the values are from the mean.\n\\[\\text{Var}(X) = E[(X - \\mu)^2]\\] \\[= \\sum_{i} (x_i - \\mu)^2 \\cdot P(X = x_i)\\]\nwhere \\(\\mu = E(X)\\)\n\nStandard Deviation \\(\\sigma\\)\nThe square root of variance (same units as X).\n\\[\\sigma = \\sqrt{\\text{Var}(X)}\\]\nInterpretation:\n\nSmall \\(\\sigma\\): values clustered near mean\nLarge \\(\\sigma\\): values spread out"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#where-do-all-these-distributions-come-from",
+    "href": "slides/stats-probability-g11/index.html#where-do-all-these-distributions-come-from",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Where Do All These Distributions Come From?",
+    "text": "Where Do All These Distributions Come From?\nMany real-life situations follow repeatable patterns. When we study those patterns carefully, we discover a handful of probability distributions that keep showing up again and again.\nThe normal distribution (the bell curve) is the most famous distribution out there. Yes, it is only a member of a much larger family."
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#common-discrete-distributions",
+    "href": "slides/stats-probability-g11/index.html#common-discrete-distributions",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Common Discrete Distributions",
+    "text": "Common Discrete Distributions\nHere are common discrete probability distribution.\n\nBernoulli DistributionBinomial Distribution\n\n\nScenario: A single trial with only two possible outcomes (success or failure)\n\\[P(X = x) = \\begin{cases}\np & \\text{if } x = 1 \\text{ (success)} \\\\\n1-p & \\text{if } x = 0 \\text{ (failure)}\n\\end{cases}\\]\n\\[P(X = x)=p^x(1-p)^{1-x}\\]\nProperties: - \\(E(X) = p\\) - \\(\\text{Var}(X) = p(1-p)\\)\nExample: Flipping a coin once, \\(X = 1\\) if heads, \\(X = 0\\) if tails - \\(p = 0.5\\) - \\(E(X) = 0.5\\) - \\(\\text{Var}(X) = 0.5(0.5) = 0.25\\)\n\n\nScenario: n independent trials, each with probability p of success\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\nExample: Flipping a coin 10 times, X = number of heads\n\n\\(n = 10\\), \\(p = 0.5\\)\n\\(E(X) = np = 5\\)\n\\(\\text{Var}(X) = np(1-p) = 2.5\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#practice-problem",
+    "href": "slides/stats-probability-g11/index.html#practice-problem",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Practice Problem",
+    "text": "Practice Problem\nProblem: A bag contains 3 red balls and 2 blue balls. You draw 2 balls without replacement. Let X = number of red balls drawn.\nFind:\n\nThe probability distribution of \\(X\\)\n\\(E(X)\\)\n\\(Var(X)\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11/index.html#solution",
+    "href": "slides/stats-probability-g11/index.html#solution",
+    "title": "Statistics and Probability for 11th Graders",
+    "section": "Solution",
+    "text": "Solution\nProbability Distribution:\n\n\\(P(X = 0) = P(\\text{2 blue}) = (2/5)(1/4) = 2/20 = 1/10\\)\n\\(P(X = 1) = P(\\text{1 red, 1 blue}) = (2)(3/5)(2/4) = 12/20 = 3/5\\)\n\\(P(X = 2) = P(\\text{2 red}) = (3/5)(2/4) = 6/20 = 3/10\\)\n\nExpected Value:\nE(X) = 0(1/10) + 1(3/5) + 2(3/10) = 0 + 3/5 + 6/10 = 12/10 = 1.2\nVariance:\nVar(X) = (0-1.2)²(1/10) + (1-1.2)²(3/5) + (2-1.2)²(3/10) = 0.36"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz",
+    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nWhat defines the population and sample?\n\nPopulation refers to a subset of data while sample refers to all data\nPopulation refers to estimates while sample refers to parameters\nPopulation refers to small groups while sample refers to large groups\nPopulation refers to the entire group being studied while sample refers to a subset selected from that group"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nWhat is the probability of drawing a “king” from the deck of card?\n\n\\(\\frac{1}{13}\\)\n\\(\\frac{1}{2}\\)\n\\(\\frac{2}{13}\\)\n\\(\\frac{1}{5}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-2",
+    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nConsider \\(A\\) and \\(B\\) defines the two events. Which of the following defines mutually exclusive events?\n\nTwo events occur simultaneously\nTwo events are disjoint\n\\(P(A \\cap B) = 0\\)\n\\(P(A \\cap B) \\neq 0\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-3",
+    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-3",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nA binomial distribution requires which conditions?\n\nTrials are dependent and probability changes\nFixed number of independent trials with constant probability\nContinuous outcomes with no upper limit\nOnly two trials are needed"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-4",
+    "href": "slides/stats-probability-g11-pt2/index.html#hands-on-quiz-4",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Hands-on Quiz",
+    "text": "Hands-on Quiz\nWhat is the expected value of rolling a fair six-sided die?\n\n3.2\n3.5\n4.5\n5.3"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nLet us continue…"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nLet us continue…\nRemember: For \\(n\\) independent trials with probability \\(p\\):\n\\[P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\]\n\nSide question: What shape do you notice as \\(n\\) gets larger?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-2",
+    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#probability-distribution-3",
+    "href": "slides/stats-probability-g11-pt2/index.html#probability-distribution-3",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Probability distribution",
+    "text": "Probability distribution\nWhat happens when you increase the number of trials \\(n\\)?\n\nimport { plotBinomial } from \"./binomial_sim.js\"\n\n// Sample Size\nviewof sampleSize = Inputs.range([50, 100000], {\n    label: \"Size\",\n    value: 50,\n    step: 10\n})\n\n// Number of Trials\nviewof n = Inputs.range([1, 300], {\n    label: \"(n)\",\n    value: 1,\n    step: 1\n})\n\n// Probability of Success\nviewof p = Inputs.range([0.001, 0.999], {\n    label: \"(p)\",\n    value: 0.5,\n    step: 0.001\n})\n\nplotBinomial(sampleSize, n, p)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBecause of this pattern, we define what we called the normal distribution."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nA normal distribution is a continuous probability distribution that describes the population that has mean \\(\\mu\\) and variance \\(\\sigma^2\\) forms a bell-shaped curve.\nKey characteristics:\n\nBell-shaped and symmetric\nMean = Median = Mode (all at the center)\nTotal area under curve = 1 (or 100%)\nExtends indefinitely in both directions (left and right of the mean \\(\\mu\\))"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#normal-distribution-2",
+    "href": "slides/stats-probability-g11-pt2/index.html#normal-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nIt has its own closed mathematical form that defines the normal distribution:\n\\[\nf(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}\n\\exp\\!\\left( -\\frac{(x-\\mu)^2}{2\\sigma^2} \\right)\n\\]\n\nThe \\(f(x)\\) there refers to the density function. Some textbooks denotes the density function as \\(f_X(x)\\).\n\n\nThe random variable for this distribution \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) (reads as “X follows the normal distribution with parameters mean \\(\\mu\\) and standard deviation \\(\\sigma\\)”)."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#visualization-of-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#visualization-of-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Visualization of the normal distribution",
+    "text": "Visualization of the normal distribution\n\nviewof mu = Inputs.range([-7, 7], {\n    label: \"Mean (μ)\",\n    value: 0,\n    step: 0.1\n})\n\nviewof sigma = Inputs.range([0.001, 5], {\n    label: \"Standard Deviation (σ)\",\n    value: 1,\n    step: 0.01\n})\n\n{\n    const width = 800;\n    const height = 400;\n    const margin = {top: 20, right: 30, bottom: 40, left: 50};\n    \n    const xMin = -10;\n    const xMax = 10;\n    \n    const data = [];\n    for (let x = xMin; x &lt;= xMax; x += 0.1) {\n        const y = (1 / (sigma * Math.sqrt(2 * Math.PI))) * \n                  Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));\n        data.push({x, y});\n    }\n    \n    const svg = d3.create(\"svg\")\n        .attr(\"width\", width)\n        .attr(\"height\", height)\n        .attr(\"viewBox\", [0, 0, width, height]);\n    \n    const xScale = d3.scaleLinear()\n        .domain([xMin, xMax])\n        .range([margin.left, width - margin.right]);\n    \n    const yScale = d3.scaleLinear()\n        .domain([0, 0.9])\n        .range([height - margin.bottom, margin.top]);\n    \n    const line = d3.line()\n        .x(d =&gt; xScale(d.x))\n        .y(d =&gt; yScale(d.y));\n    \n    svg.append(\"path\")\n        .datum(data)\n        .attr(\"fill\", \"none\")\n        .attr(\"stroke\", \"#4CAF50\")\n        .attr(\"stroke-width\", 2.5)\n        .attr(\"d\", line);\n    \n    svg.append(\"g\")\n        .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n        .call(d3.axisBottom(xScale));\n    \n    svg.append(\"g\")\n        .attr(\"transform\", `translate(${margin.left},0)`)\n        .call(d3.axisLeft(yScale));\n    \n    svg.append(\"line\")\n        .attr(\"x1\", xScale(mu))\n        .attr(\"x2\", xScale(mu))\n        .attr(\"y1\", margin.top)\n        .attr(\"y2\", height - margin.bottom)\n        .attr(\"stroke\", \"red\")\n        .attr(\"stroke-width\", 2)\n        .attr(\"stroke-dasharray\", \"5,5\");\n    \n    return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObserve\n\n\nAs you adjust \\(\\mu\\) and \\(\\sigma\\), notice how the curve shifts and spreads!"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Characteristics of the normal distribution",
+    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#characteristics-of-the-normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Characteristics of the normal distribution",
+    "text": "Characteristics of the normal distribution\n\n\nVisual Properties\n\nBell-shaped with highest peak at center\nSymmetrical about the mean\nContinuous on both sides\nHorizontally Asymptotic Never touches the horizontal axis\n\n\nMathematical Properties\n\nMean = Median = Mode\nTotal area $  (100%)$\nDetermined by two parameters:\n\n\\(\\mu\\) (mean): location\n\\(\\sigma\\) (standard deviation): spread"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution",
+    "href": "slides/stats-probability-g11-pt2/index.html#standard-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\nThe standard normal distribution is a special case where:\n\nMean \\(\\mu = 0\\)\nStandard deviation \\(\\sigma = 1\\)\n\nMost textbooks denotes the random variable \\(Z\\) of the standard normal distribution as \\(Z \\sim \\mathcal{N}(0, 1)\\)\n\nWe can scale down \\(X \\sim \\mathcal{N}(\\mu, \\sigma)\\) to \\(Z \\sim \\mathcal{N}(0, 1)\\). We called it “standardization”."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#the-importance-of-z-scores",
+    "href": "slides/stats-probability-g11-pt2/index.html#the-importance-of-z-scores",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "The importance of z-scores",
+    "text": "The importance of z-scores\n\n\nCompare different distributions\nIt is much easier to compare different distribution (still normal) on the same scale\n\nDealing with probabilities\nAlthough we have softwares for us to calculate such probabilities, interpreting probabilities under z-score scale is much easier.\n\nIdentify outliers\nStandardization has a huge advantage to the application of outlier identification."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule",
+    "href": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "The Empirical Rule (68-95-99.7 Rule)",
+    "text": "The Empirical Rule (68-95-99.7 Rule)\n\n\nviewof mu_empirical = Inputs.range([-10, 10], {\n    label: \"Mean (μ)\",\n    value: 0,\n    step: 0.5\n})\n\nviewof sigma_empirical = Inputs.range([0.001, 5], {\n    label: \"Std. Dev. (σ)\",\n    value: 1,\n    step: 0.01\n})\n\nviewof ruleSelect = Inputs.radio(\n    new Map([\n        [\"68% Rule (±1σ)\", 1],\n        [\"95% Rule (±2σ)\", 2],\n        [\"99.7% Rule (±3σ)\", 3],\n        [\"All Rules\", 4]\n    ]),\n    {label: \"Show Rule:\", value: 1}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport { plotEmpiricalRule } from \"./normal_empirical_rule.js\"\n\nplotEmpiricalRule(mu_empirical, sigma_empirical, ruleSelect)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtml`&lt;hr&gt;&lt;h4&gt;Current Values:&lt;/h4&gt;`\n\n\n\n\n\n\n\nmd`${\n    ruleSelect === 1 ? `**68% of data falls between ${(mu_empirical - sigma_empirical).toFixed(2)} and ${(mu_empirical + sigma_empirical).toFixed(2)}**` :\n    ruleSelect === 2 ? `**95% of data falls between ${(mu_empirical - 2*sigma_empirical).toFixed(2)} and ${(mu_empirical + 2*sigma_empirical).toFixed(2)}**` :\n    ruleSelect === 3 ? `**99.7% of data falls between ${(mu_empirical - 3*sigma_empirical).toFixed(2)} and ${(mu_empirical + 3*sigma_empirical).toFixed(2)}**` :\n    `**μ ± 1σ:** [${(mu_empirical - sigma_empirical).toFixed(2)}, ${(mu_empirical + sigma_empirical).toFixed(2)}]\n    \n**μ ± 2σ:** [${(mu_empirical - 2*sigma_empirical).toFixed(2)}, ${(mu_empirical + 2*sigma_empirical).toFixed(2)}]\n\n**μ ± 3σ:** [${(mu_empirical - 3*sigma_empirical).toFixed(2)}, ${(mu_empirical + 3*sigma_empirical).toFixed(2)}]`\n}`\n\n\n\n\n\n\n\n\n\n\nmd`${\n    ruleSelect === 1 ? `**68% Rule:** Approximately 68% of all data values fall within ONE standard deviation of the mean (μ ± σ).` :\n    ruleSelect === 2 ? `**95% Rule:** Approximately 95% of all data values fall within TWO standard deviations of the mean (μ ± 2σ).` :\n    ruleSelect === 3 ? `**99.7% Rule:** Approximately 99.7% of all data values fall within THREE standard deviations of the mean (μ ± 3σ).` :\n    `**Complete Empirical Rule:** This shows all three rules simultaneously:\n- 68% within μ ± σ (purple)\n- 95% within μ ± 2σ (orange)  \n- 99.7% within μ ± 3σ (red)`\n}`"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule-1",
+    "href": "slides/stats-probability-g11-pt2/index.html#the-empirical-rule-68-95-99.7-rule-1",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "The Empirical Rule (68-95-99.7 Rule)",
+    "text": "The Empirical Rule (68-95-99.7 Rule)\nThe Empirical Rule (also called the 68-95-99.7 Rule) tells us what percentage of data falls within certain distances from the mean in a normal distribution.\n\n\n68% Rule\nApproximately 68% of data falls within 1 standard deviation of the mean:\n\\[\\mu - \\sigma \\leq X \\leq \\mu + \\sigma\\]\n\n95% Rule\nApproximately 95% of data falls within 2 standard deviations of the mean:\n\\[\\mu - 2\\sigma \\leq X \\leq \\mu + 2\\sigma\\]\n\n99.7% Rule\nApproximately 99.7% of data falls within 3 standard deviations of the mean:\n\\[\\mu - 3\\sigma \\leq X \\leq \\mu + 3\\sigma\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#practice-problem",
+    "href": "slides/stats-probability-g11-pt2/index.html#practice-problem",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Practice Problem",
+    "text": "Practice Problem\nScenario: Heights of adult males in a population are normally distributed with a mean of 175 cm and a standard deviation of 8 cm.\nQuestions:\n\nWhat percentage of men have heights between 167 cm and 183 cm?\nWhat percentage of men are taller than 191 cm?\nIf a man is 159 cm tall, how many standard deviations is he from the mean?\nWould a height of 159 cm be considered unusual? Why or why not?\n\n\nSolutions:\n\n167 to 183 cm = \\(\\mu \\pm 1\\sigma\\). It should be 68%\n191 cm = \\(\\mu + 2\\sigma\\)\n\nBeyond \\(2\\sigma\\) above mean\n\\((100\\% - 95\\%) / 2\\) = 2.5%\n\n\\(z = \\frac{159 - 175}{8} = \\frac{-16}{8} = -2\\) — 2 standard deviations below\nYes, unusual because it’s exactly \\(2\\sigma\\) below the mean (only 2.5% are this short or shorter)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt2/index.html#assignment",
+    "href": "slides/stats-probability-g11-pt2/index.html#assignment",
+    "title": "Statistics and Probability for 11th Graders — Part 2",
+    "section": "Assignment",
+    "text": "Assignment\nInstructions:\n\nOpen the link for the exercise:"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#recall-to-standard-normal-distribution",
+    "href": "slides/stats-probability-g11-pt3/index.html#recall-to-standard-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Recall to standard normal distribution",
+    "text": "Recall to standard normal distribution\nWhat is a standard normal distribution?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#recall-to-standard-normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#recall-to-standard-normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Recall to standard normal distribution",
+    "text": "Recall to standard normal distribution\nWhat is a standard normal distribution?\nA special case of the normal distribution where:\n\nMean \\(\\mu = 0\\)\nStandard deviation \\(\\sigma = 1\\)\nUsually a random variable represents as \\(Z\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#recall-to-standard-normal-distribution-2",
+    "href": "slides/stats-probability-g11-pt3/index.html#recall-to-standard-normal-distribution-2",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Recall to standard normal distribution",
+    "text": "Recall to standard normal distribution\nStandardize \\(X\\) that scales to standard normal distribution \\(Z \\sim \\mathcal{N}(0, 1)\\) through standardization:\n\n\\[Z=\\frac{X-\\mu}{\\sigma}\\]\n\n\nYou’ll get z-scores"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#to-calculate-probability-from-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt3/index.html#to-calculate-probability-from-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "To calculate probability from the normal distribution",
+    "text": "To calculate probability from the normal distribution"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#you-need-z-table",
+    "href": "slides/stats-probability-g11-pt3/index.html#you-need-z-table",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "You need z-table",
+    "text": "You need z-table\nGo to this link and then download the following PDF."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#you-need-z-table-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#you-need-z-table-1",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "You need z-table",
+    "text": "You need z-table\nGo to this link and then download the following PDF.\nHere’s what it looks like:"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#how-to-use-z-table",
+    "href": "slides/stats-probability-g11-pt3/index.html#how-to-use-z-table",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "How to use z-table",
+    "text": "How to use z-table"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#basics-of-calculation",
+    "href": "slides/stats-probability-g11-pt3/index.html#basics-of-calculation",
+    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "section": "Basics of calculation",
+    "text": "Basics of calculation"
+  },
+  {
+    "objectID": "resources/materials/z-table/index.html",
+    "href": "resources/materials/z-table/index.html",
+    "title": "Standard Normal Distribution (Z) Table",
+    "section": "",
+    "text": "Download Z-Table (PDF)"
+  },
+  {
+    "objectID": "resources/materials/z-table/index.html#download-pdf-version",
+    "href": "resources/materials/z-table/index.html#download-pdf-version",
+    "title": "Standard Normal Distribution (Z) Table",
+    "section": "",
+    "text": "Download Z-Table (PDF)"
   }
 ]

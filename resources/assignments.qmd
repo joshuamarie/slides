@@ -1,0 +1,19 @@
+---
+title: "Link to my assignments"
+listing:
+  - id: "assignments"
+    sort-ui: false
+    sort: "date desc"
+    filter-ui: false
+    categories: false
+    type: grid
+    page-size: 5
+    fields: [date, title, description, categories]
+    contents: 
+      - "/assignments/*/*.qmd"
+    feed: true
+---
+
+::: {#assignments}
+:::
+

@@ -1,0 +1,88 @@
+---
+title: "Standard Normal Distribution (Z) Table"
+description: "The generated z-table, available for HTML and PDF formats"
+format:
+  html:
+    toc: true
+    toc-location: left
+    theme: cosmo
+    css: styles.css
+    embed-resources: false
+  pdf:
+    output-file: z-table.pdf
+    documentclass: article
+    geometry: 
+      - margin=0.5in
+      - paperheight=11in
+      - paperwidth=8.5in
+    fontsize: 9pt
+    keep-tex: false
+    include-in-header:
+      text: |
+        \usepackage{caption}
+        \captionsetup[table]{skip=2pt}
+        \setlength{\abovecaptionskip}{2pt}
+        \setlength{\belowcaptionskip}{2pt}
+execute:
+  echo: false
+  warning: false
+  message: false
+engine: knitr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+box::use(./z_table[create_z_table])
+```
+
+::: {.content-visible when-format="html"}
+## Download PDF Version
+
+{{< downloadthis z-table.pdf dname="z-table" label="Download Z-Table (PDF)" icon="file-earmark-pdf" type="info" >}}
+:::
+
+::: {.content-visible when-format="pdf"}
+\vspace{-10pt}
+:::
+
+## About the Z-Table
+
+This table shows the cumulative probability (area under the curve) to the *left* of a given z-score in a standard normal distribution.
+
+- **Rows**: z-score to first decimal place | **Columns**: second decimal place | **Values**: Cumulative probability $P(Z \leq z)$
+
+::: {.content-visible when-format="pdf"}
+\vspace{-5pt}
+:::
+
+## Positive Z-Scores
+
+```{r positive-z-table}
+create_z_table(
+    z_range = c(0, 4),
+    caption = "Standard Normal Distribution - Positive Z-Scores",
+    header_color = "#4a90e2"
+)
+```
+
+::: {.content-visible when-format="pdf"}
+\vspace{-8pt}
+:::
+
+## Negative Z-Scores
+
+```{r negative-z-table}
+create_z_table(
+    z_range = c(-4, 0),
+    caption = "Standard Normal Distribution - Negative Z-Scores",
+    header_color = "#e24a4a"
+)
+```
+
+::: {.content-visible when-format="pdf"}
+\vspace{-5pt}
+:::
+
+## How to Use This Table
+
+**Example:** For $z = 1.96$, find row "1.9" and column ".06". The value 0.9750 means 97.50% of values fall below $z = 1.96$.

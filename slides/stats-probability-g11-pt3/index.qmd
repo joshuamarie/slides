@@ -1,0 +1,89 @@
+---
+title: "Statistics and Probability for 11th Graders — Part 3"
+subtitle: "Calculating probabilities"
+date: 2025-12-12
+categories: [statistics, probability]
+image: 'image-thumb.png'
+format:
+    revealjs:
+        transition: slide
+        transition-speed: default
+        background-transition: fade
+        
+        title-slide-attributes:
+            data-background-image: "image-main.png"
+            data-background-size: cover
+            data-background-position: center
+            data-background-opacity: "1"
+        
+        width: 1600
+        height: 900
+        margin: 0.1
+        min-scale: 0.2
+        max-scale: 2.0
+        
+        highlight-style: github-dark
+        css: 
+          - ./custom_style.css
+          - ./button.css
+        
+        chalkboard: 
+            buttons: false
+            
+        quiz:
+            resetKey: 'q'
+
+filters:
+  - shinylive
+
+revealjs-plugins:
+  - quiz
+---
+
+## Recall to standard normal distribution {background-image="image-main.png" auto-animate="true"}
+
+What is a **standard normal distribution**?
+
+## Recall to standard normal distribution {background-image="image-main.png" auto-animate="true"}
+
+What is a **standard normal distribution**?
+
+A special case of the **normal distribution** where:
+
+::: incremental
+-   Mean $\mu = 0$
+-   Standard deviation $\sigma = 1$
+-   Usually a random variable represents as $Z$
+:::
+
+## Recall to standard normal distribution {background-image="image-main.png" auto-animate="true"}
+
+Standardize $X$ that scales to standard normal distribution $Z \sim \mathcal{N}(0, 1)$ through **standardization**:
+
+::: {.fragment .fade-in}
+$$Z=\frac{X-\mu}{\sigma}$$
+:::
+
+::: {.fragment .fade-in}
+You'll get *z-scores*
+:::
+
+## To calculate probability from the normal distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+## You need z-table {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+Go to this link and then download the following PDF.
+
+## You need z-table {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+Go to this link and then download the following PDF.
+
+Here's what it looks like:
+
+![](image-main.png)
+
+## How to use z-table {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+## Basics of calculation {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+

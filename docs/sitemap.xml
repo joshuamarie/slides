@@ -1,35 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://slides.joshuamarie.com/slides/stats-probability-g11/index.html</loc>
-    <lastmod>2025-11-22T12:50:03.857Z</lastmod>
-  </url>
-  <url>
-    <loc>https://slides.joshuamarie.com/index.html</loc>
-    <lastmod>2025-11-22T09:04:19.087Z</lastmod>
-  </url>
-  <url>
-    <loc>https://slides.joshuamarie.com/slides/stats-probability-g11-pt2/index.html</loc>
-    <lastmod>2025-12-06T07:53:41.254Z</lastmod>
-  </url>
-  <url>
-    <loc>https://slides.joshuamarie.com/slides/try.html</loc>
-    <lastmod>2025-12-04T10:46:00.773Z</lastmod>
-  </url>
-  <url>
-    <loc>https://slides.joshuamarie.com/slides/trial/index.html</loc>
-    <lastmod>2025-12-04T10:50:29.998Z</lastmod>
-  </url>
-  <url>
-    <loc>https://slides.joshuamarie.com/slides/stats-probability-g11-light/index.html</loc>
-    <lastmod>2025-12-05T04:20:31.820Z</lastmod>
+    <loc>https://slides.joshuamarie.com/slides/stats-probability-g11-pt3-light/index.html</loc>
+    <lastmod>2025-12-11T07:31:15.326Z</lastmod>
   </url>
   <url>
     <loc>https://slides.joshuamarie.com/slides/stats-probability-g11-pt2-light/index.html</loc>
     <lastmod>2025-12-06T08:28:02.595Z</lastmod>
   </url>
   <url>
+    <loc>https://slides.joshuamarie.com/slides/stats-probability-g11-light/index.html</loc>
+    <lastmod>2025-12-05T04:20:31.820Z</lastmod>
+  </url>
+  <url>
     <loc>https://slides.joshuamarie.com/slides/accounting/index.html</loc>
     <lastmod>2025-12-07T03:54:43.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://slides.joshuamarie.com/resources/materials/z-table/index.html</loc>
+    <lastmod>2025-12-11T09:28:34.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://slides.joshuamarie.com/index.html</loc>
+    <lastmod>2025-11-22T09:04:19.087Z</lastmod>
+  </url>
+  <url>
+    <loc>https://slides.joshuamarie.com/resources/assignments.html</loc>
+    <lastmod>2025-12-11T08:20:34.907Z</lastmod>
+  </url>
+  <url>
+    <loc>https://slides.joshuamarie.com/resources/materials.html</loc>
+    <lastmod>2025-12-11T08:20:26.943Z</lastmod>
+  </url>
+  <url>
+    <loc>https://slides.joshuamarie.com/slides/stats-probability-g11/index.html</loc>
+    <lastmod>2025-11-22T12:50:03.857Z</lastmod>
+  </url>
+  <url>
+    <loc>https://slides.joshuamarie.com/slides/stats-probability-g11-pt2/index.html</loc>
+    <lastmod>2025-12-06T07:53:41.254Z</lastmod>
+  </url>
+  <url>
+    <loc>https://slides.joshuamarie.com/slides/stats-probability-g11-pt3/index.html</loc>
+    <lastmod>2025-12-11T07:45:38.746Z</lastmod>
   </url>
 </urlset>

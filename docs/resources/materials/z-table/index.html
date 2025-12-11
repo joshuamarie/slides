@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="The generated z-table, available for HTML and PDF formats">
+
+<title>Standard Normal Distribution (Z) Table – Slides - Joshua Marie</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/jm-favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-0beff3bfa1d16fc36cbc44a1456394a4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Slides - Joshua Marie</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">All Slides</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/joshuamarie"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="../../../resources/materials.html">
+ <span class="dropdown-text">Materials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../resources/assignments.html">
+ <span class="dropdown-text">Assignments</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#download-pdf-version" id="toc-download-pdf-version" class="nav-link active" data-scroll-target="#download-pdf-version">Download PDF Version</a></li>
+  <li><a href="#about-the-z-table" id="toc-about-the-z-table" class="nav-link" data-scroll-target="#about-the-z-table">About the Z-Table</a></li>
+  <li><a href="#positive-z-scores" id="toc-positive-z-scores" class="nav-link" data-scroll-target="#positive-z-scores">Positive Z-Scores</a></li>
+  <li><a href="#negative-z-scores" id="toc-negative-z-scores" class="nav-link" data-scroll-target="#negative-z-scores">Negative Z-Scores</a></li>
+  <li><a href="#how-to-use-this-table" id="toc-how-to-use-this-table" class="nav-link" data-scroll-target="#how-to-use-this-table">How to Use This Table</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="z-table.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Standard Normal Distribution (Z) Table</h1>
+</div>
+
+<div>
+  <div class="description">
+    The generated z-table, available for HTML and PDF formats
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="download-pdf-version" class="level2">
+<h2 class="anchored" data-anchor-id="download-pdf-version">Download PDF Version</h2>
+<p><a href="#dnldts42892" onclick="fetch('data:application/pdf;base64,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').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'z-table.pdf'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-info downloadthis  " id="dnldts42892"><i class="bi bi-file-earmark-pdf"></i> Download Z-Table (PDF) </button></a></p>
+</section>
+<section id="about-the-z-table" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-z-table">About the Z-Table</h2>
+<p>This table shows the cumulative probability (area under the curve) to the <em>left</em> of a given z-score in a standard normal distribution.</p>
+<ul>
+<li><strong>Rows</strong>: z-score to first decimal place | <strong>Columns</strong>: second decimal place | <strong>Values</strong>: Cumulative probability <span class="math inline">\(P(Z \leq z)\)</span></li>
+</ul>
+</section>
+<section id="positive-z-scores" class="level2">
+<h2 class="anchored" data-anchor-id="positive-z-scores">Positive Z-Scores</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Standard Normal Distribution - Positive Z-Scores</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">Z</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.00</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.01</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.02</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.03</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.04</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.05</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.06</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.07</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.08</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(74, 144, 226, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.09</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.0</td>
+<td style="text-align: center;">0.5000</td>
+<td style="text-align: center;">0.5040</td>
+<td style="text-align: center;">0.5080</td>
+<td style="text-align: center;">0.5120</td>
+<td style="text-align: center;">0.5160</td>
+<td style="text-align: center;">0.5199</td>
+<td style="text-align: center;">0.5239</td>
+<td style="text-align: center;">0.5279</td>
+<td style="text-align: center;">0.5319</td>
+<td style="text-align: center;">0.5359</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.1</td>
+<td style="text-align: center;">0.5398</td>
+<td style="text-align: center;">0.5438</td>
+<td style="text-align: center;">0.5478</td>
+<td style="text-align: center;">0.5517</td>
+<td style="text-align: center;">0.5557</td>
+<td style="text-align: center;">0.5596</td>
+<td style="text-align: center;">0.5636</td>
+<td style="text-align: center;">0.5675</td>
+<td style="text-align: center;">0.5714</td>
+<td style="text-align: center;">0.5753</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.2</td>
+<td style="text-align: center;">0.5793</td>
+<td style="text-align: center;">0.5832</td>
+<td style="text-align: center;">0.5871</td>
+<td style="text-align: center;">0.5910</td>
+<td style="text-align: center;">0.5948</td>
+<td style="text-align: center;">0.5987</td>
+<td style="text-align: center;">0.6026</td>
+<td style="text-align: center;">0.6064</td>
+<td style="text-align: center;">0.6103</td>
+<td style="text-align: center;">0.6141</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.3</td>
+<td style="text-align: center;">0.6179</td>
+<td style="text-align: center;">0.6217</td>
+<td style="text-align: center;">0.6255</td>
+<td style="text-align: center;">0.6293</td>
+<td style="text-align: center;">0.6331</td>
+<td style="text-align: center;">0.6368</td>
+<td style="text-align: center;">0.6406</td>
+<td style="text-align: center;">0.6443</td>
+<td style="text-align: center;">0.6480</td>
+<td style="text-align: center;">0.6517</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.4</td>
+<td style="text-align: center;">0.6554</td>
+<td style="text-align: center;">0.6591</td>
+<td style="text-align: center;">0.6628</td>
+<td style="text-align: center;">0.6664</td>
+<td style="text-align: center;">0.6700</td>
+<td style="text-align: center;">0.6736</td>
+<td style="text-align: center;">0.6772</td>
+<td style="text-align: center;">0.6808</td>
+<td style="text-align: center;">0.6844</td>
+<td style="text-align: center;">0.6879</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.5</td>
+<td style="text-align: center;">0.6915</td>
+<td style="text-align: center;">0.6950</td>
+<td style="text-align: center;">0.6985</td>
+<td style="text-align: center;">0.7019</td>
+<td style="text-align: center;">0.7054</td>
+<td style="text-align: center;">0.7088</td>
+<td style="text-align: center;">0.7123</td>
+<td style="text-align: center;">0.7157</td>
+<td style="text-align: center;">0.7190</td>
+<td style="text-align: center;">0.7224</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.6</td>
+<td style="text-align: center;">0.7257</td>
+<td style="text-align: center;">0.7291</td>
+<td style="text-align: center;">0.7324</td>
+<td style="text-align: center;">0.7357</td>
+<td style="text-align: center;">0.7389</td>
+<td style="text-align: center;">0.7422</td>
+<td style="text-align: center;">0.7454</td>
+<td style="text-align: center;">0.7486</td>
+<td style="text-align: center;">0.7517</td>
+<td style="text-align: center;">0.7549</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.7</td>
+<td style="text-align: center;">0.7580</td>
+<td style="text-align: center;">0.7611</td>
+<td style="text-align: center;">0.7642</td>
+<td style="text-align: center;">0.7673</td>
+<td style="text-align: center;">0.7704</td>
+<td style="text-align: center;">0.7734</td>
+<td style="text-align: center;">0.7764</td>
+<td style="text-align: center;">0.7794</td>
+<td style="text-align: center;">0.7823</td>
+<td style="text-align: center;">0.7852</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.8</td>
+<td style="text-align: center;">0.7881</td>
+<td style="text-align: center;">0.7910</td>
+<td style="text-align: center;">0.7939</td>
+<td style="text-align: center;">0.7967</td>
+<td style="text-align: center;">0.7995</td>
+<td style="text-align: center;">0.8023</td>
+<td style="text-align: center;">0.8051</td>
+<td style="text-align: center;">0.8078</td>
+<td style="text-align: center;">0.8106</td>
+<td style="text-align: center;">0.8133</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.9</td>
+<td style="text-align: center;">0.8159</td>
+<td style="text-align: center;">0.8186</td>
+<td style="text-align: center;">0.8212</td>
+<td style="text-align: center;">0.8238</td>
+<td style="text-align: center;">0.8264</td>
+<td style="text-align: center;">0.8289</td>
+<td style="text-align: center;">0.8315</td>
+<td style="text-align: center;">0.8340</td>
+<td style="text-align: center;">0.8365</td>
+<td style="text-align: center;">0.8389</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.0</td>
+<td style="text-align: center;">0.8413</td>
+<td style="text-align: center;">0.8438</td>
+<td style="text-align: center;">0.8461</td>
+<td style="text-align: center;">0.8485</td>
+<td style="text-align: center;">0.8508</td>
+<td style="text-align: center;">0.8531</td>
+<td style="text-align: center;">0.8554</td>
+<td style="text-align: center;">0.8577</td>
+<td style="text-align: center;">0.8599</td>
+<td style="text-align: center;">0.8621</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.1</td>
+<td style="text-align: center;">0.8643</td>
+<td style="text-align: center;">0.8665</td>
+<td style="text-align: center;">0.8686</td>
+<td style="text-align: center;">0.8708</td>
+<td style="text-align: center;">0.8729</td>
+<td style="text-align: center;">0.8749</td>
+<td style="text-align: center;">0.8770</td>
+<td style="text-align: center;">0.8790</td>
+<td style="text-align: center;">0.8810</td>
+<td style="text-align: center;">0.8830</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.2</td>
+<td style="text-align: center;">0.8849</td>
+<td style="text-align: center;">0.8869</td>
+<td style="text-align: center;">0.8888</td>
+<td style="text-align: center;">0.8907</td>
+<td style="text-align: center;">0.8925</td>
+<td style="text-align: center;">0.8944</td>
+<td style="text-align: center;">0.8962</td>
+<td style="text-align: center;">0.8980</td>
+<td style="text-align: center;">0.8997</td>
+<td style="text-align: center;">0.9015</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.3</td>
+<td style="text-align: center;">0.9032</td>
+<td style="text-align: center;">0.9049</td>
+<td style="text-align: center;">0.9066</td>
+<td style="text-align: center;">0.9082</td>
+<td style="text-align: center;">0.9099</td>
+<td style="text-align: center;">0.9115</td>
+<td style="text-align: center;">0.9131</td>
+<td style="text-align: center;">0.9147</td>
+<td style="text-align: center;">0.9162</td>
+<td style="text-align: center;">0.9177</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.4</td>
+<td style="text-align: center;">0.9192</td>
+<td style="text-align: center;">0.9207</td>
+<td style="text-align: center;">0.9222</td>
+<td style="text-align: center;">0.9236</td>
+<td style="text-align: center;">0.9251</td>
+<td style="text-align: center;">0.9265</td>
+<td style="text-align: center;">0.9279</td>
+<td style="text-align: center;">0.9292</td>
+<td style="text-align: center;">0.9306</td>
+<td style="text-align: center;">0.9319</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.5</td>
+<td style="text-align: center;">0.9332</td>
+<td style="text-align: center;">0.9345</td>
+<td style="text-align: center;">0.9357</td>
+<td style="text-align: center;">0.9370</td>
+<td style="text-align: center;">0.9382</td>
+<td style="text-align: center;">0.9394</td>
+<td style="text-align: center;">0.9406</td>
+<td style="text-align: center;">0.9418</td>
+<td style="text-align: center;">0.9429</td>
+<td style="text-align: center;">0.9441</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.6</td>
+<td style="text-align: center;">0.9452</td>
+<td style="text-align: center;">0.9463</td>
+<td style="text-align: center;">0.9474</td>
+<td style="text-align: center;">0.9484</td>
+<td style="text-align: center;">0.9495</td>
+<td style="text-align: center;">0.9505</td>
+<td style="text-align: center;">0.9515</td>
+<td style="text-align: center;">0.9525</td>
+<td style="text-align: center;">0.9535</td>
+<td style="text-align: center;">0.9545</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.7</td>
+<td style="text-align: center;">0.9554</td>
+<td style="text-align: center;">0.9564</td>
+<td style="text-align: center;">0.9573</td>
+<td style="text-align: center;">0.9582</td>
+<td style="text-align: center;">0.9591</td>
+<td style="text-align: center;">0.9599</td>
+<td style="text-align: center;">0.9608</td>
+<td style="text-align: center;">0.9616</td>
+<td style="text-align: center;">0.9625</td>
+<td style="text-align: center;">0.9633</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.8</td>
+<td style="text-align: center;">0.9641</td>
+<td style="text-align: center;">0.9649</td>
+<td style="text-align: center;">0.9656</td>
+<td style="text-align: center;">0.9664</td>
+<td style="text-align: center;">0.9671</td>
+<td style="text-align: center;">0.9678</td>
+<td style="text-align: center;">0.9686</td>
+<td style="text-align: center;">0.9693</td>
+<td style="text-align: center;">0.9699</td>
+<td style="text-align: center;">0.9706</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">1.9</td>
+<td style="text-align: center;">0.9713</td>
+<td style="text-align: center;">0.9719</td>
+<td style="text-align: center;">0.9726</td>
+<td style="text-align: center;">0.9732</td>
+<td style="text-align: center;">0.9738</td>
+<td style="text-align: center;">0.9744</td>
+<td style="text-align: center;">0.9750</td>
+<td style="text-align: center;">0.9756</td>
+<td style="text-align: center;">0.9761</td>
+<td style="text-align: center;">0.9767</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.0</td>
+<td style="text-align: center;">0.9772</td>
+<td style="text-align: center;">0.9778</td>
+<td style="text-align: center;">0.9783</td>
+<td style="text-align: center;">0.9788</td>
+<td style="text-align: center;">0.9793</td>
+<td style="text-align: center;">0.9798</td>
+<td style="text-align: center;">0.9803</td>
+<td style="text-align: center;">0.9808</td>
+<td style="text-align: center;">0.9812</td>
+<td style="text-align: center;">0.9817</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.1</td>
+<td style="text-align: center;">0.9821</td>
+<td style="text-align: center;">0.9826</td>
+<td style="text-align: center;">0.9830</td>
+<td style="text-align: center;">0.9834</td>
+<td style="text-align: center;">0.9838</td>
+<td style="text-align: center;">0.9842</td>
+<td style="text-align: center;">0.9846</td>
+<td style="text-align: center;">0.9850</td>
+<td style="text-align: center;">0.9854</td>
+<td style="text-align: center;">0.9857</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.2</td>
+<td style="text-align: center;">0.9861</td>
+<td style="text-align: center;">0.9864</td>
+<td style="text-align: center;">0.9868</td>
+<td style="text-align: center;">0.9871</td>
+<td style="text-align: center;">0.9875</td>
+<td style="text-align: center;">0.9878</td>
+<td style="text-align: center;">0.9881</td>
+<td style="text-align: center;">0.9884</td>
+<td style="text-align: center;">0.9887</td>
+<td style="text-align: center;">0.9890</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.3</td>
+<td style="text-align: center;">0.9893</td>
+<td style="text-align: center;">0.9896</td>
+<td style="text-align: center;">0.9898</td>
+<td style="text-align: center;">0.9901</td>
+<td style="text-align: center;">0.9904</td>
+<td style="text-align: center;">0.9906</td>
+<td style="text-align: center;">0.9909</td>
+<td style="text-align: center;">0.9911</td>
+<td style="text-align: center;">0.9913</td>
+<td style="text-align: center;">0.9916</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.4</td>
+<td style="text-align: center;">0.9918</td>
+<td style="text-align: center;">0.9920</td>
+<td style="text-align: center;">0.9922</td>
+<td style="text-align: center;">0.9925</td>
+<td style="text-align: center;">0.9927</td>
+<td style="text-align: center;">0.9929</td>
+<td style="text-align: center;">0.9931</td>
+<td style="text-align: center;">0.9932</td>
+<td style="text-align: center;">0.9934</td>
+<td style="text-align: center;">0.9936</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.5</td>
+<td style="text-align: center;">0.9938</td>
+<td style="text-align: center;">0.9940</td>
+<td style="text-align: center;">0.9941</td>
+<td style="text-align: center;">0.9943</td>
+<td style="text-align: center;">0.9945</td>
+<td style="text-align: center;">0.9946</td>
+<td style="text-align: center;">0.9948</td>
+<td style="text-align: center;">0.9949</td>
+<td style="text-align: center;">0.9951</td>
+<td style="text-align: center;">0.9952</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.6</td>
+<td style="text-align: center;">0.9953</td>
+<td style="text-align: center;">0.9955</td>
+<td style="text-align: center;">0.9956</td>
+<td style="text-align: center;">0.9957</td>
+<td style="text-align: center;">0.9959</td>
+<td style="text-align: center;">0.9960</td>
+<td style="text-align: center;">0.9961</td>
+<td style="text-align: center;">0.9962</td>
+<td style="text-align: center;">0.9963</td>
+<td style="text-align: center;">0.9964</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.7</td>
+<td style="text-align: center;">0.9965</td>
+<td style="text-align: center;">0.9966</td>
+<td style="text-align: center;">0.9967</td>
+<td style="text-align: center;">0.9968</td>
+<td style="text-align: center;">0.9969</td>
+<td style="text-align: center;">0.9970</td>
+<td style="text-align: center;">0.9971</td>
+<td style="text-align: center;">0.9972</td>
+<td style="text-align: center;">0.9973</td>
+<td style="text-align: center;">0.9974</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.8</td>
+<td style="text-align: center;">0.9974</td>
+<td style="text-align: center;">0.9975</td>
+<td style="text-align: center;">0.9976</td>
+<td style="text-align: center;">0.9977</td>
+<td style="text-align: center;">0.9977</td>
+<td style="text-align: center;">0.9978</td>
+<td style="text-align: center;">0.9979</td>
+<td style="text-align: center;">0.9979</td>
+<td style="text-align: center;">0.9980</td>
+<td style="text-align: center;">0.9981</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">2.9</td>
+<td style="text-align: center;">0.9981</td>
+<td style="text-align: center;">0.9982</td>
+<td style="text-align: center;">0.9982</td>
+<td style="text-align: center;">0.9983</td>
+<td style="text-align: center;">0.9984</td>
+<td style="text-align: center;">0.9984</td>
+<td style="text-align: center;">0.9985</td>
+<td style="text-align: center;">0.9985</td>
+<td style="text-align: center;">0.9986</td>
+<td style="text-align: center;">0.9986</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.0</td>
+<td style="text-align: center;">0.9987</td>
+<td style="text-align: center;">0.9987</td>
+<td style="text-align: center;">0.9987</td>
+<td style="text-align: center;">0.9988</td>
+<td style="text-align: center;">0.9988</td>
+<td style="text-align: center;">0.9989</td>
+<td style="text-align: center;">0.9989</td>
+<td style="text-align: center;">0.9989</td>
+<td style="text-align: center;">0.9990</td>
+<td style="text-align: center;">0.9990</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.1</td>
+<td style="text-align: center;">0.9990</td>
+<td style="text-align: center;">0.9991</td>
+<td style="text-align: center;">0.9991</td>
+<td style="text-align: center;">0.9991</td>
+<td style="text-align: center;">0.9992</td>
+<td style="text-align: center;">0.9992</td>
+<td style="text-align: center;">0.9992</td>
+<td style="text-align: center;">0.9992</td>
+<td style="text-align: center;">0.9993</td>
+<td style="text-align: center;">0.9993</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.2</td>
+<td style="text-align: center;">0.9993</td>
+<td style="text-align: center;">0.9993</td>
+<td style="text-align: center;">0.9994</td>
+<td style="text-align: center;">0.9994</td>
+<td style="text-align: center;">0.9994</td>
+<td style="text-align: center;">0.9994</td>
+<td style="text-align: center;">0.9994</td>
+<td style="text-align: center;">0.9995</td>
+<td style="text-align: center;">0.9995</td>
+<td style="text-align: center;">0.9995</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.3</td>
+<td style="text-align: center;">0.9995</td>
+<td style="text-align: center;">0.9995</td>
+<td style="text-align: center;">0.9995</td>
+<td style="text-align: center;">0.9996</td>
+<td style="text-align: center;">0.9996</td>
+<td style="text-align: center;">0.9996</td>
+<td style="text-align: center;">0.9996</td>
+<td style="text-align: center;">0.9996</td>
+<td style="text-align: center;">0.9996</td>
+<td style="text-align: center;">0.9997</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.4</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9997</td>
+<td style="text-align: center;">0.9998</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.5</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.6</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9998</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.7</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.8</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+<td style="text-align: center;">0.9999</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">3.9</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">4.0</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+<td style="text-align: center;">1.0000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="negative-z-scores" class="level2">
+<h2 class="anchored" data-anchor-id="negative-z-scores">Negative Z-Scores</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Standard Normal Distribution - Negative Z-Scores</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">Z</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.09</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.08</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.07</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.06</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.05</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.04</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.03</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.02</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.01</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; position: sticky; top: 0; background-color: #FFFFFF; font-weight: bold; color: white !important; background-color: rgba(226, 74, 74, 255) !important; position: sticky; top: 0; background-color: #FFFFFF;">.00</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-4.0</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.9</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+<td style="text-align: center;">0.0000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.8</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.7</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.6</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0001</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.5</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0002</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.4</td>
+<td style="text-align: center;">0.0002</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0003</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.3</td>
+<td style="text-align: center;">0.0003</td>
+<td style="text-align: center;">0.0004</td>
+<td style="text-align: center;">0.0004</td>
+<td style="text-align: center;">0.0004</td>
+<td style="text-align: center;">0.0004</td>
+<td style="text-align: center;">0.0004</td>
+<td style="text-align: center;">0.0004</td>
+<td style="text-align: center;">0.0005</td>
+<td style="text-align: center;">0.0005</td>
+<td style="text-align: center;">0.0005</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.2</td>
+<td style="text-align: center;">0.0005</td>
+<td style="text-align: center;">0.0005</td>
+<td style="text-align: center;">0.0005</td>
+<td style="text-align: center;">0.0006</td>
+<td style="text-align: center;">0.0006</td>
+<td style="text-align: center;">0.0006</td>
+<td style="text-align: center;">0.0006</td>
+<td style="text-align: center;">0.0006</td>
+<td style="text-align: center;">0.0007</td>
+<td style="text-align: center;">0.0007</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.1</td>
+<td style="text-align: center;">0.0007</td>
+<td style="text-align: center;">0.0007</td>
+<td style="text-align: center;">0.0008</td>
+<td style="text-align: center;">0.0008</td>
+<td style="text-align: center;">0.0008</td>
+<td style="text-align: center;">0.0008</td>
+<td style="text-align: center;">0.0009</td>
+<td style="text-align: center;">0.0009</td>
+<td style="text-align: center;">0.0009</td>
+<td style="text-align: center;">0.0010</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-3.0</td>
+<td style="text-align: center;">0.0010</td>
+<td style="text-align: center;">0.0010</td>
+<td style="text-align: center;">0.0011</td>
+<td style="text-align: center;">0.0011</td>
+<td style="text-align: center;">0.0011</td>
+<td style="text-align: center;">0.0012</td>
+<td style="text-align: center;">0.0012</td>
+<td style="text-align: center;">0.0013</td>
+<td style="text-align: center;">0.0013</td>
+<td style="text-align: center;">0.0013</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.9</td>
+<td style="text-align: center;">0.0014</td>
+<td style="text-align: center;">0.0014</td>
+<td style="text-align: center;">0.0015</td>
+<td style="text-align: center;">0.0015</td>
+<td style="text-align: center;">0.0016</td>
+<td style="text-align: center;">0.0016</td>
+<td style="text-align: center;">0.0017</td>
+<td style="text-align: center;">0.0018</td>
+<td style="text-align: center;">0.0018</td>
+<td style="text-align: center;">0.0019</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.8</td>
+<td style="text-align: center;">0.0019</td>
+<td style="text-align: center;">0.0020</td>
+<td style="text-align: center;">0.0021</td>
+<td style="text-align: center;">0.0021</td>
+<td style="text-align: center;">0.0022</td>
+<td style="text-align: center;">0.0023</td>
+<td style="text-align: center;">0.0023</td>
+<td style="text-align: center;">0.0024</td>
+<td style="text-align: center;">0.0025</td>
+<td style="text-align: center;">0.0026</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.7</td>
+<td style="text-align: center;">0.0026</td>
+<td style="text-align: center;">0.0027</td>
+<td style="text-align: center;">0.0028</td>
+<td style="text-align: center;">0.0029</td>
+<td style="text-align: center;">0.0030</td>
+<td style="text-align: center;">0.0031</td>
+<td style="text-align: center;">0.0032</td>
+<td style="text-align: center;">0.0033</td>
+<td style="text-align: center;">0.0034</td>
+<td style="text-align: center;">0.0035</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.6</td>
+<td style="text-align: center;">0.0036</td>
+<td style="text-align: center;">0.0037</td>
+<td style="text-align: center;">0.0038</td>
+<td style="text-align: center;">0.0039</td>
+<td style="text-align: center;">0.0040</td>
+<td style="text-align: center;">0.0041</td>
+<td style="text-align: center;">0.0043</td>
+<td style="text-align: center;">0.0044</td>
+<td style="text-align: center;">0.0045</td>
+<td style="text-align: center;">0.0047</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.5</td>
+<td style="text-align: center;">0.0048</td>
+<td style="text-align: center;">0.0049</td>
+<td style="text-align: center;">0.0051</td>
+<td style="text-align: center;">0.0052</td>
+<td style="text-align: center;">0.0054</td>
+<td style="text-align: center;">0.0055</td>
+<td style="text-align: center;">0.0057</td>
+<td style="text-align: center;">0.0059</td>
+<td style="text-align: center;">0.0060</td>
+<td style="text-align: center;">0.0062</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.4</td>
+<td style="text-align: center;">0.0064</td>
+<td style="text-align: center;">0.0066</td>
+<td style="text-align: center;">0.0068</td>
+<td style="text-align: center;">0.0069</td>
+<td style="text-align: center;">0.0071</td>
+<td style="text-align: center;">0.0073</td>
+<td style="text-align: center;">0.0075</td>
+<td style="text-align: center;">0.0078</td>
+<td style="text-align: center;">0.0080</td>
+<td style="text-align: center;">0.0082</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.3</td>
+<td style="text-align: center;">0.0084</td>
+<td style="text-align: center;">0.0087</td>
+<td style="text-align: center;">0.0089</td>
+<td style="text-align: center;">0.0091</td>
+<td style="text-align: center;">0.0094</td>
+<td style="text-align: center;">0.0096</td>
+<td style="text-align: center;">0.0099</td>
+<td style="text-align: center;">0.0102</td>
+<td style="text-align: center;">0.0104</td>
+<td style="text-align: center;">0.0107</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.2</td>
+<td style="text-align: center;">0.0110</td>
+<td style="text-align: center;">0.0113</td>
+<td style="text-align: center;">0.0116</td>
+<td style="text-align: center;">0.0119</td>
+<td style="text-align: center;">0.0122</td>
+<td style="text-align: center;">0.0125</td>
+<td style="text-align: center;">0.0129</td>
+<td style="text-align: center;">0.0132</td>
+<td style="text-align: center;">0.0136</td>
+<td style="text-align: center;">0.0139</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.1</td>
+<td style="text-align: center;">0.0143</td>
+<td style="text-align: center;">0.0146</td>
+<td style="text-align: center;">0.0150</td>
+<td style="text-align: center;">0.0154</td>
+<td style="text-align: center;">0.0158</td>
+<td style="text-align: center;">0.0162</td>
+<td style="text-align: center;">0.0166</td>
+<td style="text-align: center;">0.0170</td>
+<td style="text-align: center;">0.0174</td>
+<td style="text-align: center;">0.0179</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-2.0</td>
+<td style="text-align: center;">0.0183</td>
+<td style="text-align: center;">0.0188</td>
+<td style="text-align: center;">0.0192</td>
+<td style="text-align: center;">0.0197</td>
+<td style="text-align: center;">0.0202</td>
+<td style="text-align: center;">0.0207</td>
+<td style="text-align: center;">0.0212</td>
+<td style="text-align: center;">0.0217</td>
+<td style="text-align: center;">0.0222</td>
+<td style="text-align: center;">0.0228</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.9</td>
+<td style="text-align: center;">0.0233</td>
+<td style="text-align: center;">0.0239</td>
+<td style="text-align: center;">0.0244</td>
+<td style="text-align: center;">0.0250</td>
+<td style="text-align: center;">0.0256</td>
+<td style="text-align: center;">0.0262</td>
+<td style="text-align: center;">0.0268</td>
+<td style="text-align: center;">0.0274</td>
+<td style="text-align: center;">0.0281</td>
+<td style="text-align: center;">0.0287</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.8</td>
+<td style="text-align: center;">0.0294</td>
+<td style="text-align: center;">0.0301</td>
+<td style="text-align: center;">0.0307</td>
+<td style="text-align: center;">0.0314</td>
+<td style="text-align: center;">0.0322</td>
+<td style="text-align: center;">0.0329</td>
+<td style="text-align: center;">0.0336</td>
+<td style="text-align: center;">0.0344</td>
+<td style="text-align: center;">0.0351</td>
+<td style="text-align: center;">0.0359</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.7</td>
+<td style="text-align: center;">0.0367</td>
+<td style="text-align: center;">0.0375</td>
+<td style="text-align: center;">0.0384</td>
+<td style="text-align: center;">0.0392</td>
+<td style="text-align: center;">0.0401</td>
+<td style="text-align: center;">0.0409</td>
+<td style="text-align: center;">0.0418</td>
+<td style="text-align: center;">0.0427</td>
+<td style="text-align: center;">0.0436</td>
+<td style="text-align: center;">0.0446</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.6</td>
+<td style="text-align: center;">0.0455</td>
+<td style="text-align: center;">0.0465</td>
+<td style="text-align: center;">0.0475</td>
+<td style="text-align: center;">0.0485</td>
+<td style="text-align: center;">0.0495</td>
+<td style="text-align: center;">0.0505</td>
+<td style="text-align: center;">0.0516</td>
+<td style="text-align: center;">0.0526</td>
+<td style="text-align: center;">0.0537</td>
+<td style="text-align: center;">0.0548</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.5</td>
+<td style="text-align: center;">0.0559</td>
+<td style="text-align: center;">0.0571</td>
+<td style="text-align: center;">0.0582</td>
+<td style="text-align: center;">0.0594</td>
+<td style="text-align: center;">0.0606</td>
+<td style="text-align: center;">0.0618</td>
+<td style="text-align: center;">0.0630</td>
+<td style="text-align: center;">0.0643</td>
+<td style="text-align: center;">0.0655</td>
+<td style="text-align: center;">0.0668</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.4</td>
+<td style="text-align: center;">0.0681</td>
+<td style="text-align: center;">0.0694</td>
+<td style="text-align: center;">0.0708</td>
+<td style="text-align: center;">0.0721</td>
+<td style="text-align: center;">0.0735</td>
+<td style="text-align: center;">0.0749</td>
+<td style="text-align: center;">0.0764</td>
+<td style="text-align: center;">0.0778</td>
+<td style="text-align: center;">0.0793</td>
+<td style="text-align: center;">0.0808</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.3</td>
+<td style="text-align: center;">0.0823</td>
+<td style="text-align: center;">0.0838</td>
+<td style="text-align: center;">0.0853</td>
+<td style="text-align: center;">0.0869</td>
+<td style="text-align: center;">0.0885</td>
+<td style="text-align: center;">0.0901</td>
+<td style="text-align: center;">0.0918</td>
+<td style="text-align: center;">0.0934</td>
+<td style="text-align: center;">0.0951</td>
+<td style="text-align: center;">0.0968</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.2</td>
+<td style="text-align: center;">0.0985</td>
+<td style="text-align: center;">0.1003</td>
+<td style="text-align: center;">0.1020</td>
+<td style="text-align: center;">0.1038</td>
+<td style="text-align: center;">0.1056</td>
+<td style="text-align: center;">0.1075</td>
+<td style="text-align: center;">0.1093</td>
+<td style="text-align: center;">0.1112</td>
+<td style="text-align: center;">0.1131</td>
+<td style="text-align: center;">0.1151</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.1</td>
+<td style="text-align: center;">0.1170</td>
+<td style="text-align: center;">0.1190</td>
+<td style="text-align: center;">0.1210</td>
+<td style="text-align: center;">0.1230</td>
+<td style="text-align: center;">0.1251</td>
+<td style="text-align: center;">0.1271</td>
+<td style="text-align: center;">0.1292</td>
+<td style="text-align: center;">0.1314</td>
+<td style="text-align: center;">0.1335</td>
+<td style="text-align: center;">0.1357</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-1.0</td>
+<td style="text-align: center;">0.1379</td>
+<td style="text-align: center;">0.1401</td>
+<td style="text-align: center;">0.1423</td>
+<td style="text-align: center;">0.1446</td>
+<td style="text-align: center;">0.1469</td>
+<td style="text-align: center;">0.1492</td>
+<td style="text-align: center;">0.1515</td>
+<td style="text-align: center;">0.1539</td>
+<td style="text-align: center;">0.1562</td>
+<td style="text-align: center;">0.1587</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.9</td>
+<td style="text-align: center;">0.1611</td>
+<td style="text-align: center;">0.1635</td>
+<td style="text-align: center;">0.1660</td>
+<td style="text-align: center;">0.1685</td>
+<td style="text-align: center;">0.1711</td>
+<td style="text-align: center;">0.1736</td>
+<td style="text-align: center;">0.1762</td>
+<td style="text-align: center;">0.1788</td>
+<td style="text-align: center;">0.1814</td>
+<td style="text-align: center;">0.1841</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.8</td>
+<td style="text-align: center;">0.1867</td>
+<td style="text-align: center;">0.1894</td>
+<td style="text-align: center;">0.1922</td>
+<td style="text-align: center;">0.1949</td>
+<td style="text-align: center;">0.1977</td>
+<td style="text-align: center;">0.2005</td>
+<td style="text-align: center;">0.2033</td>
+<td style="text-align: center;">0.2061</td>
+<td style="text-align: center;">0.2090</td>
+<td style="text-align: center;">0.2119</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.7</td>
+<td style="text-align: center;">0.2148</td>
+<td style="text-align: center;">0.2177</td>
+<td style="text-align: center;">0.2206</td>
+<td style="text-align: center;">0.2236</td>
+<td style="text-align: center;">0.2266</td>
+<td style="text-align: center;">0.2296</td>
+<td style="text-align: center;">0.2327</td>
+<td style="text-align: center;">0.2358</td>
+<td style="text-align: center;">0.2389</td>
+<td style="text-align: center;">0.2420</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.6</td>
+<td style="text-align: center;">0.2451</td>
+<td style="text-align: center;">0.2483</td>
+<td style="text-align: center;">0.2514</td>
+<td style="text-align: center;">0.2546</td>
+<td style="text-align: center;">0.2578</td>
+<td style="text-align: center;">0.2611</td>
+<td style="text-align: center;">0.2643</td>
+<td style="text-align: center;">0.2676</td>
+<td style="text-align: center;">0.2709</td>
+<td style="text-align: center;">0.2743</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.5</td>
+<td style="text-align: center;">0.2776</td>
+<td style="text-align: center;">0.2810</td>
+<td style="text-align: center;">0.2843</td>
+<td style="text-align: center;">0.2877</td>
+<td style="text-align: center;">0.2912</td>
+<td style="text-align: center;">0.2946</td>
+<td style="text-align: center;">0.2981</td>
+<td style="text-align: center;">0.3015</td>
+<td style="text-align: center;">0.3050</td>
+<td style="text-align: center;">0.3085</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.4</td>
+<td style="text-align: center;">0.3121</td>
+<td style="text-align: center;">0.3156</td>
+<td style="text-align: center;">0.3192</td>
+<td style="text-align: center;">0.3228</td>
+<td style="text-align: center;">0.3264</td>
+<td style="text-align: center;">0.3300</td>
+<td style="text-align: center;">0.3336</td>
+<td style="text-align: center;">0.3372</td>
+<td style="text-align: center;">0.3409</td>
+<td style="text-align: center;">0.3446</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.3</td>
+<td style="text-align: center;">0.3483</td>
+<td style="text-align: center;">0.3520</td>
+<td style="text-align: center;">0.3557</td>
+<td style="text-align: center;">0.3594</td>
+<td style="text-align: center;">0.3632</td>
+<td style="text-align: center;">0.3669</td>
+<td style="text-align: center;">0.3707</td>
+<td style="text-align: center;">0.3745</td>
+<td style="text-align: center;">0.3783</td>
+<td style="text-align: center;">0.3821</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.2</td>
+<td style="text-align: center;">0.3859</td>
+<td style="text-align: center;">0.3897</td>
+<td style="text-align: center;">0.3936</td>
+<td style="text-align: center;">0.3974</td>
+<td style="text-align: center;">0.4013</td>
+<td style="text-align: center;">0.4052</td>
+<td style="text-align: center;">0.4090</td>
+<td style="text-align: center;">0.4129</td>
+<td style="text-align: center;">0.4168</td>
+<td style="text-align: center;">0.4207</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">-0.1</td>
+<td style="text-align: center;">0.4247</td>
+<td style="text-align: center;">0.4286</td>
+<td style="text-align: center;">0.4325</td>
+<td style="text-align: center;">0.4364</td>
+<td style="text-align: center;">0.4404</td>
+<td style="text-align: center;">0.4443</td>
+<td style="text-align: center;">0.4483</td>
+<td style="text-align: center;">0.4522</td>
+<td style="text-align: center;">0.4562</td>
+<td style="text-align: center;">0.4602</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(240, 240, 240, 255) !important;">0.0</td>
+<td style="text-align: center;">0.4641</td>
+<td style="text-align: center;">0.4681</td>
+<td style="text-align: center;">0.4721</td>
+<td style="text-align: center;">0.4761</td>
+<td style="text-align: center;">0.4801</td>
+<td style="text-align: center;">0.4840</td>
+<td style="text-align: center;">0.4880</td>
+<td style="text-align: center;">0.4920</td>
+<td style="text-align: center;">0.4960</td>
+<td style="text-align: center;">0.5000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-use-this-table" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-this-table">How to Use This Table</h2>
+<p><strong>Example:</strong> For <span class="math inline">\(z = 1.96\)</span>, find row “1.9” and column “.06”. The value 0.9750 means 97.50% of values fall below <span class="math inline">\(z = 1.96\)</span>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/slides\.joshuamarie\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 Joshua Marie. Made with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
