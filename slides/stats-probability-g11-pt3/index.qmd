@@ -1,5 +1,5 @@
 ---
-title: "Statistics and Probability for 11th Graders — Part 3"
+title: "Statistics and Probability for 11th Graders - Part 3"
 subtitle: "Calculating probabilities"
 date: 2025-12-12
 categories: [statistics, probability]
@@ -40,11 +40,11 @@ revealjs-plugins:
   - quiz
 ---
 
-## Recall to standard normal distribution {background-image="image-main.png" auto-animate="true"}
+## Recall: Standard Normal Distribution {background-image="image-main.png" auto-animate="true"}
 
 What is a **standard normal distribution**?
 
-## Recall to standard normal distribution {background-image="image-main.png" auto-animate="true"}
+## Recall: Standard Normal Distribution {background-image="image-main.png" auto-animate="true"}
 
 What is a **standard normal distribution**?
 
@@ -56,7 +56,7 @@ A special case of the **normal distribution** where:
 -   Usually a random variable represents as $Z$
 :::
 
-## Recall to standard normal distribution {background-image="image-main.png" auto-animate="true"}
+## Recall: Standard Normal Distribution {background-image="image-main.png" auto-animate="true"}
 
 Standardize $X$ that scales to standard normal distribution $Z \sim \mathcal{N}(0, 1)$ through **standardization**:
 
@@ -68,22 +68,476 @@ $$Z=\frac{X-\mu}{\sigma}$$
 You'll get *z-scores*
 :::
 
-## To calculate probability from the normal distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
+## To Calculate Probability from the Normal Distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-## You need z-table {background-image="image-main.png" transition="fade" transition-speed="fast"}
+This is how you calculate the cumulative probability:
 
-Go to this link and then download the following PDF.
+$$
+P(z_1 \leq Z \leq z_2) = F(z) = \int_{z_1}^{z_2} \frac{1}{\sqrt{2\pi}}
+\exp\left( -\frac{z^2}{2} \right) dz
+$$
 
-## You need z-table {background-image="image-main.png" transition="fade" transition-speed="fast"}
+The parameters $\mu$ and $\sigma$ are already cancelled since $\mu=0$ and $\sigma = 1$.
 
-Go to this link and then download the following PDF.
+::: {.fragment .fade-in}
+*Do not attempt to calculate this*. We need tools to find exact probabilities!
+:::
 
-Here's what it looks like:
+## You Need a Z-Table {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-![](image-main.png)
+A **z-table** (also called the standard normal table) gives us the area under the standard normal curve to the LEFT of any z-score.
 
-## How to use z-table {background-image="image-main.png" transition="fade" transition-speed="fast"}
+::: {.fragment .fade-in}
+**Access the z-table here:** <https://slides.joshuamarie.com/resources/materials/z-table/>
+:::
 
-## Basics of calculation {background-image="image-main.png" transition="fade" transition-speed="fast"}
+## You Need a Z-Table {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
+Go to this link and download the z-table PDF:
 
+[**https://slides.joshuamarie.com/resources/materials/z-table/**](https://slides.joshuamarie.com/resources/materials/z-table/)
+
+## How to Use the Z-Table {background-image="image-main.png" auto-animate="true"}
+
+::: {.fragment .fade-in}
+Apparently, I already have set the instruction in the page. Either go look for it, or look after the next slide.
+:::
+
+## How to Use the Z-Table {background-image="image-main.png" auto-animate="true"}
+
+**Steps to read the z-table:**
+
+1.  Find the **row** corresponding to the first two digits of your z-score (e.g., for $z = 1.23$, look for 1.2)
+2.  Find the **column** corresponding to the second decimal place (e.g., for $z = 1.23$, look for 0.03)
+3.  The intersection gives you $P(Z \leq z)$ - the area to the LEFT of that z-score
+
+::: {.fragment .fade-in}
+**Example:** For $z = 1.23$, you'd find row "1.2" and column "0.03"
+:::
+
+## Example: Reading the Z-Table {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Find** $P(Z \leq 1.50)$
+
+::: incremental
+-   Row: 1.5
+-   Column: 0.00
+-   Table value: **0.9332**
+:::
+
+::: {.fragment .fade-in}
+**Interpretation:** About 93.32% of the data falls to the LEFT of $z = 1.50$
+:::
+
+## Example: Reading the Z-Table {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Find** $P(Z \leq -0.75)$
+
+::: incremental
+-   Row: -0.7
+-   Column: 0.05
+-   Table value: **0.2266**
+:::
+
+::: {.fragment .fade-in}
+**Interpretation:** About 22.66% of the data falls to the LEFT of $z = -0.75$
+:::
+
+## Basics of Calculation {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+There are **three main types** of probability calculations:
+
+::: incremental
+1.  $P(Z \leq z)$ - Area to the *LEFT* (direct from table)
+
+2.  $P(Z \geq z)$ - Area to the *RIGHT* (use: 1 - table value)
+
+3.  $P(z_1 \leq Z \leq z_2)$ - Area *BETWEEN* two z-scores (subtract table values):
+
+    $$P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)$$
+:::
+
+## Type 1: $P(Z \leq z)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area to the LEFT of a z-score*
+
+This is the **easiest** case — just look up the z-score directly in the table!
+
+## Type 1: $P(Z \leq z)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area to the LEFT of a z-score*
+
+This is the **easiest** case — just look up the z-score directly in the table!
+
+**Example:** Find $P(Z \leq 1.25)$
+
+::: {.fragment .fade-in}
+**Solution:**
+
+1.  Look up $z = 1.25$ in the table
+2.  Row: 1.2, Column: 0.05
+3.  Table value: **0.8944**
+:::
+
+::: {.fragment .fade-in}
+**Answer:** $P(Z \leq 1.25) = 0.8944$ or **89.44%**
+:::
+
+## Type 2: $P(Z \geq z)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area to the RIGHT of a z-score*
+
+Since the z-table gives LEFT areas, we use:
+
+$$P(Z > z) = 1 - P(Z \leq z)$$
+
+## Type 2: $P(Z \geq z)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area to the RIGHT of a z-score*
+
+Since the z-table gives LEFT areas, we use:
+
+$$P(Z > z) = 1 - P(Z \leq z)$$
+
+**Example:** Find $P(Z > 0.80)$
+
+::: {.fragment .fade-in}
+**Solution:**
+
+1.  Look up $z = 0.80$ in the table, which gives you 0.7881
+2.  Calculate: $P(Z > 0.80) = 1 - P(Z \leq 0.80) = 1 - 0.7881$
+3.  $P(Z > 0.80) = \mathbf{0.2119}$
+:::
+
+::: {.fragment .fade-in}
+**Answer:** $P(Z > 0.80) = \mathbf{0.2119}$ or **21.19%**
+:::
+
+## Type 3: $P(z_1 \leq Z \leq z_2)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area BETWEEN two z-scores*
+
+We subtract the smaller cumulative area from the larger:
+
+$$P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)$$
+
+## Type 3: $P(z_1 \leq Z \leq z_2)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area BETWEEN two z-scores*
+
+We subtract the smaller cumulative area from the larger:
+
+$$P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)$$
+
+**Example:** Find $P(-1.00 < Z < 1.50)$
+
+::: {.fragment .fade-in}
+**Solution:**
+
+1.  $P(Z < 1.50)$ from table → 0.9332
+2.  $P(Z < -1.00)$ from table → 0.1587
+3.  $P(-1.00 < Z < 1.50) = 0.9332 - 0.1587 = \mathbf{0.7745}$
+:::
+
+::: {.fragment .fade-in}
+**Answer:** $P(-1.00 < Z < 1.50) = \mathbf{0.7745}$ or **77.45%**
+:::
+
+## Practice Problem 1 {.scrollable background-image="image-main.png"}
+
+**Problem:** Find the following probabilities using the z-table:
+
+a.  $P(Z \leq 2.00)$
+b.  $P(Z > -1.50)$
+c.  $P(0.50 \leq Z \leq 1.80)$
+
+::: {.fragment .fade-in}
+**Solutions:**
+
+a.  $P(Z \leq 2.00) = \mathbf{0.9772}$ (direct from table)
+
+b.  $P(Z > -1.50) = 1 - P(Z \leq -1.50) = 1 - 0.0668 = \mathbf{0.9332}$
+
+c.  $P(0.50 \leq Z \leq 1.80) = P(Z \leq 1.80) - P(Z \leq 0.50) = 0.9641 - 0.6915 = \mathbf{0.2726}$
+:::
+
+## Converting to Real-World Problems {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Remember the z-score formula:**
+
+$$z = \frac{x - \mu}{\sigma}$$
+
+**Steps:**
+
+1.  Convert the raw score ($x$) to a z-score
+2.  Use the z-table to find the probability
+3.  Interpret in context
+
+## Real-World Example 1 {.scrollable background-image="image-main.png"}
+
+**Problem:** Test scores are normally distributed with $\mu = 75$ and $\sigma = 10$. What is the probability that a randomly selected student scored less than 85?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+**Step 1:** Convert to z-score $$z = \frac{85 - 75}{10} = \frac{10}{10} = 1.00$$
+
+**Step 2:** Look up $z = 1.00$ in table. This will be 0.8413
+
+**Interpretation:** $84.13\%$ of students scored less than 85
+:::
+
+## Real-World Example 2 {.scrollable background-image="image-main.png"}
+
+**Problem:** Heights of adult men are normally distributed with $\mu = 175$ cm and $\sigma = 8$ cm. What percentage of men are taller than 183 cm?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+**Step 1:** Convert to z-score $$z = \frac{183 - 175}{8} = \frac{8}{8} = 1.00$$
+
+**Step 2:** $$P(Z > 1.00) = 1 - P(Z < 1.00) = 1 - 0.8413 = 0.1587$$
+
+**Interpretation:** $15.87\%$ of men are taller than 183 cm
+:::
+
+## Real-World Example 3 {.scrollable background-image="image-main.png"}
+
+**Problem:** Battery life is normally distributed with $\mu = 400$ hours and $\sigma = 50$ hours. What is the probability a battery lasts between 350 and 450 hours?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+**Step 1:** Convert both values to z-scores $$z_1 = \frac{350 - 400}{50} = -1.00, \quad z_2 = \frac{450 - 400}{50} = 1.00$$
+
+**Step 2:** $$P(-1.00 < Z < 1.00) = 0.8413 - 0.1587 = 0.6826$$
+
+**Interpretation**: $68.26\%$ of batteries last between 350 and 450 hours
+:::
+
+## Practice Problem 2 {.scrollable background-image="image-main.png"}
+
+**Problem:** Your monthly electric bill has $\mu = 1500$ and $\sigma = 120$. What is the probability you'll pay between 1380 and 1740?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+$$z_1 = \frac{1380 - 1500}{120} = -1.00, \quad z_2 = \frac{1740 - 1500}{120} = 2.00$$
+
+**Answer:** $P(-1.00 < Z < 2.00) = 0.9772 - 0.1587 = \mathbf{0.8185}$ or **81.85%**
+:::
+
+## Working Backwards: Finding X from Probability {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+Sometimes we know the probability and need to find the value (x).
+
+**Steps:**
+
+1.  Find the z-score that corresponds to the given probability in the z-table
+2.  Use the formula: $x = \mu + z\sigma$
+3.  Interpret the result
+
+## Example: Finding X {.scrollable background-image="image-main.png"}
+
+**Problem:** Test scores are normally distributed with $\mu = 70$ and $\sigma = 12$. What score represents the 90th percentile?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+**Step 1:** Find z-score where $P(Z < z) = 0.90$
+
+-   Looking through the table, $z \approx \mathbf{1.28}$
+
+**Step 2:** Calculate x 
+
+$$x = 70 + (1.28)(12) = 70 + 15.36 = 85.36$$
+
+**Interpretation:** A score of approximately **85.36** (around 85 or 86) represents the 90th percentile. Which means you got a better score of 85 than 90% of others, with only 10% scoring higher.
+:::
+
+## Interactive Z-Score Visualizer {.scrollable background-image="image-main.png"}
+
+```{ojs}
+//| echo: false
+viewof zScore = Inputs.range([-3.5, 3.5], {
+    label: "Z-Score",
+    value: 1.5,
+    step: 0.01
+})
+
+viewof calcType = Inputs.radio(
+    ["Left tail (P(Z < z))", "Right tail (P(Z > z))", "Between (-z to z)"],
+    {label: "Calculate:", value: "Left tail (P(Z < z))"}
+)
+```
+
+```{ojs}
+{
+  const width = 800;
+  const height = 400;
+  const margin = {top: 40, right: 40, bottom: 60, left: 60};
+  
+  function normalPDF(x) {
+    return Math.exp(-0.5 * x * x) / Math.sqrt(2 * Math.PI);
+  }
+  
+  function normalCDF(z) {
+    const t = 1 / (1 + 0.2316419 * Math.abs(z));
+    const d = 0.3989423 * Math.exp(-z * z / 2);
+    const prob = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+    return z > 0 ? 1 - prob : prob;
+  }
+  
+  const svg = d3.create("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", [0, 0, width, height])
+    .attr("style", "max-width: 100%; height: auto; background: white;");
+  
+  const xScale = d3.scaleLinear()
+    .domain([-4, 4])
+    .range([margin.left, width - margin.right]);
+  
+  const yScale = d3.scaleLinear()
+    .domain([0, 0.45])
+    .range([height - margin.bottom, margin.top]);
+  
+  const curveData = d3.range(-4, 4.01, 0.05).map(x => ({
+    x: x,
+    y: normalPDF(x)
+  }));
+  
+  const line = d3.line()
+    .x(d => xScale(d.x))
+    .y(d => yScale(d.y));
+  
+  let shadedData;
+  if (calcType === "Left tail (P(Z < z))") {
+    shadedData = curveData.filter(d => d.x <= zScore);
+  } else if (calcType === "Right tail (P(Z > z))") {
+    shadedData = curveData.filter(d => d.x >= zScore);
+  } else {
+    shadedData = curveData.filter(d => d.x >= -Math.abs(zScore) && d.x <= Math.abs(zScore));
+  }
+  
+  const area = d3.area()
+    .x(d => xScale(d.x))
+    .y0(height - margin.bottom)
+    .y1(d => yScale(d.y));
+  
+  svg.append("path")
+    .datum(shadedData)
+    .attr("fill", "rgba(76, 175, 80, 0.3)")
+    .attr("d", area);
+  
+  svg.append("path")
+    .datum(curveData)
+    .attr("fill", "none")
+    .attr("stroke", "steelblue")
+    .attr("stroke-width", 2)
+    .attr("d", line);
+  
+  if (calcType === "Between (-z to z)") {
+    svg.append("line")
+      .attr("x1", xScale(-Math.abs(zScore)))
+      .attr("x2", xScale(-Math.abs(zScore)))
+      .attr("y1", margin.top)
+      .attr("y2", height - margin.bottom)
+      .attr("stroke", "red")
+      .attr("stroke-width", 2)
+      .attr("stroke-dasharray", "5,5");
+    
+    svg.append("line")
+      .attr("x1", xScale(Math.abs(zScore)))
+      .attr("x2", xScale(Math.abs(zScore)))
+      .attr("y1", margin.top)
+      .attr("y2", height - margin.bottom)
+      .attr("stroke", "red")
+      .attr("stroke-width", 2)
+      .attr("stroke-dasharray", "5,5");
+  } else {
+    svg.append("line")
+      .attr("x1", xScale(zScore))
+      .attr("x2", xScale(zScore))
+      .attr("y1", margin.top)
+      .attr("y2", height - margin.bottom)
+      .attr("stroke", "red")
+      .attr("stroke-width", 2)
+      .attr("stroke-dasharray", "5,5");
+  }
+  
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(xScale));
+  
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(yScale));
+  
+  let prob;
+  if (calcType === "Left tail (P(Z < z))") {
+    prob = normalCDF(zScore);
+  } else if (calcType === "Right tail (P(Z > z))") {
+    prob = 1 - normalCDF(zScore);
+  } else {
+    prob = normalCDF(Math.abs(zScore)) - normalCDF(-Math.abs(zScore));
+  }
+  
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top - 10)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "16px")
+    .attr("font-weight", "bold")
+    .text(`Probability = ${prob.toFixed(4)} (${(prob * 100).toFixed(2)}%)`);
+  
+  return svg.node();
+}
+```
+
+## Summary: Using Z-Tables {.scrollable background-image="image-main.png"}
+
+::: callout-tip
+1.  Z-tables give cumulative probability to the LEFT
+2.  For $P(Z > z)$, use $1 - \text{table value}$
+3.  For $P(z_1 < Z < z_2)$, subtract table values
+4.  Always convert real-world problems using $z = \frac{x-\mu}{\sigma}$
+5.  To find x from probability, look up z first, then use $x = \mu + z\sigma$
+:::
+
+## Assignment {.scrollable background-image="image-main.png"}
+
+**Instructions:**
+
+Complete the following problems. Show your complete solution including:
+
+-   Z-score calculations
+-   Z-table lookups
+-   Final answers with proper units
+
+**Problems:**
+
+1.  IQ scores are normally distributed with $\mu = 100$ and $\sigma = 15$. Find the probability that a randomly selected person has an IQ between 85 and 130.
+
+2.  The lifespan of light bulbs is normally distributed with $\mu = 800$ hours and $\sigma = 40$ hours. What percentage of bulbs last more than 900 hours?
+
+3.  If scores on an exam are normally distributed with $\mu = 78$ and $\sigma = 8$ what score separates the top 25% of students from the rest?
+
+## Additional Resources {background-image="image-main.png"}
+
+**For further practice:**
+
+-   Online z-table calculators
+-   Practice worksheets (provided separately)
+-   Interactive normal distribution applets
+-   Review the Empirical Rule (68-95-99.7) as a quick check
+
+::: callout-tip
+Remember: The z-table is your friend! Practice reading it until it becomes second nature.
+:::
+
+## Thank You! {background-image="image-main.png"}
+
+**Next session:** Hypothesis Testing and Confidence Intervals
+
+**Questions?**

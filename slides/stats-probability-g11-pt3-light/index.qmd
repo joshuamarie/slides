@@ -1,8 +1,7 @@
 ---
-title: "Statistics and Probability for 11th Graders — Part 3"
+title: "Statistics and Probability for 11th Graders - Part 3"
 subtitle: "Calculating probabilities"
-description: "The light mode version of the original 'part 3' slide"
-date: 2025-12-05
+date: 2025-12-12
 categories: [statistics, probability]
 image: 'image-thumb.png'
 format:
@@ -41,419 +40,504 @@ revealjs-plugins:
   - quiz
 ---
 
-## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
+## Recall: Standard Normal Distribution {background-image="image-main.png" auto-animate="true"}
 
-What defines the population and sample?
+What is a **standard normal distribution**?
 
--  Population refers to a subset of data while sample refers to all data
--  Population refers to estimates while sample refers to parameters
--  Population refers to small groups while sample refers to large groups
--  [Population refers to the entire group being studied while sample refers to a subset selected from that group]{.correct}
+## Recall: Standard Normal Distribution {background-image="image-main.png" auto-animate="true"}
 
-## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
+What is a **standard normal distribution**?
 
-What is the probability of drawing a "king" from the deck of card?
-
--  [$\frac{1}{13}$]{.correct}
--  $\frac{1}{2}$
--  $\frac{2}{13}$
--  $\frac{1}{5}$
-
-## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question .quiz-multiple}
-
-Consider $A$ and $B$ defines the two events. Which of the following defines mutually exclusive events? 
-
--  Two events occur simultaneously
--  [Two events are disjoint]{.correct}
--  [$P(A \cap B) = 0$]{.correct}
--  $P(A \cap B) \neq 0$
-
-## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
-
-A binomial distribution requires which conditions?
-
--  Trials are dependent and probability changes
--  [Fixed number of independent trials with constant probability]{.correct}
--  Continuous outcomes with no upper limit
--  Only two trials are needed
-
-## Hands-on Quiz {background-image="image-main.png" transition="fade" transition-speed="fast" .quiz-question}
-
-What is the expected value of rolling a fair six-sided die?
-
--  3.2
--  [3.5]{.correct}
--  4.5
--  5.3
-
-## Probability distribution {background-image="image-main.png" auto-animate="true"}
-
-Let us continue...
-
-## Probability distribution {background-image="image-main.png" auto-animate="true"}
-
-Let us continue...
-
-**Remember:** For $n$ independent trials with probability $p$:
-
-$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
-
-::: {.fragment .fade-in}
-**Side question:** What shape do you notice as $n$ gets larger?
-:::
-
-## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
-
-What happens when you increase the number of trials $n$?
-
-## Probability distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
-
-What happens when you increase the number of trials $n$?
-
-```{ojs}
-//| panel: fill
-import { plotBinomial } from "./binomial_sim.js"
-
-// Sample Size
-viewof sampleSize = Inputs.range([50, 100000], {
-    label: "Size",
-    value: 50,
-    step: 10
-})
-
-// Number of Trials
-viewof n = Inputs.range([1, 300], {
-    label: "(n)",
-    value: 1,
-    step: 1
-})
-
-// Probability of Success
-viewof p = Inputs.range([0.001, 0.999], {
-    label: "(p)",
-    value: 0.5,
-    step: 0.001
-})
-
-plotBinomial(sampleSize, n, p)
-```
-
-::: {.fragment .fade-in}
-Because of this pattern, we define what we called the **normal distribution**. 
-:::
-
-## Normal distribution {background-image="image-main.png" auto-animate="true"} 
-
-A **normal distribution** is a continuous probability distribution that describes the population that has mean $\mu$ and variance $\sigma^2$ forms a bell-shaped curve.
-
-## Normal distribution {background-image="image-main.png" auto-animate="true"} 
-
-A **normal distribution** is a continuous probability distribution that describes the population that has mean $\mu$ and variance $\sigma^2$ forms a bell-shaped curve.
-
-**Key characteristics:**
+A special case of the **normal distribution** where:
 
 ::: incremental
-- Bell-shaped and symmetric
-- Mean = Median = Mode (all at the center)
-- Total area under curve = 1 (or 100%)
-- Extends indefinitely in both directions (left and right of the mean $\mu$)
+-   Mean $\mu = 0$
+-   Standard deviation $\sigma = 1$
+-   Usually a random variable represents as $Z$
 :::
 
-## Normal distribution {background-image="image-main.png" auto-animate="true"} 
+## Recall: Standard Normal Distribution {background-image="image-main.png" auto-animate="true"}
 
-It has the closed mathematical form that defines the normal distribution:
+Standardize $X$ that scales to standard normal distribution $Z \sim \mathcal{N}(0, 1)$ through **standardization**:
+
+::: {.fragment .fade-in}
+$$Z=\frac{X-\mu}{\sigma}$$
+:::
+
+::: {.fragment .fade-in}
+You'll get *z-scores*
+:::
+
+## To Calculate Probability from the Normal Distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+This is how you calculate the cumulative probability:
 
 $$
-f(x)=\frac{1}{\sigma\sqrt{2\pi}}
-\exp\!\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
+P(z_1 \leq Z \leq z_2) = F(z) = \int_{z_1}^{z_2} \frac{1}{\sqrt{2\pi}}
+\exp\left( -\frac{z^2}{2} \right) dz
 $$
 
-::: {.fragment .fade-in}
-The $f(x)$ there refers to the density function. Some textbooks denotes the density function as $f_X(x)$. 
-:::
+The parameters $\mu$ and $\sigma$ are already cancelled since $\mu=0$ and $\sigma = 1$.
 
 ::: {.fragment .fade-in}
-The random variable for this distribution $X \sim \mathcal{N}(\mu, \sigma)$ (reads as "X follows the normal distribution with parameters mean $\mu$ and standard deviation $\sigma$"). 
+*Do not attempt to calculate this*. We need tools to find exact probabilities!
 :::
 
-## Visualization of the normal distribution {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable} 
+## You Need a Z-Table {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-```{ojs}
-//| panel: fill
-viewof mu = Inputs.range([-7, 7], {
-    label: "Mean (μ)",
-    value: 0,
-    step: 0.1
-})
-
-viewof sigma = Inputs.range([0.001, 5], {
-    label: "Standard Deviation (σ)",
-    value: 1,
-    step: 0.01
-})
-
-{
-    const width = 800;
-    const height = 400;
-    const margin = {top: 20, right: 30, bottom: 40, left: 50};
-    
-    const xMin = -10;
-    const xMax = 10;
-    
-    const data = [];
-    for (let x = xMin; x <= xMax; x += 0.1) {
-        const y = (1 / (sigma * Math.sqrt(2 * Math.PI))) * 
-                  Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));
-        data.push({x, y});
-    }
-    
-    const svg = d3.create("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("viewBox", [0, 0, width, height]);
-    
-    const xScale = d3.scaleLinear()
-        .domain([xMin, xMax])
-        .range([margin.left, width - margin.right]);
-    
-    const yScale = d3.scaleLinear()
-        .domain([0, 0.9])
-        .range([height - margin.bottom, margin.top]);
-    
-    const line = d3.line()
-        .x(d => xScale(d.x))
-        .y(d => yScale(d.y));
-    
-    svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "#4CAF50")
-        .attr("stroke-width", 2.5)
-        .attr("d", line);
-    
-    svg.append("g")
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(xScale));
-    
-    svg.append("g")
-        .attr("transform", `translate(${margin.left},0)`)
-        .call(d3.axisLeft(yScale));
-    
-    svg.append("line")
-        .attr("x1", xScale(mu))
-        .attr("x2", xScale(mu))
-        .attr("y1", margin.top)
-        .attr("y2", height - margin.bottom)
-        .attr("stroke", "red")
-        .attr("stroke-width", 2)
-        .attr("stroke-dasharray", "5,5");
-    
-    return svg.node();
-}
-```
-
-::: {.callout-note title="Observe"}
-As you adjust $\mu$ and $\sigma$, notice how the curve shifts and spreads!
-:::
-
-## Characteristics of the normal distribution {background-image="image-main.png" auto-animate="true" .scrollable} 
-
-::::: {.columns}
-:::: {.column width="50%"}
-
-### Visual Properties
-
-1.  **Bell-shaped** with highest peak at center
-2.  **Symmetrical** about the mean
-3.  **Continuous** on both sides
-4.  **Horizontally Asymptotic** Never touches the horizontal axis
-
-::::
-:::::
-
-## Characteristics of the normal distribution {background-image="image-main.png" auto-animate="true" .scrollable} 
-
-::::: {.columns}
-:::: {.column width="50%"}
-
-### Visual Properties
-
-1.  **Bell-shaped** with highest peak at center
-2.  **Symmetrical** about the mean
-3.  **Continuous** on both sides
-4.  **Horizontally Asymptotic** Never touches the horizontal axis
-
-::::
-
-:::: {.column width="50%"}
-
-### Mathematical Properties
-
-- Mean = Median = Mode
-- Total area = 1 (100%)
-- Determined by two parameters:
-  - $\mu$ (mean): location
-  - $\sigma$ (standard deviation): spread
-
-::::
-:::::
-
-## Standard Normal Distribution {background-image="image-main.png" transition="fade" transition-speed="fast"}
-
-The **standard normal distribution** is a special case where:
-
-- Mean $\mu = 0$
-- Standard deviation $\sigma = 1$
-
-Most textbooks denotes the random variable $Z$ of the **standard normal distribution** as $Z \sim \mathcal{N}(0, 1)$
+A **z-table** (also called the standard normal table) gives us the area under the standard normal curve to the LEFT of any z-score.
 
 ::: {.fragment .fade-in}
-We can scale down $X \sim \mathcal{N}(\mu, \sigma)$ to $Z \sim \mathcal{N}(0, 1)$. We called it "**standardization**". 
+**Access the z-table here:** <https://slides.joshuamarie.com/resources/materials/z-table/>
 :::
 
-## The importance of z-scores {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+## You Need a Z-Table {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-:::: columns
+Go to this link and download the z-table PDF:
 
-::: {.column width="25%"} 
-### Compare different distributions
+[**https://slides.joshuamarie.com/resources/materials/z-table/**](https://slides.joshuamarie.com/resources/materials/z-table/)
 
-It is much easier to compare different distribution (still normal) on the same scale
+## How to Use the Z-Table {background-image="image-main.png" auto-animate="true"}
+
+::: {.fragment .fade-in}
+Apparently, I already have set the instruction in the page. Either go look for it, or look after the next slide.
 :::
 
-::: {.column width="25%"}
-### Dealing with probabilities
+## How to Use the Z-Table {background-image="image-main.png" auto-animate="true"}
 
-Although we have softwares for us to calculate such probabilities, interpreting probabilities under z-score scale is much easier. 
+**Steps to read the z-table:**
+
+1.  Find the **row** corresponding to the first two digits of your z-score (e.g., for $z = 1.23$, look for 1.2)
+2.  Find the **column** corresponding to the second decimal place (e.g., for $z = 1.23$, look for 0.03)
+3.  The intersection gives you $P(Z \leq z)$ - the area to the LEFT of that z-score
+
+::: {.fragment .fade-in}
+**Example:** For $z = 1.23$, you'd find row "1.2" and column "0.03"
 :::
 
-::: {.column width="50%"}
-### Identify outliers
+## Example: Reading the Z-Table {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-**Standardization** has a huge advantage to the application of outlier identification. 
+**Find** $P(Z \leq 1.50)$
+
+::: incremental
+-   Row: 1.5
+-   Column: 0.00
+-   Table value: **0.9332**
 :::
 
-::::
+::: {.fragment .fade-in}
+**Interpretation:** About 93.32% of the data falls to the LEFT of $z = 1.50$
+:::
 
-## The Empirical Rule (68-95-99.7 Rule) {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+## Example: Reading the Z-Table {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-```{ojs}
-//| panel: sidebar
-viewof mu_empirical = Inputs.range([-10, 10], {
-    label: "Mean (μ)",
-    value: 0,
-    step: 0.5
-})
+**Find** $P(Z \leq -0.75)$
 
-viewof sigma_empirical = Inputs.range([0.001, 5], {
-    label: "Std. Dev. (σ)",
-    value: 1,
-    step: 0.01
-})
+::: incremental
+-   Row: -0.7
+-   Column: 0.05
+-   Table value: **0.2266**
+:::
 
-viewof ruleSelect = Inputs.radio(
-    new Map([
-        ["68% Rule (±1σ)", 1],
-        ["95% Rule (±2σ)", 2],
-        ["99.7% Rule (±3σ)", 3],
-        ["All Rules", 4]
-    ]),
-    {label: "Show Rule:", value: 1}
-)
-```
+::: {.fragment .fade-in}
+**Interpretation:** About 22.66% of the data falls to the LEFT of $z = -0.75$
+:::
 
-```{ojs}
-//| panel: fill
-import { plotEmpiricalRule } from "./normal_empirical_rule.js"
+## Basics of Calculation {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-plotEmpiricalRule(mu_empirical, sigma_empirical, ruleSelect)
-```
+There are **three main types** of probability calculations:
 
-```{ojs}
-//| panel: sidebar
-html`<hr><h4>Current Values:</h4>`
+::: incremental
+1.  $P(Z \leq z)$ - Area to the *LEFT* (direct from table)
 
-md`${
-    ruleSelect === 1 ? `**68% of data falls between ${(mu_empirical - sigma_empirical).toFixed(2)} and ${(mu_empirical + sigma_empirical).toFixed(2)}**` :
-    ruleSelect === 2 ? `**95% of data falls between ${(mu_empirical - 2*sigma_empirical).toFixed(2)} and ${(mu_empirical + 2*sigma_empirical).toFixed(2)}**` :
-    ruleSelect === 3 ? `**99.7% of data falls between ${(mu_empirical - 3*sigma_empirical).toFixed(2)} and ${(mu_empirical + 3*sigma_empirical).toFixed(2)}**` :
-    `**μ ± 1σ:** [${(mu_empirical - sigma_empirical).toFixed(2)}, ${(mu_empirical + sigma_empirical).toFixed(2)}]
-    
-**μ ± 2σ:** [${(mu_empirical - 2*sigma_empirical).toFixed(2)}, ${(mu_empirical + 2*sigma_empirical).toFixed(2)}]
+2.  $P(Z \geq z)$ - Area to the *RIGHT* (use: 1 - table value)
 
-**μ ± 3σ:** [${(mu_empirical - 3*sigma_empirical).toFixed(2)}, ${(mu_empirical + 3*sigma_empirical).toFixed(2)}]`
-}`
-```
+3.  $P(z_1 \leq Z \leq z_2)$ - Area *BETWEEN* two z-scores (subtract table values):
 
-```{ojs}
-md`${
-    ruleSelect === 1 ? `**68% Rule:** Approximately 68% of all data values fall within ONE standard deviation of the mean (μ ± σ).` :
-    ruleSelect === 2 ? `**95% Rule:** Approximately 95% of all data values fall within TWO standard deviations of the mean (μ ± 2σ).` :
-    ruleSelect === 3 ? `**99.7% Rule:** Approximately 99.7% of all data values fall within THREE standard deviations of the mean (μ ± 3σ).` :
-    `**Complete Empirical Rule:** This shows all three rules simultaneously:
-- 68% within μ ± σ (purple)
-- 95% within μ ± 2σ (orange)  
-- 99.7% within μ ± 3σ (red)`
-}`
-```
+    $$P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)$$
+:::
 
-## The Empirical Rule (68-95-99.7 Rule) {background-image="image-main.png" transition="fade" transition-speed="fast"}
+## Type 1: $P(Z \leq z)$ {background-image="image-main.png" auto-animate="true"}
 
-The **Empirical Rule** (also called the **68-95-99.7 Rule**) tells us what percentage of data falls within certain distances from the mean in a normal distribution.
+*Finding the area to the LEFT of a z-score*
 
-::::: {.columns}
+This is the **easiest** case — just look up the z-score directly in the table!
 
-:::: {.column width="33%"}
-### 68% Rule
-Approximately **68%** of data falls within **1 standard deviation** of the mean:
+## Type 1: $P(Z \leq z)$ {background-image="image-main.png" auto-animate="true"}
 
-$$\mu - \sigma \leq X \leq \mu + \sigma$$
-::::
+*Finding the area to the LEFT of a z-score*
 
-:::: {.column width="33%"}
-### 95% Rule
-Approximately **95%** of data falls within **2 standard deviations** of the mean:
+This is the **easiest** case — just look up the z-score directly in the table!
 
-$$\mu - 2\sigma \leq X \leq \mu + 2\sigma$$
-::::
+**Example:** Find $P(Z \leq 1.25)$
 
-:::: {.column width="33%"}
-### 99.7% Rule
-Approximately **99.7%** of data falls within **3 standard deviations** of the mean:
+::: {.fragment .fade-in}
+**Solution:**
 
-$$\mu - 3\sigma \leq X \leq \mu + 3\sigma$$
-::::
+1.  Look up $z = 1.25$ in the table
+2.  Row: 1.2, Column: 0.05
+3.  Table value: **0.8944**
+:::
 
-:::::
+::: {.fragment .fade-in}
+**Answer:** $P(Z \leq 1.25) = 0.8944$ or **89.44%**
+:::
 
-## Practice Problem {background-image="image-main.png" .scrollable}
+## Type 2: $P(Z \geq z)$ {background-image="image-main.png" auto-animate="true"}
 
-**Scenario:** Heights of adult males in a population are normally distributed with a mean of 175 cm and a standard deviation of 8 cm.
+*Finding the area to the RIGHT of a z-score*
 
-**Questions:**
+Since the z-table gives LEFT areas, we use:
 
-1. What percentage of men have heights between 167 cm and 183 cm?
-2. What percentage of men are taller than 191 cm?
-3. If a man is 159 cm tall, how many standard deviations is he from the mean?
-4. Would a height of 159 cm be considered unusual? Why or why not?
+$$P(Z > z) = 1 - P(Z \leq z)$$
+
+## Type 2: $P(Z \geq z)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area to the RIGHT of a z-score*
+
+Since the z-table gives LEFT areas, we use:
+
+$$P(Z > z) = 1 - P(Z \leq z)$$
+
+**Example:** Find $P(Z > 0.80)$
+
+::: {.fragment .fade-in}
+**Solution:**
+
+1.  Look up $z = 0.80$ in the table, which gives you 0.7881
+2.  Calculate: $P(Z > 0.80) = 1 - P(Z \leq 0.80) = 1 - 0.7881$
+3.  $P(Z > 0.80) = \mathbf{0.2119}$
+:::
+
+::: {.fragment .fade-in}
+**Answer:** $P(Z > 0.80) = \mathbf{0.2119}$ or **21.19%**
+:::
+
+## Type 3: $P(z_1 \leq Z \leq z_2)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area BETWEEN two z-scores*
+
+We subtract the smaller cumulative area from the larger:
+
+$$P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)$$
+
+## Type 3: $P(z_1 \leq Z \leq z_2)$ {background-image="image-main.png" auto-animate="true"}
+
+*Finding the area BETWEEN two z-scores*
+
+We subtract the smaller cumulative area from the larger:
+
+$$P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)$$
+
+**Example:** Find $P(-1.00 < Z < 1.50)$
+
+::: {.fragment .fade-in}
+**Solution:**
+
+1.  $P(Z < 1.50)$ from table → 0.9332
+2.  $P(Z < -1.00)$ from table → 0.1587
+3.  $P(-1.00 < Z < 1.50) = 0.9332 - 0.1587 = \mathbf{0.7745}$
+:::
+
+::: {.fragment .fade-in}
+**Answer:** $P(-1.00 < Z < 1.50) = \mathbf{0.7745}$ or **77.45%**
+:::
+
+## Practice Problem 1 {.scrollable background-image="image-main.png"}
+
+**Problem:** Find the following probabilities using the z-table:
+
+a.  $P(Z \leq 2.00)$
+b.  $P(Z > -1.50)$
+c.  $P(0.50 \leq Z \leq 1.80)$
 
 ::: {.fragment .fade-in}
 **Solutions:**
 
-1.  167 to 183 cm = $\mu \pm 1\sigma$. It should be **68%**
-2.  191 cm = $\mu + 2\sigma$ 
+a.  $P(Z \leq 2.00) = \mathbf{0.9772}$ (direct from table)
 
-    - Beyond $2\sigma$ above mean 
-    - $(100\% - 95\%) / 2$ = **2.5%**
+b.  $P(Z > -1.50) = 1 - P(Z \leq -1.50) = 1 - 0.0668 = \mathbf{0.9332}$
 
-3.  $z = \frac{159 - 175}{8} = \frac{-16}{8} = -2$ — **2 standard deviations below**
-4.  **Yes, unusual** because it's exactly $2\sigma$ below the mean (only 2.5% are this short or shorter)
+c.  $P(0.50 \leq Z \leq 1.80) = P(Z \leq 1.80) - P(Z \leq 0.50) = 0.9641 - 0.6915 = \mathbf{0.2726}$
 :::
 
-## Assignment {background-image="image-main.png" .scrollable}
+## Converting to Real-World Problems {background-image="image-main.png" transition="fade" transition-speed="fast"}
 
-Instructions: 
+**Remember the z-score formula:**
 
-1.  Open the [link]() for the exercise: 
-2.  
+$$z = \frac{x - \mu}{\sigma}$$
 
+**Steps:**
+
+1.  Convert the raw score ($x$) to a z-score
+2.  Use the z-table to find the probability
+3.  Interpret in context
+
+## Real-World Example 1 {.scrollable background-image="image-main.png"}
+
+**Problem:** Test scores are normally distributed with $\mu = 75$ and $\sigma = 10$. What is the probability that a randomly selected student scored less than 85?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+**Step 1:** Convert to z-score $$z = \frac{85 - 75}{10} = \frac{10}{10} = 1.00$$
+
+**Step 2:** Look up $z = 1.00$ in table. This will be 0.8413
+
+**Interpretation:** $84.13\%$ of students scored less than 85
+:::
+
+## Real-World Example 2 {.scrollable background-image="image-main.png"}
+
+**Problem:** Heights of adult men are normally distributed with $\mu = 175$ cm and $\sigma = 8$ cm. What percentage of men are taller than 183 cm?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+**Step 1:** Convert to z-score $$z = \frac{183 - 175}{8} = \frac{8}{8} = 1.00$$
+
+**Step 2:** $$P(Z > 1.00) = 1 - P(Z < 1.00) = 1 - 0.8413 = 0.1587$$
+
+**Interpretation:** $15.87\%$ of men are taller than 183 cm
+:::
+
+## Real-World Example 3 {.scrollable background-image="image-main.png"}
+
+**Problem:** Battery life is normally distributed with $\mu = 400$ hours and $\sigma = 50$ hours. What is the probability a battery lasts between 350 and 450 hours?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+**Step 1:** Convert both values to z-scores $$z_1 = \frac{350 - 400}{50} = -1.00, \quad z_2 = \frac{450 - 400}{50} = 1.00$$
+
+**Step 2:** $$P(-1.00 < Z < 1.00) = 0.8413 - 0.1587 = 0.6826$$
+
+**Interpretation**: $68.26\%$ of batteries last between 350 and 450 hours
+:::
+
+## Practice Problem 2 {.scrollable background-image="image-main.png"}
+
+**Problem:** Your monthly electric bill has $\mu = 1500$ and $\sigma = 120$. What is the probability you'll pay between 1380 and 1740?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+$$z_1 = \frac{1380 - 1500}{120} = -1.00, \quad z_2 = \frac{1740 - 1500}{120} = 2.00$$
+
+**Answer:** $P(-1.00 < Z < 2.00) = 0.9772 - 0.1587 = \mathbf{0.8185}$ or **81.85%**
+:::
+
+## Working Backwards: Finding X from Probability {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+Sometimes we know the probability and need to find the value (x).
+
+**Steps:**
+
+1.  Find the z-score that corresponds to the given probability in the z-table
+2.  Use the formula: $x = \mu + z\sigma$
+3.  Interpret the result
+
+## Example: Finding X {.scrollable background-image="image-main.png"}
+
+**Problem:** Test scores are normally distributed with $\mu = 70$ and $\sigma = 12$. What score represents the 90th percentile?
+
+::: {.fragment .fade-in}
+**Solution:**
+
+**Step 1:** Find z-score where $P(Z < z) = 0.90$
+
+-   Looking through the table, $z \approx \mathbf{1.28}$
+
+**Step 2:** Calculate x 
+
+$$x = 70 + (1.28)(12) = 70 + 15.36 = 85.36$$
+
+**Interpretation:** A score of approximately **85.36** (around 85 or 86) represents the 90th percentile. Which means you got a better score of 85 than 90% of others, with only 10% scoring higher.
+:::
+
+## Interactive Z-Score Visualizer {.scrollable background-image="image-main.png"}
+
+```{ojs}
+//| echo: false
+viewof zScore = Inputs.range([-3.5, 3.5], {
+    label: "Z-Score",
+    value: 1.5,
+    step: 0.01
+})
+
+viewof calcType = Inputs.radio(
+    ["Left tail (P(Z < z))", "Right tail (P(Z > z))", "Between (-z to z)"],
+    {label: "Calculate:", value: "Left tail (P(Z < z))"}
+)
+```
+
+```{ojs}
+{
+  const width = 800;
+  const height = 400;
+  const margin = {top: 40, right: 40, bottom: 60, left: 60};
+  
+  function normalPDF(x) {
+    return Math.exp(-0.5 * x * x) / Math.sqrt(2 * Math.PI);
+  }
+  
+  function normalCDF(z) {
+    const t = 1 / (1 + 0.2316419 * Math.abs(z));
+    const d = 0.3989423 * Math.exp(-z * z / 2);
+    const prob = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+    return z > 0 ? 1 - prob : prob;
+  }
+  
+  const svg = d3.create("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", [0, 0, width, height])
+    .attr("style", "max-width: 100%; height: auto; background: white;");
+  
+  const xScale = d3.scaleLinear()
+    .domain([-4, 4])
+    .range([margin.left, width - margin.right]);
+  
+  const yScale = d3.scaleLinear()
+    .domain([0, 0.45])
+    .range([height - margin.bottom, margin.top]);
+  
+  const curveData = d3.range(-4, 4.01, 0.05).map(x => ({
+    x: x,
+    y: normalPDF(x)
+  }));
+  
+  const line = d3.line()
+    .x(d => xScale(d.x))
+    .y(d => yScale(d.y));
+  
+  let shadedData;
+  if (calcType === "Left tail (P(Z < z))") {
+    shadedData = curveData.filter(d => d.x <= zScore);
+  } else if (calcType === "Right tail (P(Z > z))") {
+    shadedData = curveData.filter(d => d.x >= zScore);
+  } else {
+    shadedData = curveData.filter(d => d.x >= -Math.abs(zScore) && d.x <= Math.abs(zScore));
+  }
+  
+  const area = d3.area()
+    .x(d => xScale(d.x))
+    .y0(height - margin.bottom)
+    .y1(d => yScale(d.y));
+  
+  svg.append("path")
+    .datum(shadedData)
+    .attr("fill", "rgba(76, 175, 80, 0.3)")
+    .attr("d", area);
+  
+  svg.append("path")
+    .datum(curveData)
+    .attr("fill", "none")
+    .attr("stroke", "steelblue")
+    .attr("stroke-width", 2)
+    .attr("d", line);
+  
+  if (calcType === "Between (-z to z)") {
+    svg.append("line")
+      .attr("x1", xScale(-Math.abs(zScore)))
+      .attr("x2", xScale(-Math.abs(zScore)))
+      .attr("y1", margin.top)
+      .attr("y2", height - margin.bottom)
+      .attr("stroke", "red")
+      .attr("stroke-width", 2)
+      .attr("stroke-dasharray", "5,5");
+    
+    svg.append("line")
+      .attr("x1", xScale(Math.abs(zScore)))
+      .attr("x2", xScale(Math.abs(zScore)))
+      .attr("y1", margin.top)
+      .attr("y2", height - margin.bottom)
+      .attr("stroke", "red")
+      .attr("stroke-width", 2)
+      .attr("stroke-dasharray", "5,5");
+  } else {
+    svg.append("line")
+      .attr("x1", xScale(zScore))
+      .attr("x2", xScale(zScore))
+      .attr("y1", margin.top)
+      .attr("y2", height - margin.bottom)
+      .attr("stroke", "red")
+      .attr("stroke-width", 2)
+      .attr("stroke-dasharray", "5,5");
+  }
+  
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(xScale));
+  
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(yScale));
+  
+  let prob;
+  if (calcType === "Left tail (P(Z < z))") {
+    prob = normalCDF(zScore);
+  } else if (calcType === "Right tail (P(Z > z))") {
+    prob = 1 - normalCDF(zScore);
+  } else {
+    prob = normalCDF(Math.abs(zScore)) - normalCDF(-Math.abs(zScore));
+  }
+  
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top - 10)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "16px")
+    .attr("font-weight", "bold")
+    .text(`Probability = ${prob.toFixed(4)} (${(prob * 100).toFixed(2)}%)`);
+  
+  return svg.node();
+}
+```
+
+## Summary: Using Z-Tables {.scrollable background-image="image-main.png"}
+
+::: callout-tip
+1.  Z-tables give cumulative probability to the LEFT
+2.  For $P(Z > z)$, use $1 - \text{table value}$
+3.  For $P(z_1 < Z < z_2)$, subtract table values
+4.  Always convert real-world problems using $z = \frac{x-\mu}{\sigma}$
+5.  To find x from probability, look up z first, then use $x = \mu + z\sigma$
+:::
+
+## Assignment {.scrollable background-image="image-main.png"}
+
+**Instructions:**
+
+Complete the following problems. Show your complete solution including:
+
+-   Z-score calculations
+-   Z-table lookups
+-   Final answers with proper units
+
+**Problems:**
+
+1.  IQ scores are normally distributed with $\mu = 100$ and $\sigma = 15$. Find the probability that a randomly selected person has an IQ between 85 and 130.
+
+2.  The lifespan of light bulbs is normally distributed with $\mu = 800$ hours and $\sigma = 40$ hours. What percentage of bulbs last more than 900 hours?
+
+3.  If scores on an exam are normally distributed with $\mu = 78$ and $\sigma = 8$ what score separates the top 25% of students from the rest?
+
+## Additional Resources {background-image="image-main.png"}
+
+**For further practice:**
+
+-   Online z-table calculators
+-   Practice worksheets (provided separately)
+-   Interactive normal distribution applets
+-   Review the Empirical Rule (68-95-99.7) as a quick check
+
+::: callout-tip
+Remember: The z-table is your friend! Practice reading it until it becomes second nature.
+:::
+
+## Thank You! {background-image="image-main.png"}
+
+**Next session:** Hypothesis Testing and Confidence Intervals
+
+**Questions?**

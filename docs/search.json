@@ -142,9 +142,9 @@
   {
     "objectID": "slides/stats-probability-g11-pt3-light/index.html#assignment",
     "href": "slides/stats-probability-g11-pt3-light/index.html#assignment",
-    "title": "Statistics and Probability for 11th Graders — Part 3",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
     "section": "Assignment",
-    "text": "Assignment\nInstructions:\n\nOpen the link for the exercise:"
+    "text": "Assignment\nInstructions:\nComplete the following problems. Show your complete solution including:\n\nZ-score calculations\nZ-table lookups\nFinal answers with proper units\n\nProblems:\n\nIQ scores are normally distributed with \\(\\mu = 100\\) and \\(\\sigma = 15\\). Find the probability that a randomly selected person has an IQ between 85 and 130.\nThe lifespan of light bulbs is normally distributed with \\(\\mu = 800\\) hours and \\(\\sigma = 40\\) hours. What percentage of bulbs last more than 900 hours?\nIf scores on an exam are normally distributed with \\(\\mu = 78\\) and \\(\\sigma = 8\\) what score separates the top 25% of students from the rest?"
   },
   {
     "objectID": "slides/stats-probability-g11-pt2-light/index.html#hands-on-quiz",
@@ -884,9 +884,9 @@
   {
     "objectID": "slides/stats-probability-g11-pt3/index.html#to-calculate-probability-from-the-normal-distribution",
     "href": "slides/stats-probability-g11-pt3/index.html#to-calculate-probability-from-the-normal-distribution",
-    "title": "Statistics and Probability for 11th Graders — Part 3",
-    "section": "To calculate probability from the normal distribution",
-    "text": "To calculate probability from the normal distribution"
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "To Calculate Probability from the Normal Distribution",
+    "text": "To Calculate Probability from the Normal Distribution\nThis is how you calculate the cumulative probability:\n\\[\nP(z_1 \\leq Z \\leq z_2) = F(z) = \\int_{z_1}^{z_2} \\frac{1}{\\sqrt{2\\pi}}\n\\exp\\left( -\\frac{z^2}{2} \\right) dz\n\\]\nThe parameters \\(\\mu\\) and \\(\\sigma\\) are already cancelled since \\(\\mu=0\\) and \\(\\sigma = 1\\).\n\nDo not attempt to calculate this. We need tools to find exact probabilities!"
   },
   {
     "objectID": "slides/stats-probability-g11-pt3/index.html#you-need-z-table",
@@ -912,9 +912,9 @@
   {
     "objectID": "slides/stats-probability-g11-pt3/index.html#basics-of-calculation",
     "href": "slides/stats-probability-g11-pt3/index.html#basics-of-calculation",
-    "title": "Statistics and Probability for 11th Graders — Part 3",
-    "section": "Basics of calculation",
-    "text": "Basics of calculation"
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Basics of Calculation",
+    "text": "Basics of Calculation\nThere are three main types of probability calculations:\n\n\\(P(Z \\leq z)\\) - Area to the LEFT (direct from table)\n\\(P(Z \\geq z)\\) - Area to the RIGHT (use: 1 - table value)\n\\(P(z_1 \\leq Z \\leq z_2)\\) - Area BETWEEN two z-scores (subtract table values):\n\\[P(z_1 \\leq Z \\leq z_2)=P(Z \\leq z_2) - P(Z \\leq z_1)\\]"
   },
   {
     "objectID": "resources/materials/z-table/index.html",
@@ -929,5 +929,404 @@
     "title": "Standard Normal Distribution (Z) Table",
     "section": "",
     "text": "Download Z-Table (PDF)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#recall-standard-normal-distribution",
+    "href": "slides/stats-probability-g11-pt3/index.html#recall-standard-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Recall: Standard Normal Distribution",
+    "text": "Recall: Standard Normal Distribution\nWhat is a standard normal distribution?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#recall-standard-normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#recall-standard-normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Recall: Standard Normal Distribution",
+    "text": "Recall: Standard Normal Distribution\nWhat is a standard normal distribution?\nA special case of the normal distribution where:\n\nMean \\(\\mu = 0\\)\nStandard deviation \\(\\sigma = 1\\)\nUsually a random variable represents as \\(Z\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#recall-standard-normal-distribution-2",
+    "href": "slides/stats-probability-g11-pt3/index.html#recall-standard-normal-distribution-2",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Recall: Standard Normal Distribution",
+    "text": "Recall: Standard Normal Distribution\nStandardize \\(X\\) that scales to standard normal distribution \\(Z \\sim \\mathcal{N}(0, 1)\\) through standardization:\n\n\\[Z=\\frac{X-\\mu}{\\sigma}\\]\n\n\nYou’ll get z-scores"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#you-need-a-z-table",
+    "href": "slides/stats-probability-g11-pt3/index.html#you-need-a-z-table",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "You Need a Z-Table",
+    "text": "You Need a Z-Table\nA z-table (also called the standard normal table) gives us the area under the standard normal curve to the LEFT of any z-score.\n\nAccess the z-table here: https://slides.joshuamarie.com/resources/materials/z-table/"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#you-need-a-z-table-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#you-need-a-z-table-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "You Need a Z-Table",
+    "text": "You Need a Z-Table\nGo to this link and download the z-table PDF:\nhttps://slides.joshuamarie.com/resources/materials/z-table/"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#how-to-use-the-z-table",
+    "href": "slides/stats-probability-g11-pt3/index.html#how-to-use-the-z-table",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "How to Use the Z-Table",
+    "text": "How to Use the Z-Table\n\nApparently, I already have set the instruction in the page. Either go look for it, or look after the next slide."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#how-to-use-the-z-table-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#how-to-use-the-z-table-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "How to Use the Z-Table",
+    "text": "How to Use the Z-Table\nSteps to read the z-table:\n\nFind the row corresponding to the first two digits of your z-score (e.g., for \\(z = 1.23\\), look for 1.2)\nFind the column corresponding to the second decimal place (e.g., for \\(z = 1.23\\), look for 0.03)\nThe intersection gives you \\(P(Z \\leq z)\\) - the area to the LEFT of that z-score\n\n\nExample: For \\(z = 1.23\\), you’d find row “1.2” and column “0.03”"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#example-reading-the-z-table",
+    "href": "slides/stats-probability-g11-pt3/index.html#example-reading-the-z-table",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Example: Reading the Z-Table",
+    "text": "Example: Reading the Z-Table\nFind \\(P(Z \\leq 1.50)\\)\n\nRow: 1.5\nColumn: 0.00\nTable value: 0.9332\n\n\nInterpretation: About 93.32% of the data falls to the LEFT of \\(z = 1.50\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#example-reading-the-z-table-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#example-reading-the-z-table-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Example: Reading the Z-Table",
+    "text": "Example: Reading the Z-Table\nFind \\(P(Z \\leq -0.75)\\)\n\nRow: -0.7\nColumn: 0.05\nTable value: 0.2266\n\n\nInterpretation: About 22.66% of the data falls to the LEFT of \\(z = -0.75\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#type-1-pz-leq-z",
+    "href": "slides/stats-probability-g11-pt3/index.html#type-1-pz-leq-z",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 1: \\(P(Z \\leq z)\\)",
+    "text": "Type 1: \\(P(Z \\leq z)\\)\nFinding the area to the LEFT of a z-score\nThis is the easiest case — just look up the z-score directly in the table!"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#type-1-pz-leq-z-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#type-1-pz-leq-z-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 1: \\(P(Z \\leq z)\\)",
+    "text": "Type 1: \\(P(Z \\leq z)\\)\nFinding the area to the LEFT of a z-score\nThis is the easiest case — just look up the z-score directly in the table!\nExample: Find \\(P(Z \\leq 1.25)\\)\n\nSolution:\n\nLook up \\(z = 1.25\\) in the table\nRow: 1.2, Column: 0.05\nTable value: 0.8944\n\n\n\nAnswer: \\(P(Z \\leq 1.25) = 0.8944\\) or 89.44%"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#type-2-pz-geq-z",
+    "href": "slides/stats-probability-g11-pt3/index.html#type-2-pz-geq-z",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 2: \\(P(Z \\geq z)\\)",
+    "text": "Type 2: \\(P(Z \\geq z)\\)\nFinding the area to the RIGHT of a z-score\nSince the z-table gives LEFT areas, we use:\n\\[P(Z &gt; z) = 1 - P(Z \\leq z)\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#type-2-pz-geq-z-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#type-2-pz-geq-z-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 2: \\(P(Z \\geq z)\\)",
+    "text": "Type 2: \\(P(Z \\geq z)\\)\nFinding the area to the RIGHT of a z-score\nSince the z-table gives LEFT areas, we use:\n\\[P(Z &gt; z) = 1 - P(Z \\leq z)\\]\nExample: Find \\(P(Z &gt; 0.80)\\)\n\nSolution:\n\nLook up \\(z = 0.80\\) in the table, which gives you 0.7881\nCalculate: \\(P(Z &gt; 0.80) = 1 - P(Z \\leq 0.80) = 1 - 0.7881\\)\n\\(P(Z &gt; 0.80) = \\mathbf{0.2119}\\)\n\n\n\nAnswer: \\(P(Z &gt; 0.80) = \\mathbf{0.2119}\\) or 21.19%"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#type-3-pz_1-leq-z-leq-z_2",
+    "href": "slides/stats-probability-g11-pt3/index.html#type-3-pz_1-leq-z-leq-z_2",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 3: \\(P(z_1 \\leq Z \\leq z_2)\\)",
+    "text": "Type 3: \\(P(z_1 \\leq Z \\leq z_2)\\)\nFinding the area BETWEEN two z-scores\nWe subtract the smaller cumulative area from the larger:\n\\[P(z_1 \\leq Z \\leq z_2)=P(Z \\leq z_2) - P(Z \\leq z_1)\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#type-3-pz_1-leq-z-leq-z_2-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#type-3-pz_1-leq-z-leq-z_2-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 3: \\(P(z_1 \\leq Z \\leq z_2)\\)",
+    "text": "Type 3: \\(P(z_1 \\leq Z \\leq z_2)\\)\nFinding the area BETWEEN two z-scores\nWe subtract the smaller cumulative area from the larger:\n\\[P(z_1 \\leq Z \\leq z_2)=P(Z \\leq z_2) - P(Z \\leq z_1)\\]\nExample: Find \\(P(-1.00 &lt; Z &lt; 1.50)\\)\n\nSolution:\n\n\\(P(Z &lt; 1.50)\\) from table → 0.9332\n\\(P(Z &lt; -1.00)\\) from table → 0.1587\n\\(P(-1.00 &lt; Z &lt; 1.50) = 0.9332 - 0.1587 = \\mathbf{0.7745}\\)\n\n\n\nAnswer: \\(P(-1.00 &lt; Z &lt; 1.50) = \\mathbf{0.7745}\\) or 77.45%"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#practice-problem-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#practice-problem-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Practice Problem 1",
+    "text": "Practice Problem 1\nProblem: Find the following probabilities using the z-table:\n\n\\(P(Z \\leq 2.00)\\)\n\\(P(Z &gt; -1.50)\\)\n\\(P(0.50 \\leq Z \\leq 1.80)\\)\n\n\nSolutions:\n\n\\(P(Z \\leq 2.00) = \\mathbf{0.9772}\\) (direct from table)\n\\(P(Z &gt; -1.50) = 1 - P(Z \\leq -1.50) = 1 - 0.0668 = \\mathbf{0.9332}\\)\n\\(P(0.50 \\leq Z \\leq 1.80) = P(Z \\leq 1.80) - P(Z \\leq 0.50) = 0.9641 - 0.6915 = \\mathbf{0.2726}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#converting-to-real-world-problems",
+    "href": "slides/stats-probability-g11-pt3/index.html#converting-to-real-world-problems",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Converting to Real-World Problems",
+    "text": "Converting to Real-World Problems\nRemember the z-score formula:\n\\[z = \\frac{x - \\mu}{\\sigma}\\]\nSteps:\n\nConvert the raw score (\\(x\\)) to a z-score\nUse the z-table to find the probability\nInterpret in context"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#real-world-example-1",
+    "href": "slides/stats-probability-g11-pt3/index.html#real-world-example-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Real-World Example 1",
+    "text": "Real-World Example 1\nProblem: Test scores are normally distributed with \\(\\mu = 75\\) and \\(\\sigma = 10\\). What is the probability that a randomly selected student scored less than 85?\n\nSolution:\nStep 1: Convert to z-score \\[z = \\frac{85 - 75}{10} = \\frac{10}{10} = 1.00\\]\nStep 2: Look up \\(z = 1.00\\) in table. This will be 0.8413\nInterpretation: \\(84.13\\%\\) of students scored less than 85"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#real-world-example-2",
+    "href": "slides/stats-probability-g11-pt3/index.html#real-world-example-2",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Real-World Example 2",
+    "text": "Real-World Example 2\nProblem: Heights of adult men are normally distributed with \\(\\mu = 175\\) cm and \\(\\sigma = 8\\) cm. What percentage of men are taller than 183 cm?\n\nSolution:\nStep 1: Convert to z-score \\[z = \\frac{183 - 175}{8} = \\frac{8}{8} = 1.00\\]\nStep 2: \\[P(Z &gt; 1.00) = 1 - P(Z &lt; 1.00) = 1 - 0.8413 = 0.1587\\]\nInterpretation: \\(15.87\\%\\) of men are taller than 183 cm"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#real-world-example-3",
+    "href": "slides/stats-probability-g11-pt3/index.html#real-world-example-3",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Real-World Example 3",
+    "text": "Real-World Example 3\nProblem: Battery life is normally distributed with \\(\\mu = 400\\) hours and \\(\\sigma = 50\\) hours. What is the probability a battery lasts between 350 and 450 hours?\n\nSolution:\nStep 1: Convert both values to z-scores \\[z_1 = \\frac{350 - 400}{50} = -1.00, \\quad z_2 = \\frac{450 - 400}{50} = 1.00\\]\nStep 2: \\[P(-1.00 &lt; Z &lt; 1.00) = 0.8413 - 0.1587 = 0.6826\\]\nInterpretation: \\(68.26\\%\\) of batteries last between 350 and 450 hours"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#practice-problem-2",
+    "href": "slides/stats-probability-g11-pt3/index.html#practice-problem-2",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Practice Problem 2",
+    "text": "Practice Problem 2\nProblem: Your monthly electric bill has \\(\\mu = 1500\\) and \\(\\sigma = 120\\). What is the probability you’ll pay between 1380 and 1740?\n\nSolution:\n\\[z_1 = \\frac{1380 - 1500}{120} = -1.00, \\quad z_2 = \\frac{1740 - 1500}{120} = 2.00\\]\nAnswer: \\(P(-1.00 &lt; Z &lt; 2.00) = 0.9772 - 0.1587 = \\mathbf{0.8185}\\) or 81.85%"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#working-backwards-finding-x-from-probability",
+    "href": "slides/stats-probability-g11-pt3/index.html#working-backwards-finding-x-from-probability",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Working Backwards: Finding X from Probability",
+    "text": "Working Backwards: Finding X from Probability\nSometimes we know the probability and need to find the value (x).\nSteps:\n\nFind the z-score that corresponds to the given probability in the z-table\nUse the formula: \\(x = \\mu + z\\sigma\\)\nInterpret the result"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#example-finding-x",
+    "href": "slides/stats-probability-g11-pt3/index.html#example-finding-x",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Example: Finding X",
+    "text": "Example: Finding X\nProblem: Test scores are normally distributed with \\(\\mu = 70\\) and \\(\\sigma = 12\\). What score represents the 90th percentile?\n\nSolution:\nStep 1: Find z-score where \\(P(Z &lt; z) = 0.90\\)\n\nLooking through the table, \\(z \\approx \\mathbf{1.28}\\)\n\nStep 2: Calculate x\n\\[x = 70 + (1.28)(12) = 70 + 15.36 = 85.36\\]\nInterpretation: A score of approximately 85.36 (around 85 or 86) represents the 90th percentile. Which means you got a better score of 85 than 90% of others, with only 10% scoring higher."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#interactive-z-score-visualizer",
+    "href": "slides/stats-probability-g11-pt3/index.html#interactive-z-score-visualizer",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Interactive Z-Score Visualizer",
+    "text": "Interactive Z-Score Visualizer\n\nviewof zScore = Inputs.range([-3.5, 3.5], {\n    label: \"Z-Score\",\n    value: 1.5,\n    step: 0.01\n})\n\nviewof calcType = Inputs.radio(\n    [\"Left tail (P(Z &lt; z))\", \"Right tail (P(Z &gt; z))\", \"Between (-z to z)\"],\n    {label: \"Calculate:\", value: \"Left tail (P(Z &lt; z))\"}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  const width = 800;\n  const height = 400;\n  const margin = {top: 40, right: 40, bottom: 60, left: 60};\n  \n  function normalPDF(x) {\n    return Math.exp(-0.5 * x * x) / Math.sqrt(2 * Math.PI);\n  }\n  \n  function normalCDF(z) {\n    const t = 1 / (1 + 0.2316419 * Math.abs(z));\n    const d = 0.3989423 * Math.exp(-z * z / 2);\n    const prob = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));\n    return z &gt; 0 ? 1 - prob : prob;\n  }\n  \n  const svg = d3.create(\"svg\")\n    .attr(\"width\", width)\n    .attr(\"height\", height)\n    .attr(\"viewBox\", [0, 0, width, height])\n    .attr(\"style\", \"max-width: 100%; height: auto; background: white;\");\n  \n  const xScale = d3.scaleLinear()\n    .domain([-4, 4])\n    .range([margin.left, width - margin.right]);\n  \n  const yScale = d3.scaleLinear()\n    .domain([0, 0.45])\n    .range([height - margin.bottom, margin.top]);\n  \n  const curveData = d3.range(-4, 4.01, 0.05).map(x =&gt; ({\n    x: x,\n    y: normalPDF(x)\n  }));\n  \n  const line = d3.line()\n    .x(d =&gt; xScale(d.x))\n    .y(d =&gt; yScale(d.y));\n  \n  let shadedData;\n  if (calcType === \"Left tail (P(Z &lt; z))\") {\n    shadedData = curveData.filter(d =&gt; d.x &lt;= zScore);\n  } else if (calcType === \"Right tail (P(Z &gt; z))\") {\n    shadedData = curveData.filter(d =&gt; d.x &gt;= zScore);\n  } else {\n    shadedData = curveData.filter(d =&gt; d.x &gt;= -Math.abs(zScore) && d.x &lt;= Math.abs(zScore));\n  }\n  \n  const area = d3.area()\n    .x(d =&gt; xScale(d.x))\n    .y0(height - margin.bottom)\n    .y1(d =&gt; yScale(d.y));\n  \n  svg.append(\"path\")\n    .datum(shadedData)\n    .attr(\"fill\", \"rgba(76, 175, 80, 0.3)\")\n    .attr(\"d\", area);\n  \n  svg.append(\"path\")\n    .datum(curveData)\n    .attr(\"fill\", \"none\")\n    .attr(\"stroke\", \"steelblue\")\n    .attr(\"stroke-width\", 2)\n    .attr(\"d\", line);\n  \n  if (calcType === \"Between (-z to z)\") {\n    svg.append(\"line\")\n      .attr(\"x1\", xScale(-Math.abs(zScore)))\n      .attr(\"x2\", xScale(-Math.abs(zScore)))\n      .attr(\"y1\", margin.top)\n      .attr(\"y2\", height - margin.bottom)\n      .attr(\"stroke\", \"red\")\n      .attr(\"stroke-width\", 2)\n      .attr(\"stroke-dasharray\", \"5,5\");\n    \n    svg.append(\"line\")\n      .attr(\"x1\", xScale(Math.abs(zScore)))\n      .attr(\"x2\", xScale(Math.abs(zScore)))\n      .attr(\"y1\", margin.top)\n      .attr(\"y2\", height - margin.bottom)\n      .attr(\"stroke\", \"red\")\n      .attr(\"stroke-width\", 2)\n      .attr(\"stroke-dasharray\", \"5,5\");\n  } else {\n    svg.append(\"line\")\n      .attr(\"x1\", xScale(zScore))\n      .attr(\"x2\", xScale(zScore))\n      .attr(\"y1\", margin.top)\n      .attr(\"y2\", height - margin.bottom)\n      .attr(\"stroke\", \"red\")\n      .attr(\"stroke-width\", 2)\n      .attr(\"stroke-dasharray\", \"5,5\");\n  }\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n    .call(d3.axisBottom(xScale));\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${margin.left},0)`)\n    .call(d3.axisLeft(yScale));\n  \n  let prob;\n  if (calcType === \"Left tail (P(Z &lt; z))\") {\n    prob = normalCDF(zScore);\n  } else if (calcType === \"Right tail (P(Z &gt; z))\") {\n    prob = 1 - normalCDF(zScore);\n  } else {\n    prob = normalCDF(Math.abs(zScore)) - normalCDF(-Math.abs(zScore));\n  }\n  \n  svg.append(\"text\")\n    .attr(\"x\", width / 2)\n    .attr(\"y\", margin.top - 10)\n    .attr(\"text-anchor\", \"middle\")\n    .attr(\"font-size\", \"16px\")\n    .attr(\"font-weight\", \"bold\")\n    .text(`Probability = ${prob.toFixed(4)} (${(prob * 100).toFixed(2)}%)`);\n  \n  return svg.node();\n}"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#summary-using-z-tables",
+    "href": "slides/stats-probability-g11-pt3/index.html#summary-using-z-tables",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Summary: Using Z-Tables",
+    "text": "Summary: Using Z-Tables\n\n\n\n\n\n\nTip\n\n\n\nZ-tables give cumulative probability to the LEFT\nFor \\(P(Z &gt; z)\\), use \\(1 - \\text{table value}\\)\nFor \\(P(z_1 &lt; Z &lt; z_2)\\), subtract table values\nAlways convert real-world problems using \\(z = \\frac{x-\\mu}{\\sigma}\\)\nTo find x from probability, look up z first, then use \\(x = \\mu + z\\sigma\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#assignment",
+    "href": "slides/stats-probability-g11-pt3/index.html#assignment",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Assignment",
+    "text": "Assignment\nInstructions:\nComplete the following problems. Show your complete solution including:\n\nZ-score calculations\nZ-table lookups\nFinal answers with proper units\n\nProblems:\n\nIQ scores are normally distributed with \\(\\mu = 100\\) and \\(\\sigma = 15\\). Find the probability that a randomly selected person has an IQ between 85 and 130.\nThe lifespan of light bulbs is normally distributed with \\(\\mu = 800\\) hours and \\(\\sigma = 40\\) hours. What percentage of bulbs last more than 900 hours?\nIf scores on an exam are normally distributed with \\(\\mu = 78\\) and \\(\\sigma = 8\\) what score separates the top 25% of students from the rest?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#additional-resources",
+    "href": "slides/stats-probability-g11-pt3/index.html#additional-resources",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Additional Resources",
+    "text": "Additional Resources\nFor further practice:\n\nOnline z-table calculators\nPractice worksheets (provided separately)\nInteractive normal distribution applets\nReview the Empirical Rule (68-95-99.7) as a quick check\n\n\n\n\n\n\n\nTip\n\n\nRemember: The z-table is your friend! Practice reading it until it becomes second nature."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3/index.html#thank-you",
+    "href": "slides/stats-probability-g11-pt3/index.html#thank-you",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Thank You!",
+    "text": "Thank You!\nNext session: Hypothesis Testing and Confidence Intervals\nQuestions?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#recall-standard-normal-distribution",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#recall-standard-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Recall: Standard Normal Distribution",
+    "text": "Recall: Standard Normal Distribution\nWhat is a standard normal distribution?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#recall-standard-normal-distribution-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#recall-standard-normal-distribution-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Recall: Standard Normal Distribution",
+    "text": "Recall: Standard Normal Distribution\nWhat is a standard normal distribution?\nA special case of the normal distribution where:\n\nMean \\(\\mu = 0\\)\nStandard deviation \\(\\sigma = 1\\)\nUsually a random variable represents as \\(Z\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#recall-standard-normal-distribution-2",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#recall-standard-normal-distribution-2",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Recall: Standard Normal Distribution",
+    "text": "Recall: Standard Normal Distribution\nStandardize \\(X\\) that scales to standard normal distribution \\(Z \\sim \\mathcal{N}(0, 1)\\) through standardization:\n\n\\[Z=\\frac{X-\\mu}{\\sigma}\\]\n\n\nYou’ll get z-scores"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#to-calculate-probability-from-the-normal-distribution",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#to-calculate-probability-from-the-normal-distribution",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "To Calculate Probability from the Normal Distribution",
+    "text": "To Calculate Probability from the Normal Distribution\nThis is how you calculate the cumulative probability:\n\\[\nP(z_1 \\leq Z \\leq z_2) = F(z) = \\int_{z_1}^{z_2} \\frac{1}{\\sqrt{2\\pi}}\n\\exp\\left( -\\frac{z^2}{2} \\right) dz\n\\]\nThe parameters \\(\\mu\\) and \\(\\sigma\\) are already cancelled since \\(\\mu=0\\) and \\(\\sigma = 1\\).\n\nDo not attempt to calculate this. We need tools to find exact probabilities!"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#you-need-a-z-table",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#you-need-a-z-table",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "You Need a Z-Table",
+    "text": "You Need a Z-Table\nA z-table (also called the standard normal table) gives us the area under the standard normal curve to the LEFT of any z-score.\n\nAccess the z-table here: https://slides.joshuamarie.com/resources/materials/z-table/"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#you-need-a-z-table-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#you-need-a-z-table-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "You Need a Z-Table",
+    "text": "You Need a Z-Table\nGo to this link and download the z-table PDF:\nhttps://slides.joshuamarie.com/resources/materials/z-table/"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#how-to-use-the-z-table",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#how-to-use-the-z-table",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "How to Use the Z-Table",
+    "text": "How to Use the Z-Table\n\nApparently, I already have set the instruction in the page. Either go look for it, or look after the next slide."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#how-to-use-the-z-table-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#how-to-use-the-z-table-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "How to Use the Z-Table",
+    "text": "How to Use the Z-Table\nSteps to read the z-table:\n\nFind the row corresponding to the first two digits of your z-score (e.g., for \\(z = 1.23\\), look for 1.2)\nFind the column corresponding to the second decimal place (e.g., for \\(z = 1.23\\), look for 0.03)\nThe intersection gives you \\(P(Z \\leq z)\\) - the area to the LEFT of that z-score\n\n\nExample: For \\(z = 1.23\\), you’d find row “1.2” and column “0.03”"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#example-reading-the-z-table",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#example-reading-the-z-table",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Example: Reading the Z-Table",
+    "text": "Example: Reading the Z-Table\nFind \\(P(Z \\leq 1.50)\\)\n\nRow: 1.5\nColumn: 0.00\nTable value: 0.9332\n\n\nInterpretation: About 93.32% of the data falls to the LEFT of \\(z = 1.50\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#example-reading-the-z-table-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#example-reading-the-z-table-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Example: Reading the Z-Table",
+    "text": "Example: Reading the Z-Table\nFind \\(P(Z \\leq -0.75)\\)\n\nRow: -0.7\nColumn: 0.05\nTable value: 0.2266\n\n\nInterpretation: About 22.66% of the data falls to the LEFT of \\(z = -0.75\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#basics-of-calculation",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#basics-of-calculation",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Basics of Calculation",
+    "text": "Basics of Calculation\nThere are three main types of probability calculations:\n\n\\(P(Z \\leq z)\\) - Area to the LEFT (direct from table)\n\\(P(Z \\geq z)\\) - Area to the RIGHT (use: 1 - table value)\n\\(P(z_1 \\leq Z \\leq z_2)\\) - Area BETWEEN two z-scores (subtract table values):\n\\[P(z_1 \\leq Z \\leq z_2)=P(Z \\leq z_2) - P(Z \\leq z_1)\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#type-1-pz-leq-z",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#type-1-pz-leq-z",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 1: \\(P(Z \\leq z)\\)",
+    "text": "Type 1: \\(P(Z \\leq z)\\)\nFinding the area to the LEFT of a z-score\nThis is the easiest case — just look up the z-score directly in the table!"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#type-1-pz-leq-z-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#type-1-pz-leq-z-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 1: \\(P(Z \\leq z)\\)",
+    "text": "Type 1: \\(P(Z \\leq z)\\)\nFinding the area to the LEFT of a z-score\nThis is the easiest case — just look up the z-score directly in the table!\nExample: Find \\(P(Z \\leq 1.25)\\)\n\nSolution:\n\nLook up \\(z = 1.25\\) in the table\nRow: 1.2, Column: 0.05\nTable value: 0.8944\n\n\n\nAnswer: \\(P(Z \\leq 1.25) = 0.8944\\) or 89.44%"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#type-2-pz-geq-z",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#type-2-pz-geq-z",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 2: \\(P(Z \\geq z)\\)",
+    "text": "Type 2: \\(P(Z \\geq z)\\)\nFinding the area to the RIGHT of a z-score\nSince the z-table gives LEFT areas, we use:\n\\[P(Z &gt; z) = 1 - P(Z \\leq z)\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#type-2-pz-geq-z-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#type-2-pz-geq-z-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 2: \\(P(Z \\geq z)\\)",
+    "text": "Type 2: \\(P(Z \\geq z)\\)\nFinding the area to the RIGHT of a z-score\nSince the z-table gives LEFT areas, we use:\n\\[P(Z &gt; z) = 1 - P(Z \\leq z)\\]\nExample: Find \\(P(Z &gt; 0.80)\\)\n\nSolution:\n\nLook up \\(z = 0.80\\) in the table, which gives you 0.7881\nCalculate: \\(P(Z &gt; 0.80) = 1 - P(Z \\leq 0.80) = 1 - 0.7881\\)\n\\(P(Z &gt; 0.80) = \\mathbf{0.2119}\\)\n\n\n\nAnswer: \\(P(Z &gt; 0.80) = \\mathbf{0.2119}\\) or 21.19%"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#type-3-pz_1-leq-z-leq-z_2",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#type-3-pz_1-leq-z-leq-z_2",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 3: \\(P(z_1 \\leq Z \\leq z_2)\\)",
+    "text": "Type 3: \\(P(z_1 \\leq Z \\leq z_2)\\)\nFinding the area BETWEEN two z-scores\nWe subtract the smaller cumulative area from the larger:\n\\[P(z_1 \\leq Z \\leq z_2)=P(Z \\leq z_2) - P(Z \\leq z_1)\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#type-3-pz_1-leq-z-leq-z_2-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#type-3-pz_1-leq-z-leq-z_2-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Type 3: \\(P(z_1 \\leq Z \\leq z_2)\\)",
+    "text": "Type 3: \\(P(z_1 \\leq Z \\leq z_2)\\)\nFinding the area BETWEEN two z-scores\nWe subtract the smaller cumulative area from the larger:\n\\[P(z_1 \\leq Z \\leq z_2)=P(Z \\leq z_2) - P(Z \\leq z_1)\\]\nExample: Find \\(P(-1.00 &lt; Z &lt; 1.50)\\)\n\nSolution:\n\n\\(P(Z &lt; 1.50)\\) from table → 0.9332\n\\(P(Z &lt; -1.00)\\) from table → 0.1587\n\\(P(-1.00 &lt; Z &lt; 1.50) = 0.9332 - 0.1587 = \\mathbf{0.7745}\\)\n\n\n\nAnswer: \\(P(-1.00 &lt; Z &lt; 1.50) = \\mathbf{0.7745}\\) or 77.45%"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#practice-problem-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#practice-problem-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Practice Problem 1",
+    "text": "Practice Problem 1\nProblem: Find the following probabilities using the z-table:\n\n\\(P(Z \\leq 2.00)\\)\n\\(P(Z &gt; -1.50)\\)\n\\(P(0.50 \\leq Z \\leq 1.80)\\)\n\n\nSolutions:\n\n\\(P(Z \\leq 2.00) = \\mathbf{0.9772}\\) (direct from table)\n\\(P(Z &gt; -1.50) = 1 - P(Z \\leq -1.50) = 1 - 0.0668 = \\mathbf{0.9332}\\)\n\\(P(0.50 \\leq Z \\leq 1.80) = P(Z \\leq 1.80) - P(Z \\leq 0.50) = 0.9641 - 0.6915 = \\mathbf{0.2726}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#converting-to-real-world-problems",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#converting-to-real-world-problems",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Converting to Real-World Problems",
+    "text": "Converting to Real-World Problems\nRemember the z-score formula:\n\\[z = \\frac{x - \\mu}{\\sigma}\\]\nSteps:\n\nConvert the raw score (\\(x\\)) to a z-score\nUse the z-table to find the probability\nInterpret in context"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#real-world-example-1",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#real-world-example-1",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Real-World Example 1",
+    "text": "Real-World Example 1\nProblem: Test scores are normally distributed with \\(\\mu = 75\\) and \\(\\sigma = 10\\). What is the probability that a randomly selected student scored less than 85?\n\nSolution:\nStep 1: Convert to z-score \\[z = \\frac{85 - 75}{10} = \\frac{10}{10} = 1.00\\]\nStep 2: Look up \\(z = 1.00\\) in table. This will be 0.8413\nInterpretation: \\(84.13\\%\\) of students scored less than 85"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#real-world-example-2",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#real-world-example-2",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Real-World Example 2",
+    "text": "Real-World Example 2\nProblem: Heights of adult men are normally distributed with \\(\\mu = 175\\) cm and \\(\\sigma = 8\\) cm. What percentage of men are taller than 183 cm?\n\nSolution:\nStep 1: Convert to z-score \\[z = \\frac{183 - 175}{8} = \\frac{8}{8} = 1.00\\]\nStep 2: \\[P(Z &gt; 1.00) = 1 - P(Z &lt; 1.00) = 1 - 0.8413 = 0.1587\\]\nInterpretation: \\(15.87\\%\\) of men are taller than 183 cm"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#real-world-example-3",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#real-world-example-3",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Real-World Example 3",
+    "text": "Real-World Example 3\nProblem: Battery life is normally distributed with \\(\\mu = 400\\) hours and \\(\\sigma = 50\\) hours. What is the probability a battery lasts between 350 and 450 hours?\n\nSolution:\nStep 1: Convert both values to z-scores \\[z_1 = \\frac{350 - 400}{50} = -1.00, \\quad z_2 = \\frac{450 - 400}{50} = 1.00\\]\nStep 2: \\[P(-1.00 &lt; Z &lt; 1.00) = 0.8413 - 0.1587 = 0.6826\\]\nInterpretation: \\(68.26\\%\\) of batteries last between 350 and 450 hours"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#practice-problem-2",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#practice-problem-2",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Practice Problem 2",
+    "text": "Practice Problem 2\nProblem: Your monthly electric bill has \\(\\mu = 1500\\) and \\(\\sigma = 120\\). What is the probability you’ll pay between 1380 and 1740?\n\nSolution:\n\\[z_1 = \\frac{1380 - 1500}{120} = -1.00, \\quad z_2 = \\frac{1740 - 1500}{120} = 2.00\\]\nAnswer: \\(P(-1.00 &lt; Z &lt; 2.00) = 0.9772 - 0.1587 = \\mathbf{0.8185}\\) or 81.85%"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#working-backwards-finding-x-from-probability",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#working-backwards-finding-x-from-probability",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Working Backwards: Finding X from Probability",
+    "text": "Working Backwards: Finding X from Probability\nSometimes we know the probability and need to find the value (x).\nSteps:\n\nFind the z-score that corresponds to the given probability in the z-table\nUse the formula: \\(x = \\mu + z\\sigma\\)\nInterpret the result"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#example-finding-x",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#example-finding-x",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Example: Finding X",
+    "text": "Example: Finding X\nProblem: Test scores are normally distributed with \\(\\mu = 70\\) and \\(\\sigma = 12\\). What score represents the 90th percentile?\n\nSolution:\nStep 1: Find z-score where \\(P(Z &lt; z) = 0.90\\)\n\nLooking through the table, \\(z \\approx \\mathbf{1.28}\\)\n\nStep 2: Calculate x\n\\[x = 70 + (1.28)(12) = 70 + 15.36 = 85.36\\]\nInterpretation: A score of approximately 85.36 (around 85 or 86) represents the 90th percentile. Which means you got a better score of 85 than 90% of others, with only 10% scoring higher."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#interactive-z-score-visualizer",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#interactive-z-score-visualizer",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Interactive Z-Score Visualizer",
+    "text": "Interactive Z-Score Visualizer\n\nviewof zScore = Inputs.range([-3.5, 3.5], {\n    label: \"Z-Score\",\n    value: 1.5,\n    step: 0.01\n})\n\nviewof calcType = Inputs.radio(\n    [\"Left tail (P(Z &lt; z))\", \"Right tail (P(Z &gt; z))\", \"Between (-z to z)\"],\n    {label: \"Calculate:\", value: \"Left tail (P(Z &lt; z))\"}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{\n  const width = 800;\n  const height = 400;\n  const margin = {top: 40, right: 40, bottom: 60, left: 60};\n  \n  function normalPDF(x) {\n    return Math.exp(-0.5 * x * x) / Math.sqrt(2 * Math.PI);\n  }\n  \n  function normalCDF(z) {\n    const t = 1 / (1 + 0.2316419 * Math.abs(z));\n    const d = 0.3989423 * Math.exp(-z * z / 2);\n    const prob = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));\n    return z &gt; 0 ? 1 - prob : prob;\n  }\n  \n  const svg = d3.create(\"svg\")\n    .attr(\"width\", width)\n    .attr(\"height\", height)\n    .attr(\"viewBox\", [0, 0, width, height])\n    .attr(\"style\", \"max-width: 100%; height: auto; background: white;\");\n  \n  const xScale = d3.scaleLinear()\n    .domain([-4, 4])\n    .range([margin.left, width - margin.right]);\n  \n  const yScale = d3.scaleLinear()\n    .domain([0, 0.45])\n    .range([height - margin.bottom, margin.top]);\n  \n  const curveData = d3.range(-4, 4.01, 0.05).map(x =&gt; ({\n    x: x,\n    y: normalPDF(x)\n  }));\n  \n  const line = d3.line()\n    .x(d =&gt; xScale(d.x))\n    .y(d =&gt; yScale(d.y));\n  \n  let shadedData;\n  if (calcType === \"Left tail (P(Z &lt; z))\") {\n    shadedData = curveData.filter(d =&gt; d.x &lt;= zScore);\n  } else if (calcType === \"Right tail (P(Z &gt; z))\") {\n    shadedData = curveData.filter(d =&gt; d.x &gt;= zScore);\n  } else {\n    shadedData = curveData.filter(d =&gt; d.x &gt;= -Math.abs(zScore) && d.x &lt;= Math.abs(zScore));\n  }\n  \n  const area = d3.area()\n    .x(d =&gt; xScale(d.x))\n    .y0(height - margin.bottom)\n    .y1(d =&gt; yScale(d.y));\n  \n  svg.append(\"path\")\n    .datum(shadedData)\n    .attr(\"fill\", \"rgba(76, 175, 80, 0.3)\")\n    .attr(\"d\", area);\n  \n  svg.append(\"path\")\n    .datum(curveData)\n    .attr(\"fill\", \"none\")\n    .attr(\"stroke\", \"steelblue\")\n    .attr(\"stroke-width\", 2)\n    .attr(\"d\", line);\n  \n  if (calcType === \"Between (-z to z)\") {\n    svg.append(\"line\")\n      .attr(\"x1\", xScale(-Math.abs(zScore)))\n      .attr(\"x2\", xScale(-Math.abs(zScore)))\n      .attr(\"y1\", margin.top)\n      .attr(\"y2\", height - margin.bottom)\n      .attr(\"stroke\", \"red\")\n      .attr(\"stroke-width\", 2)\n      .attr(\"stroke-dasharray\", \"5,5\");\n    \n    svg.append(\"line\")\n      .attr(\"x1\", xScale(Math.abs(zScore)))\n      .attr(\"x2\", xScale(Math.abs(zScore)))\n      .attr(\"y1\", margin.top)\n      .attr(\"y2\", height - margin.bottom)\n      .attr(\"stroke\", \"red\")\n      .attr(\"stroke-width\", 2)\n      .attr(\"stroke-dasharray\", \"5,5\");\n  } else {\n    svg.append(\"line\")\n      .attr(\"x1\", xScale(zScore))\n      .attr(\"x2\", xScale(zScore))\n      .attr(\"y1\", margin.top)\n      .attr(\"y2\", height - margin.bottom)\n      .attr(\"stroke\", \"red\")\n      .attr(\"stroke-width\", 2)\n      .attr(\"stroke-dasharray\", \"5,5\");\n  }\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n    .call(d3.axisBottom(xScale));\n  \n  svg.append(\"g\")\n    .attr(\"transform\", `translate(${margin.left},0)`)\n    .call(d3.axisLeft(yScale));\n  \n  let prob;\n  if (calcType === \"Left tail (P(Z &lt; z))\") {\n    prob = normalCDF(zScore);\n  } else if (calcType === \"Right tail (P(Z &gt; z))\") {\n    prob = 1 - normalCDF(zScore);\n  } else {\n    prob = normalCDF(Math.abs(zScore)) - normalCDF(-Math.abs(zScore));\n  }\n  \n  svg.append(\"text\")\n    .attr(\"x\", width / 2)\n    .attr(\"y\", margin.top - 10)\n    .attr(\"text-anchor\", \"middle\")\n    .attr(\"font-size\", \"16px\")\n    .attr(\"font-weight\", \"bold\")\n    .text(`Probability = ${prob.toFixed(4)} (${(prob * 100).toFixed(2)}%)`);\n  \n  return svg.node();\n}"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#summary-using-z-tables",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#summary-using-z-tables",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Summary: Using Z-Tables",
+    "text": "Summary: Using Z-Tables\n\n\n\n\n\n\nTip\n\n\n\nZ-tables give cumulative probability to the LEFT\nFor \\(P(Z &gt; z)\\), use \\(1 - \\text{table value}\\)\nFor \\(P(z_1 &lt; Z &lt; z_2)\\), subtract table values\nAlways convert real-world problems using \\(z = \\frac{x-\\mu}{\\sigma}\\)\nTo find x from probability, look up z first, then use \\(x = \\mu + z\\sigma\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#additional-resources",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#additional-resources",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Additional Resources",
+    "text": "Additional Resources\nFor further practice:\n\nOnline z-table calculators\nPractice worksheets (provided separately)\nInteractive normal distribution applets\nReview the Empirical Rule (68-95-99.7) as a quick check\n\n\n\n\n\n\n\nTip\n\n\nRemember: The z-table is your friend! Practice reading it until it becomes second nature."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt3-light/index.html#thank-you",
+    "href": "slides/stats-probability-g11-pt3-light/index.html#thank-you",
+    "title": "Statistics and Probability for 11th Graders - Part 3",
+    "section": "Thank You!",
+    "text": "Thank You!\nNext session: Hypothesis Testing and Confidence Intervals\nQuestions?"
   }
 ]

@@ -12,7 +12,7 @@
 
   <meta name="author" content="Joshua Marie">
   <meta name="dcterms.date" content="2025-12-12">
-  <title>Slides - Joshua Marie – Statistics and Probability for 11th Graders — Part 3</title>
+  <title>Slides - Joshua Marie – Statistics and Probability for 11th Graders - Part 3</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #e1e4e8; background-color: #24292e; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #e1e4e8; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #f97583; } /* Attribute */
+    code span.bn { color: #79b8ff; } /* BaseN */
+    code span.bu { color: #f97583; } /* BuiltIn */
+    code span.cf { color: #f97583; } /* ControlFlow */
+    code span.ch { color: #9ecbff; } /* Char */
+    code span.cn { color: #79b8ff; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #f97583; } /* DataType */
+    code span.dv { color: #79b8ff; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #f97583; font-weight: bold; } /* Extension */
+    code span.fl { color: #79b8ff; } /* Float */
+    code span.fu { color: #b392f0; } /* Function */
+    code span.im { color: #9ecbff; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #f97583; } /* Keyword */
+    code span.op { color: #e1e4e8; } /* Operator */
+    code span.ot { color: #b392f0; } /* Other */
+    code span.pp { color: #f97583; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #79b8ff; } /* SpecialChar */
+    code span.ss { color: #9ecbff; } /* SpecialString */
+    code span.st { color: #9ecbff; } /* String */
+    code span.va { color: #ffab70; } /* Variable */
+    code span.vs { color: #9ecbff; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-e819637885281928af38d8b96f95b3b0.css">
   <link rel="stylesheet" href="./custom_style.css">
@@ -128,13 +194,15 @@
       margin-right: 0; 
     }
   </style>
+  <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="image-main.png" data-background-opacity="1" data-background-position="center" data-background-size="cover" class="quarto-title-block center">
-  <h1 class="title">Statistics and Probability for 11th Graders — Part 3</h1>
+  <h1 class="title">Statistics and Probability for 11th Graders - Part 3</h1>
   <p class="subtitle">Calculating probabilities</p>
 
 <div class="quarto-title-authors">
@@ -147,12 +215,12 @@ Joshua Marie
 
   <p class="date">2025-12-12</p>
 </section>
-<section id="recall-to-standard-normal-distribution" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Recall to standard normal distribution</h2>
+<section id="recall-standard-normal-distribution" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Recall: Standard Normal Distribution</h2>
 <p>What is a <strong>standard normal distribution</strong>?</p>
 </section>
-<section id="recall-to-standard-normal-distribution-1" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Recall to standard normal distribution</h2>
+<section id="recall-standard-normal-distribution-1" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Recall: Standard Normal Distribution</h2>
 <p>What is a <strong>standard normal distribution</strong>?</p>
 <p>A special case of the <strong>normal distribution</strong> where:</p>
 <ul>
@@ -161,8 +229,8 @@ Joshua Marie
 <li class="fragment">Usually a random variable represents as <span class="math inline">\(Z\)</span></li>
 </ul>
 </section>
-<section id="recall-to-standard-normal-distribution-2" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Recall to standard normal distribution</h2>
+<section id="recall-standard-normal-distribution-2" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Recall: Standard Normal Distribution</h2>
 <p>Standardize <span class="math inline">\(X\)</span> that scales to standard normal distribution <span class="math inline">\(Z \sim \mathcal{N}(0, 1)\)</span> through <strong>standardization</strong>:</p>
 <div class="fragment fade-in">
 <p><span class="math display">\[Z=\frac{X-\mu}{\sigma}\]</span></p>
@@ -172,23 +240,464 @@ Joshua Marie
 </div>
 </section>
 <section id="to-calculate-probability-from-the-normal-distribution" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>To calculate probability from the normal distribution</h2>
+<h2>To Calculate Probability from the Normal Distribution</h2>
+<p>This is how you calculate the cumulative probability:</p>
+<p><span class="math display">\[
+P(z_1 \leq Z \leq z_2) = F(z) = \int_{z_1}^{z_2} \frac{1}{\sqrt{2\pi}}
+\exp\left( -\frac{z^2}{2} \right) dz
+\]</span></p>
+<p>The parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> are already cancelled since <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma = 1\)</span>.</p>
+<div class="fragment fade-in">
+<p><em>Do not attempt to calculate this</em>. We need tools to find exact probabilities!</p>
+</div>
 </section>
-<section id="you-need-z-table" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>You need z-table</h2>
-<p>Go to this link and then download the following PDF.</p>
+<section id="you-need-a-z-table" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>You Need a Z-Table</h2>
+<p>A <strong>z-table</strong> (also called the standard normal table) gives us the area under the standard normal curve to the LEFT of any z-score.</p>
+<div class="fragment fade-in">
+<p><strong>Access the z-table here:</strong> <a href="https://slides.joshuamarie.com/resources/materials/z-table/" class="uri">https://slides.joshuamarie.com/resources/materials/z-table/</a></p>
+</div>
 </section>
-<section id="you-need-z-table-1" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>You need z-table</h2>
-<p>Go to this link and then download the following PDF.</p>
-<p>Here’s what it looks like:</p>
-
-<img data-src="image-main.png" class="r-stretch"></section>
-<section id="how-to-use-z-table" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>How to use z-table</h2>
+<section id="you-need-a-z-table-1" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>You Need a Z-Table</h2>
+<p>Go to this link and download the z-table PDF:</p>
+<p><a href="https://slides.joshuamarie.com/resources/materials/z-table/"><strong>https://slides.joshuamarie.com/resources/materials/z-table/</strong></a></p>
+</section>
+<section id="how-to-use-the-z-table" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">How to Use the Z-Table</h2>
+<div class="fragment fade-in">
+<p>Apparently, I already have set the instruction in the page. Either go look for it, or look after the next slide.</p>
+</div>
+</section>
+<section id="how-to-use-the-z-table-1" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">How to Use the Z-Table</h2>
+<p><strong>Steps to read the z-table:</strong></p>
+<ol type="1">
+<li>Find the <strong>row</strong> corresponding to the first two digits of your z-score (e.g., for <span class="math inline">\(z = 1.23\)</span>, look for 1.2)</li>
+<li>Find the <strong>column</strong> corresponding to the second decimal place (e.g., for <span class="math inline">\(z = 1.23\)</span>, look for 0.03)</li>
+<li>The intersection gives you <span class="math inline">\(P(Z \leq z)\)</span> - the area to the LEFT of that z-score</li>
+</ol>
+<div class="fragment fade-in">
+<p><strong>Example:</strong> For <span class="math inline">\(z = 1.23\)</span>, you’d find row “1.2” and column “0.03”</p>
+</div>
+</section>
+<section id="example-reading-the-z-table" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Example: Reading the Z-Table</h2>
+<p><strong>Find</strong> <span class="math inline">\(P(Z \leq 1.50)\)</span></p>
+<ul>
+<li class="fragment">Row: 1.5</li>
+<li class="fragment">Column: 0.00</li>
+<li class="fragment">Table value: <strong>0.9332</strong></li>
+</ul>
+<div class="fragment fade-in">
+<p><strong>Interpretation:</strong> About 93.32% of the data falls to the LEFT of <span class="math inline">\(z = 1.50\)</span></p>
+</div>
+</section>
+<section id="example-reading-the-z-table-1" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Example: Reading the Z-Table</h2>
+<p><strong>Find</strong> <span class="math inline">\(P(Z \leq -0.75)\)</span></p>
+<ul>
+<li class="fragment">Row: -0.7</li>
+<li class="fragment">Column: 0.05</li>
+<li class="fragment">Table value: <strong>0.2266</strong></li>
+</ul>
+<div class="fragment fade-in">
+<p><strong>Interpretation:</strong> About 22.66% of the data falls to the LEFT of <span class="math inline">\(z = -0.75\)</span></p>
+</div>
 </section>
 <section id="basics-of-calculation" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
-<h2>Basics of calculation</h2>
+<h2>Basics of Calculation</h2>
+<p>There are <strong>three main types</strong> of probability calculations:</p>
+<ol type="1">
+<li class="fragment"><p><span class="math inline">\(P(Z \leq z)\)</span> - Area to the <em>LEFT</em> (direct from table)</p></li>
+<li class="fragment"><p><span class="math inline">\(P(Z \geq z)\)</span> - Area to the <em>RIGHT</em> (use: 1 - table value)</p></li>
+<li class="fragment"><p><span class="math inline">\(P(z_1 \leq Z \leq z_2)\)</span> - Area <em>BETWEEN</em> two z-scores (subtract table values):</p>
+<p><span class="math display">\[P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)\]</span></p></li>
+</ol>
+</section>
+<section id="type-1-pz-leq-z" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Type 1: <span class="math inline">\(P(Z \leq z)\)</span></h2>
+<p><em>Finding the area to the LEFT of a z-score</em></p>
+<p>This is the <strong>easiest</strong> case — just look up the z-score directly in the table!</p>
+</section>
+<section id="type-1-pz-leq-z-1" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Type 1: <span class="math inline">\(P(Z \leq z)\)</span></h2>
+<p><em>Finding the area to the LEFT of a z-score</em></p>
+<p>This is the <strong>easiest</strong> case — just look up the z-score directly in the table!</p>
+<p><strong>Example:</strong> Find <span class="math inline">\(P(Z \leq 1.25)\)</span></p>
+<div class="fragment fade-in">
+<p><strong>Solution:</strong></p>
+<ol type="1">
+<li>Look up <span class="math inline">\(z = 1.25\)</span> in the table</li>
+<li>Row: 1.2, Column: 0.05</li>
+<li>Table value: <strong>0.8944</strong></li>
+</ol>
+</div>
+<div class="fragment fade-in">
+<p><strong>Answer:</strong> <span class="math inline">\(P(Z \leq 1.25) = 0.8944\)</span> or <strong>89.44%</strong></p>
+</div>
+</section>
+<section id="type-2-pz-geq-z" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Type 2: <span class="math inline">\(P(Z \geq z)\)</span></h2>
+<p><em>Finding the area to the RIGHT of a z-score</em></p>
+<p>Since the z-table gives LEFT areas, we use:</p>
+<p><span class="math display">\[P(Z &gt; z) = 1 - P(Z \leq z)\]</span></p>
+</section>
+<section id="type-2-pz-geq-z-1" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Type 2: <span class="math inline">\(P(Z \geq z)\)</span></h2>
+<p><em>Finding the area to the RIGHT of a z-score</em></p>
+<p>Since the z-table gives LEFT areas, we use:</p>
+<p><span class="math display">\[P(Z &gt; z) = 1 - P(Z \leq z)\]</span></p>
+<p><strong>Example:</strong> Find <span class="math inline">\(P(Z &gt; 0.80)\)</span></p>
+<div class="fragment fade-in">
+<p><strong>Solution:</strong></p>
+<ol type="1">
+<li>Look up <span class="math inline">\(z = 0.80\)</span> in the table, which gives you 0.7881</li>
+<li>Calculate: <span class="math inline">\(P(Z &gt; 0.80) = 1 - P(Z \leq 0.80) = 1 - 0.7881\)</span></li>
+<li><span class="math inline">\(P(Z &gt; 0.80) = \mathbf{0.2119}\)</span></li>
+</ol>
+</div>
+<div class="fragment fade-in">
+<p><strong>Answer:</strong> <span class="math inline">\(P(Z &gt; 0.80) = \mathbf{0.2119}\)</span> or <strong>21.19%</strong></p>
+</div>
+</section>
+<section id="type-3-pz_1-leq-z-leq-z_2" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Type 3: <span class="math inline">\(P(z_1 \leq Z \leq z_2)\)</span></h2>
+<p><em>Finding the area BETWEEN two z-scores</em></p>
+<p>We subtract the smaller cumulative area from the larger:</p>
+<p><span class="math display">\[P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)\]</span></p>
+</section>
+<section id="type-3-pz_1-leq-z-leq-z_2-1" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Type 3: <span class="math inline">\(P(z_1 \leq Z \leq z_2)\)</span></h2>
+<p><em>Finding the area BETWEEN two z-scores</em></p>
+<p>We subtract the smaller cumulative area from the larger:</p>
+<p><span class="math display">\[P(z_1 \leq Z \leq z_2)=P(Z \leq z_2) - P(Z \leq z_1)\]</span></p>
+<p><strong>Example:</strong> Find <span class="math inline">\(P(-1.00 &lt; Z &lt; 1.50)\)</span></p>
+<div class="fragment fade-in">
+<p><strong>Solution:</strong></p>
+<ol type="1">
+<li><span class="math inline">\(P(Z &lt; 1.50)\)</span> from table → 0.9332</li>
+<li><span class="math inline">\(P(Z &lt; -1.00)\)</span> from table → 0.1587</li>
+<li><span class="math inline">\(P(-1.00 &lt; Z &lt; 1.50) = 0.9332 - 0.1587 = \mathbf{0.7745}\)</span></li>
+</ol>
+</div>
+<div class="fragment fade-in">
+<p><strong>Answer:</strong> <span class="math inline">\(P(-1.00 &lt; Z &lt; 1.50) = \mathbf{0.7745}\)</span> or <strong>77.45%</strong></p>
+</div>
+</section>
+<section id="practice-problem-1" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Practice Problem 1</h2>
+<p><strong>Problem:</strong> Find the following probabilities using the z-table:</p>
+<ol type="a">
+<li><span class="math inline">\(P(Z \leq 2.00)\)</span></li>
+<li><span class="math inline">\(P(Z &gt; -1.50)\)</span></li>
+<li><span class="math inline">\(P(0.50 \leq Z \leq 1.80)\)</span></li>
+</ol>
+<div class="fragment fade-in">
+<p><strong>Solutions:</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(P(Z \leq 2.00) = \mathbf{0.9772}\)</span> (direct from table)</p></li>
+<li><p><span class="math inline">\(P(Z &gt; -1.50) = 1 - P(Z \leq -1.50) = 1 - 0.0668 = \mathbf{0.9332}\)</span></p></li>
+<li><p><span class="math inline">\(P(0.50 \leq Z \leq 1.80) = P(Z \leq 1.80) - P(Z \leq 0.50) = 0.9641 - 0.6915 = \mathbf{0.2726}\)</span></p></li>
+</ol>
+</div>
+</section>
+<section id="converting-to-real-world-problems" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Converting to Real-World Problems</h2>
+<p><strong>Remember the z-score formula:</strong></p>
+<p><span class="math display">\[z = \frac{x - \mu}{\sigma}\]</span></p>
+<p><strong>Steps:</strong></p>
+<ol type="1">
+<li>Convert the raw score (<span class="math inline">\(x\)</span>) to a z-score</li>
+<li>Use the z-table to find the probability</li>
+<li>Interpret in context</li>
+</ol>
+</section>
+<section id="real-world-example-1" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Real-World Example 1</h2>
+<p><strong>Problem:</strong> Test scores are normally distributed with <span class="math inline">\(\mu = 75\)</span> and <span class="math inline">\(\sigma = 10\)</span>. What is the probability that a randomly selected student scored less than 85?</p>
+<div class="fragment fade-in">
+<p><strong>Solution:</strong></p>
+<p><strong>Step 1:</strong> Convert to z-score <span class="math display">\[z = \frac{85 - 75}{10} = \frac{10}{10} = 1.00\]</span></p>
+<p><strong>Step 2:</strong> Look up <span class="math inline">\(z = 1.00\)</span> in table. This will be 0.8413</p>
+<p><strong>Interpretation:</strong> <span class="math inline">\(84.13\%\)</span> of students scored less than 85</p>
+</div>
+</section>
+<section id="real-world-example-2" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Real-World Example 2</h2>
+<p><strong>Problem:</strong> Heights of adult men are normally distributed with <span class="math inline">\(\mu = 175\)</span> cm and <span class="math inline">\(\sigma = 8\)</span> cm. What percentage of men are taller than 183 cm?</p>
+<div class="fragment fade-in">
+<p><strong>Solution:</strong></p>
+<p><strong>Step 1:</strong> Convert to z-score <span class="math display">\[z = \frac{183 - 175}{8} = \frac{8}{8} = 1.00\]</span></p>
+<p><strong>Step 2:</strong> <span class="math display">\[P(Z &gt; 1.00) = 1 - P(Z &lt; 1.00) = 1 - 0.8413 = 0.1587\]</span></p>
+<p><strong>Interpretation:</strong> <span class="math inline">\(15.87\%\)</span> of men are taller than 183 cm</p>
+</div>
+</section>
+<section id="real-world-example-3" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Real-World Example 3</h2>
+<p><strong>Problem:</strong> Battery life is normally distributed with <span class="math inline">\(\mu = 400\)</span> hours and <span class="math inline">\(\sigma = 50\)</span> hours. What is the probability a battery lasts between 350 and 450 hours?</p>
+<div class="fragment fade-in">
+<p><strong>Solution:</strong></p>
+<p><strong>Step 1:</strong> Convert both values to z-scores <span class="math display">\[z_1 = \frac{350 - 400}{50} = -1.00, \quad z_2 = \frac{450 - 400}{50} = 1.00\]</span></p>
+<p><strong>Step 2:</strong> <span class="math display">\[P(-1.00 &lt; Z &lt; 1.00) = 0.8413 - 0.1587 = 0.6826\]</span></p>
+<p><strong>Interpretation</strong>: <span class="math inline">\(68.26\%\)</span> of batteries last between 350 and 450 hours</p>
+</div>
+</section>
+<section id="practice-problem-2" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Practice Problem 2</h2>
+<p><strong>Problem:</strong> Your monthly electric bill has <span class="math inline">\(\mu = 1500\)</span> and <span class="math inline">\(\sigma = 120\)</span>. What is the probability you’ll pay between 1380 and 1740?</p>
+<div class="fragment fade-in">
+<p><strong>Solution:</strong></p>
+<p><span class="math display">\[z_1 = \frac{1380 - 1500}{120} = -1.00, \quad z_2 = \frac{1740 - 1500}{120} = 2.00\]</span></p>
+<p><strong>Answer:</strong> <span class="math inline">\(P(-1.00 &lt; Z &lt; 2.00) = 0.9772 - 0.1587 = \mathbf{0.8185}\)</span> or <strong>81.85%</strong></p>
+</div>
+</section>
+<section id="working-backwards-finding-x-from-probability" class="slide level2" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Working Backwards: Finding X from Probability</h2>
+<p>Sometimes we know the probability and need to find the value (x).</p>
+<p><strong>Steps:</strong></p>
+<ol type="1">
+<li>Find the z-score that corresponds to the given probability in the z-table</li>
+<li>Use the formula: <span class="math inline">\(x = \mu + z\sigma\)</span></li>
+<li>Interpret the result</li>
+</ol>
+</section>
+<section id="example-finding-x" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Example: Finding X</h2>
+<p><strong>Problem:</strong> Test scores are normally distributed with <span class="math inline">\(\mu = 70\)</span> and <span class="math inline">\(\sigma = 12\)</span>. What score represents the 90th percentile?</p>
+<div class="fragment fade-in">
+<p><strong>Solution:</strong></p>
+<p><strong>Step 1:</strong> Find z-score where <span class="math inline">\(P(Z &lt; z) = 0.90\)</span></p>
+<ul>
+<li>Looking through the table, <span class="math inline">\(z \approx \mathbf{1.28}\)</span></li>
+</ul>
+<p><strong>Step 2:</strong> Calculate x</p>
+<p><span class="math display">\[x = 70 + (1.28)(12) = 70 + 15.36 = 85.36\]</span></p>
+<p><strong>Interpretation:</strong> A score of approximately <strong>85.36</strong> (around 85 or 86) represents the 90th percentile. Which means you got a better score of 85 than 90% of others, with only 10% scoring higher.</p>
+</div>
+</section>
+<section id="interactive-z-score-visualizer" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Interactive Z-Score Visualizer</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="362" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 361;"><span id="cb1-362"><a></a>viewof zScore <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="fl">3.5</span><span class="op">,</span> <span class="fl">3.5</span>]<span class="op">,</span> {</span>
+<span id="cb1-363"><a></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Z-Score"</span><span class="op">,</span></span>
+<span id="cb1-364"><a></a>    <span class="dt">value</span><span class="op">:</span> <span class="fl">1.5</span><span class="op">,</span></span>
+<span id="cb1-365"><a></a>    <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span></span>
+<span id="cb1-366"><a></a>})</span>
+<span id="cb1-367"><a></a></span>
+<span id="cb1-368"><a></a>viewof calcType <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>(</span>
+<span id="cb1-369"><a></a>    [<span class="st">"Left tail (P(Z &lt; z))"</span><span class="op">,</span> <span class="st">"Right tail (P(Z &gt; z))"</span><span class="op">,</span> <span class="st">"Between (-z to z)"</span>]<span class="op">,</span></span>
+<span id="cb1-370"><a></a>    {<span class="dt">label</span><span class="op">:</span> <span class="st">"Calculate:"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="st">"Left tail (P(Z &lt; z))"</span>}</span>
+<span id="cb1-371"><a></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="374" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 373;"><span id="cb2-374"><a></a>{</span>
+<span id="cb2-375"><a></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">800</span><span class="op">;</span></span>
+<span id="cb2-376"><a></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb2-377"><a></a>  <span class="kw">const</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">60</span>}<span class="op">;</span></span>
+<span id="cb2-378"><a></a>  </span>
+<span id="cb2-379"><a></a>  <span class="kw">function</span> <span class="fu">normalPDF</span>(x) {</span>
+<span id="cb2-380"><a></a>    <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> x <span class="op">*</span> x) <span class="op">/</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">;</span></span>
+<span id="cb2-381"><a></a>  }</span>
+<span id="cb2-382"><a></a>  </span>
+<span id="cb2-383"><a></a>  <span class="kw">function</span> <span class="fu">normalCDF</span>(z) {</span>
+<span id="cb2-384"><a></a>    <span class="kw">const</span> t <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> <span class="fl">0.2316419</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(z))<span class="op">;</span></span>
+<span id="cb2-385"><a></a>    <span class="kw">const</span> d <span class="op">=</span> <span class="fl">0.3989423</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span>z <span class="op">*</span> z <span class="op">/</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb2-386"><a></a>    <span class="kw">const</span> prob <span class="op">=</span> d <span class="op">*</span> t <span class="op">*</span> (<span class="fl">0.3193815</span> <span class="op">+</span> t <span class="op">*</span> (<span class="op">-</span><span class="fl">0.3565638</span> <span class="op">+</span> t <span class="op">*</span> (<span class="fl">1.781478</span> <span class="op">+</span> t <span class="op">*</span> (<span class="op">-</span><span class="fl">1.821256</span> <span class="op">+</span> t <span class="op">*</span> <span class="fl">1.330274</span>))))<span class="op">;</span></span>
+<span id="cb2-387"><a></a>    <span class="cf">return</span> z <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">?</span> <span class="dv">1</span> <span class="op">-</span> prob <span class="op">:</span> prob<span class="op">;</span></span>
+<span id="cb2-388"><a></a>  }</span>
+<span id="cb2-389"><a></a>  </span>
+<span id="cb2-390"><a></a>  <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb2-391"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width)</span>
+<span id="cb2-392"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
+<span id="cb2-393"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"viewBox"</span><span class="op">,</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> width<span class="op">,</span> height])</span>
+<span id="cb2-394"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"style"</span><span class="op">,</span> <span class="st">"max-width: 100%; height: auto; background: white;"</span>)<span class="op">;</span></span>
+<span id="cb2-395"><a></a>  </span>
+<span id="cb2-396"><a></a>  <span class="kw">const</span> xScale <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb2-397"><a></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="dv">4</span>])</span>
+<span id="cb2-398"><a></a>    <span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb2-399"><a></a>  </span>
+<span id="cb2-400"><a></a>  <span class="kw">const</span> yScale <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb2-401"><a></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> <span class="fl">0.45</span>])</span>
+<span id="cb2-402"><a></a>    <span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb2-403"><a></a>  </span>
+<span id="cb2-404"><a></a>  <span class="kw">const</span> curveData <span class="op">=</span> d3<span class="op">.</span><span class="fu">range</span>(<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="fl">4.01</span><span class="op">,</span> <span class="fl">0.05</span>)<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> ({</span>
+<span id="cb2-405"><a></a>    <span class="dt">x</span><span class="op">:</span> x<span class="op">,</span></span>
+<span id="cb2-406"><a></a>    <span class="dt">y</span><span class="op">:</span> <span class="fu">normalPDF</span>(x)</span>
+<span id="cb2-407"><a></a>  }))<span class="op">;</span></span>
+<span id="cb2-408"><a></a>  </span>
+<span id="cb2-409"><a></a>  <span class="kw">const</span> line <span class="op">=</span> d3<span class="op">.</span><span class="fu">line</span>()</span>
+<span id="cb2-410"><a></a>    <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">xScale</span>(d<span class="op">.</span><span class="at">x</span>))</span>
+<span id="cb2-411"><a></a>    <span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">yScale</span>(d<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb2-412"><a></a>  </span>
+<span id="cb2-413"><a></a>  <span class="kw">let</span> shadedData<span class="op">;</span></span>
+<span id="cb2-414"><a></a>  <span class="cf">if</span> (calcType <span class="op">===</span> <span class="st">"Left tail (P(Z &lt; z))"</span>) {</span>
+<span id="cb2-415"><a></a>    shadedData <span class="op">=</span> curveData<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span> <span class="op">&lt;=</span> zScore)<span class="op">;</span></span>
+<span id="cb2-416"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (calcType <span class="op">===</span> <span class="st">"Right tail (P(Z &gt; z))"</span>) {</span>
+<span id="cb2-417"><a></a>    shadedData <span class="op">=</span> curveData<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span> <span class="op">&gt;=</span> zScore)<span class="op">;</span></span>
+<span id="cb2-418"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb2-419"><a></a>    shadedData <span class="op">=</span> curveData<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span> <span class="op">&gt;=</span> <span class="op">-</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(zScore) <span class="op">&amp;&amp;</span> d<span class="op">.</span><span class="at">x</span> <span class="op">&lt;=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(zScore))<span class="op">;</span></span>
+<span id="cb2-420"><a></a>  }</span>
+<span id="cb2-421"><a></a>  </span>
+<span id="cb2-422"><a></a>  <span class="kw">const</span> area <span class="op">=</span> d3<span class="op">.</span><span class="fu">area</span>()</span>
+<span id="cb2-423"><a></a>    <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">xScale</span>(d<span class="op">.</span><span class="at">x</span>))</span>
+<span id="cb2-424"><a></a>    <span class="op">.</span><span class="fu">y0</span>(height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb2-425"><a></a>    <span class="op">.</span><span class="fu">y1</span>(d <span class="kw">=&gt;</span> <span class="fu">yScale</span>(d<span class="op">.</span><span class="at">y</span>))<span class="op">;</span></span>
+<span id="cb2-426"><a></a>  </span>
+<span id="cb2-427"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb2-428"><a></a>    <span class="op">.</span><span class="fu">datum</span>(shadedData)</span>
+<span id="cb2-429"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"rgba(76, 175, 80, 0.3)"</span>)</span>
+<span id="cb2-430"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> area)<span class="op">;</span></span>
+<span id="cb2-431"><a></a>  </span>
+<span id="cb2-432"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
+<span id="cb2-433"><a></a>    <span class="op">.</span><span class="fu">datum</span>(curveData)</span>
+<span id="cb2-434"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)</span>
+<span id="cb2-435"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"steelblue"</span>)</span>
+<span id="cb2-436"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb2-437"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> line)<span class="op">;</span></span>
+<span id="cb2-438"><a></a>  </span>
+<span id="cb2-439"><a></a>  <span class="cf">if</span> (calcType <span class="op">===</span> <span class="st">"Between (-z to z)"</span>) {</span>
+<span id="cb2-440"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
+<span id="cb2-441"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> <span class="fu">xScale</span>(<span class="op">-</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(zScore)))</span>
+<span id="cb2-442"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> <span class="fu">xScale</span>(<span class="op">-</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(zScore)))</span>
+<span id="cb2-443"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb2-444"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb2-445"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"red"</span>)</span>
+<span id="cb2-446"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb2-447"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"5,5"</span>)<span class="op">;</span></span>
+<span id="cb2-448"><a></a>    </span>
+<span id="cb2-449"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
+<span id="cb2-450"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> <span class="fu">xScale</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(zScore)))</span>
+<span id="cb2-451"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> <span class="fu">xScale</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(zScore)))</span>
+<span id="cb2-452"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb2-453"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb2-454"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"red"</span>)</span>
+<span id="cb2-455"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb2-456"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"5,5"</span>)<span class="op">;</span></span>
+<span id="cb2-457"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb2-458"><a></a>    svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"line"</span>)</span>
+<span id="cb2-459"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x1"</span><span class="op">,</span> <span class="fu">xScale</span>(zScore))</span>
+<span id="cb2-460"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x2"</span><span class="op">,</span> <span class="fu">xScale</span>(zScore))</span>
+<span id="cb2-461"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y1"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>)</span>
+<span id="cb2-462"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y2"</span><span class="op">,</span> height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span>)</span>
+<span id="cb2-463"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"red"</span>)</span>
+<span id="cb2-464"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb2-465"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-dasharray"</span><span class="op">,</span> <span class="st">"5,5"</span>)<span class="op">;</span></span>
+<span id="cb2-466"><a></a>  }</span>
+<span id="cb2-467"><a></a>  </span>
+<span id="cb2-468"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb2-469"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
+<span id="cb2-470"><a></a>    <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(xScale))<span class="op">;</span></span>
+<span id="cb2-471"><a></a>  </span>
+<span id="cb2-472"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
+<span id="cb2-473"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
+<span id="cb2-474"><a></a>    <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(yScale))<span class="op">;</span></span>
+<span id="cb2-475"><a></a>  </span>
+<span id="cb2-476"><a></a>  <span class="kw">let</span> prob<span class="op">;</span></span>
+<span id="cb2-477"><a></a>  <span class="cf">if</span> (calcType <span class="op">===</span> <span class="st">"Left tail (P(Z &lt; z))"</span>) {</span>
+<span id="cb2-478"><a></a>    prob <span class="op">=</span> <span class="fu">normalCDF</span>(zScore)<span class="op">;</span></span>
+<span id="cb2-479"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (calcType <span class="op">===</span> <span class="st">"Right tail (P(Z &gt; z))"</span>) {</span>
+<span id="cb2-480"><a></a>    prob <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> <span class="fu">normalCDF</span>(zScore)<span class="op">;</span></span>
+<span id="cb2-481"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb2-482"><a></a>    prob <span class="op">=</span> <span class="fu">normalCDF</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(zScore)) <span class="op">-</span> <span class="fu">normalCDF</span>(<span class="op">-</span><span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(zScore))<span class="op">;</span></span>
+<span id="cb2-483"><a></a>  }</span>
+<span id="cb2-484"><a></a>  </span>
+<span id="cb2-485"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"text"</span>)</span>
+<span id="cb2-486"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"x"</span><span class="op">,</span> width <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb2-487"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"y"</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span> <span class="op">-</span> <span class="dv">10</span>)</span>
+<span id="cb2-488"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"text-anchor"</span><span class="op">,</span> <span class="st">"middle"</span>)</span>
+<span id="cb2-489"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-size"</span><span class="op">,</span> <span class="st">"16px"</span>)</span>
+<span id="cb2-490"><a></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)</span>
+<span id="cb2-491"><a></a>    <span class="op">.</span><span class="fu">text</span>(<span class="vs">`Probability = </span><span class="sc">${</span>prob<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs"> (</span><span class="sc">${</span>(prob <span class="op">*</span> <span class="dv">100</span>)<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="vs">%)`</span>)<span class="op">;</span></span>
+<span id="cb2-492"><a></a>  </span>
+<span id="cb2-493"><a></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb2-494"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</section>
+<section id="summary-using-z-tables" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Summary: Using Z-Tables</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>Z-tables give cumulative probability to the LEFT</li>
+<li>For <span class="math inline">\(P(Z &gt; z)\)</span>, use <span class="math inline">\(1 - \text{table value}\)</span></li>
+<li>For <span class="math inline">\(P(z_1 &lt; Z &lt; z_2)\)</span>, subtract table values</li>
+<li>Always convert real-world problems using <span class="math inline">\(z = \frac{x-\mu}{\sigma}\)</span></li>
+<li>To find x from probability, look up z first, then use <span class="math inline">\(x = \mu + z\sigma\)</span></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="assignment" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Assignment</h2>
+<p><strong>Instructions:</strong></p>
+<p>Complete the following problems. Show your complete solution including:</p>
+<ul>
+<li>Z-score calculations</li>
+<li>Z-table lookups</li>
+<li>Final answers with proper units</li>
+</ul>
+<p><strong>Problems:</strong></p>
+<ol type="1">
+<li><p>IQ scores are normally distributed with <span class="math inline">\(\mu = 100\)</span> and <span class="math inline">\(\sigma = 15\)</span>. Find the probability that a randomly selected person has an IQ between 85 and 130.</p></li>
+<li><p>The lifespan of light bulbs is normally distributed with <span class="math inline">\(\mu = 800\)</span> hours and <span class="math inline">\(\sigma = 40\)</span> hours. What percentage of bulbs last more than 900 hours?</p></li>
+<li><p>If scores on an exam are normally distributed with <span class="math inline">\(\mu = 78\)</span> and <span class="math inline">\(\sigma = 8\)</span> what score separates the top 25% of students from the rest?</p></li>
+</ol>
+</section>
+<section id="additional-resources" class="slide level2" data-background-image="image-main.png">
+<h2>Additional Resources</h2>
+<p><strong>For further practice:</strong></p>
+<ul>
+<li>Online z-table calculators</li>
+<li>Practice worksheets (provided separately)</li>
+<li>Interactive normal distribution applets</li>
+<li>Review the Empirical Rule (68-95-99.7) as a quick check</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Remember: The z-table is your friend! Practice reading it until it becomes second nature.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="thank-you" class="slide level2" data-background-image="image-main.png">
+<h2>Thank You!</h2>
+<p><strong>Next session:</strong> Hypothesis Testing and Confidence Intervals</p>
+<p><strong>Questions?</strong></p>
 
 
 </section>
@@ -415,6 +924,17 @@ Joshua Marie
           RevealZoom
         ]
       });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB6U2NvcmUgPSBJbnB1dHMucmFuZ2UoWy0zLjUsIDMuNV0sIHtcclxuICAgIGxhYmVsOiBcIlotU2NvcmVcIixcclxuICAgIHZhbHVlOiAxLjUsXHJcbiAgICBzdGVwOiAwLjAxXHJcbn0pXHJcblxyXG52aWV3b2YgY2FsY1R5cGUgPSBJbnB1dHMucmFkaW8oXHJcbiAgICBbXCJMZWZ0IHRhaWwgKFAoWiA8IHopKVwiLCBcIlJpZ2h0IHRhaWwgKFAoWiA+IHopKVwiLCBcIkJldHdlZW4gKC16IHRvIHopXCJdLFxyXG4gICAge2xhYmVsOiBcIkNhbGN1bGF0ZTpcIiwgdmFsdWU6IFwiTGVmdCB0YWlsIChQKFogPCB6KSlcIn1cclxuKVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ7XHJcbiAgY29uc3Qgd2lkdGggPSA4MDA7XHJcbiAgY29uc3QgaGVpZ2h0ID0gNDAwO1xyXG4gIGNvbnN0IG1hcmdpbiA9IHt0b3A6IDQwLCByaWdodDogNDAsIGJvdHRvbTogNjAsIGxlZnQ6IDYwfTtcclxuICBcclxuICBmdW5jdGlvbiBub3JtYWxQREYoeCkge1xyXG4gICAgcmV0dXJuIE1hdGguZXhwKC0wLjUgKiB4ICogeCkgLyBNYXRoLnNxcnQoMiAqIE1hdGguUEkpO1xyXG4gIH1cclxuICBcclxuICBmdW5jdGlvbiBub3JtYWxDREYoeikge1xyXG4gICAgY29uc3QgdCA9IDEgLyAoMSArIDAuMjMxNjQxOSAqIE1hdGguYWJzKHopKTtcclxuICAgIGNvbnN0IGQgPSAwLjM5ODk0MjMgKiBNYXRoLmV4cCgteiAqIHogLyAyKTtcclxuICAgIGNvbnN0IHByb2IgPSBkICogdCAqICgwLjMxOTM4MTUgKyB0ICogKC0wLjM1NjU2MzggKyB0ICogKDEuNzgxNDc4ICsgdCAqICgtMS44MjEyNTYgKyB0ICogMS4zMzAyNzQpKSkpO1xyXG4gICAgcmV0dXJuIHogPiAwID8gMSAtIHByb2IgOiBwcm9iO1xyXG4gIH1cclxuICBcclxuICBjb25zdCBzdmcgPSBkMy5jcmVhdGUoXCJzdmdcIilcclxuICAgIC5hdHRyKFwid2lkdGhcIiwgd2lkdGgpXHJcbiAgICAuYXR0cihcImhlaWdodFwiLCBoZWlnaHQpXHJcbiAgICAuYXR0cihcInZpZXdCb3hcIiwgWzAsIDAsIHdpZHRoLCBoZWlnaHRdKVxyXG4gICAgLmF0dHIoXCJzdHlsZVwiLCBcIm1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBiYWNrZ3JvdW5kOiB3aGl0ZTtcIik7XHJcbiAgXHJcbiAgY29uc3QgeFNjYWxlID0gZDMuc2NhbGVMaW5lYXIoKVxyXG4gICAgLmRvbWFpbihbLTQsIDRdKVxyXG4gICAgLnJhbmdlKFttYXJnaW4ubGVmdCwgd2lkdGggLSBtYXJnaW4ucmlnaHRdKTtcclxuICBcclxuICBjb25zdCB5U2NhbGUgPSBkMy5zY2FsZUxpbmVhcigpXHJcbiAgICAuZG9tYWluKFswLCAwLjQ1XSlcclxuICAgIC5yYW5nZShbaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSwgbWFyZ2luLnRvcF0pO1xyXG4gIFxyXG4gIGNvbnN0IGN1cnZlRGF0YSA9IGQzLnJhbmdlKC00LCA0LjAxLCAwLjA1KS5tYXAoeCA9PiAoe1xyXG4gICAgeDogeCxcclxuICAgIHk6IG5vcm1hbFBERih4KVxyXG4gIH0pKTtcclxuICBcclxuICBjb25zdCBsaW5lID0gZDMubGluZSgpXHJcbiAgICAueChkID0+IHhTY2FsZShkLngpKVxyXG4gICAgLnkoZCA9PiB5U2NhbGUoZC55KSk7XHJcbiAgXHJcbiAgbGV0IHNoYWRlZERhdGE7XHJcbiAgaWYgKGNhbGNUeXBlID09PSBcIkxlZnQgdGFpbCAoUChaIDwgeikpXCIpIHtcclxuICAgIHNoYWRlZERhdGEgPSBjdXJ2ZURhdGEuZmlsdGVyKGQgPT4gZC54IDw9IHpTY29yZSk7XHJcbiAgfSBlbHNlIGlmIChjYWxjVHlwZSA9PT0gXCJSaWdodCB0YWlsIChQKFogPiB6KSlcIikge1xyXG4gICAgc2hhZGVkRGF0YSA9IGN1cnZlRGF0YS5maWx0ZXIoZCA9PiBkLnggPj0gelNjb3JlKTtcclxuICB9IGVsc2Uge1xyXG4gICAgc2hhZGVkRGF0YSA9IGN1cnZlRGF0YS5maWx0ZXIoZCA9PiBkLnggPj0gLU1hdGguYWJzKHpTY29yZSkgJiYgZC54IDw9IE1hdGguYWJzKHpTY29yZSkpO1xyXG4gIH1cclxuICBcclxuICBjb25zdCBhcmVhID0gZDMuYXJlYSgpXHJcbiAgICAueChkID0+IHhTY2FsZShkLngpKVxyXG4gICAgLnkwKGhlaWdodCAtIG1hcmdpbi5ib3R0b20pXHJcbiAgICAueTEoZCA9PiB5U2NhbGUoZC55KSk7XHJcbiAgXHJcbiAgc3ZnLmFwcGVuZChcInBhdGhcIilcclxuICAgIC5kYXR1bShzaGFkZWREYXRhKVxyXG4gICAgLmF0dHIoXCJmaWxsXCIsIFwicmdiYSg3NiwgMTc1LCA4MCwgMC4zKVwiKVxyXG4gICAgLmF0dHIoXCJkXCIsIGFyZWEpO1xyXG4gIFxyXG4gIHN2Zy5hcHBlbmQoXCJwYXRoXCIpXHJcbiAgICAuZGF0dW0oY3VydmVEYXRhKVxyXG4gICAgLmF0dHIoXCJmaWxsXCIsIFwibm9uZVwiKVxyXG4gICAgLmF0dHIoXCJzdHJva2VcIiwgXCJzdGVlbGJsdWVcIilcclxuICAgIC5hdHRyKFwic3Ryb2tlLXdpZHRoXCIsIDIpXHJcbiAgICAuYXR0cihcImRcIiwgbGluZSk7XHJcbiAgXHJcbiAgaWYgKGNhbGNUeXBlID09PSBcIkJldHdlZW4gKC16IHRvIHopXCIpIHtcclxuICAgIHN2Zy5hcHBlbmQoXCJsaW5lXCIpXHJcbiAgICAgIC5hdHRyKFwieDFcIiwgeFNjYWxlKC1NYXRoLmFicyh6U2NvcmUpKSlcclxuICAgICAgLmF0dHIoXCJ4MlwiLCB4U2NhbGUoLU1hdGguYWJzKHpTY29yZSkpKVxyXG4gICAgICAuYXR0cihcInkxXCIsIG1hcmdpbi50b3ApXHJcbiAgICAgIC5hdHRyKFwieTJcIiwgaGVpZ2h0IC0gbWFyZ2luLmJvdHRvbSlcclxuICAgICAgLmF0dHIoXCJzdHJva2VcIiwgXCJyZWRcIilcclxuICAgICAgLmF0dHIoXCJzdHJva2Utd2lkdGhcIiwgMilcclxuICAgICAgLmF0dHIoXCJzdHJva2UtZGFzaGFycmF5XCIsIFwiNSw1XCIpO1xyXG4gICAgXHJcbiAgICBzdmcuYXBwZW5kKFwibGluZVwiKVxyXG4gICAgICAuYXR0cihcIngxXCIsIHhTY2FsZShNYXRoLmFicyh6U2NvcmUpKSlcclxuICAgICAgLmF0dHIoXCJ4MlwiLCB4U2NhbGUoTWF0aC5hYnMoelNjb3JlKSkpXHJcbiAgICAgIC5hdHRyKFwieTFcIiwgbWFyZ2luLnRvcClcclxuICAgICAgLmF0dHIoXCJ5MlwiLCBoZWlnaHQgLSBtYXJnaW4uYm90dG9tKVxyXG4gICAgICAuYXR0cihcInN0cm9rZVwiLCBcInJlZFwiKVxyXG4gICAgICAuYXR0cihcInN0cm9rZS13aWR0aFwiLCAyKVxyXG4gICAgICAuYXR0cihcInN0cm9rZS1kYXNoYXJyYXlcIiwgXCI1LDVcIik7XHJcbiAgfSBlbHNlIHtcclxuICAgIHN2Zy5hcHBlbmQoXCJsaW5lXCIpXHJcbiAgICAgIC5hdHRyKFwieDFcIiwgeFNjYWxlKHpTY29yZSkpXHJcbiAgICAgIC5hdHRyKFwieDJcIiwgeFNjYWxlKHpTY29yZSkpXHJcbiAgICAgIC5hdHRyKFwieTFcIiwgbWFyZ2luLnRvcClcclxuICAgICAgLmF0dHIoXCJ5MlwiLCBoZWlnaHQgLSBtYXJnaW4uYm90dG9tKVxyXG4gICAgICAuYXR0cihcInN0cm9rZVwiLCBcInJlZFwiKVxyXG4gICAgICAuYXR0cihcInN0cm9rZS13aWR0aFwiLCAyKVxyXG4gICAgICAuYXR0cihcInN0cm9rZS1kYXNoYXJyYXlcIiwgXCI1LDVcIik7XHJcbiAgfVxyXG4gIFxyXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXHJcbiAgICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKDAsJHtoZWlnaHQgLSBtYXJnaW4uYm90dG9tfSlgKVxyXG4gICAgLmNhbGwoZDMuYXhpc0JvdHRvbSh4U2NhbGUpKTtcclxuICBcclxuICBzdmcuYXBwZW5kKFwiZ1wiKVxyXG4gICAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgke21hcmdpbi5sZWZ0fSwwKWApXHJcbiAgICAuY2FsbChkMy5heGlzTGVmdCh5U2NhbGUpKTtcclxuICBcclxuICBsZXQgcHJvYjtcclxuICBpZiAoY2FsY1R5cGUgPT09IFwiTGVmdCB0YWlsIChQKFogPCB6KSlcIikge1xyXG4gICAgcHJvYiA9IG5vcm1hbENERih6U2NvcmUpO1xyXG4gIH0gZWxzZSBpZiAoY2FsY1R5cGUgPT09IFwiUmlnaHQgdGFpbCAoUChaID4geikpXCIpIHtcclxuICAgIHByb2IgPSAxIC0gbm9ybWFsQ0RGKHpTY29yZSk7XHJcbiAgfSBlbHNlIHtcclxuICAgIHByb2IgPSBub3JtYWxDREYoTWF0aC5hYnMoelNjb3JlKSkgLSBub3JtYWxDREYoLU1hdGguYWJzKHpTY29yZSkpO1xyXG4gIH1cclxuICBcclxuICBzdmcuYXBwZW5kKFwidGV4dFwiKVxyXG4gICAgLmF0dHIoXCJ4XCIsIHdpZHRoIC8gMilcclxuICAgIC5hdHRyKFwieVwiLCBtYXJnaW4udG9wIC0gMTApXHJcbiAgICAuYXR0cihcInRleHQtYW5jaG9yXCIsIFwibWlkZGxlXCIpXHJcbiAgICAuYXR0cihcImZvbnQtc2l6ZVwiLCBcIjE2cHhcIilcclxuICAgIC5hdHRyKFwiZm9udC13ZWlnaHRcIiwgXCJib2xkXCIpXHJcbiAgICAudGV4dChgUHJvYmFiaWxpdHkgPSAke3Byb2IudG9GaXhlZCg0KX0gKCR7KHByb2IgKiAxMDApLnRvRml4ZWQoMil9JSlgKTtcclxuICBcclxuICByZXR1cm4gc3ZnLm5vZGUoKTtcclxufVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3pTY29yZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdjYWxjVHlwZScpIn1dfQ==
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../slides/stats-probability-g11-pt3";
+    window._ojs.paths.runtimeToRoot = "../..";
+    window._ojs.paths.docToRoot = "../..";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
