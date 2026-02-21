@@ -1,0 +1,280 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=CMU+Serif:wght@400;700&display=swap');
+
+/* Root variables for color scheme - Light Mode */
+:root {
+    --bg-light: #f5f5f5;
+    --text-dark: #2a2a2a;
+    --color-blue: #0088aa;
+    --color-yellow: #cc8800;
+    --color-dark-blue: #1A2A4F;
+    --color-red: #d42f1f;
+    --color-purple: #8855aa;
+}
+
+/* Main reveal.js styling */
+.reveal {
+    font-family: 'CMU Serif', 'Times New Roman', serif;
+    font-size: 32px;
+    color: var(--text-dark);
+}
+
+/* Background styling - Full viewport coverage */
+.reveal {
+    background-color: var(--bg-light);
+    background-image: url('image-main.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.reveal .slides {
+    background: transparent;
+}
+
+.reveal .slide-background {
+    background-color: var(--bg-light);
+    background-image: url('image-main.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+}
+
+/* Headers */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    font-family: 'JetBrains Mono', 'CMU Serif', monospace;
+    font-weight: 700;
+    color: var(--color-blue);
+    text-transform: none;
+    text-shadow: none;
+}
+
+.reveal h1 {
+    font-size: 2.5em;
+}
+
+.reveal h2 {
+    font-size: 2em;
+    border-bottom: 3px solid var(--color-blue);
+    padding-bottom: 0.3em;
+    margin-top: 0;
+}
+
+.reveal h3 {
+    font-size: 1.5em;
+    color: var(--color-dark-blue);
+}
+
+/* Strong/Bold text */
+.reveal strong {
+    color: var(--color-yellow);
+    font-weight: 700;
+}
+
+/* Links */
+.reveal a {
+    color: var(--color-blue);
+    text-decoration: none;
+}
+
+.reveal a:hover {
+    color: var(--color-purple);
+    text-shadow: none;
+    text-decoration: underline;
+}
+
+/* Lists */
+.reveal ul,
+.reveal ol {
+    margin-left: 1em;
+}
+
+.reveal li {
+    margin-bottom: 0.5em;
+}
+
+/* Code blocks */
+.reveal code {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: rgba(0, 136, 170, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    color: var(--color-blue);
+}
+
+.reveal pre {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--color-blue);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reveal pre code {
+    background-color: transparent;
+    padding: 1em;
+    max-height: 600px;
+}
+
+/* Tables */
+.reveal table {
+    border-collapse: collapse;
+    margin: 1em auto;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.reveal table th {
+    background-color: var(--color-blue);
+    color: white;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    border: 2px solid var(--color-blue);
+}
+
+.reveal table td {
+    padding: 0.5em 1em;
+    border: 1px solid var(--color-blue);
+}
+
+.reveal table tr:nth-child(even) {
+    background-color: rgba(0, 136, 170, 0.05);
+}
+
+/* Math equations */
+.reveal .MathJax,
+.reveal .katex {
+    color: var(--color-dark-blue);
+    text-shadow: none;
+}
+
+/* Columns */
+.reveal .columns {
+    display: flex;
+    gap: 2em;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.reveal .column {
+    flex: 1;
+    padding: 1.5em;
+    background-color: rgba(0, 136, 170, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 136, 170, 0.2);
+}
+
+/* Slide number */
+.reveal .slide-number {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--color-blue);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 136, 170, 0.3);
+}
+
+/* Progress bar */
+.reveal .progress {
+    background: rgba(0, 136, 170, 0.2);
+}
+
+.reveal .progress span {
+    background: var(--color-blue);
+    box-shadow: none;
+}
+
+/* Blockquotes */
+.reveal blockquote {
+    background-color: rgba(0, 136, 170, 0.1);
+    border-left: 5px solid var(--color-blue);
+    padding: 1em;
+    font-style: italic;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Slide layout and content positioning */
+.reveal .slides {
+    padding: 0 !important;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+    padding: 3em 4em !important;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reveal .slides section {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+}
+
+.reveal .slides section.center {
+    text-align: center;
+}
+
+/* Title slide */
+.reveal .slides > section.title-slide,
+.reveal section.title-slide {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;    
+    align-items: center !important;        
+    height: 100vh !important;
+    width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    background-color: var(--bg-light) !important;
+}
+
+.reveal .title-slide h1 {
+    color: var(--color-blue);
+    font-size: 3.2em;
+    text-shadow: none;
+    margin: 0 0 0.4em 0;
+    line-height: 1.2;
+}
+
+.reveal .title-slide .author,
+.reveal .title-slide .date {
+    font-size: 1.4em;
+    margin: 0.4em 0;
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+.reveal .title-slide > * {
+    max-width: 90%;
+}
+
+/* Highlighting */
+.reveal .highlight {
+    color: var(--color-yellow);
+    background-color: rgba(204, 136, 0, 0.15);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* Fragment animations with emphasis effect */
+.reveal .fragment.highlight-current-blue.current-fragment {
+    color: var(--color-blue);
+    font-weight: bold;
+}
+
+/* Customize quiz button block */
+.option-button {
+    background-color: #ABE0F0 !important; 
+    color: #1B211A !important;
+}

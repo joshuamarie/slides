@@ -1348,14 +1348,14 @@
     "href": "slides/stats-probability-g11-pt5/index.html#sampling-distributions",
     "title": "Statistics and Probability for 11th Graders - Part 5",
     "section": "Sampling Distributions",
-    "text": "Sampling Distributions"
+    "text": "Sampling Distributions\nA sampling distribution is the distribution of a statistic (like \\(\\bar{x}\\)) computed from many samples of the same size."
   },
   {
     "objectID": "slides/stats-probability-g11-pt5/index.html#sampling-distributions-1",
     "href": "slides/stats-probability-g11-pt5/index.html#sampling-distributions-1",
     "title": "Statistics and Probability for 11th Graders - Part 5",
     "section": "Sampling Distributions",
-    "text": "Sampling Distributions\nA sampling distribution is the distribution of a statistic (like \\(\\bar{x}\\)) computed from many samples of the same size."
+    "text": "Sampling Distributions\nA sampling distribution is the distribution of a statistic (like \\(\\bar{x}\\)) computed from many samples of the same size.\nSpecial case of sampling distribution:"
   },
   {
     "objectID": "slides/stats-probability-g11-pt5/index.html#sampling-distribution-example",
@@ -1530,14 +1530,14 @@
     "href": "slides/stats-probability-g11-pt5/index.html#sampling-distributions-2",
     "title": "Statistics and Probability for 11th Graders - Part 5",
     "section": "Sampling Distributions",
-    "text": "Sampling Distributions\n\nSpecial case of sampling distribution:"
+    "text": "Sampling Distributions\nSpecial case of sampling distribution:\nThe Central Limit Theorem (CLT)\n\nFor large enough \\(n\\), the sampling distribution of \\(\\bar{x}\\) is approximately normal, regardless of the population shape.\n\n\\[\\bar{x} \\sim N\\!\\left(\\mu,\\; \\frac{\\sigma}{\\sqrt{n}}\\right)\\]\n\nMean of sampling distribution \\(= \\mu\\)\nStandard error (SE) \\(= \\dfrac{\\sigma}{\\sqrt{n}}\\)"
   },
   {
     "objectID": "slides/stats-probability-g11-pt5/index.html#sampling-distributions-3",
     "href": "slides/stats-probability-g11-pt5/index.html#sampling-distributions-3",
     "title": "Statistics and Probability for 11th Graders - Part 5",
     "section": "Sampling Distributions",
-    "text": "Sampling Distributions\nSpecial case of sampling distribution:\nThe Central Limit Theorem (CLT)\n\nFor large enough \\(n\\), the sampling distribution of \\(\\bar{x}\\) is approximately normal, regardless of the population shape.\n\n\\[\\bar{x} \\sim N\\!\\left(\\mu,\\; \\frac{\\sigma}{\\sqrt{n}}\\right)\\]\n\nMean of sampling distribution \\(= \\mu\\)\nStandard error (SE) \\(= \\dfrac{\\sigma}{\\sqrt{n}}\\)"
+    "text": "Sampling Distributions\nSpecial note about CLT\nAs sample size increases:\n\nSE gets smaller — estimates are more precise\nDistribution becomes more normal\nRule of thumb: \\(n \\geq 30\\) is usually “large enough”"
   },
   {
     "objectID": "slides/stats-probability-g11-pt5/index.html#sampling-distributions-4",
@@ -1587,5 +1587,222 @@
     "title": "Statistics and Probability for 11th Graders - Part 5",
     "section": "The Z-Test",
     "text": "The Z-Test\nUse the Z-test when: population \\(\\sigma\\) is known and \\(n \\geq 30\\) (or population is normal).\n\\[z = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}\\]\n\n\n\n\n\n\n\nWorked Example\n\n\nA school claims the average test score is \\(\\mu = 75\\). A sample of \\(n = 40\\) gives \\(\\bar{x} = 78\\), with known \\(\\sigma = 10\\). Test at \\(\\alpha = 0.05\\) (two-tailed).\n\\[z = \\frac{78 - 75}{10/\\sqrt{40}} = \\frac{3}{1.581} \\approx 1.897\\]\nCritical value: \\(z^* = \\pm 1.96\\). Since \\(|1.897| &lt; 1.96\\), we fail to reject \\(H_0\\). There is insufficient evidence that the mean differs from 75."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#what-is-statistical-inference",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#what-is-statistical-inference",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "What is Statistical Inference?",
+    "text": "What is Statistical Inference?"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#what-is-statistical-inference-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#what-is-statistical-inference-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "What is Statistical Inference?",
+    "text": "What is Statistical Inference?\nStatistical inference is the process of drawing conclusions about a population based on data from a sample.\nWhy do we need it?\n\nWe can rarely measure an entire population\nInstead, we collect a sample and use it to estimate population parameters\nWe quantify our uncertainty using probability"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#what-is-statistical-inference-2",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#what-is-statistical-inference-2",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "What is Statistical Inference?",
+    "text": "What is Statistical Inference?\nWhy do we need it?\n\n\n\nTerm\nSymbol\nExample\n\n\n\n\nPopulation mean\n\\(\\mu\\)\nAvg height of all students in PH\n\n\nSample mean\n\\(\\bar{x}\\)\nAvg height of 50 students surveyed\n\n\nPopulation proportion\n\\(p\\)\n% of voters who prefer candidate A\n\n\nSample proportion\n\\(\\hat{p}\\)\n% in a poll of 200 voters"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Sampling Distributions",
+    "text": "Sampling Distributions\nA sampling distribution is the distribution of a statistic (like \\(\\bar{x}\\)) computed from many samples of the same size."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Sampling Distributions",
+    "text": "Sampling Distributions\nA sampling distribution is the distribution of a statistic (like \\(\\bar{x}\\)) computed from many samples of the same size.\nSpecial case of sampling distribution:"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions-2",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions-2",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Sampling Distributions",
+    "text": "Sampling Distributions\nSpecial case of sampling distribution:\nThe Central Limit Theorem (CLT)\n\nFor large enough \\(n\\), the sampling distribution of \\(\\bar{x}\\) is approximately normal, regardless of the population shape.\n\n\\[\\bar{x} \\sim N\\!\\left(\\mu,\\; \\frac{\\sigma}{\\sqrt{n}}\\right)\\]\n\nMean of sampling distribution \\(= \\mu\\)\nStandard error (SE) \\(= \\dfrac{\\sigma}{\\sqrt{n}}\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions-3",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions-3",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Sampling Distributions",
+    "text": "Sampling Distributions\nSpecial note about CLT\nAs sample size increases:\n\nSE gets smaller — estimates are more precise\nDistribution becomes more normal\nRule of thumb: \\(n \\geq 30\\) is usually “large enough”"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions-4",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#sampling-distributions-4",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Sampling Distributions",
+    "text": "Sampling Distributions\nSpecial note about CLT\nAs sample size increases:\n\nSE gets smaller — estimates are more precise\nDistribution becomes more normal\nRule of thumb: \\(n \\geq 30\\) is usually “large enough”"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#sampling-distribution-example",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#sampling-distribution-example",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Sampling Distribution — Example",
+    "text": "Sampling Distribution — Example\n\n\n\n\n\n\n\nWorked Example\n\n\nA population has mean \\(\\mu = 70\\) and \\(\\sigma = 10\\). We take samples of size \\(n = 25\\). Find the mean and SE of the sampling distribution.\n\\[\\text{Mean} = \\mu = 70\\]\n\\[SE = \\frac{\\sigma}{\\sqrt{n}} = \\frac{10}{\\sqrt{25}} = \\frac{10}{5} = 2\\]\nSo \\(\\bar{x} \\sim N(70,\\; 2)\\). Most sample means will fall between 66 and 74."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#confidence-intervals",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#confidence-intervals",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nA confidence interval (CI) gives a range of plausible values for a population parameter.\n\\[\\bar{x} \\pm z^* \\cdot \\frac{\\sigma}{\\sqrt{n}}\\]\nCommon CI levels:\n\n90% (\\(z^*=1.645\\))\n95% (\\(z^*=1.96\\))\n99% (\\(z^*=2.576\\))"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#confidence-intervals-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#confidence-intervals-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\nCommon Misconception: \n\nA 95% CI does not mean “there is a 95% chance \\(\\mu\\) is in this interval.”\nIt means: if we repeated the process many times, 95% of the intervals we build would contain \\(\\mu\\)."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#confidence-intervals-example",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#confidence-intervals-example",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Confidence Intervals – Example",
+    "text": "Confidence Intervals – Example\nExample:"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#confidence-intervals-example-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#confidence-intervals-example-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Confidence Intervals – Example",
+    "text": "Confidence Intervals – Example\nExample:\nA sample of \\(n = 36\\) students has \\(\\bar{x} = 68\\) kg and \\(\\sigma = 12\\) kg. Construct a 95% CI for the population mean.\n\\[\\bar{x} \\pm z^* \\cdot \\frac{\\sigma}{\\sqrt{n}} = 68 \\pm 1.96 \\cdot \\frac{12}{\\sqrt{36}} = 68 \\pm 1.96 \\cdot 2 = 68 \\pm 3.92\\]\n\\[\\boxed{(64.08,\\; 71.92)}\\]\nWe are 95% confident the true mean weight is between 64.08 kg and 71.92 kg."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#hypothesis-testing-the-big-picture",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#hypothesis-testing-the-big-picture",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Hypothesis Testing – The Big Picture",
+    "text": "Hypothesis Testing – The Big Picture\nHypothesis testing is a formal procedure to decide whether sample evidence is strong enough to reject a claim about a population."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#hypothesis-testing-the-big-picture-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#hypothesis-testing-the-big-picture-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Hypothesis Testing – The Big Picture",
+    "text": "Hypothesis Testing – The Big Picture\nHypothesis testing is a formal procedure to decide whether sample evidence is strong enough to reject a claim about a population.\nTwo Hypotheses\n\nNull hypothesis or \\(H_0\\): The “nothing is happening” claim; assumed true until proven otherwise\nAlternative hypothesis or \\(H_a\\) or \\(H_1\\): What we want to show; the “new” claim"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#hypothesis-testing-the-big-picture-2",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#hypothesis-testing-the-big-picture-2",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Hypothesis Testing – The Big Picture",
+    "text": "Hypothesis Testing – The Big Picture\nStep-by-Step Process\n\nState \\(H_0\\) and \\(H_a\\)\nChoose significance level \\(\\alpha\\)\nCompute the test statistic\nFind the p-value\nMake a decision and conclusion"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#hypothesis-testing-the-big-picture-3",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#hypothesis-testing-the-big-picture-3",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Hypothesis Testing – The Big Picture",
+    "text": "Hypothesis Testing – The Big Picture\nStep-by-Step Process\n\nState \\(H_0\\) and \\(H_a\\)\nChoose significance level \\(\\alpha\\)\nCompute the test statistic\nFind the p-value\nMake a decision and conclusion\n\n\n\n\n\n\n\nTip\n\n\n\\(H_0\\) always contains =. \\(H_a\\) usually opposes \\(H_0\\), and usually uses \\(\\neq\\), \\(&lt;\\), or \\(&gt;\\)."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#setting-up-hypotheses",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#setting-up-hypotheses",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Setting Up Hypotheses",
+    "text": "Setting Up Hypotheses\n\n\nTwo-tailed\n“Is the mean different from 50?”\n\\[H_0: \\mu = 50\\] \\[H_a: \\mu \\neq 50\\]\n\nLeft-tailed\n“Is the mean less than 50?”\n\\[H_0: \\mu = 50\\] \\[H_a: \\mu &lt; 50\\]\n\nRight-tailed\n“Is the mean greater than 50?”\n\\[H_0: \\mu = 50\\] \\[H_a: \\mu &gt; 50\\]\n\n\n\n\n\n\n\nNote\n\n\nThe direction of \\(H_a\\) determines where the rejection region falls in the distribution."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#p-values-and-significance",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#p-values-and-significance",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "p-values and Significance",
+    "text": "p-values and Significance\nThe p-value is the probability of getting a result as extreme as your sample, assuming \\(H_0\\) is true."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#p-values-and-significance-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#p-values-and-significance-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "p-values and Significance",
+    "text": "p-values and Significance\nThe p-value is the probability of getting a result as extreme as your sample, assuming \\(H_0\\) is true.\n\n\nDecision Rule\n\nIf \\(p\\text{-value} \\leq \\alpha \\Rightarrow \\textbf{Reject } H_0\\)\nIf \\(p\\text{-value} &gt; \\alpha \\Rightarrow \\textbf{Fail to reject } H_0\\)\n\nCommon significance levels: \\(\\alpha = 0.05\\) or \\(\\alpha = 0.01\\)\n\nInterpreting the p-value\n\n\n\np-value\nEvidence against \\(H_0\\)\n\n\n\n\n\\(&gt; 0.10\\)\nWeak\n\n\n\\(0.05 - 0.10\\)\nModerate\n\n\n\\(0.01 - 0.05\\)\nStrong\n\n\n\\(&lt; 0.01\\)\nVery strong\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\nFailing to reject \\(H_0\\) does not prove \\(H_0\\) is true – it just means there is not enough evidence to reject it."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#type-i-and-type-ii-errors",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#type-i-and-type-ii-errors",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Type I and Type II Errors",
+    "text": "Type I and Type II Errors\nWhen we make a decision, we can be wrong in two ways:\n\n\n\n\n\\(H_0\\) is True\n\\(H_0\\) is False\n\n\n\n\nReject \\(H_0\\)\nType I Error (\\(\\alpha\\))\nCorrect (Power)\n\n\nFail to Reject \\(H_0\\)\nCorrect\nType II Error (\\(\\beta\\))"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#type-i-and-type-ii-errors-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#type-i-and-type-ii-errors-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Type I and Type II Errors",
+    "text": "Type I and Type II Errors\nRemarks:\n\n\nType I Error (\\(\\alpha\\))\n\nRejecting \\(H_0\\) when it is actually true\n“False positive”\nProbability \\(= \\alpha\\) (significance level)\ne.g., convicting an innocent person\n\n\nType II Error (\\(\\beta\\))\n\nFailing to reject \\(H_0\\) when it is actually false\n“False negative”\nProbability \\(= \\beta\\)\nPower \\(= 1 - \\beta\\) = prob. of correctly rejecting \\(H_0\\)\ne.g., acquitting a guilty person"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#the-z-test",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#the-z-test",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "The Z-Test",
+    "text": "The Z-Test\nUse the Z-test when: population \\(\\sigma\\) is known and \\(n \\geq 30\\) (or population is normal)."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#the-z-test-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#the-z-test-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "The Z-Test",
+    "text": "The Z-Test\nUse the Z-test when: population \\(\\sigma\\) is known and \\(n \\geq 30\\) (or population is normal).\n\\[z = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#the-z-test-2",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#the-z-test-2",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "The Z-Test",
+    "text": "The Z-Test\nUse the Z-test when: population \\(\\sigma\\) is known and \\(n \\geq 30\\) (or population is normal).\n\\[z = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}\\]\n\n\n\n\n\n\n\nWorked Example\n\n\nA school claims the average test score is \\(\\mu = 75\\). A sample of \\(n = 40\\) gives \\(\\bar{x} = 78\\), with known \\(\\sigma = 10\\). Test at \\(\\alpha = 0.05\\) (two-tailed).\n\\[z = \\frac{78 - 75}{10/\\sqrt{40}} = \\frac{3}{1.581} \\approx 1.897\\]\nCritical value: \\(z^* = \\pm 1.96\\). Since \\(|1.897| &lt; 1.96\\), we fail to reject \\(H_0\\). There is insufficient evidence that the mean differs from 75."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#the-t-test",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#the-t-test",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "The T-Test",
+    "text": "The T-Test\nUse the T-test when: population \\(\\sigma\\) is unknown (use sample \\(s\\) instead) or \\(n &lt; 30\\).\n\\[t = \\frac{\\bar{x} - \\mu_0}{s / \\sqrt{n}}, \\quad df = n - 1\\]"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#the-t-test-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#the-t-test-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "The T-Test",
+    "text": "The T-Test\nUse the T-test when: population \\(\\sigma\\) is unknown (use sample \\(s\\) instead) or \\(n &lt; 30\\).\n\\[t = \\frac{\\bar{x} - \\mu_0}{s / \\sqrt{n}}, \\quad df = n - 1\\]\n\n\n\n\n\n\n\nWorked Example\n\n\nA sample of \\(n = 16\\) bags shows \\(\\bar{x} = 498\\) g and \\(s = 6\\) g. Claim: \\(\\mu = 500\\) g. Test at \\(\\alpha = 0.05\\) (left-tailed).\n\\[t = \\frac{498 - 500}{6/\\sqrt{16}} = \\frac{-2}{1.5} \\approx -1.333\\]\nCritical value (\\(df = 15\\), left-tailed): \\(t^* = -1.753\\). Since \\(-1.333 &gt; -1.753\\), we fail to reject \\(H_0\\). No significant evidence that bags are underfilled."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#when-to-use-z-vs-t",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#when-to-use-z-vs-t",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "When to Use Z vs T",
+    "text": "When to Use Z vs T\n\n\n\n\n\nflowchart TD\n    A[Start: Testing a mean] --&gt; B{Is sigma known?}\n    B --&gt;|Yes| C{n &gt;= 30?}\n    B --&gt;|No| E{n &gt;= 30?}\n    C --&gt;|Yes| F[Z-test]\n    C --&gt;|No| G{Population normal?}\n    G --&gt;|Yes| F\n    G --&gt;|No| H[Need larger sample]\n    E --&gt;|Yes| I[T-test, approx. normal]\n    E --&gt;|No| J{Population normal?}\n    J --&gt;|Yes| K[T-test, df = n-1]\n    J --&gt;|No| H"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#proportion-test",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#proportion-test",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Proportion Test",
+    "text": "Proportion Test\nUse a proportion test when the variable is categorical (yes/no, success/failure).\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\dfrac{p_0(1-p_0)}{n}}}\\]\nConditions: \\(np_0 \\geq 10\\) and \\(n(1-p_0) \\geq 10\\)"
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#proportion-test-1",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#proportion-test-1",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Proportion Test",
+    "text": "Proportion Test\nUse a proportion test when the variable is categorical (yes/no, success/failure).\n\\[z = \\frac{\\hat{p} - p_0}{\\sqrt{\\dfrac{p_0(1-p_0)}{n}}}\\]\nConditions: \\(np_0 \\geq 10\\) and \\(n(1-p_0) \\geq 10\\)\n\n\n\n\n\n\n\nWorked Example\n\n\nA candidate claims 60% support (\\(p_0 = 0.60\\)). A poll of \\(n = 200\\) finds \\(\\hat{p} = 0.55\\). Test at \\(\\alpha = 0.05\\) (left-tailed).\n\\[z = \\frac{0.55 - 0.60}{\\sqrt{0.60 \\cdot 0.40 / 200}} = \\frac{-0.05}{0.03464} \\approx -1.443\\]\nCritical value: \\(z^* = -1.645\\). Since \\(-1.443 &gt; -1.645\\), we fail to reject \\(H_0\\). Not enough evidence that support is below 60%."
+  },
+  {
+    "objectID": "slides/stats-probability-g11-pt5-light/index.html#proportion-test-conditions-checklist",
+    "href": "slides/stats-probability-g11-pt5-light/index.html#proportion-test-conditions-checklist",
+    "title": "Statistics and Probability for 11th Graders - Part 5",
+    "section": "Proportion Test – Conditions Checklist",
+    "text": "Proportion Test – Conditions Checklist\nBefore running a proportion test, verify:\n\n\n\n\n\n\n\nCondition\nWhy?\n\n\n\n\nRandom sample\nAvoids bias\n\n\nIndependence: \\(n \\leq 10\\%\\) of population\nObservations are independent\n\n\nSuccess: \\(np_0 \\geq 10\\)\nNormal approximation is valid\n\n\nFailure: \\(n(1-p_0) \\geq 10\\)\nNormal approximation is valid\n\n\n\n\n\n\n\n\n\nTip\n\n\nIf conditions are not met, the z-approximation may be unreliable – results should be interpreted with caution."
   }
 ]
