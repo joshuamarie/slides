@@ -1,0 +1,561 @@
+---
+title: "Statistics and Probability for 11th Graders - Part 4"
+subtitle: "Probability Random Sampling"
+date: 2025-12-12
+categories: [statistics, probability]
+image: 'image-thumb.png'
+format:
+    revealjs:
+        transition: slide
+        transition-speed: default
+        background-transition: fade
+        
+        title-slide-attributes:
+            data-background-image: "image-main.png"
+            data-background-size: cover
+            data-background-position: center
+            data-background-opacity: "1"
+        
+        width: 1600
+        height: 900
+        margin: 0.1
+        min-scale: 0.2
+        max-scale: 2.0
+        
+        highlight-style: github-dark
+        css: 
+          - ./custom_style.css
+          - ./button.css
+        
+        chalkboard: 
+            buttons: false
+---
+
+## Why This Topic Before Hypothesis Testing? {background-image="image-main.png" auto-animate="true"}
+
+::: {.fragment .fade-in}
+Before we dive into **hypothesis testing** in our next session, learning how to make a sample and sampling design is needed. 
+:::
+
+::: {.fragment .fade-in}
+**How do we collect data properly?**
+:::
+
+::: {.fragment .fade-in}
+Without proper sampling methods, our statistical tests would be meaningless!
+:::
+
+## What is Random Sampling? {background-image="image-main.png" auto-animate="true"}
+
+**Random sampling** is a method of selecting individuals from a population where each individual has an equal or known probability of being selected.
+
+## What is Random Sampling? {background-image="image-main.png" auto-animate="true"}
+
+**Random sampling** is a method of selecting individuals from a population where each individual has an equal or known probability of being selected.
+
+::: incremental
+**Key Terms:**
+
+- **Population**: The entire group we want to study
+- **Sample**: A subset of the population we actually observe
+- **Sampling**: The process of selecting individuals from the population
+:::
+
+## Why Random Sampling? {background-image="image-main.png" auto-animate="true"}
+
+Why can't we just pick whoever is convenient?
+
+## Why Random Sampling? {background-image="image-main.png" auto-animate="true"}
+
+Why can't we just pick whoever is convenient?
+
+::: incremental
+**Problems with non-random sampling:**
+
+1. **Bias**: Your sample may not represent the population
+2. **Unreliable conclusions**: Results can't be generalized
+3. **Invalid statistics**: Tests assume random sampling
+:::
+
+::: {.fragment .fade-in}
+**Example:** Surveying only students in the library about study habits would give biased results!
+:::
+
+## Benefits of Random Sampling {background-image="image-main.png" auto-animate="true"}
+
+::: incremental
+1. **Reduces bias**: Every individual has a fair chance
+2. **Representative**: Sample reflects population characteristics
+3. **Valid inference**: Allows us to generalize findings
+4. **Foundation for tests**: Required for hypothesis testing and confidence intervals
+:::
+
+## Four Main Types of Random Sampling {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+::: incremental
+1. **Simple Random Sampling**
+2. **Systematic Random Sampling**
+3. **Stratified Random Sampling**
+4. **Cluster Sampling**
+:::
+
+::: {.fragment .fade-in}
+Each method has different advantages and use cases!
+:::
+
+## Simple Random Sampling {background-image="image-main.png" auto-animate="true"}
+
+**Definition:** Every individual in the population has an **equal** probability of being selected.
+
+## Simple Random Sampling {background-image="image-main.png" auto-animate="true"}
+
+**Definition:** Every individual in the population has an **equal** probability of being selected.
+
+**How it works:**
+
+::: incremental
+1. Number all individuals in the population (1 to N)
+2. Use a random number generator or draw names from a hat
+3. Select n individuals
+:::
+
+::: {.fragment .fade-in}
+**Think of it as:** Drawing names from a well-mixed bowl
+:::
+
+## Simple Random Sampling: Example {.scrollable background-image="image-main.png"}
+
+**Scenario:** A school has 1,000 students. You want to survey 100 students about cafeteria food.
+
+::: {.fragment .fade-in}
+**Method:**
+
+1. Create a list of all 1,000 students (numbered 1-1000)
+2. Use a random number generator to select 100 numbers
+3. Survey the students corresponding to those numbers
+:::
+
+::: {.fragment .fade-in}
+**Advantages:**
+- Easy to understand
+- Unbiased if done properly
+- Foundation for statistical theory
+:::
+
+::: {.fragment .fade-in}
+**Disadvantages:**
+- Requires complete list of population
+- Can be impractical for large populations
+- May miss important subgroups by chance
+:::
+
+## Systematic Random Sampling {background-image="image-main.png" auto-animate="true"}
+
+**Definition:** Select every **k-th** individual from the population after a random start.
+
+## Systematic Random Sampling {background-image="image-main.png" auto-animate="true"}
+
+**Definition:** Select every **k-th** individual from the population after a random start.
+
+**Formula for interval:**
+$$k = \frac{N}{n}$$
+
+Where:
+- N = population size
+- n = desired sample size
+- k = sampling interval
+
+## Systematic Random Sampling: How it Works {background-image="image-main.png" auto-animate="true"}
+
+**Steps:**
+
+::: incremental
+1. Calculate the sampling interval: $k = \frac{N}{n}$
+2. Randomly select a starting point between 1 and k
+3. Select every k-th individual after that
+:::
+
+::: {.fragment .fade-in}
+**Example:** If k = 10 and you start at 3, you'd select: 3, 13, 23, 33, 43...
+:::
+
+## Systematic Random Sampling: Example {.scrollable background-image="image-main.png"}
+
+**Scenario:** A factory produces 5,000 items per day. You want to inspect 100 items for quality control.
+
+::: {.fragment .fade-in}
+**Method:**
+
+1. Calculate interval: $k = \frac{5000}{100} = 50$
+2. Randomly pick a number between 1-50 (say, 17)
+3. Inspect items: 17, 67, 117, 167, 217...
+:::
+
+::: {.fragment .fade-in}
+**Advantages:**
+- Easier to implement than simple random sampling
+- Evenly distributed across population
+- Good for production line scenarios
+:::
+
+::: {.fragment .fade-in}
+**Disadvantages:**
+- Risk of periodicity (if list has patterns)
+- Not truly random if population has hidden order
+:::
+
+## Stratified Random Sampling {background-image="image-main.png" auto-animate="true"}
+
+**Definition:** Divide the population into **homogeneous subgroups** (strata), then randomly sample from each stratum.
+
+## Stratified Random Sampling {background-image="image-main.png" auto-animate="true"}
+
+**Definition:** Divide the population into **homogeneous subgroups** (strata), then randomly sample from each stratum.
+
+**Key idea:** Ensure all important subgroups are represented!
+
+::: {.fragment .fade-in}
+**Strata must be:**
+- Mutually exclusive (no overlap)
+- Collectively exhaustive (cover everyone)
+- Homogeneous within, heterogeneous between
+:::
+
+## Stratified Sampling: Two Approaches {background-image="image-main.png" auto-animate="true"}
+
+**1. Proportional Allocation**
+
+Sample size from each stratum proportional to its size in the population.
+
+$$n_i = n \times \frac{N_i}{N}$$
+
+Where:
+- $n_i$ = sample size from stratum i
+- $N_i$ = population size of stratum i
+- n = total sample size
+- N = total population size
+
+## Stratified Sampling: Two Approaches {background-image="image-main.png" auto-animate="true"}
+
+**2. Equal Allocation**
+
+Same sample size from each stratum regardless of stratum size.
+
+$$n_i = \frac{n}{k}$$
+
+Where:
+- k = number of strata
+
+::: {.fragment .fade-in}
+*Used when comparing strata is more important than overall population estimates*
+:::
+
+## Stratified Random Sampling: Example {.scrollable background-image="image-main.png"}
+
+**Scenario:** A university has 10,000 students (6,000 undergrad, 3,000 grad, 1,000 PhD). You want to survey 500 students about campus facilities.
+
+::: {.fragment .fade-in}
+**Strata:** Undergrad, Graduate, PhD students
+
+**Proportional allocation:**
+- Undergrad: $500 \times \frac{6000}{10000} = 300$ students
+- Graduate: $500 \times \frac{3000}{10000} = 150$ students  
+- PhD: $500 \times \frac{1000}{10000} = 50$ students
+:::
+
+::: {.fragment .fade-in}
+**Advantages:**
+- Ensures representation of all subgroups
+- More precise estimates
+- Can compare strata
+:::
+
+::: {.fragment .fade-in}
+**Disadvantages:**
+- Requires knowledge of population characteristics
+- More complex to implement
+- Need complete list of each stratum
+:::
+
+## Cluster Sampling {background-image="image-main.png" auto-animate="true"}
+
+**Definition:** Divide the population into **clusters** (naturally occurring groups), randomly select some clusters, then survey **all** individuals in selected clusters.
+
+## Cluster Sampling {background-image="image-main.png" auto-animate="true"}
+
+**Definition:** Divide the population into **clusters** (naturally occurring groups), randomly select some clusters, then survey **all** individuals in selected clusters.
+
+**Key difference from stratified sampling:**
+- **Stratified**: Sample from ALL strata
+- **Cluster**: Sample ALL members from SOME clusters
+
+## Cluster Sampling: Types {background-image="image-main.png" auto-animate="true"}
+
+**One-stage cluster sampling:**
+- Select clusters randomly
+- Survey ALL individuals in selected clusters
+
+::: {.fragment .fade-in}
+**Two-stage cluster sampling:**
+- Select clusters randomly
+- Randomly sample individuals within selected clusters
+:::
+
+## Cluster Sampling: Example {.scrollable background-image="image-main.png"}
+
+**Scenario:** Survey elementary school students across a large city with 200 schools (50,000 total students).
+
+::: {.fragment .fade-in}
+**Method:**
+
+1. **Clusters:** Each school is a cluster
+2. Randomly select 20 schools
+3. **One-stage:** Survey ALL students in those 20 schools
+4. **Two-stage:** Randomly sample 50 students from each selected school
+:::
+
+::: {.fragment .fade-in}
+**Advantages:**
+- Cost-effective for geographically spread populations
+- Practical when complete list unavailable
+- Easier logistics
+:::
+
+::: {.fragment .fade-in}
+**Disadvantages:**
+- Less precise than other methods
+- Clusters may not be representative
+- Higher sampling error
+:::
+
+## Comparing All Four Methods {.scrollable background-image="image-main.png"}
+
+| Method | When to Use | Main Advantage | Main Disadvantage |
+|--------|-------------|----------------|-------------------|
+| **Simple Random** | Small, accessible population | Unbiased, simple | Needs complete list |
+| **Systematic** | Ordered populations | Easy to implement | Risk of periodicity |
+| **Stratified** | Known subgroups exist | Ensures representation | Complex, needs info |
+| **Cluster** | Geographically spread | Cost-effective | Less precise |
+
+## Sampling Error vs. Sampling Bias {background-image="image-main.png" auto-animate="true"}
+
+::: incremental
+**Sampling Error:**
+- Natural variation between sample and population
+- Occurs even with perfect random sampling
+- Can be reduced by increasing sample size
+- Is **random** and **expected**
+:::
+
+## Sampling Error vs. Sampling Bias {background-image="image-main.png" auto-animate="true"}
+
+::: incremental
+**Sampling Bias:**
+- Systematic error in sample selection
+- Makes sample unrepresentative
+- Cannot be fixed by increasing sample size
+- Result of **poor methodology**
+:::
+
+::: {.fragment .fade-in}
+**Remember:** Random sampling minimizes bias but doesn't eliminate sampling error!
+:::
+
+## Common Sources of Sampling Bias {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+::: incremental
+1. **Selection bias**: Certain groups more likely to be selected
+2. **Non-response bias**: Selected individuals don't participate
+3. **Voluntary response bias**: Only interested people respond
+4. **Undercoverage**: Some population members not in sampling frame
+:::
+
+## Sample Size Considerations {background-image="image-main.png" auto-animate="true"}
+
+**How large should your sample be?**
+
+::: incremental
+- Larger samples → more precise estimates
+- But: diminishing returns after a point
+- Cost vs. precision trade-off
+- Rule of thumb: n ≥ 30 for many statistical tests
+:::
+
+::: {.fragment .fade-in}
+**For our next topic (hypothesis testing), adequate sample size is crucial!**
+:::
+
+## Practice Problem 1 {.scrollable background-image="image-main.png"}
+
+**Scenario:** A company has 5,000 employees across 50 departments. They want to survey 250 employees about workplace satisfaction.
+
+**Question:** Which sampling method would you recommend and why? Describe the steps.
+
+::: {.fragment .fade-in}
+**Possible Answer: Stratified Random Sampling**
+
+**Why:** Departments may have different satisfaction levels. Ensures all departments represented.
+
+**Steps:**
+1. Identify 50 departments as strata
+2. Proportional allocation: $n_i = 250 \times \frac{N_i}{5000}$
+3. Simple random sample within each department
+4. If Dept A has 200 employees: $250 \times \frac{200}{5000} = 10$ employees
+:::
+
+## Practice Problem 2 {.scrollable background-image="image-main.png"}
+
+**Scenario:** A researcher wants to study shopping behavior in a mall with 8 floors. Budget allows surveying only 200 shoppers.
+
+**Question:** Cluster sampling is proposed. Describe how to implement this.
+
+::: {.fragment .fade-in}
+**Answer:**
+
+**One-stage approach:**
+1. Each floor = 1 cluster (8 clusters total)
+2. Randomly select 2-3 floors
+3. Survey ALL shoppers on those floors (until reaching ~200)
+
+**Two-stage approach:**
+1. Randomly select 4 floors
+2. Randomly sample 50 shoppers from each floor
+3. Total: 4 × 50 = 200 shoppers
+:::
+
+## Real-World Application: Election Polls {background-image="image-main.png" auto-animate="true"}
+
+**How do polls predict elections with only 1,000 voters?**
+
+::: {.fragment .fade-in}
+They use **stratified random sampling**:
+- Strata: Age groups, regions, income levels, etc.
+- Ensures representation of all demographic groups
+- Proportional allocation based on population
+:::
+
+::: {.fragment .fade-in}
+**Why it works:** A well-selected sample of 1,000 can represent millions with ±3% margin of error!
+:::
+
+## Real-World Application: Quality Control {background-image="image-main.png" auto-animate="true"}
+
+**Manufacturing scenario:**
+
+::: incremental
+- **Systematic sampling** on production lines
+- Inspect every 50th item
+- Detect defects without inspecting everything
+- Balance cost and quality assurance
+:::
+
+::: {.fragment .fade-in}
+**Critical:** Must ensure no periodicity in production cycle!
+:::
+
+## Connection to Hypothesis Testing {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Why this matters for next session:**
+
+::: incremental
+1. **Random samples** allow us to make inferences about populations
+2. **Sampling distributions** follow predictable patterns (Central Limit Theorem)
+3. **Hypothesis tests** assume random sampling
+4. **Biased samples** invalidate test results
+:::
+
+::: {.fragment .fade-in}
+**Bottom line:** Good sampling = valid conclusions!
+:::
+
+## Group Activity {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Scenario:** Your school principal wants to know if students support extending lunch break by 15 minutes. There are 2,000 students in grades 7-12.
+
+**Tasks (work in groups of 4-5):**
+
+1. Design a sampling plan (choose a method)
+2. Justify your choice
+3. Calculate sample sizes if using stratified sampling
+4. Identify potential sources of bias
+5. Present your plan to the class
+
+**Time:** 15 minutes
+
+## Group Activity: Discussion Points {.scrollable background-image="image-main.png"}
+
+**Consider:**
+
+- Why might different grade levels have different opinions?
+- Should you sample proportionally or equally from each grade?
+- What time/location would minimize non-response bias?
+- How many students is realistic to survey?
+- What if only students in cafeteria are surveyed?
+
+## Summary: Key Takeaways {.scrollable background-image="image-main.png"}
+
+::: callout-tip
+**Main Points:**
+
+1. **Random sampling** ensures representative samples
+2. **Four main methods:** Simple, Systematic, Stratified, Cluster
+3. **Stratified** ensures subgroup representation
+4. **Cluster** is cost-effective for spread populations
+5. **Bias** must be avoided; **error** is expected
+6. **Proper sampling** is essential for valid hypothesis testing
+:::
+
+## Preparing for Hypothesis Testing {background-image="image-main.png" auto-animate="true"}
+
+**In our next session, we'll learn to:**
+
+::: incremental
+- Make claims about populations based on samples
+- Test if observed differences are statistically significant
+- Calculate confidence intervals
+- Interpret p-values
+:::
+
+::: {.fragment .fade-in}
+**All of this requires:** properly collected random samples!
+:::
+
+## Assignment {.scrollable background-image="image-main.png"}
+
+**Instructions:** Answer the following questions. Show your reasoning.
+
+**Problems:**
+
+1. A city has 100,000 residents. Describe how you would obtain a simple random sample of 500 residents. What are the practical challenges?
+
+2. A factory produces 20,000 items daily. You need to inspect 400 items. Using systematic sampling:
+   - Calculate the sampling interval
+   - If you start at item #7, list the first 5 items you'd inspect
+
+3. A school has: 800 freshmen, 750 sophomores, 700 juniors, 600 seniors. You want to survey 240 students using stratified random sampling with proportional allocation. How many students from each grade?
+
+4. Identify the sampling method and potential bias:
+   - Surveying every 10th customer entering a store
+   - Posting an online poll on social media
+   - Randomly selecting 5 schools and surveying all students in those schools
+
+## Additional Resources {background-image="image-main.png"}
+
+**For further learning:**
+
+- Khan Academy: Sampling methods
+- Statistics textbook: Chapter on sampling designs
+- Online random number generators (random.org)
+- Practice problems (provided separately)
+
+::: callout-tip
+**Pro tip:** Understanding sampling now will make hypothesis testing much easier!
+:::
+
+## Thank You! {background-image="image-main.png"}
+
+**Next session:** Hypothesis Testing and Confidence Intervals
+
+**Remember:** A good sample today means valid conclusions tomorrow!
+
+**Questions?**

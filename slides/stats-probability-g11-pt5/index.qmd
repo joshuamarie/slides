@@ -1,0 +1,479 @@
+---
+title: "Statistics and Probability for 11th Graders - Part 5"
+subtitle: "Statistical Inference and Hypothesis Testing"
+date: 2026-02-21
+categories: [statistics, probability]
+image: 'image-thumb.png'
+format:
+    revealjs:
+        transition: slide
+        transition-speed: default
+        background-transition: fade
+        
+        title-slide-attributes:
+            data-background-image: "image-main.png"
+            data-background-size: cover
+            data-background-position: center
+            data-background-opacity: "1"
+        
+        width: 1600
+        height: 900
+        margin: 0.1
+        min-scale: 0.2
+        max-scale: 2.0
+        
+        highlight-style: github-dark
+        css: 
+          - ./custom_style.css
+          - ./button.css
+        
+        chalkboard: 
+            buttons: false
+            
+        quiz:
+            resetKey: 'q'
+
+filters:
+  - shinylive
+
+revealjs-plugins:
+  - quiz
+---
+
+## What is Statistical Inference? {background-image="image-main.png" auto-animate="true"}
+
+## What is Statistical Inference? {background-image="image-main.png" auto-animate="true"}
+
+**Statistical inference** is the process of drawing conclusions about a **population** based on data from a **sample**.
+
+### Why do we need it?
+
+- We can rarely measure an **entire population**
+- Instead, we collect a **sample** and use it to estimate population parameters
+- We quantify our **uncertainty** using probability
+
+## What is Statistical Inference? {background-image="image-main.png" auto-animate="true"}
+
+### Why do we need it?
+
+| Term | Symbol | Example |
+|------|--------|---------|
+| Population mean | $\mu$ | Avg height of all students in PH |
+| Sample mean | $\bar{x}$ | Avg height of 50 students surveyed |
+| Population proportion | $p$ | % of voters who prefer candidate A |
+| Sample proportion | $\hat{p}$ | % in a poll of 200 voters |
+
+
+## Sampling Distributions {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+## Sampling Distributions {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+A **sampling distribution** is the distribution of a statistic (like $\bar{x}$) computed from **many** samples of the same size.
+
+## Sampling Distributions {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+::: {.fragment .fade-in}
+Special case of sampling distribution: 
+:::
+
+## Sampling Distributions {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+Special case of sampling distribution: 
+
+**The Central Limit Theorem (CLT)**
+
+> For large enough $n$, the sampling distribution of $\bar{x}$ is approximately **normal**, regardless of the population shape.
+
+$$\bar{x} \sim N\!\left(\mu,\; \frac{\sigma}{\sqrt{n}}\right)$$
+
+- Mean of sampling distribution $= \mu$
+- Standard error (SE) $= \dfrac{\sigma}{\sqrt{n}}$
+
+## Sampling Distributions {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Special note about CLT**
+
+As **sample size increases**:
+
+- SE gets **smaller** — estimates are more precise
+- Distribution becomes **more normal**
+- Rule of thumb: $n \geq 30$ is usually "large enough"
+
+## Sampling Distribution — Example {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+::: {.callout-note title="Worked Example"}
+A population has mean $\mu = 70$ and $\sigma = 10$. We take samples of size $n = 25$. Find the mean and SE of the sampling distribution.
+
+$$\text{Mean} = \mu = 70$$
+
+$$SE = \frac{\sigma}{\sqrt{n}} = \frac{10}{\sqrt{25}} = \frac{10}{5} = 2$$
+
+So $\bar{x} \sim N(70,\; 2)$. Most sample means will fall between **66 and 74**.
+:::
+
+## Confidence Intervals {background-image="image-main.png" auto-animate="true"}
+
+A **confidence interval (CI)** gives a **range of plausible values** for a population parameter.
+
+$$\bar{x} \pm z^* \cdot \frac{\sigma}{\sqrt{n}}$$
+
+Common CI levels:
+
+1.  90% ($z^*=1.645$)
+2.  95% ($z^*=1.96$)
+3.  99% ($z^*=2.576$)
+
+## Confidence Intervals {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Common Misconception: **
+
+-  A 95% CI does **not** mean "there is a 95% chance $\mu$ is in this interval."
+-  It means: if we repeated the process many times, **95% of the intervals** we build would contain $\mu$.
+
+## Confidence Intervals -- Example {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Example:**
+
+## Confidence Intervals -- Example {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+**Example:**
+
+A sample of $n = 36$ students has $\bar{x} = 68$ kg and $\sigma = 12$ kg.
+**Construct a 95% CI for the population mean.**
+
+$$\bar{x} \pm z^* \cdot \frac{\sigma}{\sqrt{n}} = 68 \pm 1.96 \cdot \frac{12}{\sqrt{36}} = 68 \pm 1.96 \cdot 2 = 68 \pm 3.92$$
+
+$$\boxed{(64.08,\; 71.92)}$$
+
+We are **95% confident** the true mean weight is between 64.08 kg and 71.92 kg.
+
+## Hypothesis Testing -- The Big Picture {background-image="image-main.png" auto-animate="true"}
+
+**Hypothesis testing** is a formal procedure to decide whether sample evidence is strong enough to reject a claim about a population.
+
+
+## Hypothesis Testing -- The Big Picture {background-image="image-main.png" auto-animate="true"}
+
+**Hypothesis testing** is a formal procedure to decide whether sample evidence is strong enough to reject a claim about a population.
+
+**Two Hypotheses**
+
+1. **Null hypothesis** or $H_0$: The "nothing is happening" claim; assumed true until proven otherwise
+2. **Alternative hypothesis** or $H_a$ or $H_1$: What we want to show; the "new" claim
+
+## Hypothesis Testing -- The Big Picture {background-image="image-main.png" auto-animate="true"}
+
+**Step-by-Step Process**
+
+::: incremental
+1. State $H_0$ and $H_a$
+2. Choose significance level $\alpha$
+3. Compute the test statistic
+4. Find the p-value
+5. Make a decision and conclusion
+:::
+
+## Hypothesis Testing -- The Big Picture {background-image="image-main.png" auto-animate="true"}
+
+**Step-by-Step Process**
+
+1. State $H_0$ and $H_a$
+2. Choose significance level $\alpha$
+3. Compute the test statistic
+4. Find the p-value
+5. Make a decision and conclusion
+
+::: {.callout-tip}
+$H_0$ always contains **=**. $H_a$ usually opposes $H_0$, and usually uses $\neq$, $<$, or $>$.
+:::
+
+## Setting Up Hypotheses {background-image="image-main.png" transition="fade" transition-speed="fast"}
+
+::: {.columns}
+::: {.column width="33%"}
+### Two-tailed
+*"Is the mean different from 50?"*
+
+$$H_0: \mu = 50$$
+$$H_a: \mu \neq 50$$
+:::
+::: {.column width="33%"}
+### Left-tailed
+*"Is the mean less than 50?"*
+
+$$H_0: \mu = 50$$
+$$H_a: \mu < 50$$
+:::
+::: {.column width="33%"}
+### Right-tailed
+*"Is the mean greater than 50?"*
+
+$$H_0: \mu = 50$$
+$$H_a: \mu > 50$$
+:::
+:::
+
+::: {.callout-note}
+The direction of $H_a$ determines where the **rejection region** falls in the distribution.
+:::
+
+## p-values and Significance {background-image="image-main.png" auto-animate="true"}
+
+The **p-value** is the probability of getting a result as extreme as your sample, **assuming $H_0$ is true**.
+
+## p-values and Significance {background-image="image-main.png" auto-animate="true" .scrollable}
+
+The **p-value** is the probability of getting a result as extreme as your sample, **assuming $H_0$ is true**.
+
+::: {.columns}
+::: {.column width="55%"}
+### Decision Rule
+
+-  If $p\text{-value} \leq \alpha \Rightarrow \textbf{Reject } H_0$
+-  If $p\text{-value} > \alpha \Rightarrow \textbf{Fail to reject } H_0$
+
+Common significance levels: $\alpha = 0.05$ or $\alpha = 0.01$
+:::
+::: {.column width="45%"}
+### Interpreting the p-value
+
+| p-value | Evidence against $H_0$ |
+|---------|----------------------|
+| $> 0.10$ | Weak |
+| $0.05 - 0.10$ | Moderate |
+| $0.01 - 0.05$ | Strong |
+| $< 0.01$ | Very strong |
+:::
+:::
+
+::: {.callout-warning title="Important"}
+Failing to reject $H_0$ does **not** prove $H_0$ is true -- it just means there is not enough evidence to reject it.
+:::
+
+## Type I and Type II Errors {background-image="image-main.png" auto-animate="true"}
+
+When we make a decision, we can be **wrong** in two ways:
+
+|  | $H_0$ is True | $H_0$ is False |
+|--|--------------|----------------|
+| **Reject $H_0$** | Type I Error ($\alpha$) | Correct (Power) |
+| **Fail to Reject $H_0$** | Correct | Type II Error ($\beta$) |
+
+## Type I and Type II Errors {background-image="image-main.png" auto-animate="true"}
+
+**Remarks:**
+
+:::: {.columns}
+::: {.column width="50%"}
+### Type I Error ($\alpha$)
+
+- Rejecting $H_0$ when it is **actually true**
+- "False positive"
+- Probability $= \alpha$ (significance level)
+- *e.g., convicting an innocent person*
+:::
+::: {.column width="50%"}
+### Type II Error ($\beta$)
+
+- Failing to reject $H_0$ when it is **actually false**
+- "False negative"
+- Probability $= \beta$
+- **Power** $= 1 - \beta$ = prob. of correctly rejecting $H_0$
+- *e.g., acquitting a guilty person*
+:::
+::::
+
+## The Z-Test {background-image="image-main.png" auto-animate="true"}
+
+Use the **Z-test** when: population $\sigma$ is **known** and $n \geq 30$ (or population is normal).
+
+## The Z-Test {background-image="image-main.png" auto-animate="true"}
+
+Use the **Z-test** when: population $\sigma$ is **known** and $n \geq 30$ (or population is normal).
+
+$$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}$$
+
+## The Z-Test {background-image="image-main.png" auto-animate="true"}
+
+Use the **Z-test** when: population $\sigma$ is **known** and $n \geq 30$ (or population is normal).
+
+$$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}$$
+
+::: {.callout-note title="Worked Example"}
+A school claims the average test score is $\mu = 75$. A sample of $n = 40$ gives $\bar{x} = 78$, with known $\sigma = 10$. Test at $\alpha = 0.05$ (two-tailed).
+
+$$z = \frac{78 - 75}{10/\sqrt{40}} = \frac{3}{1.581} \approx 1.897$$
+
+Critical value: $z^* = \pm 1.96$. Since $|1.897| < 1.96$, we **fail to reject $H_0$**.
+There is insufficient evidence that the mean differs from 75.
+:::
+
+## The T-Test {background-image="image-main.png" auto-animate="true"}
+
+Use the **T-test** when: population $\sigma$ is **unknown** (use sample $s$ instead) or $n < 30$.
+
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}, \quad df = n - 1$$
+
+## The T-Test {background-image="image-main.png" auto-animate="true"}
+
+Use the **T-test** when: population $\sigma$ is **unknown** (use sample $s$ instead) or $n < 30$.
+
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}, \quad df = n - 1$$
+
+::: {.callout-note title="Worked Example"}
+A sample of $n = 16$ bags shows $\bar{x} = 498$ g and $s = 6$ g. Claim: $\mu = 500$ g. Test at $\alpha = 0.05$ (left-tailed).
+
+$$t = \frac{498 - 500}{6/\sqrt{16}} = \frac{-2}{1.5} \approx -1.333$$
+
+Critical value ($df = 15$, left-tailed): $t^* = -1.753$. Since $-1.333 > -1.753$, we **fail to reject $H_0$**.
+No significant evidence that bags are underfilled.
+:::
+
+## When to Use Z vs T {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+
+```{mermaid}
+flowchart TD
+    A[Start: Testing a mean] --> B{Is sigma known?}
+    B -->|Yes| C{n >= 30?}
+    B -->|No| E{n >= 30?}
+    C -->|Yes| F[Z-test]
+    C -->|No| G{Population normal?}
+    G -->|Yes| F
+    G -->|No| H[Need larger sample]
+    E -->|Yes| I[T-test, approx. normal]
+    E -->|No| J{Population normal?}
+    J -->|Yes| K[T-test, df = n-1]
+    J -->|No| H
+```
+
+## Proportion Test {background-image="image-main.png" auto-animate="true"}
+
+Use a **proportion test** when the variable is **categorical** (yes/no, success/failure).
+
+$$z = \frac{\hat{p} - p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}$$
+
+**Conditions:** $np_0 \geq 10$ and $n(1-p_0) \geq 10$
+
+## Proportion Test {background-image="image-main.png" auto-animate="true"}
+
+Use a **proportion test** when the variable is **categorical** (yes/no, success/failure).
+
+$$z = \frac{\hat{p} - p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}$$
+
+**Conditions:** $np_0 \geq 10$ and $n(1-p_0) \geq 10$
+
+::: {.callout-note title="Worked Example"}
+A candidate claims 60% support ($p_0 = 0.60$). A poll of $n = 200$ finds $\hat{p} = 0.55$. Test at $\alpha = 0.05$ (left-tailed).
+
+$$z = \frac{0.55 - 0.60}{\sqrt{0.60 \cdot 0.40 / 200}} = \frac{-0.05}{0.03464} \approx -1.443$$
+
+Critical value: $z^* = -1.645$. Since $-1.443 > -1.645$, we **fail to reject $H_0$**.
+Not enough evidence that support is below 60%.
+:::
+
+## Proportion Test -- Conditions Checklist {background-image="image-main.png" transition="fade" transition-speed="fast" .scrollable}
+
+Before running a proportion test, verify:
+
+| Condition | Why? |
+|-----------|------|
+| Random sample | Avoids bias |
+| Independence: $n \leq 10\%$ of population | Observations are independent |
+| Success: $np_0 \geq 10$ | Normal approximation is valid |
+| Failure: $n(1-p_0) \geq 10$ | Normal approximation is valid |
+
+::: {.callout-tip}
+If conditions are not met, the z-approximation may be unreliable -- results should be interpreted with caution.
+:::
+
+<!-- ## Summary: Which Test to Use? {background-image="image-main.png" transition="fade" transition-speed="fast"} -->
+
+<!-- | Situation | Test | Statistic | -->
+<!-- |-----------|------|-----------| -->
+<!-- | Testing a mean, $\sigma$ known | Z-test | $z = \dfrac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}$ | -->
+<!-- | Testing a mean, $\sigma$ unknown | T-test | $t = \dfrac{\bar{x}-\mu_0}{s/\sqrt{n}}$, $df=n-1$ | -->
+<!-- | Testing a proportion | Z proportion test | $z = \dfrac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)/n}}$ | -->
+
+<!-- ### The 5-Step Process (Always!) -->
+
+<!-- 1. State $H_0, H_a$  -->
+<!-- 2. Set $\alpha$ -->
+<!-- 3. Compute test statistic  -->
+<!-- 4. Find p-value  -->
+<!-- 5. Conclude -->
+
+<!-- ## Quiz Time! {background-image="image-main.png"} -->
+
+<!-- ::: {.quiz} -->
+<!-- ::: {.quiz-question} -->
+<!-- A researcher wants to test if the average sleep of students is less than 8 hours. Which is the correct $H_a$? -->
+
+<!-- - [ ] $H_a: \mu = 8$ -->
+<!-- - [ ] $H_a: \mu \neq 8$ -->
+<!-- - [x] $H_a: \mu < 8$ -->
+<!-- - [ ] $H_a: \mu > 8$ -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ## Quiz Time! {background-image="image-main.png"} -->
+
+<!-- ::: {.quiz} -->
+<!-- ::: {.quiz-question} -->
+<!-- A sample of $n = 25$ is taken and $\sigma$ is unknown. Which test should you use? -->
+
+<!-- - [ ] Z-test -->
+<!-- - [x] T-test -->
+<!-- - [ ] Proportion test -->
+<!-- - [ ] Either Z or T -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ## Quiz Time! {background-image="image-main.png"} -->
+
+<!-- ::: {.quiz} -->
+<!-- ::: {.quiz-question} -->
+<!-- A p-value of 0.03 is found, with $\alpha = 0.05$. What is the correct conclusion? -->
+
+<!-- - [ ] Fail to reject $H_0$; no evidence for $H_a$ -->
+<!-- - [x] Reject $H_0$; evidence supports $H_a$ -->
+<!-- - [ ] Accept $H_0$; it is proven true -->
+<!-- - [ ] The test is inconclusive -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ## Quiz Time! {background-image="image-main.png"} -->
+
+<!-- ::: {.quiz} -->
+<!-- ::: {.quiz-question} -->
+<!-- Rejecting $H_0$ when it is actually true is called a: -->
+
+<!-- - [ ] Type II Error -->
+<!-- - [ ] Correct decision -->
+<!-- - [x] Type I Error -->
+<!-- - [ ] Power error -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- ## Key Takeaways {background-image="image-main.png" transition="fade" transition-speed="fast"} -->
+
+<!-- ::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- ### Concepts -->
+
+<!-- - **Inference** lets us generalize from sample to population -->
+<!-- - **Sampling distributions** describe how statistics vary across samples -->
+<!-- - **Confidence intervals** give a range of plausible values for $\mu$ or $p$ -->
+<!-- - **Hypothesis testing** formally tests claims using sample data -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- ### Decision Framework -->
+
+<!-- - Small p-value ($\leq \alpha$): **Reject $H_0$** -->
+<!-- - Type I error = false positive ($\alpha$) -->
+<!-- - Type II error = false negative ($\beta$) -->
+<!-- - Choose Z or T based on what is **known** and sample size -->
+<!-- - Proportion test for **categorical** outcomes -->
+<!-- ::: -->
+<!-- ::: -->
+
+<!-- > *"In statistics, we do not prove -- we provide evidence."* -->
