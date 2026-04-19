@@ -1804,5 +1804,117 @@
     "title": "Statistics and Probability for 11th Graders - Part 5",
     "section": "Proportion Test – Conditions Checklist",
     "text": "Proportion Test – Conditions Checklist\nBefore running a proportion test, verify:\n\n\n\n\n\n\n\nCondition\nWhy?\n\n\n\n\nRandom sample\nAvoids bias\n\n\nIndependence: \\(n \\leq 10\\%\\) of population\nObservations are independent\n\n\nSuccess: \\(np_0 \\geq 10\\)\nNormal approximation is valid\n\n\nFailure: \\(n(1-p_0) \\geq 10\\)\nNormal approximation is valid\n\n\n\n\n\n\n\n\n\nTip\n\n\nIf conditions are not met, the z-approximation may be unreliable – results should be interpreted with caution."
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#spot-the-parabola",
+    "href": "slides/quadratic-equtions/index.html#spot-the-parabola",
+    "title": "Quadratic Equations",
+    "section": "Spot the Parabola!",
+    "text": "Spot the Parabola!\n\n\nBefore we start — where have you seen a curved, U-shaped arc in real life?\n\n\nLike the path of a basketball when you throw it?\n\n👍\n\nExactly! That arc is called a parabola — and today we are going to learn the equation behind it.\n\n\nSo quadratic equations describe that shape?\n\n\nYes. Bridges, fountains, roller coasters — they all follow the same equation: \\(ax^2 + bx + c = 0\\).\n\n😮\n\nI never thought math would show up on a basketball court.\n\n\nIt is everywhere once you know what to look for. Let us dive in."
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#what-is-a-quadratic-equation",
+    "href": "slides/quadratic-equtions/index.html#what-is-a-quadratic-equation",
+    "title": "Quadratic Equations",
+    "section": "What Is a Quadratic Equation?",
+    "text": "What Is a Quadratic Equation?\n\nA quadratic equation is any equation that can be written in the form:\n\\[ax^2 + bx + c = 0\\]\nwhere \\(a \\neq 0\\), and \\(a\\), \\(b\\), \\(c\\) are real numbers.\n\n\n\nQuadratic Examples\n\n\\(x^2 + 5x + 6 = 0\\)\n\\(2x^2 - 3x = 0\\)\n\\(x^2 - 9 = 0\\)\n\n\nNOT Quadratic\n\n\\(3x + 5 = 0\\) (linear — no \\(x^2\\))\n\\(x^3 + x^2 = 0\\) (cubic — degree 3)\n\\(\\frac{1}{x} + 2 = 0\\) (rational)"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#anatomy-of-a-quadratic",
+    "href": "slides/quadratic-equtions/index.html#anatomy-of-a-quadratic",
+    "title": "Quadratic Equations",
+    "section": "Anatomy of a Quadratic",
+    "text": "Anatomy of a Quadratic\n\\[\\underbrace{a}_{\\text{leads}}x^2 + \\underbrace{b}_{\\text{middle}}x + \\underbrace{c}_{\\text{constant}} = 0\\]\n\n\nIdentify the values in \\(3x^2 - 7x + 2 = 0\\):\n\n\n\nPart\nValue\n\n\n\n\n\\(a\\)\n\\(3\\)\n\n\n\\(b\\)\n\\(-7\\)\n\n\n\\(c\\)\n\\(2\\)\n\n\n\n\n\n\n\n\n\n\nKey Rule\n\n\nThe coefficient \\(a\\) must never equal zero. If \\(a = 0\\), the equation becomes linear, not quadratic."
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#method-1-factoring",
+    "href": "slides/quadratic-equtions/index.html#method-1-factoring",
+    "title": "Quadratic Equations",
+    "section": "Method 1: Factoring",
+    "text": "Method 1: Factoring\nGoal: Rewrite \\(ax^2 + bx + c\\) as a product of two binomials.\n\nExample: Solve \\(x^2 + 5x + 6 = 0\\)\nStep 1 — Find two numbers that multiply to \\(c = 6\\) and add to \\(b = 5\\):\n\\[\\text{Factors of 6: } (1,6),\\ (2,3) \\quad \\Rightarrow \\quad 2 + 3 = 5\\]\nStep 2 — Factor the equation:\n\\[(x + 2)(x + 3) = 0\\]\nStep 3 — Apply the Zero Product Property:\n\\[x + 2 = 0 \\quad \\Rightarrow \\quad x = -2\\] \\[x + 3 = 0 \\quad \\Rightarrow \\quad x = -3\\]\nSolutions: \\(x = -2\\) or \\(x = -3\\)"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#factoring-practice",
+    "href": "slides/quadratic-equtions/index.html#factoring-practice",
+    "title": "Quadratic Equations",
+    "section": "Factoring Practice",
+    "text": "Factoring Practice\nSolve by factoring:\n\\[x^2 - 7x + 12 = 0\\]\n\nHint: Find two numbers that multiply to \\(12\\) and add to \\(-7\\).\n\n\nAnswer: \\((-3) \\times (-4) = 12\\) and \\((-3) + (-4) = -7\\)\n\\[(x - 3)(x - 4) = 0\\]\n\\[\\boxed{x = 3 \\quad \\text{or} \\quad x = 4}\\]"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#method-2-quadratic-formula",
+    "href": "slides/quadratic-equtions/index.html#method-2-quadratic-formula",
+    "title": "Quadratic Equations",
+    "section": "Method 2: Quadratic Formula",
+    "text": "Method 2: Quadratic Formula\nWhen factoring is difficult, we use the Quadratic Formula:\n\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\n\nThis formula works for every quadratic equation.\n\n\n\n\n\n\nMemory Tip\n\n\n“Negative b, plus or minus square root, b squared minus 4ac, all over 2a!”"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#quadratic-formula-worked-example",
+    "href": "slides/quadratic-equtions/index.html#quadratic-formula-worked-example",
+    "title": "Quadratic Equations",
+    "section": "Quadratic Formula — Worked Example",
+    "text": "Quadratic Formula — Worked Example\nSolve \\(2x^2 - 4x - 6 = 0\\)\n\n\nIdentify: \\[a = 2, \\quad b = -4, \\quad c = -6\\]\nSubstitute: \\[x = \\frac{-(-4) \\pm \\sqrt{(-4)^2 - 4(2)(-6)}}{2(2)}\\]\n\\[x = \\frac{4 \\pm \\sqrt{16 + 48}}{4}\\]\n\\[x = \\frac{4 \\pm \\sqrt{64}}{4} = \\frac{4 \\pm 8}{4}\\]\n\nTwo Solutions:\n\\[x = \\frac{4 + 8}{4} = \\frac{12}{4} = 3\\]\n\\[x = \\frac{4 - 8}{4} = \\frac{-4}{4} = -1\\]\n\n\n\n\n\n\nTip\n\n\n\\[\\boxed{x = 3 \\quad \\text{or} \\quad x = -1}\\]"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#the-discriminant",
+    "href": "slides/quadratic-equtions/index.html#the-discriminant",
+    "title": "Quadratic Equations",
+    "section": "The Discriminant",
+    "text": "The Discriminant\nThe part under the radical, \\(b^2 - 4ac\\), is called the discriminant \\((\\Delta)\\).\n\n\n\n\\(\\Delta &gt; 0\\)\nTwo real solutions\nThe parabola crosses the x-axis twice.\n\n\n\n\\(\\Delta = 0\\)\nOne real solution\nThe parabola touches the x-axis exactly once.\n\n\n\n\\(\\Delta &lt; 0\\)\nNo real solutions\nThe parabola does not cross the x-axis."
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#the-parabola-graphing-a-quadratic",
+    "href": "slides/quadratic-equtions/index.html#the-parabola-graphing-a-quadratic",
+    "title": "Quadratic Equations",
+    "section": "The Parabola — Graphing a Quadratic",
+    "text": "The Parabola — Graphing a Quadratic\nThe graph of \\(y = ax^2 + bx + c\\) is always a parabola.\n\n\n\n\n\nFeature\nFormula\n\n\n\n\nVertex (turning point)\n\\(x = -\\dfrac{b}{2a}\\)\n\n\nAxis of Symmetry\n\\(x = -\\dfrac{b}{2a}\\)\n\n\nOpens Up\nwhen \\(a &gt; 0\\)\n\n\nOpens Down\nwhen \\(a &lt; 0\\)\n\n\ny-intercept\n\\((0, c)\\)\n\n\nx-intercepts (roots)\nsolutions of the equation\n\n\n\n\n\n\n\n\n\n\nWhiteboard Activity\n\n\nLet’s sketch \\(y = x^2 - 4x + 3\\) together.\n\nFind the vertex\nFind the axis of symmetry\nFind the x-intercepts\nSketch the parabola"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#method-3-completing-the-square",
+    "href": "slides/quadratic-equtions/index.html#method-3-completing-the-square",
+    "title": "Quadratic Equations",
+    "section": "Method 3: Completing the Square",
+    "text": "Method 3: Completing the Square\nTransform the equation into the form \\((x + h)^2 = k\\).\n\nExample: Solve \\(x^2 + 6x + 5 = 0\\)\nStep 1 — Move the constant to the right: \\[x^2 + 6x = -5\\]\nStep 2 — Add \\(\\left(\\dfrac{b}{2}\\right)^2 = \\left(\\dfrac{6}{2}\\right)^2 = 9\\) to both sides: \\[x^2 + 6x + 9 = -5 + 9 = 4\\]\nStep 3 — Write as a perfect square: \\[(x + 3)^2 = 4\\]\nStep 4 — Take square roots: \\[x + 3 = \\pm 2 \\quad \\Rightarrow \\quad \\boxed{x = -1 \\quad \\text{or} \\quad x = -5}\\]"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#which-method-to-use",
+    "href": "slides/quadratic-equtions/index.html#which-method-to-use",
+    "title": "Quadratic Equations",
+    "section": "Which Method to Use?",
+    "text": "Which Method to Use?\n\n\n\n\nSituation\nBest Method\n\n\n\n\nEasy to factor (small integers)\nFactoring\n\n\n\\(b = 0\\) (e.g. \\(x^2 - 16 = 0\\))\nSquare Root\n\n\nAny quadratic, guaranteed\nQuadratic Formula\n\n\nConverting to vertex form\nCompleting the Square\n\n\n\n\n\n\n\n\n\n\nPro Tip\n\n\nWhen in doubt, the Quadratic Formula always works. It is your safety net."
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#quick-quiz",
+    "href": "slides/quadratic-equtions/index.html#quick-quiz",
+    "title": "Quadratic Equations",
+    "section": "Quick Quiz",
+    "text": "Quick Quiz\n\nWhat are the solutions of \\(x^2 - x - 6 = 0\\)?\n\n\n\\(x = 2\\) or \\(x = -3\\)\n\n\n\\(x = -2\\) or \\(x = 3\\)\n\n\n\\(x = 3\\) or \\(x = -3\\)\n\n\n\\(x = 1\\) or \\(x = -6\\)\n\n\n\n\nAnswer: B — \\(x = -2\\) or \\(x = 3\\)\n\\((x - 3)(x + 2) = 0 \\Rightarrow x = 3\\) or \\(x = -2\\)"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#what-we-learned-today",
+    "href": "slides/quadratic-equtions/index.html#what-we-learned-today",
+    "title": "Quadratic Equations",
+    "section": "What We Learned Today",
+    "text": "What We Learned Today\n\n\nKey Takeaways\n\nA quadratic equation has the form \\(ax^2 + bx + c = 0\\)\nWe can solve by factoring, quadratic formula, or completing the square\nThe discriminant (\\(b^2 - 4ac\\)) tells us how many solutions exist\nThe graph of a quadratic is always a parabola\nParabolas appear everywhere in the real world\n\n\n\n\n\n\n\n\nThe Golden Formula\n\n\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\nMemorize this — it works every time."
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#take-home-practice",
+    "href": "slides/quadratic-equtions/index.html#take-home-practice",
+    "title": "Quadratic Equations",
+    "section": "Take-Home Practice",
+    "text": "Take-Home Practice\n\n\nProblem 1 (Factoring)\nSolve: \\(x^2 - 2x - 15 = 0\\)\n\n\nProblem 2 (Formula)\nSolve: \\(3x^2 + 5x - 2 = 0\\)\n\n\nProblem 3 (Discriminant)\nHow many solutions does \\(x^2 + x + 1 = 0\\) have? Why?\n\n\nProblem 4 (Real Life)\nA ball is thrown upward. Its height is \\(h = -5t^2 + 20t\\). When does it hit the ground?"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#closing",
+    "href": "slides/quadratic-equtions/index.html#closing",
+    "title": "Quadratic Equations",
+    "section": "Closing",
+    "text": "Closing\n\n“Every expert was once a beginner.”\nQuadratic equations might seem tricky at first — but with practice, you will solve them effortlessly.\nKeep asking questions. Keep practicing. See you next class.\n\n\n\nNext Lesson Preview\nQuadratic Functions & Graphs\n\nVertex form\nTransformations\nReal-world modeling\n\n\nResources\n\nKhan Academy: Quadratic Equations\nYour textbook: Chapter 9\nAsk your teacher anytime"
+  },
+  {
+    "objectID": "slides/quadratic-equtions/index.html#note-for-parents",
+    "href": "slides/quadratic-equtions/index.html#note-for-parents",
+    "title": "Quadratic Equations",
+    "section": "Note for Parents",
+    "text": "Note for Parents\n\nWhat your child learned today\nToday we explored Quadratic Equations — a foundational algebra topic. Your child learned to:\n\nRecognize the standard form \\(ax^2 + bx + c = 0\\)\nSolve using factoring and the quadratic formula\nUnderstand the discriminant and number of solutions\nConnect quadratics to real-world parabolas\n\nHow to support at home\nAsk your child to explain the quadratic formula to you — teaching is the best way to learn.\nThank you for your support."
   }
 ]

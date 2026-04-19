@@ -1,0 +1,353 @@
+---
+title: "Quadratic Equations"
+categories: [algebra, math]
+image: 'image-thumb.png'
+format:
+    revealjs:
+        transition: slide
+        transition-speed: default
+        background-transition: fade
+        
+        title-slide-attributes:
+            data-background-image: "image-main.png"
+            data-background-size: cover
+            data-background-position: center
+            data-background-opacity: "1"
+        
+        width: 1600
+        height: 900
+        margin: 0.1
+        min-scale: 0.2
+        max-scale: 2.0
+        
+        highlight-style: github-dark
+        css: 
+          - ./custom_style.css
+          - ./button.css
+        
+        chalkboard: 
+            buttons: false
+            
+        quiz:
+            resetKey: 'q'
+
+filters:
+  - shinylive
+
+revealjs-plugins:
+  - quiz
+  - chat-bubbles
+---
+
+## Spot the Parabola! {background-image="image-main.png" auto-animate="true"}
+
+::: {.chat}
+::: {.bubble-right}
+Before we start — where have you seen a curved, U-shaped arc in real life?
+:::
+
+::: {.fragment .bubble-left}
+Like the path of a basketball when you throw it?
+:::
+
+[👍]{.fragment .reaction}
+
+::: {.fragment .bubble-right}
+Exactly! That arc is called a **parabola** — and today we are going to learn the equation behind it.
+:::
+
+::: {.fragment .bubble-left}
+So quadratic equations describe that shape?
+:::
+
+::: {.fragment .bubble-right}
+Yes. Bridges, fountains, roller coasters — they all follow the same equation: $ax^2 + bx + c = 0$.
+:::
+
+[😮]{.fragment .reaction}
+
+::: {.fragment .bubble-left}
+I never thought math would show up on a basketball court.
+:::
+
+::: {.fragment .bubble-right}
+It is everywhere once you know what to look for. Let us dive in.
+:::
+:::
+
+## What Is a Quadratic Equation? {background-image="image-main.png" auto-animate="true"}
+
+::: {.definition-box}
+A **quadratic equation** is any equation that can be written in the form:
+
+$$ax^2 + bx + c = 0$$
+
+where $a \neq 0$, and $a$, $b$, $c$ are real numbers.
+:::
+
+::: columns
+::: {.column width="50%"}
+### Quadratic Examples
+- $x^2 + 5x + 6 = 0$
+- $2x^2 - 3x = 0$
+- $x^2 - 9 = 0$
+:::
+
+::: {.column width="50%"}
+### NOT Quadratic
+- $3x + 5 = 0$ *(linear — no $x^2$)*
+- $x^3 + x^2 = 0$ *(cubic — degree 3)*
+- $\frac{1}{x} + 2 = 0$ *(rational)*
+:::
+:::
+
+## Anatomy of a Quadratic {background-image="image-main.png" auto-animate="true"}
+
+$$\underbrace{a}_{\text{leads}}x^2 + \underbrace{b}_{\text{middle}}x + \underbrace{c}_{\text{constant}} = 0$$
+
+::: columns
+::: {.column width="50%"}
+**Identify the values** in $3x^2 - 7x + 2 = 0$:
+
+| Part | Value |
+|------|-------|
+| $a$  | $3$   |
+| $b$  | $-7$  |
+| $c$  | $2$   |
+:::
+
+::: {.column width="50%"}
+::: {.callout-important}
+## Key Rule
+The coefficient **$a$ must never equal zero**. If $a = 0$, the equation becomes linear, not quadratic.
+:::
+:::
+:::
+
+## Method 1: Factoring {background-image="image-main.png" auto-animate="true"}
+
+**Goal:** Rewrite $ax^2 + bx + c$ as a product of two binomials.
+
+::: {.step-box}
+### Example: Solve $x^2 + 5x + 6 = 0$
+
+**Step 1** — Find two numbers that **multiply** to $c = 6$ and **add** to $b = 5$:
+
+$$\text{Factors of 6: } (1,6),\ (2,3) \quad \Rightarrow \quad 2 + 3 = 5$$
+
+**Step 2** — Factor the equation:
+
+$$(x + 2)(x + 3) = 0$$
+
+**Step 3** — Apply the Zero Product Property:
+
+$$x + 2 = 0 \quad \Rightarrow \quad x = -2$$
+$$x + 3 = 0 \quad \Rightarrow \quad x = -3$$
+
+**Solutions:** $x = -2$ or $x = -3$
+:::
+
+## Factoring Practice {background-image="image-main.png" auto-animate="true"}
+
+Solve by factoring:
+
+$$x^2 - 7x + 12 = 0$$
+
+::: {.fragment}
+**Hint:** Find two numbers that multiply to $12$ and add to $-7$.
+:::
+
+::: {.fragment}
+**Answer:** $(-3) \times (-4) = 12$ and $(-3) + (-4) = -7$
+
+$$(x - 3)(x - 4) = 0$$
+
+$$\boxed{x = 3 \quad \text{or} \quad x = 4}$$
+:::
+
+## Method 2: Quadratic Formula {background-image="image-main.png" auto-animate="true"}
+
+When factoring is difficult, we use the **Quadratic Formula**:
+
+::: {.formula-highlight}
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+:::
+
+This formula works for **every** quadratic equation.
+
+::: {.callout-note}
+## Memory Tip
+*"Negative b, plus or minus square root, b squared minus 4ac, all over 2a!"*
+:::
+
+## Quadratic Formula — Worked Example {background-image="image-main.png" auto-animate="true"}
+
+Solve $2x^2 - 4x - 6 = 0$
+
+::: columns
+::: {.column width="50%"}
+**Identify:**
+$$a = 2, \quad b = -4, \quad c = -6$$
+
+**Substitute:**
+$$x = \frac{-(-4) \pm \sqrt{(-4)^2 - 4(2)(-6)}}{2(2)}$$
+
+$$x = \frac{4 \pm \sqrt{16 + 48}}{4}$$
+
+$$x = \frac{4 \pm \sqrt{64}}{4} = \frac{4 \pm 8}{4}$$
+:::
+
+::: {.column width="50%"}
+**Two Solutions:**
+
+$$x = \frac{4 + 8}{4} = \frac{12}{4} = 3$$
+
+$$x = \frac{4 - 8}{4} = \frac{-4}{4} = -1$$
+
+::: {.callout-tip}
+$$\boxed{x = 3 \quad \text{or} \quad x = -1}$$
+:::
+:::
+:::
+
+## The Discriminant {background-image="image-main.png" auto-animate="true"}
+
+The part under the radical, $b^2 - 4ac$, is called the **discriminant** $(\Delta)$.
+
+::: columns
+::: {.column width="33%"}
+::: {.disc-box .two-solutions}
+### $\Delta > 0$
+**Two real solutions**
+
+The parabola crosses the x-axis **twice**.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.disc-box .one-solution}
+### $\Delta = 0$
+**One real solution**
+
+The parabola **touches** the x-axis exactly once.
+:::
+:::
+
+::: {.column width="33%"}
+::: {.disc-box .no-solutions}
+### $\Delta < 0$
+**No real solutions**
+
+The parabola does **not** cross the x-axis.
+:::
+:::
+:::
+
+## The Parabola — Graphing a Quadratic {background-image="image-main.png" auto-animate="true"}
+
+The graph of $y = ax^2 + bx + c$ is always a **parabola**.
+
+::: columns
+::: {.column width="55%"}
+
+| Feature | Formula |
+|---------|---------|
+| **Vertex** (turning point) | $x = -\dfrac{b}{2a}$ |
+| **Axis of Symmetry** | $x = -\dfrac{b}{2a}$ |
+| **Opens Up** | when $a > 0$ |
+| **Opens Down** | when $a < 0$ |
+| **y-intercept** | $(0, c)$ |
+| **x-intercepts** (roots) | solutions of the equation |
+:::
+
+::: {.column width="45%"}
+::: {.callout-note}
+## Whiteboard Activity
+Let's sketch $y = x^2 - 4x + 3$ together.
+
+- Find the vertex
+- Find the axis of symmetry
+- Find the x-intercepts
+- Sketch the parabola
+:::
+:::
+:::
+
+## Method 3: Completing the Square {background-image="image-main.png" auto-animate="true"}
+
+Transform the equation into the form $(x + h)^2 = k$.
+
+::: {.step-box}
+### Example: Solve $x^2 + 6x + 5 = 0$
+
+**Step 1** — Move the constant to the right:
+$$x^2 + 6x = -5$$
+
+**Step 2** — Add $\left(\dfrac{b}{2}\right)^2 = \left(\dfrac{6}{2}\right)^2 = 9$ to both sides:
+$$x^2 + 6x + 9 = -5 + 9 = 4$$
+
+**Step 3** — Write as a perfect square:
+$$(x + 3)^2 = 4$$
+
+**Step 4** — Take square roots:
+$$x + 3 = \pm 2 \quad \Rightarrow \quad \boxed{x = -1 \quad \text{or} \quad x = -5}$$
+:::
+
+## Which Method to Use? {background-image="image-main.png" auto-animate="true"}
+
+::: {.method-table}
+| Situation | Best Method |
+|-----------|-------------|
+| Easy to factor (small integers) | **Factoring** |
+| $b = 0$ (e.g. $x^2 - 16 = 0$) | **Square Root** |
+| Any quadratic, guaranteed | **Quadratic Formula** |
+| Converting to vertex form | **Completing the Square** |
+:::
+
+::: {.callout-tip}
+## Pro Tip
+When in doubt, **the Quadratic Formula always works.** It is your safety net.
+:::
+
+## Quick Quiz {background-image="image-main.png" auto-animate="true"}
+
+::: {.quiz-question}
+What are the solutions of $x^2 - x - 6 = 0$?
+
+- A) $x = 2$ or $x = -3$
+- B) $x = -2$ or $x = 3$
+- C) $x = 3$ or $x = -3$
+- D) $x = 1$ or $x = -6$
+:::
+
+::: {.fragment}
+**Answer: B** — $x = -2$ or $x = 3$
+
+$(x - 3)(x + 2) = 0 \Rightarrow x = 3$ or $x = -2$
+:::
+
+## What We Learned Today {background-image="image-main.png" auto-animate="true"}
+
+::: columns
+::: {.column width="60%"}
+### Key Takeaways
+
+- A quadratic equation has the form $ax^2 + bx + c = 0$
+- We can solve by **factoring**, **quadratic formula**, or **completing the square**
+- The **discriminant** ($b^2 - 4ac$) tells us how many solutions exist
+- The graph of a quadratic is always a **parabola**
+- Parabolas appear everywhere in the real world
+:::
+
+::: {.column width="40%"}
+::: {.callout-important}
+## The Golden Formula
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+*Memorize this — it works every time.*
+:::
+:::
+:::
+
+
+
