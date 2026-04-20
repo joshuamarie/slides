@@ -1,19 +1,20 @@
-/* Import fonts */
+/* ── Fonts ─────────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=CMU+Serif:wght@400;700&display=swap');
 
-/* Root variables for color scheme - Light Mode */
+/* ── Variables ──────────────────────────────────────────── */
 :root {
-    --bg-light: #f5f5f5;
-    --text-dark: #2a2a2a;
-    --color-blue: #0088aa;
-    --color-yellow: #cc8800;
-    --color-dark-blue: #1A2A4F;
-    --color-red: #d42f1f;
-    --color-purple: #8855aa;
+    --bg-light:       #f5f5f5;
+    --text-dark:      #2a2a2a;
+    --color-blue:     #0088aa;
+    --color-yellow:   #cc8800;
+    --color-dark-blue:#1A2A4F;
+    --color-red:      #d42f1f;
+    --color-green:    #2e9e5b;
+    --color-purple:   #8855aa;
 }
 
-/* ── Main reveal.js styling ── */
+/* ── Base ───────────────────────────────────────────────── */
 .reveal {
     font-family: 'CMU Serif', 'Times New Roman', serif;
     font-size: 32px;
@@ -23,21 +24,50 @@
 
 .reveal .slides {
     background: transparent;
+    padding: 0 !important;
 }
 
-/* ── Slide backgrounds ── */
+/* ── Slide background (dice watermark) ──────────────────── */
 .reveal .slide-background {
     background-color: var(--bg-light);
 }
 
-/* image-main.png applied per-slide via attribute; keep the dice watermark subtle */
 .reveal .slide-background-content {
     background-size: cover;
     background-position: center;
     opacity: 0.18;
 }
 
-/* ── Headers ── */
+/* ── Slide layout ───────────────────────────────────────── */
+.reveal .slides > section,
+.reveal .slides > section > section {
+    padding: 1.8em 2.8em !important;
+    min-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    text-align: left;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+.reveal .slides section::-webkit-scrollbar {
+    width: 6px;
+}
+
+.reveal .slides section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.reveal .slides section::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 136, 170, 0.3);
+    border-radius: 10px;
+}
+
+.reveal .slides section::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-blue);
+}
+
+/* ── Typography ─────────────────────────────────────────── */
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -49,9 +79,7 @@
     text-shadow: none;
 }
 
-.reveal h1 {
-    font-size: 2.5em;
-}
+.reveal h1 { font-size: 2.5em; }
 
 .reveal h2 {
     font-size: 2em;
@@ -65,37 +93,18 @@
     color: var(--color-dark-blue);
 }
 
-/* ── Text ── */
-.reveal strong {
-    color: var(--color-yellow);
-    font-weight: 700;
-}
+.reveal strong { color: var(--color-yellow); font-weight: 700; }
+.reveal em     { color: var(--color-dark-blue); }
 
-.reveal em {
-    color: var(--color-dark-blue);
-}
+.reveal a            { color: var(--color-blue); text-decoration: none; }
+.reveal a:hover      { color: var(--color-purple); text-decoration: underline; }
 
-.reveal a {
-    color: var(--color-blue);
-    text-decoration: none;
-}
-
-.reveal a:hover {
-    color: var(--color-purple);
-    text-decoration: underline;
-}
-
-/* ── Lists ── */
+/* ── Lists ──────────────────────────────────────────────── */
 .reveal ul,
-.reveal ol {
-    margin-left: 1em;
-}
+.reveal ol  { margin-left: 1em; }
+.reveal li  { margin-bottom: 0.5em; }
 
-.reveal li {
-    margin-bottom: 0.5em;
-}
-
-/* ── Code ── */
+/* ── Code ───────────────────────────────────────────────── */
 .reveal code {
     font-family: 'JetBrains Mono', monospace;
     background-color: rgba(0, 136, 170, 0.08);
@@ -118,13 +127,14 @@
     color: var(--text-dark);
 }
 
-/* ── Tables ── */
+/* ── Tables ─────────────────────────────────────────────── */
 .reveal table {
     border-collapse: collapse;
     margin: 1em auto;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.88em;
     background-color: rgba(255, 255, 255, 0.75);
+    width: 100%;
 }
 
 .reveal table th {
@@ -145,14 +155,14 @@
     background-color: rgba(0, 136, 170, 0.05);
 }
 
-/* ── Math ── */
+/* ── Math ───────────────────────────────────────────────── */
 .reveal .MathJax,
 .reveal .katex {
     color: var(--color-dark-blue);
     text-shadow: none;
 }
 
-/* ── Columns ── */
+/* ── Columns ────────────────────────────────────────────── */
 .reveal .columns {
     display: flex;
     gap: 2em;
@@ -163,32 +173,12 @@
 .reveal .column {
     flex: 1;
     padding: 1.2em 1.5em;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.55);
     border-radius: 10px;
-    border: 1px solid rgba(0, 136, 170, 0.2);
+    border: 1px solid rgba(0, 136, 170, 0.15);
 }
 
-/* ── Slide number ── */
-.reveal .slide-number {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--color-blue);
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 0.4em 0.6em;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 136, 170, 0.25);
-}
-
-/* ── Progress bar ── */
-.reveal .progress {
-    background: rgba(0, 136, 170, 0.15);
-}
-
-.reveal .progress span {
-    background: var(--color-blue);
-    box-shadow: none;
-}
-
-/* ── Blockquotes ── */
+/* ── Blockquotes ────────────────────────────────────────── */
 .reveal blockquote {
     background-color: rgba(0, 136, 170, 0.07);
     border-left: 5px solid var(--color-blue);
@@ -198,33 +188,22 @@
     color: var(--text-dark);
 }
 
-/* ── Slide layout ── */
-.reveal .slides {
-    padding: 0 !important;
+/* ── Slide number ───────────────────────────────────────── */
+.reveal .slide-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75em;
+    color: var(--color-blue);
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 0.4em 0.6em;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 136, 170, 0.25);
 }
 
-.reveal .slides > section,
-.reveal .slides > section > section {
-    padding: 3em 4em !important;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/* ── Progress bar ───────────────────────────────────────── */
+.reveal .progress { background: rgba(0, 136, 170, 0.15); }
+.reveal .progress span { background: var(--color-blue); box-shadow: none; }
 
-.reveal .slides section {
-    text-align: left;
-    width: 100%;
-    height: 100%;
-}
-
-.reveal .slides section.center {
-    text-align: center;
-}
-
-/* ── Title slide ── */
+/* ── Title slide ────────────────────────────────────────── */
 .reveal .slides > section.title-slide,
 .reveal section.title-slide {
     text-align: center !important;
@@ -235,9 +214,6 @@
     height: 100vh !important;
     width: 100vw !important;
     padding: 0 !important;
-    margin: 0 !important;
-    top: 0 !important;
-    left: 0 !important;
     background-color: var(--bg-light) !important;
 }
 
@@ -257,27 +233,24 @@
     opacity: 0.8;
 }
 
-.reveal .title-slide > * {
-    max-width: 90%;
-}
-
-/* ── Callouts — light-mode aware ── */
+/* ── Callouts ───────────────────────────────────────────── */
 .reveal .callout {
     border-radius: 8px;
     font-size: 0.88em;
     background-color: rgba(255, 255, 255, 0.75);
     border-left-width: 5px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
-}
-
-.reveal .callout-tip {
-    border-left-color: #2e9e5b;
-    background-color: rgba(46, 158, 91, 0.07);
+    margin: 0.6em 0;
 }
 
 .reveal .callout-note {
     border-left-color: var(--color-blue);
     background-color: rgba(0, 136, 170, 0.07);
+}
+
+.reveal .callout-tip {
+    border-left-color: var(--color-green);
+    background-color: rgba(46, 158, 91, 0.07);
 }
 
 .reveal .callout-important {
@@ -291,20 +264,59 @@
     color: var(--text-dark);
 }
 
-/* ── Fragments ── */
-.reveal .fragment.highlight-current-blue.current-fragment {
-    color: var(--color-blue);
-    font-weight: bold;
+/* ── Navigation controls (tablet) ──────────────────────── */
+.reveal .controls {
+    bottom: 1.5em !important;
+    right: 1.5em !important;
 }
 
-/* ── Quiz button ── */
+.reveal .controls button {
+    color: var(--color-blue) !important;
+    opacity: 0.7;
+    width: 48px !important;
+    height: 48px !important;
+    transition: opacity 0.2s ease;
+}
+
+.reveal .controls button:hover,
+.reveal .controls button:focus {
+    opacity: 1;
+    color: var(--color-dark-blue) !important;
+}
+
+/* ── Chalkboard buttons (tablet) ────────────────────────── */
+.reveal .chalkboard-button,
+.plugin-chalkboard .chalkboard-button {
+    opacity: 1 !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 8px !important;
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(0, 136, 170, 0.3) !important;
+    margin: 4px !important;
+}
+
+/* ── Cursor (always visible on tablet) ──────────────────── */
+.reveal,
+.reveal * { cursor: default !important; }
+
+.reveal a,
+.reveal button,
+.reveal [role="button"],
+.option-button { cursor: pointer !important; }
+
+/* ── Quiz option buttons ────────────────────────────────── */
 .option-button {
     background-color: #d6f0f7 !important;
     color: #1B211A !important;
     border: 1px solid var(--color-blue) !important;
+    padding: 0.6em 1.2em !important;
+    font-size: 0.9em !important;
+    border-radius: 6px !important;
+    min-height: 48px !important;
 }
 
-/* ── Definition box ── */
+/* ── Definition box ─────────────────────────────────────── */
 .definition-box {
     background-color: rgba(0, 136, 170, 0.07);
     border-left: 5px solid var(--color-blue);
@@ -315,7 +327,7 @@
     color: var(--text-dark);
 }
 
-/* ── Formula highlight ── */
+/* ── Formula highlight ──────────────────────────────────── */
 .formula-highlight {
     background-color: rgba(0, 136, 170, 0.06);
     border: 2px solid var(--color-blue);
@@ -327,22 +339,7 @@
     box-shadow: 0 2px 12px rgba(0, 136, 170, 0.12);
 }
 
-/* ── Step box ── */
-.step-box {
-    background-color: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(0, 136, 170, 0.2);
-    border-radius: 8px;
-    padding: 1em 1.5em;
-    margin: 0.5em 0;
-    font-size: 0.9em;
-}
-
-.step-box h3 {
-    color: var(--color-blue) !important;
-    margin-bottom: 0.4em;
-}
-
-/* ── Discriminant boxes ── */
+/* ── Discriminant boxes ─────────────────────────────────── */
 .disc-box {
     border-radius: 8px;
     padding: 1.2em 1em;
@@ -352,7 +349,7 @@
 }
 
 .disc-box.two-solutions {
-    border: 2px solid #2e9e5b;
+    border: 2px solid var(--color-green);
     background-color: rgba(46, 158, 91, 0.07);
 }
 
@@ -366,66 +363,83 @@
     background-color: rgba(212, 47, 31, 0.07);
 }
 
-.disc-box h3 { font-size: 1.5em; margin-bottom: 0.3em; }
-.two-solutions h3 { color: #2e9e5b !important; }
-.one-solution h3  { color: var(--color-blue) !important; }
-.no-solutions h3  { color: var(--color-red) !important; }
+.disc-box h3              { font-size: 1.5em; margin-bottom: 0.3em; }
+.two-solutions h3         { color: var(--color-green) !important; }
+.one-solution h3          { color: var(--color-blue) !important; }
+.no-solutions h3          { color: var(--color-red) !important; }
 
-/* ── Homework grid ── */
-.homework-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
-    margin-top: 0.8em;
-}
-
-.hw-card {
-    background-color: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(0, 136, 170, 0.25);
-    border-radius: 8px;
-    padding: 1em;
-    font-size: 0.9em;
-    color: var(--text-dark);
-}
-
-.hw-card strong {
-    display: block;
-    color: var(--color-blue);
-    margin-bottom: 0.4em;
-}
-
-/* ── Closing box ── */
-.closing-box {
-    background-color: rgba(0, 136, 170, 0.06);
-    border-left: 5px solid var(--color-yellow);
-    border-radius: 0 8px 8px 0;
-    padding: 1.2em 2em;
+/* ── Coefficient cards (Anatomy slide) ──────────────────── */
+.coeff-card {
+    border-radius: 10px;
+    padding: 1.2em 1em;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 1.05em;
-    color: var(--text-dark);
-    margin: 0.8em 0;
+    margin: 0.3em;
+    border-top: 4px solid transparent;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
-/* ── Parent note ── */
-.parent-note {
-    background-color: rgba(204, 136, 0, 0.06);
-    border: 1px solid rgba(204, 136, 0, 0.3);
-    border-radius: 8px;
-    padding: 1.2em 1.5em;
-    font-size: 0.9em;
-    color: var(--text-dark);
+.coeff-a {
+    border-top-color: var(--color-red);
+    background-color: rgba(212, 47, 31, 0.06);
 }
 
-.parent-note h3 {
-    color: var(--color-yellow) !important;
-    margin-bottom: 0.4em;
+.coeff-b {
+    border-top-color: var(--color-blue);
+    background-color: rgba(0, 136, 170, 0.06);
 }
 
-/* ── Chat bubbles — light mode override ── */
-.reveal .chat {
-    background: transparent;
+.coeff-c {
+    border-top-color: var(--color-green);
+    background-color: rgba(46, 158, 91, 0.06);
 }
 
-/* ── Highlight utility ── */
+/* ── Oral recitation ────────────────────────────────────── */
+.recitation-eq {
+    text-align: center;
+    font-size: 2em;
+    padding: 0.8em 1em;
+    margin: 1.5em auto 0.5em auto;
+    max-width: 55%;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.72);
+    border: 1.5px solid rgba(0, 136, 170, 0.2);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
+}
+
+.recitation-verdict {
+    text-align: center;
+    font-size: 1em;
+    padding: 0.5em 2em;
+    margin: 0 auto;
+    max-width: 55%;
+    border-radius: 0 0 10px 10px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.verdict-yes {
+    background-color: rgba(46, 158, 91, 0.1);
+    border-top: 3px solid var(--color-green);
+    color: var(--color-green);
+}
+
+.verdict-no {
+    background-color: rgba(212, 47, 31, 0.07);
+    border-top: 3px solid var(--color-red);
+    color: var(--color-red);
+}
+
+/* ── Method table ───────────────────────────────────────── */
+.method-table table { width: 100%; }
+
+/* ── Fragment highlight ─────────────────────────────────── */
+.reveal .fragment.highlight-current-blue.current-fragment {
+    color: var(--color-blue);
+    font-weight: bold;
+}
+
+/* ── Highlight utility ──────────────────────────────────── */
 .reveal .highlight {
     color: var(--color-yellow);
     background-color: rgba(204, 136, 0, 0.12);

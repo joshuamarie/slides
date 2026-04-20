@@ -7,7 +7,17 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7ac2f9da8c2617a4fdd15004b4601015.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/quarto-contrib/roughnotation-0.5.1/rough-notation.iife.js"></script>
+<script src="../../site_libs/quarto-contrib/roughnotation-init-1.0.0/rough.js"></script>
+<link href="../../site_libs/quarto-contrib/roughnotation-init-1.0.0/rough.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/roughnotation-flourish-bridge-1.0.0/flourish-bridge.js"></script>
+<script src="../../site_libs/quarto-contrib/more-fragments-0.1.0/more-fragments.js"></script>
+<link href="../../site_libs/quarto-contrib/more-fragments-0.1.0/animate.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/more-fragments-0.1.0/magic.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/more-fragments-0.1.0/more-fragments.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
+<link href="../../site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Joshua Marie">
@@ -32,13 +42,13 @@
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-e819637885281928af38d8b96f95b3b0.css">
   <link rel="stylesheet" href="./custom_style.css">
-  <link rel="stylesheet" href="./button.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/appearance/appearance.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-chat-bubbles/chat-bubbles.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
@@ -52,6 +62,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -128,6 +139,24 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+  <script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+  <script src="../../site_libs/d3-bundle-5.16.0/d3-bundle.min.js"></script>
+
+  <script src="../../site_libs/d3-lasso-0.0.5/d3-lasso.min.js"></script>
+
+  <script src="../../site_libs/save-svg-as-png-1.4.17/save-svg-as-png.min.js"></script>
+
+  <script src="../../site_libs/flatbush-4.4.0/flatbush.min.js"></script>
+
+  <link href="../../site_libs/ggiraphjs-0.8.10/ggiraphjs.min.css" rel="stylesheet">
+
+  <script src="../../site_libs/ggiraphjs-0.8.10/ggiraphjs.min.js"></script>
+
+  <script src="../../site_libs/girafe-binding-0.9.1/girafe.js"></script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -145,136 +174,310 @@ Joshua Marie
 </div>
 
 </section>
-<section id="spot-the-parabola" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Spot the Parabola!</h2>
-<div class="chat">
-<div class="bubble-right">
-<p>Before we start — where have you seen a curved, U-shaped arc in real life?</p>
-</div>
-<div class="fragment bubble-left">
-<p>Like the path of a basketball when you throw it?</p>
-</div>
-<p><span class="fragment reaction">👍</span></p>
-<div class="fragment bubble-right">
-<p>Exactly! That arc is called a <strong>parabola</strong> — and today we are going to learn the equation behind it.</p>
-</div>
-<div class="fragment bubble-left">
-<p>So quadratic equations describe that shape?</p>
-</div>
-<div class="fragment bubble-right">
-<p>Yes. Bridges, fountains, roller coasters — they all follow the same equation: <span class="math inline">\(ax^2 + bx + c = 0\)</span>.</p>
-</div>
-<p><span class="fragment reaction">😮</span></p>
-<div class="fragment bubble-left">
-<p>I never thought math would show up on a basketball court.</p>
-</div>
-<div class="fragment bubble-right">
-<p>It is everywhere once you know what to look for. Let us dive in.</p>
-</div>
-</div>
+<section>
+<section id="introduction-and-icebreaker" class="title-slide slide level1 center" data-background-image="image-main.png">
+<h1>Introduction and Icebreaker</h1>
+
 </section>
-<section id="what-is-a-quadratic-equation" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">What Is a Quadratic Equation?</h2>
-<div class="definition-box">
-<p>A <strong>quadratic equation</strong> is any equation that can be written in the form:</p>
-<p><span class="math display">\[ax^2 + bx + c = 0\]</span></p>
-<p>where <span class="math inline">\(a \neq 0\)</span>, and <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> are real numbers.</p>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="quadratic-examples">Quadratic Examples</h3>
-<ul>
-<li><span class="math inline">\(x^2 + 5x + 6 = 0\)</span></li>
-<li><span class="math inline">\(2x^2 - 3x = 0\)</span></li>
-<li><span class="math inline">\(x^2 - 9 = 0\)</span></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="not-quadratic">NOT Quadratic</h3>
-<ul>
-<li><span class="math inline">\(3x + 5 = 0\)</span> <em>(linear — no <span class="math inline">\(x^2\)</span>)</em></li>
-<li><span class="math inline">\(x^3 + x^2 = 0\)</span> <em>(cubic — degree 3)</em></li>
-<li><span class="math inline">\(\frac{1}{x} + 2 = 0\)</span> <em>(rational)</em></li>
-</ul>
-</div></div>
-</section>
-<section id="anatomy-of-a-quadratic" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Anatomy of a Quadratic</h2>
-<p><span class="math display">\[\underbrace{a}_{\text{leads}}x^2 + \underbrace{b}_{\text{middle}}x + \underbrace{c}_{\text{constant}} = 0\]</span></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Identify the values</strong> in <span class="math inline">\(3x^2 - 7x + 2 = 0\)</span>:</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Part</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(a\)</span></td>
-<td><span class="math inline">\(3\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(b\)</span></td>
-<td><span class="math inline">\(-7\)</span></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(c\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
-</tr>
-</tbody>
-</table>
-</div><div class="column" style="width:50%;">
-<div class="callout callout-important callout-titled callout-style-default">
+<section id="where-have-you-seen-this-shape" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Where Have You Seen This Shape?</h2>
+<div class="animate__fadeInDown">
+<div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Key Rule</strong></p>
+<p><strong>Think about it</strong></p>
 </div>
 <div class="callout-content">
-<p>The coefficient <strong><span class="math inline">\(a\)</span> must never equal zero</strong>. If <span class="math inline">\(a = 0\)</span>, the equation becomes linear, not quadratic.</p>
+<p>Where have you seen a curved, U-shaped arc in real life?</p>
+<p>Write down <strong>one example</strong> — anything around you, in sports, nature, or buildings.</p>
 </div>
 </div>
 </div>
-</div></div>
+</div>
+<countdown-timer id="timer_cb00108766cd59e2dcce086c0976825efc1e52a1" minutes="01" seconds="00" class="countdown" warn-when="15" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="top: 0;right: 0;--countdown-font-size: 2.5rem;">
+ </countdown-timer>
 </section>
-<section id="method-1-factoring" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Method 1: Factoring</h2>
+<section id="which-of-these-traces-a-parabolic-arc" class="slide level2 quiz-question scrollable" data-background-image="image-main.png">
+<h2>Which of these traces a parabolic arc?</h2>
+<ul>
+<li><span class="correct" data-explanation="Yes! Every projectile under gravity follows a parabolic arc — described by a quadratic equation.">A thrown basketball</span></li>
+<li><span data-explanation="A flat road is linear — it follows a straight line, not a curve.">A car driving on a flat road</span></li>
+<li><span data-explanation="Clock hands move in a circle, not a parabola.">The hands of a clock moving</span></li>
+<li><span data-explanation="Straight-pipe flow is linear. But a water jet arching through the air? That would be parabolic!">Water flowing through a straight pipe</span></li>
+</ul>
+</section></section>
+<section>
+<section id="main-idea" class="title-slide slide level1 scrollable center" data-background-image="image-main.png">
+<h1>Main Idea</h1>
+
+</section>
+<section id="what-is-a-quadratic-equation" class="slide level2 scrollable" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">What Is a Quadratic Equation?</h2>
+<div class="definition-box animate__fadeInDown">
+<p>A <strong>quadratic equation</strong> is any equation that can be written in the form:</p>
+<p><span class="math display">\[ax^2 + bx + c = 0\]</span></p>
+<p>where <span class="math inline">\(a \neq 0\)</span>, and <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> are real numbers.</p>
+</div>
+</section>
+<section id="anatomy-of-a-quadratic" class="slide level2 scrollable" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Anatomy of a Quadratic</h2>
+<p><span class="math display">\[ax^2 + bx + c = 0\]</span></p>
+<p>The equation has three parts:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(a\)</span>: the <strong>leading coefficient</strong>, attached to <span class="math inline">\(x^2\)</span></li>
+<li class="fragment"><span class="math inline">\(b\)</span>: the <strong>middle coefficient</strong>, attached to <span class="math inline">\(x\)</span></li>
+<li class="fragment"><span class="math inline">\(c\)</span>: the <strong>constant term</strong></li>
+</ul>
+</section>
+<section id="is-it-quadratic-conversation" class="slide level2 scrollable" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">“Is it Quadratic?” Conversation</h2>
+<p>This is my conversation with my previous student by challenging me:</p>
+</section>
+<section id="is-it-quadratic-conversation-1" class="slide level2 scrollable" data-background-image="image-main.png" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">“Is it Quadratic?” Conversation</h2>
+<p>This is my conversation with my previous student by challenging me:</p>
+<div class="chat">
+<div class="bubble-left">
+<p>Is <span class="math inline">\(x^2 + 5x + 6 = 0\)</span> a quadratic equation?</p>
+</div>
+<div class="fragment bubble-right">
+<p>Yes, it is! We have <span class="math inline">\(a = 1,\ b = 5,\ c = 6\)</span>. It fits <span class="math inline">\(ax^2 + bx + c = 0\)</span> perfectly.</p>
+</div>
+<div class="fragment bubble-left">
+<p>What about <span class="math inline">\(3x + 5 = 0\)</span>?</p>
+</div>
+<div class="fragment bubble-right">
+<p>No, there’s no <span class="math inline">\(x^2\)</span> term. In fact, the highest power is 1, not 2, so it belongs to <span class="rn" data-rn-type="underline" data-rn-color="#d42f1f">linear</span> equation.</p>
+</div>
+<div class="fragment bubble-left">
+<p>How about <span class="math inline">\(2x^2 - 3x = 0\)</span>?</p>
+</div>
+<div class="fragment bubble-right">
+<p>Also, yes. <span class="math inline">\(a = 2,\ b = -3,\ c = 0\)</span>.</p>
+</div>
+<div class="fragment bubble-left">
+<p>But how though?</p>
+</div>
+<div class="fragment bubble-right">
+<p>The constant term can BE zero. The rule said <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> can be ANY real number.</p>
+</div>
+<div class="fragment bubble-left">
+<p>What about <span class="math inline">\(x^3 + x^2 = 0\)</span>?</p>
+</div>
+<div class="fragment bubble-right">
+<p>No, the highest power is 3.</p>
+</div>
+<div class="fragment bubble-right">
+<p>That will make it <span class="rn" data-rn-type="underline" data-rn-color="#d42f1f">cubic</span>, not quadratic.</p>
+</div>
+<div class="fragment bubble-left">
+<p>Can you challenge me instead?</p>
+</div>
+<div class="fragment bubble-right">
+<p>Gladly!</p>
+</div>
+<div class="fragment bubble-right">
+<p>Is this equation: <span class="math inline">\(\dfrac{1}{x} + 2 = 0\)</span> quadratic?</p>
+</div>
+<div class="fragment bubble-left">
+<p>I got confused a bit, but I am confident that it’s not quadratic. The variable here is in the denominator.</p>
+</div>
+<div class="fragment bubble-right">
+<p>That’s right. <span class="rn" data-rn-type="underline" data-rn-color="#d42f1f">Rational</span> or an <span class="rn" data-rn-type="underline" data-rn-color="#d42f1f">inverse</span> equation is what we can call it. A quadratic can never have <span class="math inline">\(x\)</span> in the denominator.</p>
+</div>
+<div class="fragment bubble-left">
+<p>Thank you, teacher Josh. This helps me identify expressions now.</p>
+</div>
+<div class="fragment bubble-right">
+<p>No biggie. I’m glad I can help.</p>
+</div>
+</div>
+</section>
+<section id="key-rule" class="slide level2" data-background-image="image-main.png">
+<h2>Key Rule</h2>
+<p>Always remember: <span class="rn" data-rn-type="box" data-rn-color="#d42f1f" data-rn-strokewidth="2"><strong><span class="math inline">\(a\)</span> must never be zero.</strong></span> If it were, the <span class="math inline">\(x^2\)</span> term vanishes and the equation is no longer quadratic.</p>
+</section></section>
+<section>
+<section id="three-most-known-methods-for-solving-quadratic-equations" class="title-slide slide level1 center" data-background-image="image-main.png">
+<h1>Three most known methods for solving quadratic equations</h1>
+
+</section>
+<section id="method-1-factoring" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Method 1: Factoring</h2>
 <p><strong>Goal:</strong> Rewrite <span class="math inline">\(ax^2 + bx + c\)</span> as a product of two binomials.</p>
-<section id="example-solve-x2-5x-6-0" class="step-box">
-<h3>Example: Solve <span class="math inline">\(x^2 + 5x + 6 = 0\)</span></h3>
-<p><strong>Step 1</strong> — Find two numbers that <strong>multiply</strong> to <span class="math inline">\(c = 6\)</span> and <strong>add</strong> to <span class="math inline">\(b = 5\)</span>:</p>
+<p><strong>Example:</strong></p>
+<p><span class="math display">\[x^2+5x+6=0\]</span></p>
+<div class="fragment slideInLeft">
+<div title="Step 1">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 1</strong></p>
+</div>
+<div class="callout-content">
+<p>Find two numbers that <strong>multiply</strong> to <span class="math inline">\(c = 6\)</span> and <strong>add</strong> to <span class="math inline">\(b = 5\)</span>:</p>
 <p><span class="math display">\[\text{Factors of 6: } (1,6),\ (2,3) \quad \Rightarrow \quad 2 + 3 = 5\]</span></p>
-<p><strong>Step 2</strong> — Factor the equation:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Step 2">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 2</strong></p>
+</div>
+<div class="callout-content">
+<p>Factor the equation:</p>
 <p><span class="math display">\[(x + 2)(x + 3) = 0\]</span></p>
-<p><strong>Step 3</strong> — Apply the Zero Product Property:</p>
-<p><span class="math display">\[x + 2 = 0 \quad \Rightarrow \quad x = -2\]</span> <span class="math display">\[x + 3 = 0 \quad \Rightarrow \quad x = -3\]</span></p>
-<p><strong>Solutions:</strong> <span class="math inline">\(x = -2\)</span> or <span class="math inline">\(x = -3\)</span></p>
-</section>
-</section>
-<section id="factoring-practice" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Factoring Practice</h2>
-<p>Solve by factoring:</p>
-<p><span class="math display">\[x^2 - 7x + 12 = 0\]</span></p>
-<div class="fragment">
-<p><strong>Hint:</strong> Find two numbers that multiply to <span class="math inline">\(12\)</span> and add to <span class="math inline">\(-7\)</span>.</p>
 </div>
-<div class="fragment">
-<p><strong>Answer:</strong> <span class="math inline">\((-3) \times (-4) = 12\)</span> and <span class="math inline">\((-3) + (-4) = -7\)</span></p>
-<p><span class="math display">\[(x - 3)(x - 4) = 0\]</span></p>
-<p><span class="math display">\[\boxed{x = 3 \quad \text{or} \quad x = 4}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Step 3">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 3</strong></p>
+</div>
+<div class="callout-content">
+<p>Apply the Zero Product Property:</p>
+<p><span class="math display">\[x + 2 = 0 \;\Rightarrow\; x = -2 \qquad x + 3 = 0 \;\Rightarrow\; x = -3\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment bounceIn">
+<div title="Solutions:">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Solutions:</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(x = -2\)</span> or <span class="math inline">\(x = -3\)</span></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="method-2-quadratic-formula" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Method 2: Quadratic Formula</h2>
-<p>When factoring is difficult, we use the <strong>Quadratic Formula</strong>:</p>
-<div class="formula-highlight">
+<section id="factoring-practice" class="slide level2 scrollable" data-background-image="image-main.png" data-transition="fade" data-transition-speed="fast">
+<h2>Factoring Practice</h2>
+<countdown-timer id="timer_cb00108766cd59e2dcce086c0976825efc1e52a1" minutes="00" seconds="30" class="countdown" warn-when="15" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="top: 0;right: 0;--countdown-font-size: 2.5rem;">
+ </countdown-timer>
+<p>Solve by factoring: <span class="math inline">\(\quad 2x^2 - x - 6 = 0\)</span></p>
+<div class="fragment slideInLeft">
+<div title="Step 1">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 1</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Here, we have <span class="math inline">\(a&gt;1\)</span></li>
+<li>Multiply <span class="math inline">\(a=2\)</span> to <span class="math inline">\(c=-6\)</span>, and we got new <span class="math inline">\(c=-12\)</span>.</li>
+<li>Find two numbers that <strong>multiply</strong> to <span class="math inline">\(-12\)</span> and <strong>add</strong> to <span class="math inline">\(-1\)</span>.</li>
+</ul>
+<p>We have: <span class="math inline">\(3\)</span> and <span class="math inline">\(-4\)</span></p>
+<p><span class="math display">\[\Rightarrow (3) \times (-4) = 12 \quad \text{and} \quad (3) + (-4) = -1 \checkmark\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Step 2">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 2</strong></p>
+</div>
+<div class="callout-content">
+<p>Divide those 2 factors into <span class="math inline">\(a=2\)</span>, then factor:</p>
+<p>Factor:</p>
+<p><span class="math display">\[(x + \frac{3}{2})(x - 2) = 0\]</span></p>
+<p>If there’s a fraction in either or both binomials, you multiply that binomial with its denominator:</p>
+<p><span class="math display">\[(2x + 3)(x - 4) = 0\]</span></p>
+<p>but we’re solving the equation, so this is not necessary unless being asked to.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Step 3">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 3</strong></p>
+</div>
+<div class="callout-content">
+<p>Apply the Zero Product Property:</p>
+<p><span class="math display">\[x + \frac{3}{2} = 0 \;\Rightarrow\; x = -\frac{3}{2} \qquad x - 2 = 0 \;\Rightarrow\; x = 2\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment bounceIn">
+<div title="Solutions:">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Solutions:</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\boxed{x = -\frac{3}{2} \quad \text{or} \quad x = 2}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="method-2-quadratic-formula" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Method 2: Quadratic Formula</h2>
+<p>When factoring is difficult, use the <strong>Quadratic Formula</strong>:</p>
+<div class="formula-highlight animate__zoomIn">
 <p><span class="math display">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span></p>
 </div>
+<div class="animate__fadeInUp">
 <p>This formula works for <strong>every</strong> quadratic equation.</p>
+</div>
+<div class="animate__fadeInUp">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -288,64 +491,228 @@ Joshua Marie
 </div>
 </div>
 </div>
+</div>
 </section>
-<section id="quadratic-formula-worked-example" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Quadratic Formula — Worked Example</h2>
-<p>Solve <span class="math inline">\(2x^2 - 4x - 6 = 0\)</span></p>
+<section id="quadratic-formula-worked-example" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Quadratic Formula — Worked Example</h2>
+<p>Solve <span class="math inline">\(2x^2 - x - 6 = 0\)</span></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Identify:</strong> <span class="math display">\[a = 2, \quad b = -4, \quad c = -6\]</span></p>
-<p><strong>Substitute:</strong> <span class="math display">\[x = \frac{-(-4) \pm \sqrt{(-4)^2 - 4(2)(-6)}}{2(2)}\]</span></p>
-<p><span class="math display">\[x = \frac{4 \pm \sqrt{16 + 48}}{4}\]</span></p>
-<p><span class="math display">\[x = \frac{4 \pm \sqrt{64}}{4} = \frac{4 \pm 8}{4}\]</span></p>
+<div class="fragment slideInLeft">
+<div title="Identify">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Identify</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\quad a = 2,\quad b = -1,\quad c = -6\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Substitute">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Substitute</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[x = \frac{-(-1) \pm \sqrt{(-1)^2 - 4(2)(-6)}}{2(2)} = \frac{1 \pm \sqrt{49}}{4} = \frac{1 \pm 7}{4}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
-<p><strong>Two Solutions:</strong></p>
-<p><span class="math display">\[x = \frac{4 + 8}{4} = \frac{12}{4} = 3\]</span></p>
-<p><span class="math display">\[x = \frac{4 - 8}{4} = \frac{-4}{4} = -1\]</span></p>
+<div class="fragment slideInRight">
+<div title="Solving...">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Solving…</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[x = \frac{1 + 7}{4} = \frac{8}{4} = 2 \qquad x = \frac{1 - 7}{4} = -\frac{6}{4} = -\frac{3}{2}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment bounceIn">
+<div title="Solutions">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<p><strong>Solutions</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="math display">\[\boxed{x = 3 \quad \text{or} \quad x = -1}\]</span></p>
+<p><span class="math display">\[\boxed{x = 2 \quad \text{or} \quad x = -\frac{3}{2}}\]</span></p>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="the-discriminant" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The Discriminant</h2>
-<p>The part under the radical, <span class="math inline">\(b^2 - 4ac\)</span>, is called the <strong>discriminant</strong> <span class="math inline">\((\Delta)\)</span>.</p>
+<section id="the-discriminant" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>The Discriminant</h2>
+<p>The part <span class="math inline">\(b^2 - 4ac\)</span> is the <span class="rn" data-rn-type="box" data-rn-color="#0088aa"><strong>discriminant</strong></span> <span class="math inline">\((\Delta)\)</span>. It helps us predict how many solutions exist.</p>
 <div class="columns">
 <div class="column" style="width:33%;">
-<section id="delta-0" class="disc-box two-solutions">
-<h3><span class="math inline">\(\Delta &gt; 0\)</span></h3>
+<div class="fragment zoomIn disc-box two-solutions">
+<h3 id="delta-0"><span class="math inline">\(\Delta &gt; 0\)</span></h3>
 <p><strong>Two real solutions</strong></p>
 <p>The parabola crosses the x-axis <strong>twice</strong>.</p>
-</section>
+</div>
 </div><div class="column" style="width:33%;">
-<section id="delta-0-1" class="disc-box one-solution">
-<h3><span class="math inline">\(\Delta = 0\)</span></h3>
+<div class="fragment zoomIn disc-box one-solution">
+<h3 id="delta-0-1"><span class="math inline">\(\Delta = 0\)</span></h3>
 <p><strong>One real solution</strong></p>
-<p>The parabola <strong>touches</strong> the x-axis exactly once.</p>
-</section>
+<p>The parabola <strong>tangents</strong> (touches once) the x-axis.</p>
+</div>
 </div><div class="column" style="width:33%;">
-<section id="delta-0-2" class="disc-box no-solutions">
-<h3><span class="math inline">\(\Delta &lt; 0\)</span></h3>
+<div class="fragment zoomIn disc-box no-solutions">
+<h3 id="delta-0-2"><span class="math inline">\(\Delta &lt; 0\)</span></h3>
 <p><strong>No real solutions</strong></p>
-<p>The parabola does <strong>not</strong> cross the x-axis.</p>
-</section>
+<p>The parabola <strong>DOES NOT</strong> cross the x-axis.</p>
+</div>
 </div></div>
 </section>
-<section id="the-parabola-graphing-a-quadratic" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The Parabola — Graphing a Quadratic</h2>
+<section id="method-3-completing-the-square" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Method 3: Completing the Square</h2>
+<p>The idea here is literally “complete the square” for each sides of the equations.</p>
+
+<img data-src="cts.jpg" class="r-stretch"><blockquote>
+<p>Source: https://media.geeksforgeeks.org/wp-content/uploads/20250214124516755151/Completing-the-square-Method.webp</p>
+</blockquote>
+</section>
+<section id="completing-the-square-the-demo" class="slide level2">
+<h2>Completing the Square: The demo</h2>
+<p>Transform <span class="math inline">\(x^2 + 6x + 5 = 0\)</span> into the form <span class="math inline">\((x + h)^2 = k\)</span>.</p>
+<div class="fragment slideInLeft">
+<div title="Step 1">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 1</strong></p>
+</div>
+<div class="callout-content">
+<p>Move the constant:<br>
+<span class="math display">\[\quad x^2 + 6x = -5\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Step 2">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 2</strong></p>
+</div>
+<div class="callout-content">
+<p>Add <span class="math inline">\(\left(\dfrac{6}{2}\right)^2 = 9\)</span> both sides: <span class="math display">\[\quad x^2 + 6x + 9 = -5+9 \Rightarrow x^2 + 6x + 9=4\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Step 3">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 3</strong></p>
+</div>
+<div class="callout-content">
+<p>Simplify the perfect square trinomial into squared binomial factor: <span class="math display">\[(x + 3)^2 = 4\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Step 4">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 4</strong></p>
+</div>
+<div class="callout-content">
+<p>Take square roots both sides: <span class="math inline">\(\quad x + 3 = \pm 2\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Step 5">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Step 5</strong></p>
+</div>
+<div class="callout-content">
+<p>Now solve for each signs: <span class="math display">\[x + 3 = - 2 \Rightarrow x=-2-3=-5 \quad x+3=2 \Rightarrow x=2-3=-1\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment bounceIn">
+<div title="Solutions:">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Solutions:</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\boxed{x = -5 \quad \text{or} \quad x = -1}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="parabola-the-visual" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Parabola: The visual</h2>
 <p>The graph of <span class="math inline">\(y = ax^2 + bx + c\)</span> is always a <strong>parabola</strong>.</p>
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:50%;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -355,7 +722,7 @@ Joshua Marie
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Vertex</strong> (turning point)</td>
+<td><strong>Vertex</strong></td>
 <td><span class="math inline">\(x = -\dfrac{b}{2a}\)</span></td>
 </tr>
 <tr class="even">
@@ -375,47 +742,72 @@ Joshua Marie
 <td><span class="math inline">\((0, c)\)</span></td>
 </tr>
 <tr class="even">
-<td><strong>x-intercepts</strong> (roots)</td>
+<td><strong>x-intercepts</strong></td>
 <td>solutions of the equation</td>
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="girafe html-widget html-fill-item" id="htmlwidget-303f3c76da535d417bbe" style="width:528px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-303f3c76da535d417bbe">{"x":{"html":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='ggiraph-svg' role='graphics-document' id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71' viewBox='0 0 396 360'>\n <defs id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71_defs'>\n  <clipPath id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71_c1'>\n   <rect x='0' y='0' width='396' height='360'/>\n  <\/clipPath>\n  <clipPath id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71_c2'>\n   <rect x='19.89' y='30.37' width='370.13' height='309.39'/>\n  <\/clipPath>\n <\/defs>\n <g id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71_rootg' class='ggiraph-svg-rootg'>\n  <g clip-path='url(#svg_cd3429b4_1986_4212_9e19_b1b45d196c71_c1)'>\n   <rect x='0' y='0' width='396' height='360' fill='#FFFFFF' fill-opacity='1' stroke='#FFFFFF' stroke-opacity='1' stroke-width='0.75' stroke-linejoin='round' stroke-linecap='round' class='ggiraph-svg-bg'/>\n   <rect x='0' y='0' width='396' height='360' fill='none' stroke='none'/>\n  <\/g>\n  <g clip-path='url(#svg_cd3429b4_1986_4212_9e19_b1b45d196c71_c2)'>\n   <rect x='19.89' y='30.37' width='370.13' height='309.39' fill='none' stroke='none'/>\n   <polyline points='19.89,333.97 390.02,333.97' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='19.89,292.60 390.02,292.60' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='19.89,251.24 390.02,251.24' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='19.89,209.88 390.02,209.88' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='19.89,168.52 390.02,168.52' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='19.89,127.15 390.02,127.15' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='19.89,85.79 390.02,85.79' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='19.89,44.43 390.02,44.43' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='70.36,339.76 70.36,30.37' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='137.66,339.76 137.66,30.37' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='204.96,339.76 204.96,30.37' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='272.25,339.76 272.25,30.37' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='339.55,339.76 339.55,30.37' fill='none' stroke='#E0E0E0' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <line x1='204.96' y1='339.76' x2='204.96' y2='30.37' stroke='#D42F1F' stroke-opacity='0.6' stroke-width='1.28' stroke-dasharray='4,4' stroke-linejoin='round' stroke-linecap='butt'/>\n   <polyline points='36.71,34.09 37.84,37.54 38.96,40.96 40.09,44.36 41.22,47.74 42.34,51.09 43.47,54.42 44.59,57.73 45.72,61.02 46.84,64.28 47.97,67.52 49.09,70.73 50.22,73.92 51.34,77.09 52.47,80.24 53.59,83.36 54.72,86.46 55.84,89.54 56.97,92.59 58.10,95.62 59.22,98.63 60.35,101.61 61.47,104.58 62.60,107.51 63.72,110.43 64.85,113.32 65.97,116.19 67.10,119.03 68.22,121.86 69.35,124.66 70.47,127.43 71.60,130.18 72.73,132.91 73.85,135.62 74.98,138.30 76.10,140.96 77.23,143.60 78.35,146.22 79.48,148.81 80.60,151.37 81.73,153.92 82.85,156.44 83.98,158.94 85.10,161.41 86.23,163.87 87.36,166.29 88.48,168.70 89.61,171.08 90.73,173.44 91.86,175.78 92.98,178.09 94.11,180.38 95.23,182.65 96.36,184.89 97.48,187.11 98.61,189.31 99.73,191.49 100.86,193.64 101.98,195.77 103.11,197.87 104.24,199.95 105.36,202.01 106.49,204.05 107.61,206.06 108.74,208.05 109.86,210.02 110.99,211.96 112.11,213.88 113.24,215.78 114.36,217.65 115.49,219.50 116.61,221.33 117.74,223.13 118.87,224.91 119.99,226.67 121.12,228.41 122.24,230.12 123.37,231.81 124.49,233.47 125.62,235.12 126.74,236.74 127.87,238.33 128.99,239.90 130.12,241.45 131.24,242.98 132.37,244.48 133.50,245.97 134.62,247.42 135.75,248.86 136.87,250.27 138.00,251.66 139.12,253.02 140.25,254.36 141.37,255.68 142.50,256.98 143.62,258.25 144.75,259.50 145.87,260.72 147.00,261.93 148.12,263.11 149.25,264.26 150.38,265.40 151.50,266.51 152.63,267.59 153.75,268.66 154.88,269.70 156.00,270.72 157.13,271.71 158.25,272.68 159.38,273.63 160.50,274.56 161.63,275.46 162.75,276.34 163.88,277.20 165.01,278.03 166.13,278.84 167.26,279.62 168.38,280.39 169.51,281.13 170.63,281.84 171.76,282.54 172.88,283.21 174.01,283.86 175.13,284.48 176.26,285.08 177.38,285.66 178.51,286.22 179.64,286.75 180.76,287.26 181.89,287.74 183.01,288.21 184.14,288.65 185.26,289.06 186.39,289.46 187.51,289.83 188.64,290.17 189.76,290.50 190.89,290.80 192.01,291.07 193.14,291.33 194.26,291.56 195.39,291.77 196.52,291.95 197.64,292.12 198.77,292.25 199.89,292.37 201.02,292.46 202.14,292.53 203.27,292.58 204.39,292.60 205.52,292.60 206.64,292.58 207.77,292.53 208.89,292.46 210.02,292.37 211.15,292.25 212.27,292.12 213.40,291.95 214.52,291.77 215.65,291.56 216.77,291.33 217.90,291.07 219.02,290.80 220.15,290.50 221.27,290.17 222.40,289.83 223.52,289.46 224.65,289.06 225.78,288.65 226.90,288.21 228.03,287.74 229.15,287.26 230.28,286.75 231.40,286.22 232.53,285.66 233.65,285.08 234.78,284.48 235.90,283.86 237.03,283.21 238.15,282.54 239.28,281.84 240.40,281.13 241.53,280.39 242.66,279.62 243.78,278.84 244.91,278.03 246.03,277.20 247.16,276.34 248.28,275.46 249.41,274.56 250.53,273.63 251.66,272.68 252.78,271.71 253.91,270.72 255.03,269.70 256.16,268.66 257.29,267.59 258.41,266.51 259.54,265.40 260.66,264.26 261.79,263.11 262.91,261.93 264.04,260.72 265.16,259.50 266.29,258.25 267.41,256.98 268.54,255.68 269.66,254.36 270.79,253.02 271.92,251.66 273.04,250.27 274.17,248.86 275.29,247.42 276.42,245.97 277.54,244.48 278.67,242.98 279.79,241.45 280.92,239.90 282.04,238.33 283.17,236.74 284.29,235.12 285.42,233.47 286.54,231.81 287.67,230.12 288.80,228.41 289.92,226.67 291.05,224.91 292.17,223.13 293.30,221.33 294.42,219.50 295.55,217.65 296.67,215.78 297.80,213.88 298.92,211.96 300.05,210.02 301.17,208.05 302.30,206.06 303.43,204.05 304.55,202.01 305.68,199.95 306.80,197.87 307.93,195.77 309.05,193.64 310.18,191.49 311.30,189.31 312.43,187.11 313.55,184.89 314.68,182.65 315.80,180.38 316.93,178.09 318.06,175.78 319.18,173.44 320.31,171.08 321.43,168.70 322.56,166.29 323.68,163.87 324.81,161.41 325.93,158.94 327.06,156.44 328.18,153.92 329.31,151.37 330.43,148.81 331.56,146.22 332.68,143.60 333.81,140.96 334.94,138.30 336.06,135.62 337.19,132.91 338.31,130.18 339.44,127.43 340.56,124.66 341.69,121.86 342.81,119.03 343.94,116.19 345.06,113.32 346.19,110.43 347.31,107.51 348.44,104.58 349.57,101.61 350.69,98.63 351.82,95.62 352.94,92.59 354.07,89.54 355.19,86.46 356.32,83.36 357.44,80.24 358.57,77.09 359.69,73.92 360.82,70.73 361.94,67.52 363.07,64.28 364.20,61.02 365.32,57.73 366.45,54.42 367.57,51.09 368.70,47.74 369.82,44.36 370.95,40.96 372.07,37.54 373.20,34.09' fill='none' stroke='#1A2A4F' stroke-opacity='1' stroke-width='2.56' stroke-linejoin='round' stroke-linecap='butt'/>\n   <circle id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71_e1' cx='204.96' cy='292.6' r='3.49pt' fill='#D42F1F' fill-opacity='0.85' stroke='#D42F1F' stroke-opacity='0.85' stroke-width='0.77' stroke-linejoin='round' stroke-linecap='round' title='Vertex: (2, −1)&amp;lt;br/&amp;gt;Axis of symmetry: x = 2' data-id='Vertex'/>\n   <circle id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71_e2' cx='137.66' cy='251.24' r='3.49pt' fill='#0088AA' fill-opacity='0.85' stroke='#0088AA' stroke-opacity='0.85' stroke-width='0.77' stroke-linejoin='round' stroke-linecap='round' title='x-intercept: (1, 0)' data-id='x-intercept'/>\n   <circle id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71_e3' cx='272.25' cy='251.24' r='3.49pt' fill='#0088AA' fill-opacity='0.85' stroke='#0088AA' stroke-opacity='0.85' stroke-width='0.77' stroke-linejoin='round' stroke-linecap='round' title='x-intercept: (3, 0)' data-id='x-intercept'/>\n   <circle id='svg_cd3429b4_1986_4212_9e19_b1b45d196c71_e4' cx='70.36' cy='127.15' r='3.49pt' fill='#2E9E5B' fill-opacity='0.85' stroke='#2E9E5B' stroke-opacity='0.85' stroke-width='0.77' stroke-linejoin='round' stroke-linecap='round' title='y-intercept: (0, 3)' data-id='y-intercept'/>\n   <text x='191.31' y='281.38' font-size='6.83pt' font-weight='bold' font-family='Arial' fill='#D42F1F' fill-opacity='1'>Vertex<\/text>\n   <text x='114.42' y='240.02' font-size='6.83pt' font-weight='bold' font-family='Arial' fill='#0088AA' fill-opacity='1'>x-intercept<\/text>\n   <text x='249.01' y='240.02' font-size='6.83pt' font-weight='bold' font-family='Arial' fill='#0088AA' fill-opacity='1'>x-intercept<\/text>\n   <text x='47.12' y='115.93' font-size='6.83pt' font-weight='bold' font-family='Arial' fill='#2E9E5B' fill-opacity='1'>y-intercept<\/text>\n   <text x='210.34' y='80.77' font-size='6.83pt' font-style='italic' font-family='Arial' fill='#D42F1F' fill-opacity='1'>x = 2<\/text>\n   <line x1='19.89' y1='251.24' x2='390.02' y2='251.24' stroke='#AAAAAA' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n   <line x1='70.36' y1='339.76' x2='70.36' y2='30.37' stroke='#AAAAAA' stroke-opacity='1' stroke-width='0.85' stroke-linejoin='round' stroke-linecap='butt'/>\n  <\/g>\n  <g clip-path='url(#svg_cd3429b4_1986_4212_9e19_b1b45d196c71_c1)'>\n   <text x='5.98' y='337.4' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>-2<\/text>\n   <text x='5.98' y='296.04' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>-1<\/text>\n   <text x='9.17' y='254.68' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>0<\/text>\n   <text x='9.17' y='213.31' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>1<\/text>\n   <text x='9.17' y='171.95' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>2<\/text>\n   <text x='9.17' y='130.59' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>3<\/text>\n   <text x='9.17' y='89.23' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>4<\/text>\n   <text x='9.17' y='47.86' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>5<\/text>\n   <text x='67.69' y='352.01' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>0<\/text>\n   <text x='134.99' y='352.01' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>1<\/text>\n   <text x='202.29' y='352.01' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>2<\/text>\n   <text x='269.59' y='352.01' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>3<\/text>\n   <text x='336.88' y='352.01' font-size='7.2pt' font-family='Arial' fill='#4D4D4D' fill-opacity='1'>4<\/text>\n   <text x='164.29' y='18.92' font-size='9.75pt' font-family='Arial' fill='#1A2A4F' fill-opacity='1'>y<\/text>\n   <text x='173.8' y='18.92' font-size='9.75pt' font-family='Symbol' fill='#1A2A4F' fill-opacity='1'>=<\/text>\n   <text x='185.7' y='18.92' font-size='9.75pt' font-family='Arial' fill='#1A2A4F' fill-opacity='1'>x<\/text>\n   <text x='192.2' y='12.51' font-size='6.82pt' font-family='Arial' fill='#1A2A4F' fill-opacity='1'>2<\/text>\n   <text x='199.66' y='18.92' font-size='9.75pt' font-family='Symbol' fill='#1A2A4F' fill-opacity='1'>−<\/text>\n   <text x='210.96' y='18.92' font-size='9.75pt' font-family='Arial' fill='#1A2A4F' fill-opacity='1'>4<\/text>\n   <text x='218.19' y='18.92' font-size='9.75pt' font-family='Arial' fill='#1A2A4F' fill-opacity='1'>x<\/text>\n   <text x='227.1' y='18.92' font-size='9.75pt' font-family='Symbol' fill='#1A2A4F' fill-opacity='1'>+<\/text>\n   <text x='238.39' y='18.92' font-size='9.75pt' font-family='Arial' fill='#1A2A4F' fill-opacity='1'>3<\/text>\n  <\/g>\n <\/g>\n<\/svg>","js":null,"uid":"svg_cd3429b4_1986_4212_9e19_b1b45d196c71","ratio":1.1,"settings":{"tooltip":{"css":".tooltip_SVGID_ { background:#1A2A4F; color:white; padding:6px 10px;\n             border-radius:6px; font-size:12px; font-family:monospace; ; position:absolute;pointer-events:none;z-index:999;}","placement":"doc","opacity":0.9,"offx":10,"offy":0,"use_cursor_pos":true,"use_fill":false,"use_stroke":false,"delay_over":200,"delay_out":500},"hover":{"css":".hover_data_SVGID_ { fill-opacity:1; r:6px; }","reactive":false,"nearest_distance":null},"hover_inv":{"css":""},"hover_key":{"css":".hover_key_SVGID_ { fill:orange;stroke:black;cursor:pointer; }\ntext.hover_key_SVGID_ { stroke:none;fill:orange; }\ncircle.hover_key_SVGID_ { fill:orange;stroke:black; }\nline.hover_key_SVGID_, polyline.hover_key_SVGID_ { fill:none;stroke:orange; }\nrect.hover_key_SVGID_, polygon.hover_key_SVGID_, path.hover_key_SVGID_ { fill:orange;stroke:none; }\nimage.hover_key_SVGID_ { stroke:orange; }","reactive":true},"hover_theme":{"css":".hover_theme_SVGID_ { fill:orange;stroke:black;cursor:pointer; }\ntext.hover_theme_SVGID_ { stroke:none;fill:orange; }\ncircle.hover_theme_SVGID_ { fill:orange;stroke:black; }\nline.hover_theme_SVGID_, polyline.hover_theme_SVGID_ { fill:none;stroke:orange; }\nrect.hover_theme_SVGID_, polygon.hover_theme_SVGID_, path.hover_theme_SVGID_ { fill:orange;stroke:none; }\nimage.hover_theme_SVGID_ { stroke:orange; }","reactive":true},"select":{"css":".select_data_SVGID_ { fill:red;stroke:black;cursor:pointer; }\ntext.select_data_SVGID_ { stroke:none;fill:red; }\ncircle.select_data_SVGID_ { fill:red;stroke:black; }\nline.select_data_SVGID_, polyline.select_data_SVGID_ { fill:none;stroke:red; }\nrect.select_data_SVGID_, polygon.select_data_SVGID_, path.select_data_SVGID_ { fill:red;stroke:none; }\nimage.select_data_SVGID_ { stroke:red; }","type":"multiple","only_shiny":true,"selected":[]},"select_inv":{"css":""},"select_key":{"css":".select_key_SVGID_ { fill:red;stroke:black;cursor:pointer; }\ntext.select_key_SVGID_ { stroke:none;fill:red; }\ncircle.select_key_SVGID_ { fill:red;stroke:black; }\nline.select_key_SVGID_, polyline.select_key_SVGID_ { fill:none;stroke:red; }\nrect.select_key_SVGID_, polygon.select_key_SVGID_, path.select_key_SVGID_ { fill:red;stroke:none; }\nimage.select_key_SVGID_ { stroke:red; }","type":"single","only_shiny":true,"selected":[]},"select_theme":{"css":".select_theme_SVGID_ { fill:red;stroke:black;cursor:pointer; }\ntext.select_theme_SVGID_ { stroke:none;fill:red; }\ncircle.select_theme_SVGID_ { fill:red;stroke:black; }\nline.select_theme_SVGID_, polyline.select_theme_SVGID_ { fill:none;stroke:red; }\nrect.select_theme_SVGID_, polygon.select_theme_SVGID_, path.select_theme_SVGID_ { fill:red;stroke:none; }\nimage.select_theme_SVGID_ { stroke:red; }","type":"single","only_shiny":true,"selected":[]},"zoom":{"min":1,"max":1,"duration":300},"toolbar":{"position":"topright","pngname":"diagram","tooltips":null,"fixed":false,"hidden":"saveaspng","delay_over":200,"delay_out":500},"sizing":{"rescale":true,"width":1}}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div></div>
+</section>
+<section id="special-cases" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Special Cases</h2>
+<p>There are at least 2 special cases of quadratic equations that can be easily solved.</p>
+<p>Suppose <span class="math inline">\(n\)</span> is any real number.</p>
+<div class="fragment slideInLeft">
+<div title="Perfect Squares">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Whiteboard Activity</strong></p>
+<p><strong>Perfect Squares</strong></p>
 </div>
 <div class="callout-content">
-<p>Let’s sketch <span class="math inline">\(y = x^2 - 4x + 3\)</span> together.</p>
-<ul>
-<li>Find the vertex</li>
-<li>Find the axis of symmetry</li>
-<li>Find the x-intercepts</li>
-<li>Sketch the parabola</li>
-</ul>
+<p>When you detected this type of equation:</p>
+<p><span class="math display">\[x^2\pm2nx+n^2=0\]</span></p>
+<p>It is tangential to the x-axis, and you’ll get 2 kinds of solution:</p>
+<ol type="1">
+<li><span class="math inline">\(x= -n\)</span> when <span class="math inline">\(b=2n\)</span> is positive</li>
+<li><span class="math inline">\(x= n\)</span> when <span class="math inline">\(b=2n\)</span> is negative</li>
+</ol>
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
+<div class="fragment slideInLeft">
+<div title="Difference of squares">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Difference of squares</strong></p>
+</div>
+<div class="callout-content">
+<p>This has to be the easiest quadratic equation to solve</p>
+<p>When you have this given:</p>
+<p><span class="math display">\[x^2-n^2=0\]</span></p>
+<p>You can just bring <span class="math inline">\(a^2\)</span> to the right side, and you’ll get 2 solutions.</p>
+<p><span class="math display">\[x= \pm n\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="method-3-completing-the-square" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Method 3: Completing the Square</h2>
-<p>Transform the equation into the form <span class="math inline">\((x + h)^2 = k\)</span>.</p>
-<section id="example-solve-x2-6x-5-0" class="step-box">
-<h3>Example: Solve <span class="math inline">\(x^2 + 6x + 5 = 0\)</span></h3>
-<p><strong>Step 1</strong> — Move the constant to the right: <span class="math display">\[x^2 + 6x = -5\]</span></p>
-<p><strong>Step 2</strong> — Add <span class="math inline">\(\left(\dfrac{b}{2}\right)^2 = \left(\dfrac{6}{2}\right)^2 = 9\)</span> to both sides: <span class="math display">\[x^2 + 6x + 9 = -5 + 9 = 4\]</span></p>
-<p><strong>Step 3</strong> — Write as a perfect square: <span class="math display">\[(x + 3)^2 = 4\]</span></p>
-<p><strong>Step 4</strong> — Take square roots: <span class="math display">\[x + 3 = \pm 2 \quad \Rightarrow \quad \boxed{x = -1 \quad \text{or} \quad x = -5}\]</span></p>
-</section>
-</section>
-<section id="which-method-to-use" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Which Method to Use?</h2>
-<div class="method-table">
+<section id="which-method-to-use" class="slide level2 scrollable" data-background-image="image-main.png">
+<h2>Which Method to Use?</h2>
+<div class="method-table animate__fadeInDown">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -443,75 +835,9 @@ Joshua Marie
 </tbody>
 </table>
 </div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Pro Tip</strong></p>
-</div>
-<div class="callout-content">
-<p>When in doubt, <strong>the Quadratic Formula always works.</strong> It is your safety net.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="quick-quiz" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Quick Quiz</h2>
-<div class="quiz-question">
-<p>What are the solutions of <span class="math inline">\(x^2 - x - 6 = 0\)</span>?</p>
-<ul>
-<li><ol type="A">
-<li><span class="math inline">\(x = 2\)</span> or <span class="math inline">\(x = -3\)</span></li>
-</ol></li>
-<li><ol start="2" type="A">
-<li><span class="math inline">\(x = -2\)</span> or <span class="math inline">\(x = 3\)</span></li>
-</ol></li>
-<li><ol start="3" type="A">
-<li><span class="math inline">\(x = 3\)</span> or <span class="math inline">\(x = -3\)</span></li>
-</ol></li>
-<li><ol start="4" type="A">
-<li><span class="math inline">\(x = 1\)</span> or <span class="math inline">\(x = -6\)</span></li>
-</ol></li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>Answer: B</strong> — <span class="math inline">\(x = -2\)</span> or <span class="math inline">\(x = 3\)</span></p>
-<p><span class="math inline">\((x - 3)(x + 2) = 0 \Rightarrow x = 3\)</span> or <span class="math inline">\(x = -2\)</span></p>
-</div>
-</section>
-<section id="what-we-learned-today" class="slide level2" data-background-image="image-main.png" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">What We Learned Today</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<h3 id="key-takeaways">Key Takeaways</h3>
-<ul>
-<li>A quadratic equation has the form <span class="math inline">\(ax^2 + bx + c = 0\)</span></li>
-<li>We can solve by <strong>factoring</strong>, <strong>quadratic formula</strong>, or <strong>completing the square</strong></li>
-<li>The <strong>discriminant</strong> (<span class="math inline">\(b^2 - 4ac\)</span>) tells us how many solutions exist</li>
-<li>The graph of a quadratic is always a <strong>parabola</strong></li>
-<li>Parabolas appear everywhere in the real world</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>The Golden Formula</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="math display">\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</span></p>
-<p><em>Memorize this — it works every time.</em></p>
-</div>
-</div>
-</div>
-</div></div>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -528,6 +854,8 @@ Joshua Marie
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-spotlight/spotlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/appearance/appearance.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-chat-bubbles/chat-bubbles.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
@@ -543,7 +871,7 @@ Joshua Marie
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -551,23 +879,25 @@ Joshua Marie
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":false},
+'chalkboard': {"buttons":true,"theme":"whiteboard","boardmarkerWidth":4},
 'quiz': {"checkKey":"c","resetKey":"q","shuffleKey":"t","allowNumberKeys":true,"disableOnCheck":false,"shuffleOptions":true,"defaultCorrect":"","defaultIncorrect":"","includeScore":false,"disableReset":false},
+'spotlight': {"size":80,"lockPointerInsideCanvas":false,"toggleSpotlightOnMouseDown":false,"spotlightOnKeyPressAndHold":false,"spotlightCursor":"none","presentingCursor":"default","initialPresentationMode":true,"disablingUserSelect":false,"fadeInAndOut":100,"useAsPointer":true,"pointerColor":"#d42f1f"},
+'appearance': {"hideagain":true,"delay":200,"debug":false,"appearevent":"slidetransitionend","autoappear":false,"autoelements":false,"appearparents":false,"initdelay":0},
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
         controlsTutorial: false,
 
         // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
+        controlsLayout: 'bottom-right',
 
         // Visibility rule for backwards navigation arrows; "faded", "hidden"
         // or "visible"
-        controlsBackArrows: 'faded',
+        controlsBackArrows: 'visible',
 
         // Display a presentation progress bar
         progress: true,
@@ -728,7 +1058,7 @@ Joshua Marie
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealQuiz, RevealChatBubbles, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealQuiz, RevealSpotlight, Appearance, RevealChatBubbles, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -737,6 +1067,82 @@ Joshua Marie
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
