@@ -1880,7 +1880,7 @@
     "href": "slides/quadratic-equtions/index.html#which-method-to-use",
     "title": "Quadratic Equations",
     "section": "Which Method to Use?",
-    "text": "Which Method to Use?\n\n\n\n\nSituation\nBest Method\n\n\n\n\nEasy to factor (small integers)\nFactoring\n\n\n\\(b = 0\\) (e.g. \\(x^2 - 16 = 0\\))\nSquare Root\n\n\nAny quadratic, guaranteed\nQuadratic Formula\n\n\nConverting to vertex form\nCompleting the Square"
+    "text": "Which Method to Use?\n\n\n\n\n\n\n\n\nSituation\nBest Method\n\n\n\n\nEasy to factor (small integers)\nFactoring\n\n\n\\(b = 0\\) (e.g. \\(x^2 - 16 = 0\\))\nSquare Root\n\n\nAny quadratic, guaranteed\nQuadratic Formula / Completing the Square"
   },
   {
     "objectID": "slides/quadratic-equtions/index.html#quick-quiz",
@@ -2006,7 +2006,7 @@
     "href": "slides/quadratic-equtions/index.html#special-cases",
     "title": "Quadratic Equations",
     "section": "Special Cases",
-    "text": "Special Cases\nThere are at least 2 special cases of quadratic equations that can be easily solved.\nSuppose \\(n\\) is any real number.\n\n\n\n\n\n\n\n\nPerfect Squares\n\n\nWhen you detected this type of equation:\n\\[x^2\\pm2nx+n^2=0\\]\nIt is tangential to the x-axis, and you’ll get 2 kinds of solution:\n\n\\(x= -n\\) when \\(b=2n\\) is positive\n\\(x= n\\) when \\(b=2n\\) is negative\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDifference of squares\n\n\nThis has to be the easiest quadratic equation to solve\nWhen you have this given:\n\\[x^2-n^2=0\\]\nYou can just bring \\(a^2\\) to the right side, and you’ll get 2 solutions.\n\\[x= \\pm n\\]"
+    "text": "Special Cases\nThere are at least 2 special cases of quadratic equations that can be easily solved.\nSuppose \\(n\\) is any real number.\n\n\n\n\n\n\n\n\nPerfect Squares\n\n\nWhen you detected this type of equation:\n\\[x^2\\pm2nx+n^2=0\\]\nIt is tangential to the x-axis, and you’ll get 2 kinds of solution:\n\n\\(x= -n\\) when \\(b=2n\\) is positive\n\\(x= n\\) when \\(b=2n\\) is negative\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDifference of squares\n\n\nThis has to be the easiest quadratic equation to solve\nWhen you have this given:\n\\[x^2-n^2=0\\]\nYou can just bring \\(n^2\\) to the right side, and you’ll get 2 solutions.\n\\[x= \\pm n\\]"
   },
   {
     "objectID": "slides/quadratic-equtions/index.html#is-it-quadratic-conversation-1",

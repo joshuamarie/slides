@@ -563,7 +563,7 @@ When you have this given:
 
 $$x^2-n^2=0$$
 
-You can just bring $a^2$ to the right side, and you'll get 2 solutions.
+You can just bring $n^2$ to the right side, and you'll get 2 solutions.
 
 $$x= \pm n$$
 
@@ -577,6 +577,5 @@ $$x= \pm n$$
 |-----------|-------------|
 | Easy to factor (small integers) | **Factoring** |
 | $b = 0$ (e.g. $x^2 - 16 = 0$) | **Square Root** |
-| Any quadratic, guaranteed | **Quadratic Formula** |
-| Converting to vertex form | **Completing the Square** |
+| Any quadratic, guaranteed | **Quadratic Formula** / **Completing the Square** |
 :::
